@@ -32,7 +32,7 @@ Command that u need to execute beforehand
 
 Installing all dependencies
 
-```terminal/bash
+```bash
     composer install
 ```
 
