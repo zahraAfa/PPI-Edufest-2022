@@ -31,6 +31,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 Command that u need to execute beforehand
 
 Installing all dependencies
+
 ```terminal/bash
     composer install
 ```
