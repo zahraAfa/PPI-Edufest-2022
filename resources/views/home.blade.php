@@ -8,10 +8,13 @@
 
         <img src="assets/img/header/person.png" class="person translate" data-speed="-0.25" alt="">
         <img src="assets/img/header/mountain1.png" class="mountain1 translate" data-speed="-0.2" alt="">
-        
-        {{-- <img src="assets/img/header/mountain2.png" class="mountain2 translate" data-speed="0.4" alt="">
-        <img src="assets/img/header/mountain3.png" class="mountain3 translate" data-speed="0.3" alt="">
-        <img src="assets/img/header/sky.png" class="sky translate" data-speed="0.5" alt=""> --}}
+        <div class="carousel-slider" data-speed="0.3">
+            <div class="carousel-slide"><img src="assets/img/header/carousel1.jpeg" alt="Header"></div>
+            <div class="carousel-slide"><img src="assets/img/header/carousel1.jpeg" alt="Header"></div>
+            <div class="carousel-slide"><img src="assets/img/header/carousel1.jpeg" alt="Header"></div>
+            <div class="carousel-slide"><img src="assets/img/header/carousel1.jpeg" alt="Header"></div>
+            <div class="carousel-slide"><img src="assets/img/header/carousel1.jpeg" alt="Header"></div>
+        </div>
     <!-- </div> -->
 </header>
 <section>

@@ -24,11 +24,7 @@
     <!-- Style end -->
 
     <!-- Favicon start -->
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png"> -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/edufest-icon.png">
-
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logos/edufest-logo.png"> -->
-    <!-- <link rel="manifest" href="assets/favicon/site.webmanifest"> -->
     <!-- Favicon end -->
 </head>
 
@@ -68,8 +64,23 @@
     <script src="assets/scripts/nav.js"></script>
     <script src="assets/scripts/header.js"></script>
     <script src="assets/scripts/page-loader.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    
+    <script>
         AOS.init();
+    </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script>
+        $('.carousel-slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+            centerMode: false,
+        });
     </script>
 </body>
 

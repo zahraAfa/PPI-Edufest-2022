@@ -86,3 +86,11 @@ header:after{
     background-color: aqua;
     /* background: linear-gradient(to top, #151515, transparent); */
 }
+
+.carousel-slider img{
+    width: 100vw;
+    /* transform: translate(0%, 0%); */
+}
+.carousel-slider{
+    margin: auto;
+}
