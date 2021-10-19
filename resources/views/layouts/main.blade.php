@@ -48,7 +48,7 @@
                         <li><a href="#" class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
-                        <img src="assets/img/logos/edufest-logo.png" alt="Edufest Logo">
+                        <a href="/" class="gohome"><img src="assets/img/logos/edufest-logo.png" alt="Edufest Logo"></a>
                     </div>
                     <div class="nav-wrap">
                         <div class="menu-toggle">
@@ -62,7 +62,7 @@
             </div>
         </div>
     </nav>
-    
+
     @yield('body')
 
     <script src="assets/scripts/nav.js"></script>

@@ -112,6 +112,14 @@
 
 /* media query for nav */
 @media screen and (max-width: 749px) {
+  .nav-items li a {
+    font-size: 1.3em;
+    font-weight: 700;
+    text-shadow: none;
+    color: var(--LightGrey);
+    padding: 0;
+  }
+
   .nav-sections {
     justify-content: end;
   }
@@ -130,7 +138,7 @@
     height: 100vh;
     width: 100vw;
     /* background-color: transparent; */
-    background-color: var(--LightGrey);
+    background-color: var(--DarkGrey);
     /* color: ; */
   }
 
