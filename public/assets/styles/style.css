@@ -17,7 +17,12 @@
   --Purple: #67589d;
   --BrightRed: #fe4531;
   --BrightBlue: #3d94fe;
+  --SkyBlue: #a4cbfc;
   --DarkGreen: #1f3625;
+
+  /* Gradient Backgrounds */
+  --Gradient1: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,175,29,1) 75%, rgba(252,121,69,1) 100%);
+  --Gradient2: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,121,69,1) 100%);
 
   /* z index */
   --znav: 100;
@@ -103,15 +108,15 @@ h1 {
   position: relative;
   text-align: center;
   width: 200px;
-  height: 100px; /* as the half of the width */
-  background-color: var(--DarkGreen);
+  height: 80px; /* as the half of the width */
+  /* background-color: var(--DarkGreen); */
   border-top-left-radius: 110px; /* 100px of height + 10px of border */
   border-top-right-radius: 110px; /* 100px of height + 10px of border */
-  border: 10px solid var(--DarkGreen);
+  /* border: 10px solid var(--DarkGreen); */
   border-bottom: 0;
   color: var(--White);
   left: 50%;
   transform: translateX(-50%);
-  top: 20px;
+  top: 2px;
   line-height: 80px;
 }
