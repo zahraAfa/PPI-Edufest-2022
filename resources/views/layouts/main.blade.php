@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/styles/description.css" />
     <link rel="stylesheet" href="assets/styles/box.css" />
     <link rel="stylesheet" href="assets/styles/agenda.css" />
+    <link rel="stylesheet" href="assets/styles/faq.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->
@@ -64,8 +65,10 @@
     </nav>
 
     @yield('body')
+    @yield('faq')
 
     <script src="assets/scripts/nav.js"></script>
+    <script src="assets/scripts/faq.js"></script>
     <script src="assets/scripts/header.js"></script>
     <script src="assets/scripts/page-loader.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
