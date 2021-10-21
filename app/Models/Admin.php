@@ -30,6 +30,8 @@ class Admin extends Model
      * @var array
      */
     protected $hidden = [
-        'password'
+        'password',
+        'api_token',
+        'email'
     ];
 }
