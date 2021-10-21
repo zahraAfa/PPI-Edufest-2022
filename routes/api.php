@@ -16,17 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Auth::routes();
-Route::middleware('auth:api')->get('/admins/{id}', function ($id) {
-    return Admin::where('id', $id)->get();
-    // return $request->user();
-});
-// Route::get('/admin/{id}', function ($id) {
+// Route::middleware('auth:api')->get('/admins/{id}', function ($id) {
 //     return Admin::where('id', $id)->get();
-//     // return $request->user();
+//     return $request->user();
 // });
-
-// Route::middleware(['auth', 'sanctum'])->group(function () {
-//     Route::get('admins/{id}', function ($id) {
-//         return Admin::where('id', $id)->get();
-//     });
-// });
+Route::middleware('auth:api')->group(function () {
+    Route::get('admins/{id}', function ($id) {
+        return Admin::where('id', $id)->get();
+    });
+});
