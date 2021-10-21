@@ -16,6 +16,14 @@
     <!-- </div> -->
 </header>
 <section>
+    <div class="carousel-container">
+        <div class="carousel-section carousel-slider" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+            <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
+            <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
+        </div>
+    </div>
+</section>
+<section>
     <div class="shadow"></div>
     <div class="desc-container">
         <div class="desc-section">

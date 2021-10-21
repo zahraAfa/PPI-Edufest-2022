@@ -9,7 +9,7 @@ $(document).ready(function(){
     });
 
     $('.responsive-slider').slick({
-        // dots: true,
+        dots: false,
         infinite: true,
         speed: 400,
         slidesToShow: 3,
@@ -23,7 +23,6 @@ $(document).ready(function(){
               slidesToShow: 3,
               slidesToScroll: 3,
               infinite: true,
-              dots: true
             }
           },
           {
