@@ -12,3 +12,14 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+$( ".faq-btn-float" ).click(function() {
+  $( ".faq-modal" ).slideToggle( "slow", function() {
+    $( ".faq-modal" ).toggleClass( "show-faq" );
+  });
+});
+$( ".close-modal" ).click(function() {
+  $( ".faq-modal" ).slideToggle( "slow", function() {
+    $( ".faq-modal" ).toggleClass( "show-faq" );
+  });
+});
