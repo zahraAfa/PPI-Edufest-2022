@@ -36,7 +36,7 @@
 
 .h1-section-agenda{
     /* border: 10px solid var(--Gradient1); */
-    background: linear-gradient(90deg, rgba(131,58,180,1) -100%, rgba(252,121,69,1) 200%);
+    background: linear-gradient(90deg, rgba(131,58,180,1) -150%, rgba(252,121,69,1) 250%);
 }
 
 .custom-arrow{

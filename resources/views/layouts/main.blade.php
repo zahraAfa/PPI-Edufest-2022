@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edufest</title>
+    <title>Edufest | {{ $title }}</title>
     <!-- Script start -->
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -39,14 +39,14 @@
             <div class="nav-body">
                 <div class="nav-sections">
                     <ul class="nav-items">
-                        <li><a href="#" class="nav-beranda">Beranda</a></li>
+                        <li><a href="{{ ($title === "Home")?'#':'/' }}" class="nav-beranda">Beranda</a></li>
                         <li><a href="#" class="nav-pembicara">Pembicara</a></li>
                         <li><a href="#" class="nav-agenda">Agenda</a></li>
                         <li><a href="#" class="nav-writingcont">Writing Contest</a></li>
                         <li><a href="#" class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
-                        <a href="/" class="gohome"><img src="assets/img/logos/edufest-logo.png" alt="Edufest Logo"></a>
+                        <a href="{{ ($title === "Home")?'#':'/' }}" class="gohome"><img src="assets/img/logos/edufest-logo.png" alt="Edufest Logo"></a>
                     </div>
                     <div class="nav-wrap">
                         <div class="menu-toggle">
