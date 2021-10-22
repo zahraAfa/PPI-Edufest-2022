@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         DB::table('admins')->insert([
-            'name' => 'baron gobi',
-            'username' => 'barongobber',
-            'email' => 'barongobirn@gmail.com',
-            'password' => bcrypt('lkw454da78'),
+            'name' => 'admin name',
+            'username' => 'admin',
+            'email' => 'rons@gmail.com',
+            'password' => bcrypt('helloworld'),
             'api_token' => Str::random(60)
         ]);
     }
