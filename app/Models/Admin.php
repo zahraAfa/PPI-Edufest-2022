@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Admin extends Model
+
+class Admin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    
 
     /**
      * The attributes that are mass assignable.
@@ -31,7 +35,8 @@ class Admin extends Model
      */
     protected $hidden = [
         'password',
-        'api_token',
-        'email'
+        'id',
+        'created_at',
+        'updated_at'
     ];
 }

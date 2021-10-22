@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,13 +17,23 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-// Auth::routes();
-// Route::middleware('auth:api')->get('/admins/{id}', function ($id) {
-//     return Admin::where('id', $id)->get();
-//     return $request->user();
-// });
+
+//Unprotected API
+Route::prefix('/auth')->group(function() {
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::get('/logout', [AuthController::class, 'logout']);   
+});
+
+Route::prefix('/admins')->group(function() {
+    Route::post('/register', [AdminController::class, 'register']);
+});
+
+//Protected API
 Route::middleware('auth:api')->group(function () {
-    Route::get('admins/{id}', function ($id) {
-        return Admin::where('id', $id)->get();
+    //Admin API routes
+    Route::prefix('/admins')->group(function() {
+        Route::get('/read', [AdminController::class, 'retrieve']);
+        Route::put('/update', [AdminController::class, 'update']);
+        Route::put('/change_password', [AdminController::class, 'changePassword']);
     });
 });
