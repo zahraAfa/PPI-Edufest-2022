@@ -20,6 +20,10 @@ class AuthController extends Controller
                 'api_token' => Auth::user()->api_token
             ];
         }
+        
+        //Generating new token
+        $token = Str::random(60);
+
         //Validating request form
         request()->validate([
             'email' => 'required',
@@ -33,6 +37,11 @@ class AuthController extends Controller
         
         if (!$auth)
             abort(401, 'unauthorized user, please login with proper email and password');
+        
+        //Inserting new token
+        $admin = Admin::where('id', Auth::user()->id)->update([
+            'api_token' => $token
+        ]);
 
         $auth = Admin::where('id', Auth::user()->id)->first();
         $response = [
@@ -43,7 +52,7 @@ class AuthController extends Controller
 
     public function logout(){
         $admin =  Admin::where('id', Auth::guard('api')->user()->id)->update([
-            'api_token' => Str::random(60)
+            'api_token' => null
         ]);
         Auth::logout();
         return [];
