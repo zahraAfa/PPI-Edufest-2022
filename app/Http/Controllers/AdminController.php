@@ -54,12 +54,6 @@ class AdminController extends Controller
     public function update() {
         $admin = Auth::user();
 
-        $data = request()->only([
-            'name',
-            'email',
-            'username'
-        ]);
-
         //Validating request form
         request()->validate([
             'name' => ['required', 'string'],
@@ -72,6 +66,12 @@ class AdminController extends Controller
                 Rule::unique('admins')->ignore($admin->id)
             ],
             'username' => ['required', 'string']
+        ]);
+
+        $data = request()->only([
+            'name',
+            'email',
+            'username'
         ]);
 
         //Updating
