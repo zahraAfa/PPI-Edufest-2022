@@ -20,9 +20,20 @@
   --SkyBlue: #a4cbfc;
   --DarkGreen: #1f3625;
 
+  /* Base Colour */
+  --BaseLightGreen: rgb(224, 243, 240);
+  --BaseMediumGreen: rgb(166, 204, 198);
+  --BaseDarkGreen: rgb(100, 151, 144);
+
+  --BaseLightBeige: rgb(247, 245, 242);
+  --BaseMediumBeige: rgb(233, 230, 225);
+  --BaseDarkBeige: rgb(212, 208, 202);
+
+
   /* Gradient Backgrounds */
   --Gradient1: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,175,29,1) 75%, rgba(252,121,69,1) 100%);
   --Gradient2: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,121,69,1) 100%);
+  --Gradient3: linear-gradient(217deg, rgba(164,203,252,1) 18%, rgba(103,88,157,1) 100%);
 
   /* z index */
   --znav: 100;
