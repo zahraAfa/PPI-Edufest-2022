@@ -18,4 +18,10 @@ class Authenticate extends Middleware
             return route('login');
         }
     }
+
+    
+    protected function unauthenticated($request, array $guards)
+    {
+        abort(401, 'User is not authenticated / session time out, please try to login again.');
+    }
 }
