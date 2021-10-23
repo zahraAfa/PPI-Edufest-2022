@@ -47,6 +47,7 @@ Route::prefix('/faqs')->group(function() {
 |--------------------------------------------------------------------------
 */
 Route::middleware('auth:api')->group(function () {
+    //Admins API routes
     Route::prefix('/admins')->group(function() {
         Route::get('/read', [AdminController::class, 'retrieve']);
         Route::put('/update', [AdminController::class, 'update']);
