@@ -12,6 +12,7 @@
   box-sizing: border-box;
   z-index: 299;
   box-shadow: 0px 5px 5px #222222;
+  cursor: help;
 }
 
 .faq-btn-float:hover{
@@ -24,16 +25,17 @@
   font-weight: 900;
   text-align: center;
   color: white;
+  font-family: "Roboto";
 }
 
 /* Modal */
 .faq-modal{
   display: none;
-  border: 5px solid var(--Orange);
+  border: 5px solid var(--BaseDarkGreen);
   width: 60vw;
   height: 70vh;
   overflow-y: scroll;
-  background-color: rgb(236, 236, 236);
+  background-color: var(--BaseLightGreen);
   border-radius: 30px;
   position: fixed;
   z-index: 300;
@@ -68,7 +70,7 @@
 }
 
 .faq-accordion {
-    background-color: var(--Orange);
+    background-color: var(--BaseDarkGreen);
     color: black;
     cursor: pointer;
     padding: 10px;
@@ -107,7 +109,7 @@
   
   .faq-panel {
     padding: 0 20px;
-    background-color: rgb(236, 236, 236);
+    background-color: var(--BaseLightGreen);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -128,6 +130,9 @@
     color: black;
     font-family: 'Permanent Marker';
   }
+  .close-modal{
+    cursor: pointer;
+  }
 
   .telegram-btn{
     background-color: #0088cc;
@@ -140,7 +145,7 @@
     font-size: 15px;
     display: flex;
     justify-content: end;
-    width: 100px;
+    width: 150px;
     margin: 10px auto;
   }
 
