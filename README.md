@@ -39,6 +39,28 @@ Generate a new application key
     php artisan key:generate
 ```
 
+>
+> Create Database on DBMS (Navicat, mysql workbench, or phpmyadmin) called as **ppi_edufest_2022**
+>
+
+Migrate the database schema
+
+```bash
+    php artisan migrate
+```
+
+Fresh the database schema just in case you want to drop and rebuild the schema
+
+```bash
+    php artisan migrate:fresh
+```
+
+Seed the database
+
+```bash
+    php artisan db:seed
+```
+
 Start the local development server
 
 ```bash
