@@ -13,7 +13,7 @@
                     <a href="https://www.facebook.com/ppi.edufest"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
                     <a href="https://www.instagram.com/ppi.edufest/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 </div>
-                <h1 class="footer-h1">Contact Us</h1>
+                <h1 class="footer-h1 contact-footer">Contact Us</h1>
             </div>
         </div>
         <div class="footer-cr">Copyright © 2021 PPI Dunia - All rights served</div>
