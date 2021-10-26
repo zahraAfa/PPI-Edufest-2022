@@ -132,3 +132,17 @@ h1 {
   top: 2px;
   line-height: 80px;
 }
+
+.custom-card-btn{
+  padding: 10px;
+  text-decoration: none!important;
+  border-radius: 20px;
+  background-color: var(--BaseDarkGreen);
+  color: white;
+  transition: 0.2s;
+}
+
+.custom-card-btn:hover{
+  background-color: var(--BaseLightGreen);
+  color: var(--DarkGrey);
+}

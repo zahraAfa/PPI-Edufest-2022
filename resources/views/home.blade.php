@@ -49,7 +49,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="custom-card-btn">Go somewhere</a>
                     </div>
                 </div>
                 <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
@@ -57,7 +57,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="custom-card-btn">Go somewhere</a>
                     </div>
                 </div>
                 <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
@@ -65,7 +65,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="custom-card-btn">Go somewhere</a>
                     </div>
                 </div>
                 <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
@@ -73,7 +73,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="custom-card-btn">Go somewhere</a>
                     </div>
                 </div>
                 <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
@@ -81,7 +81,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="custom-card-btn">Go somewhere</a>
                     </div>
                 </div>
             </div>
