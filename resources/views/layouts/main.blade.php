@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edufest</title>
+    <title>Edufest | {{ $title }}</title>
     <!-- Script start -->
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Script end -->
     <!-- Style start -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
@@ -22,14 +25,12 @@
     <link rel="stylesheet" href="assets/styles/box.css" />
     <link rel="stylesheet" href="assets/styles/agenda.css" />
     <link rel="stylesheet" href="assets/styles/speakers.css" />
+    <link rel="stylesheet" href="assets/styles/faq.css" />
+    <link rel="stylesheet" href="assets/styles/footer.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png"> -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/edufest-icon.png">
-
-    <!-- <link rel="icon" type="image/png" sizes="16x16" href="assets/img/logos/edufest-logo.png"> -->
-    <!-- <link rel="manifest" href="assets/favicon/site.webmanifest"> -->
     <!-- Favicon end -->
 </head>
 
@@ -42,14 +43,14 @@
             <div class="nav-body">
                 <div class="nav-sections">
                     <ul class="nav-items">
-                        <li><a href="#" class="nav-beranda">Beranda</a></li>
+                        <li><a href="{{ ($title === "Home")?'#':'/' }}" class="nav-beranda">Beranda</a></li>
                         <li><a href="#" class="nav-pembicara">Pembicara</a></li>
                         <li><a href="#" class="nav-agenda">Agenda</a></li>
                         <li><a href="#" class="nav-writingcont">Writing Contest</a></li>
                         <li><a href="#" class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
-                        <a href="/" class="gohome"><img src="assets/img/logos/edufest-logo.png" alt="Edufest Logo"></a>
+                        <a href="{{ ($title === "Home")?'#':'/' }}" class="gohome"><img src="assets/img/logos/edufest-logo.png" alt="Edufest Logo"></a>
                     </div>
                     <div class="nav-wrap">
                         <div class="menu-toggle">
@@ -65,13 +66,21 @@
     </nav>
 
     @yield('body-speakers')
+    @include('layouts.faq')
 
     <script src="assets/scripts/nav.js"></script>
+    <script src="assets/scripts/faq.js"></script>
     <script src="assets/scripts/header.js"></script>
     <script src="assets/scripts/page-loader.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    
+    <script>
         AOS.init();
     </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="assets/scripts/slick-slider.js"></script>
 </body>
 
 </html>
