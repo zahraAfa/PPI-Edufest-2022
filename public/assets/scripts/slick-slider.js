@@ -6,6 +6,7 @@ $(document).ready(function(){
         autoplaySpeed: 2000,
         arrows: false,
         centerMode: false,
+        infinite: true,
     });
 
     $('.responsive-slider').slick({
@@ -29,14 +30,16 @@ $(document).ready(function(){
             breakpoint: 938,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              infinite: true,
             }
           },
           {
             breakpoint: 738,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              infinite: true,
             }
           }
         ]
@@ -49,5 +52,6 @@ $(document).ready(function(){
         autoplaySpeed: 2000,
         arrows: false,
         centerMode: true,
+        infinite: true,
     });
 });           

@@ -1,3 +1,9 @@
+.sponsor-transition{
+    background: linear-gradient(180deg, rgba(234,231,226,1) 0%, rgba(255,255,255,0) 96%), url('../img/bg/bg1.jpg');
+    background-size:cover;
+    height: 200px;
+}
+
 .sponsors-partners-container{
     width: 100vw;
     /* height: 900px; */
@@ -64,13 +70,18 @@
 }
 
 .sponsor-img{
-    width: 310px;
+    width: auto;
     height: 310px;
+    text-align: center;
 }
 
-.partner-img{
-    width: 200px;
-    height: 200px;
+.sponsor-img-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 310px;
+    height: 310px;
+    overflow: hidden;
 }
 
 .partner-item{
@@ -84,6 +95,20 @@
 
 .partners-wrapper{
     margin-top: 50px;
+}
+
+.partner-img{
+    width: auto;
+    height: 200px;
+}
+
+.partner-img-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
 }
 
 /* Forcing bootstrap modal styling */
