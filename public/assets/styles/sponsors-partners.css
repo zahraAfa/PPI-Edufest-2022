@@ -4,6 +4,10 @@
     height: auto;
     padding: 40px;
     background-color: var(--BaseLightBeige);
+    background-image: url('../img/bg/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .sponsors-wrapper, .partners-wrapper{
@@ -43,6 +47,7 @@
     box-shadow: var(--Shadow);
     border-radius: 10px;
     box-sizing: border-box;
+    background-color: var(--BaseLightBeige);
 }
 
 .sponsor-item:hover{
@@ -79,4 +84,11 @@
 
 .partners-wrapper{
     margin-top: 50px;
+}
+
+/* Forcing bootstrap modal styling */
+.modal-content{
+    border: 5px solid var(--BaseDarkGreen)!important;
+    background-color: var(--BaseLightGreen)!important;
+    border-radius: 20px!important;
 }
