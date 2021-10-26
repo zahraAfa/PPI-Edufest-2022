@@ -1,0 +1,9 @@
+.speakers-section{
+    min-width: 100vw;
+    padding: 10% 0;
+}
+
+.sp-speakers-title,
+.speakers-title{
+    color: var(--DarkGreen);
+}

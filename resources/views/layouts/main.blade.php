@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/styles/description.css" />
     <link rel="stylesheet" href="assets/styles/box.css" />
     <link rel="stylesheet" href="assets/styles/agenda.css" />
+    <link rel="stylesheet" href="assets/styles/speakers.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->
@@ -63,7 +64,7 @@
         </div>
     </nav>
 
-    @yield('body')
+    @yield('body-speakers')
 
     <script src="assets/scripts/nav.js"></script>
     <script src="assets/scripts/header.js"></script>
