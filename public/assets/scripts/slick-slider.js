@@ -45,7 +45,7 @@ $(document).ready(function(){
         ]
       });
 
-      $('.partner-slider').slick({
+      $('.sponsor-slider').slick({
         slidesToShow: 3,
         slidesToScroll: 2,
         autoplay: true,
@@ -53,5 +53,14 @@ $(document).ready(function(){
         arrows: false,
         centerMode: true,
         infinite: true,
-    });
+      });
+      $('.partner-slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 2,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        centerMode: true,
+        infinite: true,
+      });
 });           
