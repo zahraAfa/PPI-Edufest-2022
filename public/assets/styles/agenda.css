@@ -15,6 +15,7 @@
 
 .agenda-card{
     border-radius: 20px;
+    box-shadow: var(--Shadow);
 }
 
 .agenda-wrapper{

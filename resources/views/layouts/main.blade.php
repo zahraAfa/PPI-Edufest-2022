@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/styles/speakers.css" />
     <link rel="stylesheet" href="assets/styles/faq.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
+    <link rel="stylesheet" href="assets/styles/sponsors-partners.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->
@@ -66,7 +67,9 @@
     </nav>
 
     @yield($title)
+    @include('layouts.sponsors-partners')
     @include('layouts.faq')
+    @include('layouts.footer')
 
     <script src="assets/scripts/nav.js"></script>
     <script src="assets/scripts/faq.js"></script>
@@ -81,6 +84,7 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="assets/scripts/slick-slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>

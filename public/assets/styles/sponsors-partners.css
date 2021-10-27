@@ -1,0 +1,120 @@
+.sponsor-transition{
+    background: linear-gradient(180deg, rgba(234,231,226,1) 0%, rgba(255,255,255,0) 96%), url('../img/bg/bg1.jpg');
+    background-size:cover;
+    height: 200px;
+}
+
+.sponsors-partners-container{
+    width: 100vw;
+    /* height: 900px; */
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    background-color: var(--BaseLightBeige);
+    background-image: url('../img/bg/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sponsors-wrapper, .partners-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.sponsor-items, 
+.partner-items{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.sponsor-items{
+    height: 400px!important;
+    overflow: hidden;
+}
+
+.partner-items{
+    height: 200px!important;
+    overflow: hidden;
+}
+
+.sponsors-wrapper .h1-section-title,
+.partners-wrapper .h1-section-title{
+    line-height: 30px;
+    color: var(--DarkGrey);
+}
+
+.sponsor-item{
+    cursor: pointer;
+    height: 380px;
+    width: 310px!important;
+    overflow: hidden;
+    text-decoration: none!important;
+    margin: 10px;
+    box-shadow: var(--Shadow);
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: var(--BaseLightBeige);
+}
+
+.sponsor-item:hover{
+    background-color: var(--BaseMediumBeige);
+}
+
+.sponsor-name{
+    text-align: center;
+    text-decoration: none!important;
+    color: rgb(153, 153, 153);
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 15px;
+}
+
+.sponsor-img{
+    width: auto;
+    height: 310px;
+    text-align: center;
+}
+
+.sponsor-img-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 310px;
+    height: 310px;
+    overflow: hidden;
+}
+
+.partner-item{
+    height: 200px;
+    width: 203px!important;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: var(--Shadow);
+    border-radius: 3px;
+}
+
+.partners-wrapper{
+    margin-top: 50px;
+}
+
+.partner-img{
+    width: auto;
+    height: 200px;
+}
+
+.partner-img-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+/* Forcing bootstrap modal styling */
+.modal-content{
+    border: 5px solid var(--BaseDarkGreen)!important;
+    background-color: var(--BaseLightGreen)!important;
+    border-radius: 20px!important;
+}

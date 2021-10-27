@@ -6,6 +6,7 @@ $(document).ready(function(){
         autoplaySpeed: 2000,
         arrows: false,
         centerMode: false,
+        infinite: true,
     });
 
     $('.responsive-slider').slick({
@@ -29,16 +30,28 @@ $(document).ready(function(){
             breakpoint: 938,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              infinite: true,
             }
           },
           {
             breakpoint: 738,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              infinite: true,
             }
           }
         ]
       });
+
+      $('.partner-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 2,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        centerMode: true,
+        infinite: true,
+    });
 });           
