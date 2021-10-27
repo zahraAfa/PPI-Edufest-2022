@@ -2,7 +2,7 @@
 <section class="sponsors-partners-container">
     <div class="sponsors-wrapper">
         <h1 class="h1-section-title">Our Sponsors</h1>
-        <div class="sponsor-items partner-slider">
+        <div class="sponsor-items sponsor-slider">
             <a class="sponsor-item" data-bs-toggle="modal" data-bs-target="#sponsor-modal" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
                 <div class="sponsor-img-wrapper">
                     <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="sponsor-img">
