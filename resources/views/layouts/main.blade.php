@@ -64,9 +64,10 @@
             </div>
         </div>
     </nav>
-
+    @yield('body')
     @include('layouts.sponsors-partners')
     @include('layouts.faq')
+    @include('layouts.footer')
 
     <script src="assets/scripts/nav.js"></script>
     <script src="assets/scripts/faq.js"></script>

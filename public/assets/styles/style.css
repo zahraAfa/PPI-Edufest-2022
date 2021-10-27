@@ -66,7 +66,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-color: black;
+  background-color: var(--BaseLightBeige);
 }
 
 * {
@@ -134,4 +134,18 @@ h1 {
   transform: translateX(-50%);
   top: 2px;
   line-height: 80px;
+}
+
+.custom-card-btn{
+  padding: 10px;
+  text-decoration: none!important;
+  border-radius: 20px;
+  background-color: var(--BaseDarkGreen);
+  color: white;
+  transition: 0.2s;
+}
+
+.custom-card-btn:hover{
+  background-color: var(--BaseLightGreen);
+  color: var(--DarkGrey);
 }

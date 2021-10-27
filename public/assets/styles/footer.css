@@ -1,10 +1,11 @@
 .footer-container{
     width: 100vw;
     height: 300px;
+    background-color: white;
 }
 
 .footer-wrapper{
-    background-color: var(--Purple);
+    background-color: white;
     height: 270px;
     padding: 20px 10%;
     display: flex;
@@ -13,15 +14,20 @@
 }
 
 .footer-cr{
-    background-color: black;
+    background-color: white;
     font-family: Roboto;
     text-align: center;
-    color: white;
+    color: var(--DarkGrey);
+    box-shadow: 0 -1px 0 var(--LightGrey);
 }
 
 .footer-col1{
     display: flex;
     flex-direction: column;
+}
+
+.contact-footer{
+    margin-top: 20px;
 }
 
 .footer-logos{
@@ -35,12 +41,12 @@
 }
 
 .footer-h1{
-    color: white;
-    font-size: 20px;
+    color: var(--Purple);
+    font-size: 15px;
 }
 
 .fa{
-    color: white;
+    color: var(--DarkGrey);
     font-size: 30px;
 }
 
@@ -49,5 +55,5 @@
 }
 
 .footer-col2-row1 a:hover .fa:first-child{
-    color: #979797;
+    color: var(--Orange);
 }
