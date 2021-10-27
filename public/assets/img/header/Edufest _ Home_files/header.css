@@ -1,0 +1,103 @@
+.header-parallax-container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+header{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+header:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 25;
+}
+
+.header-layer1{
+    position: absolute;
+    bottom: -400px;
+    width: 2000px;
+    right: -300px;
+    z-index: 19;
+}
+
+.header-outer-layer{
+    position: absolute;
+    width: 650px;
+    bottom: -100px;
+    left: -70px;
+    z-index: 20;
+}
+
+.header-layer2{
+    position: absolute;
+    width: 1800px;
+    bottom: -400px;
+    left: -270px;
+    z-index: 18;
+}
+
+.header-layer3{
+    position: absolute;
+    width: 900px;
+    bottom: 150px;
+    right: 0;
+    z-index: 17;
+}
+
+.header-back-layer{
+    position: absolute;
+    /* width: 2100px; */
+    height: 150vh;
+    bottom: -100px;
+    right: 0;
+    left: 0;
+}
+
+.big-title{
+    position: absolute;
+    z-index: 30;
+    line-height: 4rem;
+    top: calc(50% - 2rem);
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 600;
+    color: #fff;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 700;
+}
+
+.shadow{
+    position: absolute;
+    bottom: 100%;
+    height: 300px;
+    width: 100%;
+    left: 0;
+    z-index: 20;
+    /* background-color: aqua; */
+    /* background: linear-gradient(to top, #151515, transparent); */
+}
+
+.carousel-slider img{
+    width: 100vw;
+    /* transform: translate(0%, 0%); */
+}
+.carousel-slider{
+    margin: auto;
+}
+
+.carousel-slide{
+    /* SEMENTARA */
+    background-color: black;
+}

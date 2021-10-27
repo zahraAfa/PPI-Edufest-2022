@@ -1,0 +1,59 @@
+.footer-container{
+    width: 100vw;
+    height: 300px;
+    background-color: white;
+}
+
+.footer-wrapper{
+    background-color: white;
+    height: 270px;
+    padding: 20px 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-cr{
+    background-color: white;
+    font-family: Roboto;
+    text-align: center;
+    color: var(--DarkGrey);
+    box-shadow: 0 -1px 0 var(--LightGrey);
+}
+
+.footer-col1{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-footer{
+    margin-top: 20px;
+}
+
+.footer-logos{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-col2{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-h1{
+    color: var(--Purple);
+    font-size: 15px;
+}
+
+.fa{
+    color: var(--DarkGrey);
+    font-size: 30px;
+}
+
+#footer-ppid-logo, #footer-felari-logo{
+    width: 50px;
+}
+
+.footer-col2-row1 a:hover .fa:first-child{
+    color: var(--Orange);
+}
