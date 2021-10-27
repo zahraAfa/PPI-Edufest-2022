@@ -44,7 +44,7 @@
                 <div class="nav-sections">
                     <ul class="nav-items">
                         <li><a href="{{ ($title === "Home")?'#':'/' }}" class="nav-beranda">Beranda</a></li>
-                        <li><a href="#" class="nav-pembicara">Pembicara</a></li>
+                        <li><a href="{{ ($title === "Pembicara")?'#':'/pembicara' }}" class="nav-pembicara">Pembicara</a></li>
                         <li><a href="#" class="nav-agenda">Agenda</a></li>
                         <li><a href="#" class="nav-writingcont">Writing Contest</a></li>
                         <li><a href="#" class="nav-dokumentasi">Dokumentasi</a></li>
@@ -65,7 +65,7 @@
         </div>
     </nav>
 
-    @yield('body-speakers')
+    @yield($title)
     @include('layouts.faq')
 
     <script src="assets/scripts/nav.js"></script>

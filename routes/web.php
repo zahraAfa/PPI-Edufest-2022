@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/pembicara', function () {
-    return view('pembicara', [
+    return view('speakers', [
         "title" => "Pembicara",
     ]);
 });

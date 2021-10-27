@@ -1,9 +1,92 @@
-.speakers-section{
+/* Special Speakers */
+
+.sp-speakers-container{
     min-width: 100vw;
-    padding: 10% 0;
 }
 
-.sp-speakers-title,
-.speakers-title{
-    color: var(--DarkGreen);
+.sp-speakers-wrapper{
+    display: flex;
+    flex-direction: column;
+    /* background-color: var(--BaseLightGreen); */
+    background: linear-gradient(180deg, rgba(103,88,157,1) 5%, rgba(54,39,0,0) 69%), url(../img/bg/bg3.jpg);
+    background-size:cover;
+    background-position: center;
 }
+
+.sp-speakers-title{
+    text-align: center;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    color: white;
+    /* border: 1px solid red; */
+    margin-top: 20%;
+    margin-bottom: 5%;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sp-speakers-items{
+    width: 85%;
+    margin: 20vh auto 0 auto;
+    background-color: black;
+}
+
+.sp-speakers-img-container{
+    height: 200px;
+    width: 400px;
+    /* background-color: brown; */
+}
+
+/* Speakers */
+.speakers-container{
+    background-color: var(--BaseLightBeige);
+}
+
+.speakers-wrapper{
+    width: 85%;
+    margin: auto;
+}
+
+
+.speakers-title{
+    text-align: center;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    color: var(--DarkGrey);
+    /* border: 1px solid red; */
+    padding-top: 10%;
+    padding-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.speakers-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.speakers-grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: auto;
+    width: 100%;
+    margin: 20px auto;
+    gap: 10px;
+}
+
+.speaker-card{
+    padding: 15px;
+    width: 300px;
+    height: 450px;
+    background-color: white;
+    box-shadow: var(--Shadow);
+    border-radius: 20px;
+}
+
+
+@media screen and (min-width: 600px){
+    
+} 
