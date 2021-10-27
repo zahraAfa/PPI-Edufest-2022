@@ -5,7 +5,7 @@
 <section>
     <div class="sp-speakers-container">
         <div class="sp-speakers-wrapper">
-            <h1 class="sp-speakers-title">Bintang Tamu Spesial</h1>
+            <h1 class="sp-speakers-title" data-aos="fade-down" data-aos-delay="30" data-aos-duration="2000">Bintang Tamu Spesial</h1>
             <div class="sp-speakers-items">
                 <div class="sp-speakers-img-container">
                     {{-- Layout for bintang tamu? --}}
@@ -17,7 +17,7 @@
     <div class="speakers-container">
         <div class="speakers-wrapper">
             <div class="speakers-h1">
-                <h1 class="speakers-title">Pembicara</h1>
+                <h1 class="speakers-title" data-aos="fade-down" data-aos-delay="30" data-aos-duration="2000">Pembicara</h1>
             </div>
             <div class="speakers-content">
                 <div class="filters-div">
@@ -36,13 +36,42 @@
                 </div>
                 {{-- Both grid and the card has not designed yet --}}
                 <div class="speakers-grid">
-                    <div class="speaker-card"></div>
-                    <div class="speaker-card"></div>
-                    <div class="speaker-card"></div>
-                    <div class="speaker-card"></div>
-                    <div class="speaker-card"></div>
-                    <div class="speaker-card"></div>
-                    <div class="speaker-card"></div>
+                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                        <div class="speaker-img-cont">
+                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                        </div>
+                        <div class="speaker-text-cont"></div>
+                    </div>
+                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                        <div class="speaker-img-cont">
+                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                        </div>
+                        <div class="speaker-text-cont"></div>
+                    </div>
+                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                        <div class="speaker-img-cont">
+                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                        </div>
+                        <div class="speaker-text-cont"></div>
+                    </div>
+                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                        <div class="speaker-img-cont">
+                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                        </div>
+                        <div class="speaker-text-cont"></div>
+                    </div>
+                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                        <div class="speaker-img-cont">
+                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                        </div>
+                        <div class="speaker-text-cont"></div>
+                    </div>
+                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                        <div class="speaker-img-cont">
+                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                        </div>
+                        <div class="speaker-text-cont"></div>
+                    </div>
                 </div>
             </div>
         </div>

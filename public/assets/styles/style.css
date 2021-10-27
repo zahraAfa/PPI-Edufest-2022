@@ -135,7 +135,7 @@ h1 {
 }
 
 .filters-div{
-    /* border: 1px solid red; */
+    border: 1px solid red;
     padding: 10px auto;
     display: flex;
     flex-direction: row;
@@ -155,7 +155,7 @@ h1 {
 }
 
 .search-bar{
-  min-width: 200px;
+  min-width: 100px;
   max-width: auto;
   border: 0;
 }
