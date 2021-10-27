@@ -104,7 +104,7 @@
 .speaker-text-cont{
     width: 90%;
     margin: 10px auto;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 @media screen and (max-width: 1350px){
