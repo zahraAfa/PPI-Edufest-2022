@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('body')
+@section('Home')
 
 <header>
     <!-- <div class="header-parallax-container"> -->
