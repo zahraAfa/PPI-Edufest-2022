@@ -71,7 +71,7 @@ Route::middleware('auth:api')->group(function () {
     //Sponsor API routes
     Route::prefix('/sponsors')->group(function() {
         Route::post('/insert', [SponsorController::class, 'insert']);
-        Route::post('/update/{id}', [SponsorController::class, 'update']);
+        Route::put('/update/{id}', [SponsorController::class, 'update']);
         Route::delete('/delete/{id}', [SponsorController::class, 'delete']);
     });
 });
