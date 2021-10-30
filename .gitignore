@@ -1,7 +1,7 @@
 /node_modules
-# /public/hot
-# /public/storage/img/sponsors/*
-# /storage/*.key
+/public/hot
+/public/storage/img/sponsors/*
+/storage/*.key
 /vendor
 .env
 .env.backup
