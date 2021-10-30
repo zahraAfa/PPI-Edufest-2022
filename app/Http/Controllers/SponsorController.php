@@ -60,11 +60,11 @@ class SponsorController extends Controller
         
         $pictureName = $request->file('picture')->getClientOriginalName();
         
-        $sponsorData = request()->only([
-            'name',
-            'detail',
-            $pictureName
-        ]);
+        $sponsorData = [
+            'name' => $request->name,
+            'detail' => $request->detail,
+            'picture' => $pictureName
+        ];
         
         $sponsor->update($sponsorData);
         $newPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->name;
