@@ -3,20 +3,20 @@
 @section('Agenda')
 
 <section>
-    <div class="agenda-container">
-        <div class="agenda-wrapper">
-            <div class="agenda-header">
-                <h1 class="agenda-h1">Agenda</h1>
+    <div class="agenda-page-container">
+        <div class="agenda-page-wrapper">
+            <div class="agenda-page-header">
+                <h1 class="agenda-page-h1">Agenda</h1>
             </div>
-            <div class="calendar-agenda-wrapper">
-                <div class="agenda-calendar">
+            <div class="calendar-agenda-page-wrapper">
+                <div class="agenda-page-calendar">
                     @include('layouts.calendar')
                 </div>
-                <div class="agenda-body-container">
-                    <div class="filters-div agenda-filters">
-                        <input class="form-control search-bar agenda-search-bar" id="search-input" type="text" placeholder="Search..">
+                <div class="agenda-page-body-container">
+                    <div class="filters-div agenda-page-filters">
+                        <input class="form-control search-bar agenda-page-search-bar" id="search-input" type="text" placeholder="Search..">
                         <div class="filter-separator"></div>
-                        <div class="filter-bar agenda-filter-bar dropdown show">
+                        <div class="filter-bar agenda-page-filter-bar dropdown show">
                             <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Show All
                             </a>
@@ -27,12 +27,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="agenda-grid">
-                        <div class="agenda-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                            <div class="agenda-img-cont">
+                    <div class="agenda-page-grid">
+                        <div class="agenda-page-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                            <div class="agenda-page-img-cont">
                                 <img src="assets/img/header/carousel1.jpeg" alt="agenda">
                             </div>
-                            <div class="agenda-text-cont"></div>
+                            <div class="agenda-page-text-cont"></div>
                         </div>
                     </div>
                 </div>
