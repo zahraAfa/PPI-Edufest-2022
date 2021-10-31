@@ -53,6 +53,7 @@
     border-radius: 20px;
     padding: 5px;
     margin: auto;
+    cursor: pointer;
 }
 
 .custom-arrow span{
@@ -64,7 +65,8 @@
     color: white;
 }
 
-/* Agenda Page */
+
+/*== Agenda Page ==*/
 
 .agenda-page-container{
     width: 100vw;
@@ -123,6 +125,7 @@
     flex-direction: column;
     transition: 2s;
     cursor: pointer;
+    text-decoration: none!important;
 }
 
 .calendar-agenda-page-wrapper{
@@ -132,17 +135,8 @@
     /* border: 1px solid red; */
 }
 
-.h1-title-wrapper{
-    position: relative;
-    background-color: var(--BaseLightBeige)!important;
-    width: 100vw;
-    padding: 0;
-    margin: 0;
-    top: -1px;
-}
-
 .agenda-page-img-cont{
-    height: 380px;
+    height: 300px;
     width: 300px;
     overflow: hidden;
     display: flex;
@@ -154,37 +148,21 @@
     height: 300px;
 }
 
-.h1-section-agenda-page{
-    background: rgb(164,203,252);
-    background: linear-gradient(217deg, rgba(164,203,252,1) 0%, rgba(103,88,157,1) 210%);
-}
-
-.custom-arrow{
-    display: block;
-    text-align: center;
-    background-color: var(--DarkGrey);
-    text-decoration: none!important;
-    height: 37px;
-    width: 50px;
-    border-radius: 20px;
-    padding: 5px;
-    margin: auto;
-    cursor: pointer;
-}
-
-.custom-arrow span{
-    display: block;
-    margin: auto;
-    line-height: 100%;
-    text-align: center;
-    text-decoration: none!important;
-    color: white;
-}
 
 .agenda-page-text-cont{
     width: 90%;
-    margin: 10px auto;
-    /* border: 1px solid blue; */
+    margin: 1% auto;
+}
+
+.agenda-page-name-card{
+    text-decoration: none!important;
+    color: var(--DarkGrey);
+    text-align: center;
+}
+
+.agenda-page-date-card{
+    text-decoration: none!important;
+    color: var(--LightGreen);
 }
 
 .agenda-page-card:hover{
@@ -237,7 +215,7 @@
 }
 
 
-/* Event Details Page */
+/*== Event Details Page ==*/
 
 .event-container{
     width: 100vw;

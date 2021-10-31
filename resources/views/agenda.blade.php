@@ -40,7 +40,10 @@
                             <div class="agenda-page-img-cont">
                                 <img src="assets/img/header/carousel1.jpeg" alt="agenda">
                             </div>
-                            <div class="agenda-page-text-cont"></div>
+                            <div class="agenda-page-text-cont">
+                                <h3 class="agenda-page-name-card">Event Name</h3>
+                                <p class="agenda-page-date-card">2021-01-01</p>
+                            </div>
                         </a>
                     </div>
                 </div>
