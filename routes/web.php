@@ -25,3 +25,10 @@ Route::get('/agenda', function () {
         "title" => "Agenda",
     ]);
 });
+
+Route::get('/acara', function () {
+    return view('event-details', [
+        "title" => "Acara",
+    ]);
+});
+
