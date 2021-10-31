@@ -23,16 +23,12 @@
                 <div class="filters-div">
                     <input class="form-control search-bar speakers-search-bar" id="search-input" type="text" placeholder="Search..">
                     <div class="filter-separator"></div>
-                    <div class="filter-bar speakers-filter-bar dropdown show">
-                        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Show All
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Timur Tengah dan Afrika</a>
-                            <a class="dropdown-item" href="#">Asia dan Oseania</a>
-                            <a class="dropdown-item" href="#">Eropa dan Amerika</a>
-                        </div>
-                    </div> 
+                    <select name="Kawasan" id="kawasan-filter" class="filter-bar">
+                        <option value="all">Show all</option>
+                        <option value="timtengka">Timur Tengah dan Afrika</option>
+                        <option value="aseo">Asia dan Oseania</option>
+                        <option value="aerop">Eropa dan Amerika</option>
+                    </select>
                 </div>
                 {{-- Both grid and the card has not designed yet --}}
                 <div class="speakers-grid">
