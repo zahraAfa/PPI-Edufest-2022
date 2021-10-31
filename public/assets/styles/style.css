@@ -185,3 +185,7 @@ h1 {
   background-color: var(--BaseLightGreen);
   color: var(--DarkGrey);
 }
+
+.filter-bar{
+    border: 0;
+}
