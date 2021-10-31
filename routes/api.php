@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\SponsorController;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -40,6 +41,12 @@ Route::prefix('/faqs')->group(function() {
     Route::get('/read', [FaqController::class, 'read']);
 });
 
+//Sponsor unprotected routes
+Route::prefix('/sponsors')->group(function() {
+    Route::get('/read', [SponsorController::class, 'read']);
+});
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -59,5 +66,12 @@ Route::middleware('auth:api')->group(function () {
         Route::post('/insert', [FaqController::class, 'insert']);
         Route::put('/update/{id}', [FaqController::class, 'update']);
         Route::delete('/delete/{id}', [FaqController::class, 'delete']);
+    });
+
+    //Sponsor API routes
+    Route::prefix('/sponsors')->group(function() {
+        Route::post('/insert', [SponsorController::class, 'insert']);
+        Route::put('/update/{id}', [SponsorController::class, 'update']);
+        Route::delete('/delete/{id}', [SponsorController::class, 'delete']);
     });
 });
