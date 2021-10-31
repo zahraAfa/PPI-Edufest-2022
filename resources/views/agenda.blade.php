@@ -35,7 +35,7 @@
                             </div>
                         </div> --}}
                     </div>
-                    <div class="agenda-page-grid" href="/">
+                    <div class="agenda-page-grid" href="/acara">
                         <a class="agenda-page-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
                             <div class="agenda-page-img-cont">
                                 <img src="assets/img/header/carousel1.jpeg" alt="agenda">
