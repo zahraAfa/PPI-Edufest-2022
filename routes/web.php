@@ -17,9 +17,11 @@ use App\Http\Controllers\FaqController;
 Route::get('/', function () {
     return view('home', [
         "title" => "Home",
-        // "faqs" => [FaqController::class->read],
     ]);
 });
 
-// Route::get('/', [FaqController::class, 'read'],
-// );
+Route::get('/merchandise', function () {
+    return view('merchandise', [
+        "title" => "Merchandise",
+    ]);
+});

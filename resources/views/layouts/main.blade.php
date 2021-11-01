@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/styles/faq.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
     <link rel="stylesheet" href="assets/styles/sponsors-partners.css" />
+    <link rel="stylesheet" href="assets/styles/merchandise.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->
@@ -64,7 +65,7 @@
             </div>
         </div>
     </nav>
-    @yield('body')
+    @yield($title)
     @include('layouts.sponsors-partners')
     @include('layouts.faq')
     @include('layouts.footer')
@@ -73,7 +74,7 @@
     <script src="assets/scripts/faq.js"></script>
     <script src="assets/scripts/header.js"></script>
     <script src="assets/scripts/page-loader.js"></script>
-    
+
     <script>
         AOS.init();
     </script>
