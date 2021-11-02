@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/styles/faq.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
     <link rel="stylesheet" href="assets/styles/sponsors-partners.css" />
+    <link rel="stylesheet" href="assets/styles/merchandise.css" />
     <link rel="stylesheet" href="assets/styles/docs.css" />
     <!-- Style end -->
 

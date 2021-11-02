@@ -20,6 +20,12 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/merchandise', function () {
+    return view('merchandise', [
+        "title" => "Merchandise",
+    ]);
+});
+
 Route::get('/dokumentasi', function () {
     return view('documentation', [
         "title" => "Docs",
