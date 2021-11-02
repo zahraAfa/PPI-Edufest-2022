@@ -17,12 +17,35 @@ use App\Http\Controllers\FaqController;
 Route::get('/', function () {
     return view('home', [
         "title" => "Home",
-        // "faqs" => [FaqController::class->read],
     ]);
 });
 
 Route::get('/pembicara', function () {
     return view('speakers', [
         "title" => "Pembicara",
+    ]);
+});
+
+Route::get('/agenda', function () {
+    return view('agenda', [
+        "title" => "Agenda",
+    ]);
+});
+
+Route::get('/acara', function () {
+    return view('event-details', [
+        "title" => "Acara",
+    ]);
+});
+
+Route::get('/merchandise', function () {
+    return view('merchandise', [
+        "title" => "Merchandise",
+    ]);
+});
+
+Route::get('/dokumentasi', function () {
+    return view('documentation', [
+        "title" => "Docs",
     ]);
 });

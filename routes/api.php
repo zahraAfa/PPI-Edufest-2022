@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\SponsorController;
 use App\Models\Admin;
 use Illuminate\Http\Request;
@@ -46,6 +47,11 @@ Route::prefix('/sponsors')->group(function() {
     Route::get('/read', [SponsorController::class, 'read']);
 });
 
+//Partner unprotected routes
+Route::prefix('/partners')->group(function() {
+    Route::get('/read', [PartnerController::class, 'read']);
+});
+
 
 
 /*
@@ -73,5 +79,12 @@ Route::middleware('auth:api')->group(function () {
         Route::post('/insert', [SponsorController::class, 'insert']);
         Route::put('/update/{id}', [SponsorController::class, 'update']);
         Route::delete('/delete/{id}', [SponsorController::class, 'delete']);
+    });
+
+    //Partner API routes
+    Route::prefix('/partners')->group(function() {
+        Route::post('/insert', [PartnerController::class, 'insert']);
+        Route::put('/update/{id}', [PartnerController::class, 'update']);
+        Route::delete('/delete/{id}', [PartnerController::class, 'delete']);
     });
 });

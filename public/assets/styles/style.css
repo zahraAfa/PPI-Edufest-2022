@@ -137,6 +137,7 @@ h1 {
   line-height: 80px;
 }
 
+
 .filters-div{
     /* border: 1px solid red; */
     padding: 10px auto;
@@ -183,4 +184,8 @@ h1 {
 .custom-card-btn:hover{
   background-color: var(--BaseLightGreen);
   color: var(--DarkGrey);
+}
+
+.filter-bar{
+    border: 0;
 }

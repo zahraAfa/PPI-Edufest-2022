@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="assets/styles/faq.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
     <link rel="stylesheet" href="assets/styles/sponsors-partners.css" />
+    <link rel="stylesheet" href="assets/styles/merchandise.css" />
+    <link rel="stylesheet" href="assets/styles/docs.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->
@@ -46,9 +48,9 @@
                     <ul class="nav-items">
                         <li><a href="{{ ($title === "Home")?'#':'/' }}" class="nav-beranda">Beranda</a></li>
                         <li><a href="{{ ($title === "Pembicara")?'#':'/pembicara' }}" class="nav-pembicara">Pembicara</a></li>
-                        <li><a href="#" class="nav-agenda">Agenda</a></li>
+                        <li><a href="{{ ($title === "Agenda")?'#':'/agenda' }}" class="nav-agenda">Agenda</a></li>
                         <li><a href="#" class="nav-writingcont">Writing Contest</a></li>
-                        <li><a href="#" class="nav-dokumentasi">Dokumentasi</a></li>
+                        <li><a href="{{ ($title === "Docs")?'#':'/dokumentasi' }}" class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
                         <a href="{{ ($title === "Home")?'#':'/' }}" class="gohome"><img src="assets/img/logos/edufest-logo.png" alt="Edufest Logo"></a>
@@ -75,7 +77,7 @@
     <script src="assets/scripts/faq.js"></script>
     <script src="assets/scripts/header.js"></script>
     <script src="assets/scripts/page-loader.js"></script>
-    
+
     <script>
         AOS.init();
     </script>
