@@ -23,15 +23,15 @@ header:after{
     z-index: 25;
 }
 
-.mountain1{
+.header-layer1{
     position: absolute;
-    bottom: -100px;
-    width: 1500px;
-    right: 0;
+    bottom: -400px;
+    width: 2000px;
+    right: -300px;
     z-index: 19;
 }
 
-.person{
+.header-outer-layer{
     position: absolute;
     width: 650px;
     bottom: -100px;
@@ -39,15 +39,15 @@ header:after{
     z-index: 20;
 }
 
-.mountain2{
+.header-layer2{
     position: absolute;
-    width: 1100px;
-    bottom: -100px;
-    left: 0;
+    width: 1800px;
+    bottom: -400px;
+    left: -270px;
     z-index: 18;
 }
 
-.mountain3{
+.header-layer3{
     position: absolute;
     width: 900px;
     bottom: 150px;
@@ -55,11 +55,13 @@ header:after{
     z-index: 17;
 }
 
-.sky{
+.header-back-layer{
     position: absolute;
-    width: 2100px;
-    bottom: 150px;
+    /* width: 2100px; */
+    height: 150vh;
+    bottom: -100px;
     right: 0;
+    left: 0;
 }
 
 .big-title{
@@ -83,6 +85,19 @@ header:after{
     width: 100%;
     left: 0;
     z-index: 20;
-    background-color: aqua;
+    /* background-color: aqua; */
     /* background: linear-gradient(to top, #151515, transparent); */
+}
+
+.carousel-slider img{
+    width: 100vw;
+    /* transform: translate(0%, 0%); */
+}
+.carousel-slider{
+    margin: auto;
+}
+
+.carousel-slide{
+    /* SEMENTARA */
+    background-color: black;
 }

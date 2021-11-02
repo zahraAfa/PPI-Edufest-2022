@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
   /* Colors */
@@ -17,7 +19,23 @@
   --Purple: #67589d;
   --BrightRed: #fe4531;
   --BrightBlue: #3d94fe;
+  --SkyBlue: #a4cbfc;
   --DarkGreen: #1f3625;
+
+  /* Base Colour */
+  --BaseLightGreen: rgb(224, 243, 240);
+  --BaseMediumGreen: rgb(166, 204, 198);
+  --BaseDarkGreen: rgb(100, 151, 144);
+
+  --BaseLightBeige: rgb(247, 245, 242);
+  --BaseMediumBeige: rgb(233, 230, 225);
+  --BaseDarkBeige: rgb(212, 208, 202);
+
+
+  /* Gradient Backgrounds */
+  --Gradient1: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,175,29,1) 75%, rgba(252,121,69,1) 100%);
+  --Gradient2: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,121,69,1) 100%);
+  --Gradient3: linear-gradient(217deg, rgba(164,203,252,1) 18%, rgba(103,88,157,1) 100%);
 
   /* z index */
   --znav: 100;
@@ -28,6 +46,9 @@
   --marginLg: 50px;
   --marginMd: 20px;
   --marginSm: 10px;
+
+  /* Box Shadow */
+  --Shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 /* Unable selction */
@@ -46,11 +67,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-color: black;
+  background-color: var(--BaseLightBeige);
 }
 
 * {
-  font-family: "Open Sans", sans-serif, -apple-system, BlinkMacSystemFont,
+  font-family: "Poppins", "Open Sans", sans-serif, -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
 }
@@ -103,15 +124,29 @@ h1 {
   position: relative;
   text-align: center;
   width: 200px;
-  height: 100px; /* as the half of the width */
-  background-color: var(--DarkGreen);
+  height: 80px; /* as the half of the width */
+  /* background-color: var(--DarkGreen); */
   border-top-left-radius: 110px; /* 100px of height + 10px of border */
   border-top-right-radius: 110px; /* 100px of height + 10px of border */
-  border: 10px solid var(--DarkGreen);
+  /* border: 10px solid var(--DarkGreen); */
   border-bottom: 0;
   color: var(--White);
   left: 50%;
   transform: translateX(-50%);
-  top: 20px;
+  top: 2px;
   line-height: 80px;
+}
+
+.custom-card-btn{
+  padding: 10px;
+  text-decoration: none!important;
+  border-radius: 20px;
+  background-color: var(--BaseDarkGreen);
+  color: white;
+  transition: 0.2s;
+}
+
+.custom-card-btn:hover{
+  background-color: var(--BaseLightGreen);
+  color: var(--DarkGrey);
 }

@@ -4,6 +4,6 @@ $(document).ready(function () {
     // setTimeout(function(){ $('.page-loader').hide("slow"); }, 1000);
     setTimeout(function () {
       $(".page-loader").fadeOut(500, "linear");
-    }, 700);
+    }, 100);
   });
 });

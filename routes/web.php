@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home",
+    ]);
+});
+
+Route::get('/merchandise', function () {
+    return view('merchandise', [
+        "title" => "Merchandise",
+    ]);
+});
+
+Route::get('/dokumentasi', function () {
+    return view('documentation', [
+        "title" => "Docs",
+    ]);
 });
