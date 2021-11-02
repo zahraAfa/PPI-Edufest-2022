@@ -137,6 +137,41 @@ h1 {
   line-height: 80px;
 }
 
+
+.filters-div{
+    /* border: 1px solid red; */
+    padding: 10px auto;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    box-shadow: var(--Shadow);
+    width: 100%;
+    justify-content: end;
+    border-radius: 20px;
+}
+
+.filter-separator{
+    background-color: var(--BaseLightGreen);
+    height: auto;
+    width: 3px;
+    padding: 3px 0;
+    box-sizing: border-box;
+}
+
+.search-bar{
+    min-width: 100px;
+    max-width: auto;
+    border: 0;
+}
+
+.dropdown-toggle{
+    background-color: white;
+    border: 0;
+    color: var(--DarkGrey);
+    min-width: auto;
+    max-width: 400px;
+}
+
 .custom-card-btn{
   padding: 10px;
   text-decoration: none!important;
@@ -149,4 +184,20 @@ h1 {
 .custom-card-btn:hover{
   background-color: var(--BaseLightGreen);
   color: var(--DarkGrey);
+}
+
+.filter-bar{
+    border: 0;
+}
+
+@media screen and (max-width: 357px){
+    .filters-div{
+        flex-direction: column;
+    }
+    .filter-separator{
+        display: none;
+    }
+    .filter-bar{
+        border: 2px solid var(--BaseLightGreen);
+    }
 }

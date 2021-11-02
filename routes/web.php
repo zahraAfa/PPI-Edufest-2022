@@ -20,6 +20,18 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/agenda', function () {
+    return view('agenda', [
+        "title" => "Agenda",
+    ]);
+});
+
+Route::get('/acara', function () {
+    return view('event-details', [
+        "title" => "Acara",
+    ]);
+});
+
 Route::get('/merchandise', function () {
     return view('merchandise', [
         "title" => "Merchandise",
