@@ -68,8 +68,12 @@
 }
 
 .speakers-grid{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    /* display: grid;
+    grid-template-columns: auto auto auto auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     height: auto;
     width: 100%;
     margin: 20px auto;
@@ -108,21 +112,21 @@
 }
 
 @media screen and (max-width: 1350px){
-    .speakers-grid{
+    /* .speakers-grid{
         grid-template-columns: auto auto auto;
-    }
-} 
+    } */
+}
 
 @media screen and (max-width: 1014px){
-    .speakers-grid{
+    /* .speakers-grid{
         grid-template-columns: auto auto;
-    }
-} 
+    } */
+}
 
 @media screen and (max-width: 670px){
-    .speakers-grid{
+    /* .speakers-grid{
         grid-template-columns: auto;
-    }
+    } */
     .speaker-card{
         width: 300px;
         height: 450px;
@@ -131,15 +135,15 @@
         height: 380px;
         width: 300px;
     }
-    .speakers-title, 
+    .speakers-title,
     .sp-speakers-title{
         font-size: 40px;
     }
-} 
+}
 @media screen and (max-width: 342px){
-    .speakers-grid{
+    /* .speakers-grid{
         grid-template-columns: auto;
-    }
+    } */
     .speaker-card{
         width: 260px;
         height: 450px;
@@ -148,8 +152,8 @@
         height: 260px;
         width: 300px;
     }
-    .speakers-title, 
+    .speakers-title,
     .sp-speakers-title{
         font-size: 30px;
     }
-} 
+}
