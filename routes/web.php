@@ -20,6 +20,12 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/pembicara', function () {
+    return view('speakers', [
+        "title" => "Pembicara",
+    ]);
+});
+
 Route::get('/agenda', function () {
     return view('agenda', [
         "title" => "Agenda",

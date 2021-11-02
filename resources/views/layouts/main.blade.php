@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/styles/description.css" />
     <link rel="stylesheet" href="assets/styles/box.css" />
     <link rel="stylesheet" href="assets/styles/agenda.css" />
+    <link rel="stylesheet" href="assets/styles/speakers.css" />
     <link rel="stylesheet" href="assets/styles/faq.css" />
     <link rel="stylesheet" href="assets/styles/footer.css" />
     <link rel="stylesheet" href="assets/styles/sponsors-partners.css" />
@@ -46,7 +47,7 @@
                 <div class="nav-sections">
                     <ul class="nav-items">
                         <li><a href="{{ ($title === "Home")?'#':'/' }}" class="nav-beranda">Beranda</a></li>
-                        <li><a href="#" class="nav-pembicara">Pembicara</a></li>
+                        <li><a href="{{ ($title === "Pembicara")?'#':'/pembicara' }}" class="nav-pembicara">Pembicara</a></li>
                         <li><a href="{{ ($title === "Agenda")?'#':'/agenda' }}" class="nav-agenda">Agenda</a></li>
                         <li><a href="#" class="nav-writingcont">Writing Contest</a></li>
                         <li><a href="{{ ($title === "Docs")?'#':'/dokumentasi' }}" class="nav-dokumentasi">Dokumentasi</a></li>
@@ -66,6 +67,7 @@
             </div>
         </div>
     </nav>
+
     @yield($title)
     @include('layouts.sponsors-partners')
     @include('layouts.faq')
