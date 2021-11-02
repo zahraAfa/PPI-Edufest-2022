@@ -105,8 +105,13 @@
 }
 
 .agenda-page-grid{
-    display: grid;
-    grid-template-columns: auto auto auto;
+    /* display: grid; */
+    /* grid-template-columns: auto auto auto; */
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     height: auto;
     width: 100%;
     margin: 20px auto;
@@ -170,21 +175,21 @@
 }
 
 @media screen and (max-width: 1350px){
-    .agenda-page-grid{
+    /* .agenda-page-grid{
         grid-template-columns: auto auto auto;
-    }
+    } */
 }
 
 @media screen and (max-width: 1014px){
-    .agenda-page-grid{
+    /* .agenda-page-grid{
         grid-template-columns: auto auto;
-    }
+    } */
 }
 
 @media screen and (max-width: 670px){
-    .agenda-page-grid{
+    /* .agenda-page-grid{
         grid-template-columns: auto;
-    }
+    } */
     .agenda-page-card{
         width: 320px;
         height: 450px;
@@ -197,17 +202,14 @@
         font-size: 40px;
     }
 }
-@media screen and (max-width: 342px){
-    .agenda-page-grid{
-        grid-template-columns: auto;
-    }
+@media screen and (max-width: 471px){
     .agenda-page-card{
-        width: 260px;
-        height: 450px;
+        width: 230px;
+        height: 420px;
     }
     .agenda-page-img-cont{
-        height: 260px;
-        width: 300px;
+        height: 230px;
+        width: 270px;
     }
     .agenda-page-title{
         font-size: 30px;
@@ -287,8 +289,16 @@
 
 .events-speakers-grid{
     margin: 5% 0;
-    display: grid;
-    grid-template-columns: auto auto;
+    /* display: grid;
+    grid-template-columns: auto auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    margin: 20px auto;
+    gap: 10px;
 }
 
 .event-form-section{
@@ -397,11 +407,11 @@
 }
 
 @media screen and (max-width: 1298px){
-    .events-speakers-grid{
+    /* .events-speakers-grid{
         margin: 5% 0;
         display: grid;
         grid-template-columns: auto;
-    }
+    } */
 }
 
 @media screen and (max-width: 830px){
