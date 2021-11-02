@@ -189,3 +189,15 @@ h1 {
 .filter-bar{
     border: 0;
 }
+
+@media screen and (max-width: 357px){
+    .filters-div{
+        flex-direction: column;
+    }
+    .filter-separator{
+        display: none;
+    }
+    .filter-bar{
+        border: 2px solid var(--BaseLightGreen);
+    }
+}
