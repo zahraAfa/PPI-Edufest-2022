@@ -25,3 +25,9 @@ Route::get('/merchandise', function () {
         "title" => "Merchandise",
     ]);
 });
+
+Route::get('/dokumentasi', function () {
+    return view('documentation', [
+        "title" => "Docs",
+    ]);
+});
