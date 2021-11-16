@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="assets/admin-template/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/admin-template/fonts/fontawesome5-overrides.min.css">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!-- Favicon start -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/edufest-icon.png">
+    <!-- Favicon end -->
 </head>
 
 <body class="d-md-flex justify-content-md-center bg-gradient-primary"
