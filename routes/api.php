@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\SponsorController;
@@ -52,6 +53,11 @@ Route::prefix('/partners')->group(function() {
     Route::get('/read', [PartnerController::class, 'read']);
 });
 
+//Event unprotected routes
+Route::prefix('/events')->group(function() {
+    Route::get('/read', [EventController::class, 'read']);
+});
+
 
 
 /*
@@ -86,5 +92,12 @@ Route::middleware('auth:api')->group(function () {
         Route::post('/insert', [PartnerController::class, 'insert']);
         Route::put('/update/{id}', [PartnerController::class, 'update']);
         Route::delete('/delete/{id}', [PartnerController::class, 'delete']);
+    });
+
+    //Event API routes
+    Route::prefix('/events')->group(function() {
+        Route::post('/insert', [EventController::class, 'insert']);
+        Route::put('/update/{id}', [EventController::class, 'update']);
+        Route::delete('/delete/{id}', [EventController::class, 'delete']);
     });
 });
