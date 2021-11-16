@@ -49,3 +49,18 @@ Route::get('/dokumentasi', function () {
         "title" => "Docs",
     ]);
 });
+
+
+Route::get('/register', function () {
+    return view('admin/register', [
+    ]);
+});
+
+Route::get('/login', function () {
+    return view('admin/login', [
+    ]);
+});
+
+Route::get('/admin/dashboard', function(){
+    return view('admin/dashboard');
+})->middleware('auth');
