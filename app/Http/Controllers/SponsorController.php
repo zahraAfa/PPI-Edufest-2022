@@ -17,7 +17,7 @@ class SponsorController extends Controller
         request()->validate([
             'name' => ['required', 'string'],
             'detail' => ['required', 'string'],
-            'picture' => ['required', 'file']
+            'picture' => ['required', 'image']
         ]);
 
         $check = Sponsor::where('name', request('name'))->first();
@@ -48,7 +48,7 @@ class SponsorController extends Controller
                 Rule::unique('sponsors')->ignore($id)
             ],
             'detail' => ['required', 'string'],
-            'picture' => ['required', 'file']
+            'picture' => ['required', 'image']
         ]);
 
         $sponsor = Sponsor::where('id', $id)->first();
