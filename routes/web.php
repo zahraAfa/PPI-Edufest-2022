@@ -64,3 +64,7 @@ Route::get('/login', function () {
 Route::get('/admin/dashboard', function(){
     return view('admin/dashboard');
 })->middleware('auth');
+
+Route::get('/admin/faqs', function(){
+    return view('admin/faqs/index');
+})->middleware('auth');
