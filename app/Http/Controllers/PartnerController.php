@@ -16,7 +16,7 @@ class PartnerController extends Controller
     public function insert() {
         request()->validate([
             'name' => ['required', 'string'],
-            'picture' => ['required', 'file']
+            'picture' => ['required', 'image']
         ]);
 
         $check = Partner::where('name', request('name'))->first();
@@ -45,7 +45,7 @@ class PartnerController extends Controller
                 'string',
                 Rule::unique('partners')->ignore($id)
             ],
-            'picture' => ['required', 'file']
+            'picture' => ['required', 'image']
         ]);
 
         $partner = Partner::where('id', $id)->first();
