@@ -63,8 +63,12 @@ Route::get('/login', function () {
 
 Route::get('/admin/dashboard', function(){
     return view('admin/dashboard');
-})->middleware('auth');
+})->middleware('auth')->name('admin-dashboard');
 
 Route::get('/admin/faqs', function(){
     return view('admin/faqs/index');
-})->middleware('auth');
+})->middleware('auth')->name('admin-faqs-index');
+
+Route::get('/admin/faqs/edit/{id}', function(){
+    return view('admin/faqs/edit-faq');
+})->middleware('auth')->name('admin-faq-edit');
