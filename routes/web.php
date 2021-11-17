@@ -50,6 +50,11 @@ Route::get('/dokumentasi', function () {
     ]);
 });
 
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/register', function () {
     return view('admin/register', [
@@ -65,6 +70,7 @@ Route::get('/admin/dashboard', function(){
     return view('admin/dashboard');
 })->middleware('auth')->name('admin-dashboard');
 
+// FAQs
 Route::get('/admin/faqs', function(){
     return view('admin/faqs/index');
 })->middleware('auth')->name('admin-faqs-index');
@@ -72,3 +78,7 @@ Route::get('/admin/faqs', function(){
 Route::get('/admin/faqs/edit/{id}', function(){
     return view('admin/faqs/edit-faq');
 })->middleware('auth')->name('admin-faq-edit');
+
+Route::get('/admin/faqs/add', function(){
+    return view('admin/faqs/add-faq');
+})->middleware('auth')->name('admin-faq-add');

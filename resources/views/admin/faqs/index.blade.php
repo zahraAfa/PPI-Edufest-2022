@@ -34,7 +34,7 @@
 
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Frequently Asked Questions&nbsp;</h3>
-                    <a class="btn btn-info btn-icon-split" role="button" id="faq__add-crud" style="margin-bottom: 13px;margin-top: 0px;" href="add-faq-form.html">
+                    <a class="btn btn-info btn-icon-split" role="button" id="faq__add-crud" style="margin-bottom: 13px;margin-top: 0px;" href="{{ route('admin-faq-add') }}">
                         <span class="text-white-50 icon">
                             <i class="fas fa-plus" style="color: rgb(255,255,255);"></i>
                         </span>
@@ -131,8 +131,10 @@
 
                     faqItems += '<tr>'+'<td id="faq__question-crud">'+faq["question"]+'</td>'+
                                         '<td id="faq__answer-crud">'+faq["answer"]+'</td>'+
-                                        '<td><a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="faq__edit-crud" href="../admin/faqs/edit/'+faq["id"]+'"><i class="fas fa-edit text-white"></i></a>'+
-                                            '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1" role="button" id="faq__delete-crud" href="../admin/faqs/delete/'+faq["id"]+'"><i class="fas fa-trash text-white"></i></a>'+
+                                        '<td><a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="faq__edit" href="../admin/faqs/edit/'+faq["id"]+'"><i class="fas fa-edit text-white"></i></a>'+
+                                            // '<form id="delete__faq">'+
+                                            '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1 delete-btn-faq" role="button" id="'+faq["id"]+'"><i class="fas fa-trash text-white"></i></a>'+
+                                            // '</form>'+
                                         '</td>'+
                                 '</tr>';
                 });
@@ -140,6 +142,34 @@
                 }
             });
         });
+
+            $(document).on('click',".delete-btn-faq",function() {
+
+                var del_id = $(this).attr('id');
+                console.log(del_id);
+                $.ajax({
+                    type: "DELETE",
+                    url: '../../../api/faqs/delete/'+del_id,
+                    data: 'id='+del_id ,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
+                    },
+                    success: function(data)
+                    {
+                        let headers = new Headers({'Content-Type': 'application/json'});
+                        let token = 'Bearer {{ Auth::user()->api_token }}';
+                        // alert(token);
+                        headers.append('Authorization', token);
+                        alert("FAQ with id= "+del_id+" has been deleted.");
+                        location.reload();
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        var data=XMLHttpRequest.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        alert(jsonResponse["message"]);
+                    }
+                });
+            });
     </script>
 </body>
 
