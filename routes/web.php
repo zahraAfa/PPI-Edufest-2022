@@ -54,12 +54,12 @@ Route::get('/dokumentasi', function () {
 Route::get('/register', function () {
     return view('admin/register', [
     ]);
-})->name('register');
+})->name('register')->middleware('guest');
 
 Route::get('/login', function () {
     return view('admin/login', [
     ]);
-})->name('login');
+})->name('login')->middleware('guest');
 
 Route::get('/admin/dashboard', function(){
     return view('admin/dashboard');
