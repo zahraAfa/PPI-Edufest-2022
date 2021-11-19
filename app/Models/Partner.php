@@ -18,12 +18,4 @@ class Partner extends Model
         'picture'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'id'
-    ];
 }
