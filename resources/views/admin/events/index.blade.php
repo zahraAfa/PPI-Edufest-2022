@@ -33,10 +33,10 @@
                 @include('admin.layouts.top-nav')
 
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Events</h3><a class="btn btn-info btn-icon-split" role="button"
-                        style="margin-bottom: 15px;" href="add-event-form.html"><span class="text-white-50 icon"><i
-                                class="fas fa-plus" style="color: rgb(255,255,255);"></i></span><span
-                            class="text-white text">New Event</span></a>
+                    <h3 class="text-dark mb-4">Events</h3>
+                    <a class="btn btn-info btn-icon-split" role="button" style="margin-bottom: 15px;" href="{{ route('admin-event-add') }}"><span class="text-white-50 icon"><i
+                                class="fas fa-plus" style="color: rgb(255,255,255);"></i></span>
+                                <span class="text-white text">New Event</span></a>
                     <div class="card shadow" style="border-radius: 20px;">
                         <div class="card-header py-3"
                             style="border-top-left-radius: 20px;border-top-right-radius: 20px;">

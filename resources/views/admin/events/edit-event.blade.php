@@ -34,7 +34,7 @@
 
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Edit Event</h3>
-                    <form id="event__edit-form" method="post" enctype="multipart/form-data">
+                    <form id="event__edit-form" method="put" enctype="multipart/form-data">
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
@@ -149,7 +149,7 @@
             formData.append('title', $('#form__event-title').val());
             formData.append('region',$('#form__event-region').val());
             formData.append('date',$('#form__event-date').val());
-            formData.append('link',$('#form__event-link').val());
+            formData.append('form_link',$('#form__event-link').val());
             formData.append('detail',$('#form__event-detail').val());
 
             console.log($('#form__event-link').val())

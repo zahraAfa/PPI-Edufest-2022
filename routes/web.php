@@ -64,18 +64,3 @@ Route::get('/login', function () {
 Route::get('/admin/dashboard', function(){
     return view('admin/dashboard');
 })->middleware('auth');
-
-
-// NANTI DI HAPUS
-// Events routes
-Route::get('/admin/events', function(){
-    return view('admin/events/index');
-})->middleware('auth')->name('admin-events-index');
-
-Route::get('/admin/events/edit/{id}', function(){
-    return view('admin/events/edit-event');
-})->middleware('auth')->name('admin-event-edit');
-
-Route::get('/admin/events/add', function(){
-    return view('admin/events/add-event');
-})->middleware('auth')->name('admin-event-add');
