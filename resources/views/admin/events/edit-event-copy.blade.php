@@ -130,6 +130,7 @@
                         $('#form__event-link').val(event["form_link"]);
                         $('#form__event-detail').val(event["detail"]);
                         // $('#form__img').val(event["picture"]);
+                        console.log(event["picture"]);
                     }
                 });
             },
@@ -143,24 +144,20 @@
 
             e.preventDefault();
             var form = $("#event__edit-form");
-            var formData = new FormData();
-            var files = $('#form__img')[0].files[0];
-            formData.append('picture', files);
-            formData.append('title', $('#form__event-title').val());
-            formData.append('region',$('#form__event-region').val());
-            formData.append('date',$('#form__event-date').val());
-            formData.append('link',$('#form__event-link').val());
-            formData.append('detail',$('#form__event-detail').val());
+            var formData = new FormData(this);
+            formData.append('_method', 'PATCH');
+            // formData.append('title',$('#form__event-title').val());
+            // formData.append('title',$('#form__event-region').val());
 
-            console.log($('#form__event-link').val())
+            console.log(this)
             $.ajax({
                 type: "PUT",
                 url: '../../../api/events/update/{{ request()->route('id') }}',
                 // data: form.serialize(),
-                data: formData,
+                data: JSON.stringify(formData),
                 // async: false,
-                processData: false,
-                contentType: false,
+                // processData: false,
+                // contentType: false,
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
