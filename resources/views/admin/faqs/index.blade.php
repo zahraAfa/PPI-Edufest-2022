@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Table - Edufest</title>
+    <title>Events - Edufest</title>
     <link rel="stylesheet" href="../assets/admin-template/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -132,9 +132,7 @@
                     faqItems += '<tr>'+'<td id="faq__question-crud">'+faq["question"]+'</td>'+
                                         '<td id="faq__answer-crud">'+faq["answer"]+'</td>'+
                                         '<td><a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="faq__edit" href="../admin/faqs/edit/'+faq["id"]+'"><i class="fas fa-edit text-white"></i></a>'+
-                                            // '<form id="delete__faq">'+
                                             '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1 delete-btn-faq" role="button" id="'+faq["id"]+'"><i class="fas fa-trash text-white"></i></a>'+
-                                            // '</form>'+
                                         '</td>'+
                                 '</tr>';
                 });
@@ -146,7 +144,6 @@
             $(document).on('click',".delete-btn-faq",function() {
 
                 var del_id = $(this).attr('id');
-                console.log(del_id);
                 $.ajax({
                     type: "DELETE",
                     url: '../../../api/faqs/delete/'+del_id,
@@ -158,7 +155,6 @@
                     {
                         let headers = new Headers({'Content-Type': 'application/json'});
                         let token = 'Bearer {{ Auth::user()->api_token }}';
-                        // alert(token);
                         headers.append('Authorization', token);
                         alert("FAQ with id= "+del_id+" has been deleted.");
                         location.reload();
