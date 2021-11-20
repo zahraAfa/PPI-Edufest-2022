@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Profile - Edufest</title>
+    <title>Edit Event - Edufest</title>
     <link rel="stylesheet" href="../../../assets/admin-template/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -118,7 +118,6 @@
             type: 'GET',
             url: '../../../api/events/read',
             success: function(data) {
-                console.log('success');
                 $.each(data, function(key, event){
                     if(event["id"]==={{ request()->route('id') }}){
                         var img_link = '/storage/img/events/'+event["id"]+'/'+event["picture"];
@@ -130,6 +129,10 @@
                         $('#form__event-link').val(event["form_link"]);
                         $('#form__event-detail').val(event["detail"]);
                         // $('#form__img').val(event["picture"]);
+                        // var file = new Blob([data], {type: 'application/pdf'});
+                        // new File("/path/to/file");
+                        // let file = new File([data], img_link, metadata);
+                        // document.getElementById('form__img').files[0] = file;
                     }
                 });
             },
@@ -152,13 +155,46 @@
             formData.append('form_link',$('#form__event-link').val());
             formData.append('detail',$('#form__event-detail').val());
 
-            console.log($('#form__event-link').val())
+            if(files === undefined){
+                $.ajax({
+                    type: 'GET',
+                    url: '../../../api/events/read',
+                    success: function(data) {
+                        $.each(data, function(key, event){
+                            if(event["id"]==={{ request()->route('id') }}){
+                                var img_link = '/storage/img/events/'+event["id"]+'/'+event["picture"];
+                                jQuery.ajax({
+                                            url:'../../..'+img_link,
+                                            cache:false,
+                                            xhr:function(){
+                                                var xhr = new XMLHttpRequest();
+                                                xhr.responseType= 'blob'
+                                                return xhr;
+                                            },
+                                            success: function(data){
+                                                console.log(data)
+                                                // document.getElementById('form__img').files[0] = data;
+                                                // var files = data[0].files[0];
+
+                                                var fd = new FormData();
+                                                var files = data[0].files;
+
+                                                // var imgHandler = URL.createObjectURL(data)
+                                                formData.append('picture', files);
+                                            },
+                                            error:function(){
+                                                console.log("Fail to get img");
+                                            }
+                                });
+                            }
+                        });
+                    },
+                });
+            }
             $.ajax({
-                type: "PUT",
-                url: '../../../api/events/update/{{ request()->route('id') }}',
-                // data: form.serialize(),
+                type: "POST",
+                url: '../../../api/events/update/{{ request()->route('id') }}?_method=PUT',
                 data: formData,
-                // async: false,
                 processData: false,
                 contentType: false,
                 beforeSend: function (xhr) {
