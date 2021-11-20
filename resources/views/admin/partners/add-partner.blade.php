@@ -88,10 +88,9 @@
             var files = $('#form__img')[0].files[0];
             formData.append('picture', files);
             formData.append('name', $('#form__partner-name').val());
-
             $.ajax({
                 type: "POST",
-                url: '../../../api/partners/insert',
+                url: root + '/api/partners/insert',
                 data: formData,
                 processData: false,
                 contentType: false,
@@ -100,9 +99,7 @@
                 },
                 success: function(data)
                 {
-                    let headers = new Headers({'Content-Type': 'application/json'});
-                    let token = 'Bearer {{ Auth::user()->api_token }}';
-                    headers.append('Authorization', token);
+                    alert('Successfully added')
                     window.location.href = "{{ route('admin-partners-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
