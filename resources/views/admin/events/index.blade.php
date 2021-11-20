@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Events - Edufest</title>
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="stylesheet" href="../../assets/admin-template/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -45,7 +50,7 @@
                             <p class="text-primary m-0 fw-bold">Event Info</p>
                         </div>
                         <div class="card-body">
-                            <div class="row">
+                            <div class="row d-none">
                                 <div class="col-md-6 text-nowrap">
                                     <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
                                         <label class="form-label">Show&nbsp;<select
@@ -68,7 +73,7 @@
                                     <thead>
                                         <tr>
                                             <th>Title</th>
-                                            <th>Num. Participants</th>
+                                            <th class="d-none">Num. Participants</th>
                                             <th>Region</th>
                                             <th>Date</th>
                                             <th>Detail</th>
@@ -79,20 +84,9 @@
                                     <tbody id="events__row">
 
                                     </tbody>
-                                    {{-- <tfoot>
-                                        <tr>
-                                            <td><strong>Title</strong></td>
-                                            <td><strong>Num. Participants</strong></td>
-                                            <td><strong>Region</strong></td>
-                                            <td><strong>Date</strong></td>
-                                            <td><strong>Detail</strong></td>
-                                            <td><strong>Form Link</strong></td>
-                                            <td><strong>Actions</strong></td>
-                                        </tr>
-                                    </tfoot> --}}
                                 </table>
                             </div>
-                            <div class="row">
+                            <div class="row d-none">
                                 <div class="col-md-6 align-self-center">
                                     <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">
                                         Showing 1 to 10 of 27</p>
@@ -138,10 +132,22 @@
 
                 var eventItems ='';
                 $.each(result, function(key, event){
-                    // console.log(key+1);
+
+                    var region = '';
+                    switch (event["region"]) {
+                    case 'timtengka':
+                        region = "Timur Tengah dan Afrika";
+                        break;
+                    case 'amerop':
+                        region = "Amerika dan Eropa";
+                        break;
+                    case 'asia_oseania':
+                        region = "Asia dan Oseania";
+                        break;
+                    }
                     eventItems += '<tr>'+'<td><img class="rounded-circle me-2" width="30" height="30" src="../../storage/img/events/'+event["id"]+'/'+event["picture"]+'">'+event["title"]+'</td>'+
                                         // '<td id="num-participant-crud"></td>'+
-                                        '<td id="event__region-crud">'+event["region"]+'</td>'+
+                                        '<td id="event__region-crud">'+region+'</td>'+
                                         '<td id="event__date-crud">'+event["date"]+'</td>'+
                                         '<td id="event__detail-crud">'+event["detail"]+'</td>'+
                                         '<td><a style="background-color:#858796!important;" class="btn btn-secondary btn-icon-split" role="button" href="'+event["form_link"]+'"><span class="text-white-50 icon"><i class="fas fa-share-square" style="color: rgb(255,255,255);"></i></span><span class="text-white text">Form</span></a></td>'+

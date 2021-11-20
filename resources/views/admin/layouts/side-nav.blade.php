@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="admin-events.html">
+                <a class="nav-link" href="{{ route('admin-events-index') }}">
                     <i class="fa fa-calendar-check-o" style="color: var(--bs-gray-800);"></i>
                     <span style="color: var(--bs-gray-800);">Events</span>
                 </a>
