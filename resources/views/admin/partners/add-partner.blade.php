@@ -108,7 +108,6 @@
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data=XMLHttpRequest.responseText;
                     var jsonResponse = JSON.parse(data);
-                    alert('Fail')
                     alert(jsonResponse["message"]);
                 }
             });
