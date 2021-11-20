@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>FAQs - Edufest</title>
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="stylesheet" href="../assets/admin-template/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -47,7 +52,7 @@
                             </p>
                         </div>
                         <div class="card-body">
-                            <div class="row">
+                            <div class="row d-none">
                                 <div class="col-md-6 text-nowrap">
                                     <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
                                         <label class="form-label">Show&nbsp;
@@ -85,7 +90,7 @@
                                     </tfoot> --}}
                                 </table>
                             </div>
-                            <div class="row">
+                            <div class="row d-none">
                                 <div class="col-md-6 align-self-center">
                                     <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">
                                         Showing 1 to 10 of 27
@@ -153,10 +158,7 @@
                     },
                     success: function(data)
                     {
-                        let headers = new Headers({'Content-Type': 'application/json'});
-                        let token = 'Bearer {{ Auth::user()->api_token }}';
-                        headers.append('Authorization', token);
-                        alert("FAQ with id= "+del_id+" has been deleted.");
+                        alert(data["response"]);
                         location.reload();
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) {

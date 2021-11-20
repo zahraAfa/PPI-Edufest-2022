@@ -41,6 +41,18 @@
                     <span style="color: var(--bs-gray-800);">Participants</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link @if(Route::is('admin-partners-index')) active @endif" href="">
+                    <i class="fa fa-handshake-o" style="color: var(--bs-gray-800);"></i>
+                    <span style="color: var(--bs-gray-800);">Partners</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @if(Route::is('admin-sponsors-index')) active @endif" href="">
+                    <i class="fa fa-handshake-o" style="color: var(--bs-gray-800);"></i>
+                    <span style="color: var(--bs-gray-800);">Sponsors</span>
+                </a>
+            </li>
         </ul>
         <div class="text-center d-none d-md-inline">
             <button class="btn rounded-circle border-0" id="sidebarToggle" type="button" style="background: var(--bs-gray-800);color: var(--bs-gray-100);"></button>
