@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin-partners-index') }}">
+                <a class="nav-link" href="admin-participants.html">
                     <i class="fa fa-users" style="color: var(--bs-gray-800);"></i>
                     <span style="color: var(--bs-gray-800);">Participants</span>
                 </a>
