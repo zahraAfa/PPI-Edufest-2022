@@ -168,9 +168,6 @@
                     },
                     success: function(data)
                     {
-                        let headers = new Headers({'Content-Type': 'application/json'});
-                        let token = 'Bearer {{ Auth::user()->api_token }}';
-                        headers.append('Authorization', token);
                         alert(data["response"]);
                         location.reload();
                     },

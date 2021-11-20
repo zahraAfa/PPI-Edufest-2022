@@ -134,9 +134,6 @@
                 },
                 success: function(data)
                 {
-                    let headers = new Headers({'Content-Type': 'application/json'});
-                    let token = 'Bearer {{ Auth::user()->api_token }}';
-                    headers.append('Authorization', token);
                     window.location.href = "{{ route('admin-events-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
