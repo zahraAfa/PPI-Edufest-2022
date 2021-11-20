@@ -42,13 +42,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if(Route::is('admin-partners-index')) active @endif" href="">
+                <a class="nav-link @if(Route::is('admin-partners-index')) active @endif" href="{{ route('admin-partners-index') }}">
                     <i class="fa fa-handshake-o" style="color: var(--bs-gray-800);"></i>
                     <span style="color: var(--bs-gray-800);">Partners</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if(Route::is('admin-sponsors-index')) active @endif" href="">
+                <a class="nav-link @if(Route::is('admin-sponsors-index')) active @endif" href="{{ route('admin-sponsors-index') }}">
                     <i class="fa fa-handshake-o" style="color: var(--bs-gray-800);"></i>
                     <span style="color: var(--bs-gray-800);">Sponsors</span>
                 </a>
