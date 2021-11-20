@@ -4,7 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Edit Event - Edufest</title>
+    <title>Edit Partners - Edufest</title>
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
+    <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="stylesheet" href="../../../assets/admin-template/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -24,23 +29,19 @@
 
 <body id="page-top">
     <div id="wrapper">
-
         @include('admin.layouts.side-nav')
-
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-
                 @include('admin.layouts.top-nav')
-
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Edit Event</h3>
-                    <form id="event__edit-form" method="put" enctype="multipart/form-data">
+                    <h3 class="text-dark mb-4">New Partner</h3>
+                    <form id="partner__edit-form" method="POST" enctype="multipart/form-data">
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
                                 <div class="card-body text-center shadow"><div id="before__img"></div>
                                 <div class="my-3 mx-5">
-                                    <label for="formFile" class="form-label">Change Photo</label>
+                                    <label for="formFile" class="form-label">Add Photo</label>
                                     <input class="form-control" type="file" accept="image/*" name="picture" id="form__img">
                                 </div>
                                 </div>
@@ -51,49 +52,19 @@
                                 <div class="col">
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">Event Detail</p>
+                                            <p class="text-primary m-0 fw-bold">Partner Detail</p>
                                         </div>
                                         <div class="card-body">
-
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label"
-                                                                for="form__event-title"><strong>Event Title</strong><br></label><input
-                                                                class="form-control" type="text" id="form__event-title"
-                                                                placeholder="Event Title" name="title"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label"
-                                                                for="form__event-region"><strong>Region</strong><br></label>
-                                                                <select class="form-select" id="form__event-region" name="region">
-                                                                    <optgroup label="Select region">
-                                                                        <option value="all_region">All Region</option>
-                                                                        <option value="timtengka">Timur Tengah dan Afrika</option>
-                                                                        <option value="amerop">Amerika dan Eropa</option>
-                                                                        <option value="asia_oseania">Asia dan Oseania</option>
-                                                                    </optgroup>
-                                                                </select>
-                                                        </div>
-                                                    </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="mb-3"><label class="form-label"
+                                                            for="form__partner-name"><strong>Partner Name</strong><br></label><input
+                                                            class="form-control" type="text" id="form__partner-name"
+                                                            placeholder="Partner Name" name="name"></div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label"
-                                                                for="form__event-date"><strong>Event Date</strong><br></label><input class="form-control"
-                                                                id="form__event-date" type="date" name="date"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label"
-                                                                for="form__event-link"><strong>Form Link</strong><br></label><input class="form-control"
-                                                                type="text" id="form__event-link"
-                                                                placeholder="Form Link" name="form_link"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="mb-3"><label class="form-label"
-                                                        for="form__event-detail"><strong>Details</strong></label><input
-                                                        class="form-control" type="text" id="form__event-detail" placeholder="Event Detail" name="detail"></div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm"
-                                                        type="submit">Save Info</button></div>
+                                            </div>
+                                            <div class="mb-3"><button class="btn btn-primary btn-sm"
+                                                   id="form__btn" type="submit">Add partner</button></div>
 
                                         </div>
                                     </div>
@@ -101,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    </form>
+                </form>
                 </div>
             </div>
             <footer class="bg-white sticky-footer">
@@ -116,19 +87,15 @@
     <script>
         $.ajax({
             type: 'GET',
-            url: '../../../api/events/read',
+            url: '../../../api/partners/read',
             success: function(data) {
-                $.each(data, function(key, event){
-                    if(event["id"]==={{ request()->route('id') }}){
-                        var img_link = '/storage/img/events/'+event["id"]+'/'+event["picture"];
+                $.each(data, function(key, partner){
+                    if(partner["id"]==={{ request()->route('id') }}){
+                        var img_link = '/storage/img/partners/'+partner["name"]+'/'+partner["picture"];
 
-                        $( "#before__img" ).after( '<img id="event__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="'+img_link+'"">');
-                        $('#form__event-title').val(event["title"]);
-                        $('#form__event-region').val(event["region"]);
-                        $('#form__event-date').val(event["date"]);
-                        $('#form__event-link').val(event["form_link"]);
-                        $('#form__event-detail').val(event["detail"]);
-                        // $('#form__img').val(event["picture"]);
+                        $( "#before__img" ).after( '<img id="partner__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="'+img_link+'"">');
+                        $('#form__partner-name').val(partner["name"]);
+                        // $('#form__img').val(partner["picture"]);
                         // var file = new Blob([data], {type: 'application/pdf'});
                         // new File("/path/to/file");
                         // let file = new File([data], img_link, metadata);
@@ -142,27 +109,20 @@
                     alert(jsonResponse["message"]), alert(textStatus);
                 }
         });
-        $("#event__edit-form").submit(function(e) {
-
+        $("#partner__edit-form").submit(function(e) {
             e.preventDefault();
-            var form = $("#event__edit-form");
             var formData = new FormData();
             var files = $('#form__img')[0].files[0];
             formData.append('picture', files);
-            formData.append('title', $('#form__event-title').val());
-            formData.append('region',$('#form__event-region').val());
-            formData.append('date',$('#form__event-date').val());
-            formData.append('form_link',$('#form__event-link').val());
-            formData.append('detail',$('#form__event-detail').val());
-
+            formData.append('name', $('#form__partner-name').val());
             if(files === undefined){
                 $.ajax({
                     type: 'GET',
-                    url: '../../../api/events/read',
+                    url: '../../../api/partners/read',
                     success: function(data) {
-                        $.each(data, function(key, event){
-                            if(event["id"]==={{ request()->route('id') }}){
-                                var img_link = '/storage/img/events/'+event["id"]+'/'+event["picture"];
+                        $.each(data, function(key, partner){
+                            if(partner["id"]==={{ request()->route('id') }}){
+                                var img_link = '/storage/img/partners/'+partner["id"]+'/'+partner["picture"];
                                 jQuery.ajax({
                                             url:'../../..'+img_link,
                                             cache:false,
@@ -193,7 +153,7 @@
             }
             $.ajax({
                 type: "POST",
-                url: '../../../api/events/update/{{ request()->route('id') }}?_method=PUT',
+                url: '../../../api/partners/update/{{ request()->route('id') }}?_method=PUT',
                 data: formData,
                 processData: false,
                 contentType: false,
@@ -202,10 +162,7 @@
                 },
                 success: function(data)
                 {
-                    let headers = new Headers({'Content-Type': 'application/json'});
-                    let token = 'Bearer {{ Auth::user()->api_token }}';
-                    headers.append('Authorization', token);
-                    window.location.href = "{{ route('admin-events-index') }}";
+                    window.location.href = "{{ route('admin-partners-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data=XMLHttpRequest.responseText;

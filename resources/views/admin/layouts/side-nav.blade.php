@@ -2,7 +2,7 @@
     <div class="container-fluid d-flex flex-column p-0">
         <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
             <div class="sidebar-brand-icon rotate-n-15">
-                <img src="../../assets/icons/edufest-icon.png" alt="logo" style="height: 30px;">
+                <img src="../../../assets/icons/edufest-icon.png" alt="logo" style="height: 30px;">
             </div>
             <div class="sidebar-brand-text mx-3">
                 <span style="font-family: Spartan, sans-serif;font-weight: 900; color: #D22028">Edufest</span>
@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="admin-participants.html">
+                <a class="nav-link" href="{{ route('admin-partners-index') }}">
                     <i class="fa fa-users" style="color: var(--bs-gray-800);"></i>
                     <span style="color: var(--bs-gray-800);">Participants</span>
                 </a>
