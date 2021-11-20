@@ -67,6 +67,7 @@
                                         <tr>
                                             <th>Picture</th>
                                             <th>Name</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody id="partners__row">
@@ -119,7 +120,7 @@
 
                 var partnerItems ='';
                 $.each(result, function(key, partner){
-                    partnerItems += '<tr>'+'<td><img class="rounded-circle me-2" width="30" height="30" src="../../storage/img/partners/'+partner["id"]+'/'+partner["picture"]+'"></td>'+
+                    partnerItems += '<tr>'+'<td><img class="rounded-circle me-2" width="30" height="30" src="../../storage/img/partners/'+partner["name"]+'/'+partner["picture"]+'"></td>'+
                                         '<td id="partner__region-crud">'+partner["name"]+'</td>'+
                                         '<td>'+
                                             '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="partner__edit" href="../admin/partners/edit/'+partner["id"]+'"><i class="fas fa-edit text-white"></i></a>'+
