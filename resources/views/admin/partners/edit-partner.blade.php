@@ -34,14 +34,14 @@
             <div id="content">
                 @include('admin.layouts.top-nav')
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">New Partner</h3>
+                    <h3 class="text-dark mb-4">Edit Partner</h3>
                     <form id="partner__edit-form" method="POST" enctype="multipart/form-data">
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
                                 <div class="card-body text-center shadow"><div id="before__img"></div>
                                 <div class="my-3 mx-5">
-                                    <label for="formFile" class="form-label">Add Photo</label>
+                                    <label for="formFile" class="form-label">Edit Photo</label>
                                     <input class="form-control" type="file" accept="image/*" name="picture" id="form__img">
                                 </div>
                                 </div>
@@ -63,8 +63,10 @@
                                                             placeholder="Partner Name" name="name"></div>
                                                 </div>
                                             </div>
-                                            <div class="mb-3"><button class="btn btn-primary btn-sm"
-                                                   id="form__btn" type="submit">Add partner</button></div>
+                                            <div class="mb-3">
+                                                <button class="btn btn-secondary btn-sm" id="form__btn1" type="submit" value="detail" name="detail">Update Detail Only</button>
+                                                <button class="btn btn-primary btn-sm" id="form__btn2" type="submit" value="all" name="all">Update All</button>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -115,42 +117,42 @@
             var files = $('#form__img')[0].files[0];
             formData.append('picture', files);
             formData.append('name', $('#form__partner-name').val());
-            if(files === undefined){
-                $.ajax({
-                    type: 'GET',
-                    url: '../../../api/partners/read',
-                    success: function(data) {
-                        $.each(data, function(key, partner){
-                            if(partner["id"]==={{ request()->route('id') }}){
-                                var img_link = '/storage/img/partners/'+partner["id"]+'/'+partner["picture"];
-                                jQuery.ajax({
-                                            url:'../../..'+img_link,
-                                            cache:false,
-                                            xhr:function(){
-                                                var xhr = new XMLHttpRequest();
-                                                xhr.responseType= 'blob'
-                                                return xhr;
-                                            },
-                                            success: function(data){
-                                                console.log(data)
-                                                // document.getElementById('form__img').files[0] = data;
-                                                // var files = data[0].files[0];
+            // if(files === undefined){
+            //     $.ajax({
+            //         type: 'GET',
+            //         url: '../../../api/partners/read',
+            //         success: function(data) {
+            //             $.each(data, function(key, partner){
+            //                 if(partner["id"]==={{ request()->route('id') }}){
+            //                     var img_link = '/storage/img/partners/'+partner["id"]+'/'+partner["picture"];
+            //                     jQuery.ajax({
+            //                                 url:'../../..'+img_link,
+            //                                 cache:false,
+            //                                 xhr:function(){
+            //                                     var xhr = new XMLHttpRequest();
+            //                                     xhr.responseType= 'blob'
+            //                                     return xhr;
+            //                                 },
+            //                                 success: function(data){
+            //                                     console.log(data)
+            //                                     // document.getElementById('form__img').files[0] = data;
+            //                                     // var files = data[0].files[0];
 
-                                                var fd = new FormData();
-                                                var files = data[0].files;
+            //                                     var fd = new FormData();
+            //                                     var files = data[0].files;
 
-                                                // var imgHandler = URL.createObjectURL(data)
-                                                formData.append('picture', files);
-                                            },
-                                            error:function(){
-                                                console.log("Fail to get img");
-                                            }
-                                });
-                            }
-                        });
-                    },
-                });
-            }
+            //                                     // var imgHandler = URL.createObjectURL(data)
+            //                                     formData.append('picture', files);
+            //                                 },
+            //                                 error:function(){
+            //                                     console.log("Fail to get img");
+            //                                 }
+            //                     });
+            //                 }
+            //             });
+            //         },
+            //     });
+            // }
             $.ajax({
                 type: "POST",
                 url: '../../../api/partners/update/{{ request()->route('id') }}?_method=PUT',
@@ -162,7 +164,8 @@
                 },
                 success: function(data)
                 {
-                    window.location.href = "{{ route('admin-partners-index') }}";
+                    alert ("check")
+                    // window.location.href = "{{ route('admin-partners-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data=XMLHttpRequest.responseText;
