@@ -131,3 +131,16 @@ Route::get('/admin/partners/edit/{id}', function(){
 Route::get('/admin/partners/add', function(){
     return view('admin/partners/add-partner');
 })->middleware('auth')->name('admin-partner-add');
+
+// Speakers routes
+Route::get('/admin/speakers', function(){
+    return view('admin/speakers/index');
+})->middleware('auth')->name('admin-speakers-index');
+
+Route::get('/admin/speakers/edit/{id}', function(){
+    return view('admin/speakers/edit-speaker');
+})->middleware('auth')->name('admin-speaker-edit');
+
+Route::get('/admin/speakers/add', function(){
+    return view('admin/speakers/add-speaker');
+})->middleware('auth')->name('admin-speaker-add');

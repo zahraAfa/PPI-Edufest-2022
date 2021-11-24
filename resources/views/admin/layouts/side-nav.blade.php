@@ -18,7 +18,7 @@
             </li>
 
             <li class="nav-item" style="color: var(--bs-gray-800);">
-                <a class="nav-link @if(Route::is('admin-speakers-index')) active @endif" href="" style="color: var(--bs-gray-800);">
+                <a class="nav-link @if(Route::is('admin-speakers-index')) active @endif" href="{{ route('admin-speakers-index') }}" style="color: var(--bs-gray-800);">
                     <i class="fa fa-microphone" style="color: var(--bs-gray-800);"></i>
                     <span style="color: var(--bs-gray-800);">Speakers</span>
                 </a>
