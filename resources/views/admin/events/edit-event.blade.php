@@ -94,10 +94,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3"><label class="form-label"
-                                                        for="form__event-detail"><strong>Details</strong></label><input
+                                                        for="form__event-detail"><strong>Detail</strong></label><input
                                                         class="form-control" type="text" id="form__event-detail" placeholder="Event Detail" name="detail"></div>
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm"
-                                                        type="submit">Save Info</button></div>
+                                                        type="submit">Save Changes</button></div>
 
                                         </div>
                                     </div>

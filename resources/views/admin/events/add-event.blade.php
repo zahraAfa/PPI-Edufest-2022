@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>New Events - Edufest</title>
+    <title>New Event - Edufest</title>
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
@@ -90,7 +90,7 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3"><label class="form-label"
-                                                    for="form__event-detail"><strong>Details</strong></label><input
+                                                    for="form__event-detail"><strong>Detail</strong></label><input
                                                     class="form-control" type="text" id="form__event-detail" placeholder="Event Detail" name="detail"></div>
                                             <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                     type="submit">Add Event</button></div>
