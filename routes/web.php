@@ -64,16 +64,3 @@ Route::get('/login', function () {
 Route::get('/admin/dashboard', function(){
     return view('admin/dashboard');
 })->middleware('auth');
-
-// Speakers routes
-Route::get('/admin/speakers', function(){
-    return view('admin/speakers/index');
-})->middleware('auth')->name('admin-speakers-index');
-
-Route::get('/admin/speakers/edit/{id}', function(){
-    return view('admin/speakers/edit-speaker');
-})->middleware('auth')->name('admin-speaker-edit');
-
-Route::get('/admin/speakers/add', function(){
-    return view('admin/speakers/add-speaker');
-})->middleware('auth')->name('admin-speaker-add');
