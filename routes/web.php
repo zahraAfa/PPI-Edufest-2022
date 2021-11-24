@@ -132,6 +132,7 @@ Route::get('/admin/partners/add', function(){
     return view('admin/partners/add-partner');
 })->middleware('auth')->name('admin-partner-add');
 
+
 // Speakers routes
 Route::get('/admin/speakers', function(){
     return view('admin/speakers/index');
