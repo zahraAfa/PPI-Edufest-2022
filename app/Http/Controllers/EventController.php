@@ -108,7 +108,7 @@ class EventController extends Controller
         array_map('unlink', glob("$picturePath/*.*"));
         rmdir($picturePath);
 
-        $deleteSponsor = $event->delete();
+        $deleteEvent = $event->delete();
         $msg = "success to delete";
         return [
             'response' => $msg
