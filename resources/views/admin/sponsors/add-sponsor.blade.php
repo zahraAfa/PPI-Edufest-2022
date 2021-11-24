@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>New sponsors - Edufest</title>
+    <title>New Sponsor - Edufest</title>
     <link rel="stylesheet" href="../../assets/admin-template/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -29,7 +29,7 @@
             <div id="content">
                 @include('admin.layouts.top-nav')
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">New sponsor</h3>
+                    <h3 class="text-dark mb-4">New Sponsor</h3>
                     <form id="sponsor__add-form" method="post" enctype="multipart/form-data">
                     <div class="row mb-3">
                         <div class="col-lg-4">
@@ -60,8 +60,8 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3"><label class="form-label"
-                                                    for="form__sponsor-detail"><strong>Details</strong></label><input
-                                                    class="form-control" type="text" id="form__sponsor-detail" placeholder="sponsor Detail" name="detail"></div>
+                                                    for="form__sponsor-detail"><strong>Detail</strong></label><input
+                                                    class="form-control" type="text" id="form__sponsor-detail" placeholder="Sponsor Detail" name="detail"></div>
                                             <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                     type="submit">Add Sponsor</button></div>
                                         </div>

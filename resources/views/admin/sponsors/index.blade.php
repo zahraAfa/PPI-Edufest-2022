@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>sponsors - Edufest</title>
+    <title>Sponsors - Edufest</title>
     <link rel="stylesheet" href="../../assets/admin-template/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -33,14 +33,14 @@
                 @include('admin.layouts.top-nav')
 
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">sponsors</h3>
+                    <h3 class="text-dark mb-4">Sponsors</h3>
                     <a class="btn btn-info btn-icon-split" role="button" style="margin-bottom: 15px;" href="{{ route('admin-sponsor-add') }}"><span class="text-white-50 icon"><i
                                 class="fas fa-plus" style="color: rgb(255,255,255);"></i></span>
-                                <span class="text-white text">New sponsor</span></a>
+                                <span class="text-white text">New Sponsor</span></a>
                     <div class="card shadow" style="border-radius: 20px;">
                         <div class="card-header py-3"
                             style="border-top-left-radius: 20px;border-top-right-radius: 20px;">
-                            <p class="text-primary m-0 fw-bold">sponsor Info</p>
+                            <p class="text-primary m-0 fw-bold">Sponsor Info</p>
                         </div>
                         <div class="card-body">
                             <div class="row d-none">
