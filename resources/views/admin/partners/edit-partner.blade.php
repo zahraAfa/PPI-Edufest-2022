@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Edit Partners - Edufest</title>
+    <title>Edit Partner - Edufest</title>
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
@@ -34,14 +34,14 @@
             <div id="content">
                 @include('admin.layouts.top-nav')
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">New Partner</h3>
+                    <h3 class="text-dark mb-4">Edit Partner</h3>
                     <form id="partner__edit-form" method="POST" enctype="multipart/form-data">
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
                                 <div class="card-body text-center shadow"><div id="before__img"></div>
                                 <div class="my-3 mx-5">
-                                    <label for="formFile" class="form-label">Add Photo</label>
+                                    <label for="formFile" class="form-label">Change Photo</label>
                                     <input class="form-control" type="file" accept="image/*" name="picture" id="form__img">
                                 </div>
                                 </div>
@@ -64,7 +64,7 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3"><button class="btn btn-primary btn-sm"
-                                                   id="form__btn" type="submit">Add partner</button></div>
+                                                   id="form__btn" type="submit">Save Changes</button></div>
 
                                         </div>
                                     </div>

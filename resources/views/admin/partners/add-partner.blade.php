@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>New Partners - Edufest</title>
+    <title>New Partner - Edufest</title>
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
@@ -64,7 +64,7 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3"><button class="btn btn-primary btn-sm"
-                                                   id="form__btn" type="submit">Add partner</button></div>
+                                                   id="form__btn" type="submit">Add Partner</button></div>
 
                                         </div>
                                     </div>
