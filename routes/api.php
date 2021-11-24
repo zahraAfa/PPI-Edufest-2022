@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\SponsorController;
 use App\Models\Admin;
 use Illuminate\Http\Request;
@@ -58,6 +59,11 @@ Route::prefix('/events')->group(function() {
     Route::get('/read', [EventController::class, 'read']);
 });
 
+//Speaker unprotected routes
+Route::prefix('/speakers')->group(function() {
+    Route::get('/read', [SpeakerController::class, 'read']);
+    Route::get('/read/{id}', [SpeakerController::class, 'readDetail']);
+});
 
 
 /*
@@ -99,5 +105,12 @@ Route::middleware('auth:api')->group(function () {
         Route::post('/insert', [EventController::class, 'insert']);
         Route::put('/update/{id}', [EventController::class, 'update']);
         Route::delete('/delete/{id}', [EventController::class, 'delete']);
+    });
+
+    //Speaker API routes
+    Route::prefix('/speakers')->group(function() {
+        Route::post('/insert', [SpeakerController::class, 'insert']);
+        Route::put('/update/{id}', [SpeakerController::class, 'update']);
+        Route::delete('/delete/{id}', [SpeakerController::class, 'delete']);
     });
 });
