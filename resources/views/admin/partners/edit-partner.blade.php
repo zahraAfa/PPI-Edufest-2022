@@ -35,14 +35,17 @@
                 @include('admin.layouts.top-nav')
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Edit Partner</h3>
-                    <form id="partner__edit-form" method="POST" enctype="multipart/form-data">
+                    {{-- <form id="partner__edit-form" method="POST" enctype="multipart/form-data"> --}}
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
                                 <div class="card-body text-center shadow"><div id="before__img"></div>
                                 <div class="my-3 mx-5">
                                     <label for="formFile" class="form-label">Edit Photo</label>
-                                    <input class="form-control" type="file" accept="image/*" name="picture" id="form__img">
+                                    <div class="d-flex flex-row">
+                                        <input class="form-control" type="file" accept="image/*" name="picture" id="form__img">
+                                        <button id="save-picture" class="btn btn-primary btn-sm"> save </button>
+                                    </div>
                                 </div>
                                 </div>
                             </div>
@@ -64,8 +67,7 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3">
-                                                <button class="btn btn-secondary btn-sm" id="form__btn1" type="submit" value="detail" name="detail">Update Detail Only</button>
-                                                <button class="btn btn-primary btn-sm" id="form__btn2" type="submit" value="all" name="all">Update All</button>
+                                                <input class="btn btn-primary btn-sm" id="form__btn2" type="submit" value="Update" name="all">
                                             </div>
 
                                         </div>
@@ -74,7 +76,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                {{-- </form> --}}
                 </div>
             </div>
             <footer class="bg-white sticky-footer">
@@ -87,6 +89,7 @@
     <script src="../../../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../../assets/admin-template/js/script.min.js"></script>
     <script>
+
         $.ajax({
             type: 'GET',
             url: '../../../api/partners/read',
@@ -111,7 +114,40 @@
                     alert(jsonResponse["message"]), alert(textStatus);
                 }
         });
-        $("#partner__edit-form").submit(function(e) {
+        // $('#form__img').click(function(){
+        //     $('#save-picture').attr("disabled", false);
+        //     console.log($('#form__img')[0].files[0]);
+        // });
+        $('#save-picture').click(function(e) {
+            e.preventDefault();
+            var formData = new FormData();
+            // alert('ok');
+            var files = $('#form__img')[0].files[0];
+            formData.append('picture', files);
+            $.ajax({
+                type: "POST",
+                url: '../../../api/partners/image/{{ request()->route('id') }}?_method=PUT',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
+                },
+                success: function(data)
+                {
+                    alert ("check")
+                    // window.location.href = "{{ route('admin-partners-index') }}";
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    var data=XMLHttpRequest.responseText;
+                    var jsonResponse = JSON.parse(data);
+                    alert(jsonResponse["message"]);
+                }
+            });
+
+        });
+
+        $("#form__btn2").click(function(e) {
             e.preventDefault();
             var formData = new FormData();
             var files = $('#form__img')[0].files[0];
