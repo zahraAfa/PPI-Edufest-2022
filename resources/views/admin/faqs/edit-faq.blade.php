@@ -56,7 +56,7 @@
                                                     <input class="form-control" type="text" id="answer__faq" placeholder="Answer" name="answer">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <button class="btn btn-primary btn-sm"type="submit">Save Change</button>
+                                                    <button class="btn btn-primary btn-sm"type="submit">Save Changes</button>
                                                 </div>
                                             </form>
                                         </div>
