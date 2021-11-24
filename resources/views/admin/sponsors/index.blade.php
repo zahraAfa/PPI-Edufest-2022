@@ -125,7 +125,7 @@
                                         '<td id="sponsor__name-crud">'+sponsor["name"]+'</td>'+
                                         '<td id="sponsor__detail-crud">'+sponsor["detail"]+'</td>'+
                                         '<td>'+
-                                            '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="sponsor__edit" href="../admin/sponsors/edit/'+sponsor["id"]+'"><i class="fas fa-edit text-white"></i></a>'+
+                                            '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="sponsor__edit" href="../../admin/sponsors/edit/'+sponsor["id"]+'"><i class="fas fa-edit text-white"></i></a>'+
                                             '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1 delete-btn-sponsor" role="button" id="'+sponsor["id"]+'"><i class="fas fa-trash text-white"></i></a>'+
                                         '</td>'+
                                 '</tr>';
