@@ -16,6 +16,7 @@ class Speaker extends Model
      * @var array
      */
     protected $fillable = [
+        'id',
         'name',
         'ppi',
         'email',
@@ -32,7 +33,6 @@ class Speaker extends Model
      * @var array
      */
     protected $hidden = [
-        // 'id',
-        // 'email'
+        'email'
     ];
 }
