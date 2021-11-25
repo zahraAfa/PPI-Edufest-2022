@@ -116,20 +116,13 @@
             $.ajax({
                 type: "GET",
                 url: "../../../api/events/read",
-                header:{
-                    "Authorization": "Bearer {{ Auth::user()->api_token }}"
-                },
                 success: function (events) {
                     $.ajax({
                         type: "GET",
                         url: "../../../api/speakers/read",
-                        header:{
-                            "Authorization": "Bearer {{ Auth::user()->api_token }}"
-                        },
-                        success: function (result) {
-                            console.log(result)
+                        success: function (speakers) {
                             var speakerItems ='';
-                            $.each(result, function(key, speaker){
+                            $.each(speakers, function(key, speaker){
                                 var eventTitle;
                                 $.each(events, function(key, event){
                                     if(speaker["event_id"]===event["id"]){
@@ -139,15 +132,24 @@
                                 speakerItems += '<tr>'+'<td><img class="rounded-circle me-2" width="30" height="30" src="../../storage/img/speakers/'+speaker["id"]+'/'+speaker["picture"]+'">'+speaker["name"]+'</td>'+
                                 '<td id="speaker__name-crud">'+speaker["ppi"]+'</td>'+
                                 '<td id="speaker__name-crud">'+speaker["major"]+'</td>'+
-                                '<td id="speaker__name-crud">'+speaker["school"]+'</td>'+
-                                '<td id="speaker__name-crud">'+speaker["email"]+'</td>'+
-                                '<td id="speaker__name-crud">'+eventTitle+'</td>'+
-                                '<td id="speaker__detail-crud">'+speaker["detail"]+'</td>'+
-                                '<td>'+
-                                '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="speaker__edit" href="../../admin/speakers/edit/'+speaker["id"]+'"><i class="fas fa-edit text-white"></i></a>'+
-                                '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1 delete-btn-speaker" role="button" id="'+speaker["id"]+'"><i class="fas fa-trash text-white"></i></a>'+
-                                '</td>'+
-                                '</tr>';
+                                '<td id="speaker__name-crud">'+speaker["school"]+'</td>';
+                                $.ajax({
+                                    type: "GET",
+                                    url: "../../../api/speakers/read/"+speaker["id"],
+                                    success: function (data) {
+                                        speakerItems += '<td id="speaker__name-crud">'+data+'</td>';
+                                        console.log(data.email)
+                                        console.log(data["email"])
+                                    }
+                                });
+                                console.log(speakerItems)
+                                speakerItems += '<td id="speaker__name-crud">'+eventTitle+'</td>'+
+                                                '<td id="speaker__detail-crud">'+speaker["detail"]+'</td>'+
+                                                '<td>'+
+                                                '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="speaker__edit" href="../../admin/speakers/edit/'+speaker["id"]+'"><i class="fas fa-edit text-white"></i></a>'+
+                                                '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1 delete-btn-speaker" role="button" id="'+speaker["id"]+'"><i class="fas fa-trash text-white"></i></a>'+
+                                                '</td>'+
+                                                '</tr>';
                                 });
                                 $('#speakers__row').after(speakerItems);
                             }
