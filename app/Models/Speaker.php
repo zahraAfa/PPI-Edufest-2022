@@ -32,7 +32,7 @@ class Speaker extends Model
      * @var array
      */
     protected $hidden = [
-        'id',
-        'email'
+        // 'id',
+        // 'email'
     ];
 }
