@@ -114,9 +114,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="mb-3"><label class="form-label"
-                                                    for="form__speaker-detail"><strong>Detail</strong></label><input rows="3"
-                                                    class="form-control" type="text" id="form__speaker-detail" placeholder="Speaker Detail" name="detail"></div>
+                                            <div class="mb-3"><label class="form-label" for="form__speaker-detail"><strong>Detail</strong></label>
+                                                <textarea class="form-control" type="text" id="form__speaker-detail" placeholder="Speaker Detail" name="detail" rows="3"></textarea>
+                                            </div>
                                             <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                     type="submit">Add Speaker</button></div>
                                         </div>

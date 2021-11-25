@@ -127,6 +127,7 @@
                             "Authorization": "Bearer {{ Auth::user()->api_token }}"
                         },
                         success: function (result) {
+                            console.log(result)
                             var speakerItems ='';
                             $.each(result, function(key, speaker){
                                 var eventTitle;
