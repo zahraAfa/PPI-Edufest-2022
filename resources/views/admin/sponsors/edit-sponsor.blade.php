@@ -60,8 +60,9 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3"><label class="form-label"
-                                                    for="form__sponsor-detail"><strong>Detail</strong></label><input
-                                                    class="form-control" type="text" id="form__sponsor-detail" placeholder="Sponsor Detail" name="detail"></div>
+                                                    for="form__sponsor-detail"><strong>Detail</strong></label>
+                                                    <textarea class="form-control" type="text" id="form__sponsor-detail" placeholder="Sponsor Detail" name="detail" rows="3"></textarea>
+                                                </div>
                                             <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                     type="submit">Save Changes</button></div>
                                         </div>

@@ -59,9 +59,9 @@
                                                             placeholder="Sponsor Name" name="name"></div>
                                                 </div>
                                             </div>
-                                            <div class="mb-3"><label class="form-label"
-                                                    for="form__sponsor-detail"><strong>Detail</strong></label><input
-                                                    class="form-control" type="text" id="form__sponsor-detail" placeholder="Sponsor Detail" name="detail"></div>
+                                            <div class="mb-3"><label class="form-label" for="form__sponsor-detail"><strong>Detail</strong></label>
+                                                    <textarea class="form-control" type="text" id="form__sponsor-detail" placeholder="Sponsor Detail" name="detail" rows="3"></textarea>
+                                                </div>
                                             <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                     type="submit">Add Sponsor</button></div>
                                         </div>
