@@ -52,8 +52,8 @@
                                                 <div class="mb-3"><label class="form-label" for="question__faq"><strong>Question</strong></label>
                                                     <input class="form-control" type="text" id="question__faq" placeholder="Question" name="question">
                                                 </div>
-                                                <div class="mb-3"><label class="form-label" for="address"><strong>Answer</strong></label>
-                                                    <input class="form-control" type="text" id="answer__faq" placeholder="Answer" name="answer">
+                                                <div class="mb-3"><label class="form-label" for="answer__faq"><strong>Answer</strong></label>
+                                                    <textarea class="form-control" type="text" id="answer__faq" placeholder="Answer" name="answer" rows="3"></textarea>
                                                 </div>
                                                 <div class="mb-3">
                                                     <button class="btn btn-primary btn-sm"type="submit">Save Changes</button>

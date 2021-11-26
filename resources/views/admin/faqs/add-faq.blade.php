@@ -49,14 +49,12 @@
                                         </div>
                                         <div class="card-body">
                                             <form id="faq__add-form">
-                                                <div class="mb-3"><label class="form-label"
-                                                        for="address"><strong>Question</strong></label><input
-                                                        class="form-control" type="text" id="address"
-                                                        placeholder="Question" name="question"></div>
-                                                <div class="mb-3"><label class="form-label"
-                                                        for="address"><strong>Answer</strong></label><input
-                                                        class="form-control" type="text" id="form__faq-question"
-                                                        placeholder="Answer" name="answer"></div>
+                                                <div class="mb-3"><label class="form-label" for="form__faq-question"><strong>Question</strong></label>
+                                                        <input class="form-control" type="text" id="address" placeholder="Question" name="question">
+                                                </div>
+                                                <div class="mb-3"><label class="form-label" for="form__faq-answer"><strong>Answer</strong></label>
+                                                        <textarea class="form-control" type="text" id="form__faq-answer" placeholder="Answer" name="answer" rows="3"></textarea>
+                                                </div>
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                         type="submit">Add FAQ</button></div>
                                             </form>
