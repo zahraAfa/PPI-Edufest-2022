@@ -90,8 +90,9 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3"><label class="form-label"
-                                                    for="form__event-detail"><strong>Detail</strong></label><input
-                                                    class="form-control" type="text" id="form__event-detail" placeholder="Event Detail" name="detail"></div>
+                                                    for="form__event-detail"><strong>Detail</strong></label>
+                                                    <textarea class="form-control" type="text" id="form__event-detail" placeholder="Event Detail" name="detail" rows="3"></textarea>
+                                                </div>
                                             <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                     type="submit">Add Event</button></div>
 
