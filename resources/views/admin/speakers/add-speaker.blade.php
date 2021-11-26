@@ -108,7 +108,6 @@
                                                         for="form__speaker-event"><strong>Event</strong><br></label>
                                                         <select class="form-select" id="form__speaker-event" name="event_id">
                                                             <optgroup label="All Event" id="event__dropdown">
-                                                                {{-- <option value="timtengka">Timur Tengah dan Afrika</option> --}}
                                                             </optgroup>
                                                         </select>
                                                     </div>

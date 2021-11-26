@@ -82,60 +82,6 @@
     </div>
     <script src="../../../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../../assets/admin-template/js/script.min.js"></script>
-    <script>
-        $.ajax({
-            type: 'GET',
-            url: '../../../api/speakers/read',
-            success: function(data) {
-                $.each(data, function(key, speaker){
-                    if(speaker["id"]==={{ request()->route('id') }}){
-                        var img_link = '/storage/img/speakers/'+speaker["name"]+'/'+speaker["picture"];
-
-                        $( "#before__img" ).after( '<img id="speaker__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="'+img_link+'"">');
-                        $('#form__speaker-name').val(speaker["name"]);
-                        $('#form__speaker-detail').val(speaker["detail"]);
-                    }
-                });
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    var data=XMLHttpRequest.responseText;
-                    var jsonResponse = JSON.parse(data);
-                    alert(jsonResponse["message"]), alert(textStatus);
-                }
-        });
-        $("#speaker__edit-form").submit(function(e) {
-
-            e.preventDefault();
-            var form = $("#speaker__edit-form");
-            var formData = new FormData();
-            var files = $('#form__img')[0].files[0];
-            formData.append('picture', files);
-            formData.append('name', $('#form__speaker-name').val());
-            formData.append('detail',$('#form__speaker-detail').val());
-            var urlpost = '../../../api/speakers/insert';
-            $.ajax({
-                type: "POST",
-                url: urlpost,
-                data: formData,
-                processData: false,
-                contentType: false,
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
-                },
-                success: function(data)
-                {
-                    console.log('after ajax')
-                    window.location.href = "{{ route('admin-speakers-index') }}";
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    var data=XMLHttpRequest.responseText;
-                    var jsonResponse = JSON.parse(data);
-                    alert(jsonResponse["message"]);
-                }
-            });
-        });
-
-    </script>
 </body>
 
 </html>
