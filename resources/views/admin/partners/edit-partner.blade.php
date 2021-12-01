@@ -28,6 +28,7 @@
 </head>
 
 <body id="page-top">
+
     <div id="wrapper">
         @include('admin.layouts.side-nav')
         <div class="d-flex flex-column" id="content-wrapper">
@@ -35,15 +36,40 @@
                 @include('admin.layouts.top-nav')
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Edit Partner</h3>
-                    <form id="partner__edit-form" method="POST" enctype="multipart/form-data">
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update Photo</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input class="form-control" type="file" accept="image/*" name="picture"
+                                        id="form__img">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button id="save-picture" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <form id="partner__edit-form" method="POST" enctype="multipart/form-data"> --}}
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
-                                <div class="card-body text-center shadow"><div id="before__img"></div>
-                                <div class="my-3 mx-5">
-                                    <label for="formFile" class="form-label">Change Photo</label>
-                                    <input class="form-control" type="file" accept="image/*" name="picture" id="form__img">
-                                </div>
+                                <div class="card-body text-center shadow">
+                                    <div id="before__img"></div>
+                                    <div class="my-3 mx-5">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
+                                                 Update Photo
+                                            </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -58,13 +84,16 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <div class="mb-3"><label class="form-label"
-                                                            for="form__partner-name"><strong>Partner Name</strong><br></label><input
-                                                            class="form-control" type="text" id="form__partner-name"
+                                                            for="form__partner-name"><strong>Partner
+                                                                Name</strong><br></label><input class="form-control"
+                                                            type="text" id="form__partner-name"
                                                             placeholder="Partner Name" name="name"></div>
                                                 </div>
                                             </div>
-                                            <div class="mb-3"><button class="btn btn-primary btn-sm"
-                                                   id="form__btn" type="submit">Save Changes</button></div>
+                                            <div class="mb-3">
+                                                <input class="btn btn-primary btn-sm" id="form__btn2" type="submit"
+                                                    value="Update" name="all">
+                                            </div>
 
                                         </div>
                                     </div>
@@ -72,7 +101,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                    {{-- </form> --}}
                 </div>
             </div>
             <footer class="bg-white sticky-footer">
@@ -82,6 +111,9 @@
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
+
+
+
     <script src="../../../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../../assets/admin-template/js/script.min.js"></script>
     <script>
@@ -89,11 +121,14 @@
             type: 'GET',
             url: '../../../api/partners/read',
             success: function(data) {
-                $.each(data, function(key, partner){
-                    if(partner["id"]==={{ request()->route('id') }}){
-                        var img_link = '/storage/img/partners/'+partner["name"]+'/'+partner["picture"];
+                $.each(data, function(key, partner) {
+                    if (partner["id"] === {{ request()->route('id') }}) {
+                        var img_link = '/storage/img/partners/' + partner["name"] + '/' + partner[
+                            "picture"];
 
-                        $( "#before__img" ).after( '<img id="partner__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="'+img_link+'"">');
+                        $("#before__img").after(
+                            '<img id="partner__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="' +
+                            img_link + '"">');
                         $('#form__partner-name').val(partner["name"]);
                         // $('#form__img').val(partner["picture"]);
                         // var file = new Blob([data], {type: 'application/pdf'});
@@ -104,74 +139,105 @@
                 });
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    var data=XMLHttpRequest.responseText;
-                    var jsonResponse = JSON.parse(data);
-                    alert(jsonResponse["message"]), alert(textStatus);
-                }
+                var data = XMLHttpRequest.responseText;
+                var jsonResponse = JSON.parse(data);
+                alert(jsonResponse["message"]), alert(textStatus);
+            }
         });
-        $("#partner__edit-form").submit(function(e) {
+        // $('#form__img').click(function(){
+        //     $('#save-picture').attr("disabled", false);
+        //     console.log($('#form__img')[0].files[0]);
+        // });
+        $('#save-picture').click(function(e) {
+            e.preventDefault();
+            var formData = new FormData();
+            // alert('ok');
+            var files = $('#form__img')[0].files[0];
+            formData.append('picture', files);
+            $.ajax({
+                type: "POST",
+                url: '../../../api/partners/image/{{ request()->route('id') }}?_method=PUT',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
+                },
+                success: function(data) {
+                    alert("check")
+                    // window.location.href = "{{ route('admin-partners-index') }}";
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    var data = XMLHttpRequest.responseText;
+                    var jsonResponse = JSON.parse(data);
+                    alert(jsonResponse["message"]);
+                }
+            });
+
+        });
+
+        $("#form__btn2").click(function(e) {
             e.preventDefault();
             var formData = new FormData();
             var files = $('#form__img')[0].files[0];
             formData.append('picture', files);
             formData.append('name', $('#form__partner-name').val());
-            if(files === undefined){
-                $.ajax({
-                    type: 'GET',
-                    url: '../../../api/partners/read',
-                    success: function(data) {
-                        $.each(data, function(key, partner){
-                            if(partner["id"]==={{ request()->route('id') }}){
-                                var img_link = '/storage/img/partners/'+partner["id"]+'/'+partner["picture"];
-                                jQuery.ajax({
-                                            url:'../../..'+img_link,
-                                            cache:false,
-                                            xhr:function(){
-                                                var xhr = new XMLHttpRequest();
-                                                xhr.responseType= 'blob'
-                                                return xhr;
-                                            },
-                                            success: function(data){
-                                                console.log(data)
-                                                // document.getElementById('form__img').files[0] = data;
-                                                // var files = data[0].files[0];
+            // if(files === undefined){
+            //     $.ajax({
+            //         type: 'GET',
+            //         url: '../../../api/partners/read',
+            //         success: function(data) {
+            //             $.each(data, function(key, partner){
+            //                 if(partner["id"]==={{ request()->route('id') }}){
+            //                     var img_link = '/storage/img/partners/'+partner["id"]+'/'+partner["picture"];
+            //                     jQuery.ajax({
+            //                                 url:'../../..'+img_link,
+            //                                 cache:false,
+            //                                 xhr:function(){
+            //                                     var xhr = new XMLHttpRequest();
+            //                                     xhr.responseType= 'blob'
+            //                                     return xhr;
+            //                                 },
+            //                                 success: function(data){
+            //                                     console.log(data)
+            //                                     // document.getElementById('form__img').files[0] = data;
+            //                                     // var files = data[0].files[0];
 
-                                                var fd = new FormData();
-                                                var files = data[0].files;
+            //                                     var fd = new FormData();
+            //                                     var files = data[0].files;
 
-                                                // var imgHandler = URL.createObjectURL(data)
-                                                formData.append('picture', files);
-                                            },
-                                            error:function(){
-                                                console.log("Fail to get img");
-                                            }
-                                });
-                            }
-                        });
-                    },
-                });
-            }
+            //                                     // var imgHandler = URL.createObjectURL(data)
+            //                                     formData.append('picture', files);
+            //                                 },
+            //                                 error:function(){
+            //                                     console.log("Fail to get img");
+            //                                 }
+            //                     });
+            //                 }
+            //             });
+            //         },
+            //     });
+            // }
             $.ajax({
                 type: "POST",
                 url: '../../../api/partners/update/{{ request()->route('id') }}?_method=PUT',
                 data: formData,
                 processData: false,
                 contentType: false,
-                beforeSend: function (xhr) {
+                beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
-                success: function(data)
-                {
-                    window.location.href = "{{ route('admin-partners-index') }}";
+                success: function(data) {
+                    alert("check")
+                    // window.location.href = "{{ route('admin-partners-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    var data=XMLHttpRequest.responseText;
+                    var data = XMLHttpRequest.responseText;
                     var jsonResponse = JSON.parse(data);
                     alert(jsonResponse["message"]);
                 }
             });
         });
-
     </script>
 </body>
 

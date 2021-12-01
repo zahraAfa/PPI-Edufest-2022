@@ -64,3 +64,16 @@ Route::get('/login', function () {
 Route::get('/admin/dashboard', function(){
     return view('admin/dashboard');
 })->middleware('auth');
+
+// Partners routes
+Route::get('/admin/partners', function(){
+    return view('admin/partners/index');
+})->middleware('auth')->name('admin-partners-index');
+
+Route::get('/admin/partners/edit/{id}', function(){
+    return view('admin/partners/edit-partner');
+})->middleware('auth')->name('admin-partner-edit');
+
+Route::get('/admin/partners/add', function(){
+    return view('admin/partners/add-partner');
+})->middleware('auth')->name('admin-partner-add');
