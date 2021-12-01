@@ -164,7 +164,7 @@
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
                 success: function(data) {
-                    alert("check")
+                    location.reload();
                     // window.location.href = "{{ route('admin-partners-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
