@@ -52,6 +52,7 @@ Route::prefix('/sponsors')->group(function() {
 //Partner unprotected routes
 Route::prefix('/partners')->group(function() {
     Route::get('/read', [PartnerController::class, 'read']);
+    Route::get('/image/{id}', [PartnerController::class, 'updateImage']);
 });
 
 //Event unprotected routes
@@ -63,7 +64,7 @@ Route::prefix('/events')->group(function() {
 Route::prefix('/speakers')->group(function() {
     Route::get('/read', [SpeakerController::class, 'read']);
     Route::get('/read/{id}', [SpeakerController::class, 'readDetail']);
-    Route::get('/image/{id}', [SpeakerController::class, 'updateImage']);
+    Route::post('/image/{id}', [SpeakerController::class, 'updateImage']);
 
 });
 
