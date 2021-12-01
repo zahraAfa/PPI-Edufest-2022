@@ -13,6 +13,28 @@ class SponsorController extends Controller
         return $sponsors;
     }
 
+    public function updateImage($id)
+    {
+        request()->validate([
+            'picture' => ['required', 'image']
+        ]);
+
+        // get partner data by id
+        $partner = Sponsor::find($id);
+        $oldPicturePath = public_path() . '/storage/img/partners/' . $partner->name;
+        $oldFile = $oldPicturePath . '/' . $partner->picture;
+
+        // replace old picture name
+        $pictureName = request('picture')->getClientOriginalName();
+        $partner->picture = $pictureName;
+        $partner->save();
+
+        // add new picture to storage
+        request('picture')->move($oldPicturePath, $pictureName);
+
+        return $partner;
+    }
+
     public function insert() {
         request()->validate([
             'name' => ['required', 'string'],

@@ -63,6 +63,8 @@ Route::prefix('/events')->group(function() {
 Route::prefix('/speakers')->group(function() {
     Route::get('/read', [SpeakerController::class, 'read']);
     Route::get('/read/{id}', [SpeakerController::class, 'readDetail']);
+    Route::get('/image/{id}', [SpeakerController::class, 'updateImage']);
+
 });
 
 
