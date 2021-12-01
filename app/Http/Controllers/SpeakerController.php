@@ -18,6 +18,28 @@ class SpeakerController extends Controller
         return $speaker;
     }
 
+    public function updateImage($id)
+    {
+        request()->validate([
+            'picture' => ['required', 'image']
+        ]);
+
+        // get partner data by id
+        $events = Speaker::find($id);
+        $oldPicturePath = public_path() . '/storage/img/speakers/' . $events->id;
+        $oldFile = $oldPicturePath . '/' . $events->picture;
+
+        // replace old picture name
+        $pictureName = request('picture')->getClientOriginalName();
+        $events->picture = $pictureName;
+        $events->save();
+
+        // add new picture to storage
+        request('picture')->move($oldPicturePath, $pictureName);
+
+        return $events;
+    }
+
     public function insert() {
         request()->validate([
             'name' => ['required', 'string'],

@@ -28,49 +28,143 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 @include('admin.layouts.top-nav')
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update Photo</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input class="form-control" type="file" accept="image/*" name="picture" id="form__img">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button id="save-picture" type="button" class="btn btn-primary"
+                                    data-bs-dismiss="modal">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Edit Speaker</h3>
                     <form id="speaker__edit-form" method="post" enctype="multipart/form-data">
-                    <div class="row mb-3">
-                        <div class="col-lg-4">
-                            <div class="card mb-3">
-                                <div class="card-body text-center shadow"><div id="before__img"></div>
-                                <div class="my-3 mx-5">
-                                    <label for="formFile" class="form-label">Change Photo</label>
-                                    <input class="form-control" type="file" accept="image/*" name="picture" id="form__img">
-                                </div>
+                        <div class="row mb-3">
+                            <div class="col-lg-4">
+                                <div class="card mb-3">
+                                    <div class="card-body text-center shadow">
+                                        <div id="before__img"></div>
+                                        <div class="my-3 mx-5">
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
+                                                Update Photo
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="card shadow mb-3">
-                                        <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">Speaker Detail</p>
-                                        </div>
-                                        <div class="card-body">
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="mb-3"><label class="form-label"
-                                                            for="form__speaker-name"><strong>Speaker Name</strong><br></label><input
-                                                            class="form-control" type="text" id="form__speaker-name"
-                                                            placeholder="speaker Name" name="name"></div>
-                                                </div>
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card shadow mb-3">
+                                            <div class="card-header py-3">
+                                                <p class="text-primary m-0 fw-bold">Speaker Detail</p>
                                             </div>
-                                            <div class="mb-3"><label class="form-label"
-                                                    for="form__speaker-detail"><strong>Detail</strong></label><input
-                                                    class="form-control" type="text" id="form__speaker-detail" placeholder="speaker Detail" name="detail"></div>
-                                            <div class="mb-3"><button class="btn btn-primary btn-sm"
-                                                    type="submit">Save Changes</button></div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label"
+                                                                for="form__speaker-name"><strong>Speaker
+                                                                    Name</strong><br></label><input id=""
+                                                                class="form-control" type="text"
+                                                                id="form__speaker-name" placeholder="Speaker Name"
+                                                                name="name"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label"
+                                                                for="form__speaker-email"><strong>Email</strong><br></label><input
+                                                                class="form-control" type="text"
+                                                                id="form__speaker-email" placeholder="Email"
+                                                                name="email"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label"
+                                                                for="form__speaker-ppi"><strong>PPI</strong><br></label><input
+                                                                class="form-control" type="text"
+                                                                id="form__speaker-ppi" placeholder="PPI Negara"
+                                                                name="ppi"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label"
+                                                                for="form__speaker-school"><strong>School</strong><br></label><input
+                                                                class="form-control" type="text"
+                                                                id="form__speaker-school" placeholder="School Name"
+                                                                name="school"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label"
+                                                                for="form__speaker-degree"><strong>Degree</strong><br></label>
+                                                            <select class="form-select" id="form__speaker-degree"
+                                                                name="degree">
+                                                                <optgroup label="All Degree">
+                                                                    <option value="Associate of ">Associate Degree
+                                                                    </option>
+                                                                    <option value="Bachelor of ">Bachelor's Degree
+                                                                    </option>
+                                                                    <option value="Master of ">Master's Degree</option>
+                                                                    <option value="Doctor of ">Doctoral Degree</option>
+                                                                    <option class="d-none" value="">Professional
+                                                                        degrees</option>
+                                                                    <option class="d-none" value="Doctor of ">
+                                                                        Post-Doctoral degrees</option>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label"
+                                                                for="form__speaker-major"><strong>Major</strong><br></label><input
+                                                                class="form-control" type="text"
+                                                                id="form__speaker-major" placeholder="Major"
+                                                                name="major"></div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3"><label class="form-label"
+                                                                for="form__speaker-event"><strong>Event</strong><br></label>
+                                                            <select class="form-select" id="form__speaker-event"
+                                                                name="event_id">
+                                                                <optgroup label="All Event" id="event__dropdown">
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3"><label class="form-label"
+                                                        for="form__speaker-detail"><strong>Detail</strong></label>
+                                                    <textarea class="form-control" type="text"
+                                                        id="form__speaker-detail" placeholder="Speaker Detail"
+                                                        name="detail" rows="3"></textarea>
+                                                </div>
+                                                <div class="mb-3"><button class="btn btn-primary btn-sm"
+                                                        type="submit">Save Changes</button></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
                 </div>
             </div>
             <footer class="bg-white sticky-footer">
@@ -82,6 +176,85 @@
     </div>
     <script src="../../../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../../assets/admin-template/js/script.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "../../../api/events/read",
+                header: {
+                    "Authorization": "Bearer {{ Auth::user()->api_token }}"
+                },
+                success: function(result) {
+
+                    var eventItems = '';
+                    $.each(result, function(key, event) {
+                        eventItems += '<option value="' + event["id"] + '">' + event["title"] +
+                            '</option>';
+                    });
+                    $('#event__dropdown').after(eventItems);
+                }
+            });
+        });
+        $('#save-picture').click(function(e) {
+            e.preventDefault();
+            var formData = new FormData();
+            var files = $('#form__img')[0].files[0];
+            formData.append('picture', files);
+            $.ajax({
+                type: "POST",
+                url: '../../../api/speakers/image/{{ request()->route('id') }}?_method=PUT',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
+                },
+                success: function(data) {
+                    location.reload();
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    var data = XMLHttpRequest.responseText;
+                    var jsonResponse = JSON.parse(data);
+                    alert(jsonResponse["message"]);
+                }
+            });
+
+        });
+        $.ajax({
+            type: 'GET',
+            url: '../../../api/speakers/read',
+            success: function(data) {
+                $.each(data, function(key, speaker) {
+                    if (speaker["id"] === {{ request()->route('id') }}) {
+                        var img_link = '/storage/img/speakers/' + speaker["id"] + '/' + speaker[
+                            "picture"];
+
+                        $("#before__img").after(
+                            '<img id="speaker__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="' +
+                            img_link + '"">');
+                        $('#form__speaker-name').val(speaker["name"]);
+                        $('#form__speaker-ppi').val(speaker["ppi"]);
+                        $('#form__speaker-email').val(speaker["email"]);
+                        $('#form__speaker-school').val(speaker["school"]);
+                        $('#form__speaker-degree').val(speaker["degree"]);
+                        $('#form__speaker-major').val(speaker["major"]);
+                        $('#form__speaker-detail').val(speaker["detail"]);
+                        $('#form__speaker-event').val(speaker["event_id"]);
+                        $('#form__img').val(speaker["picture"]);
+                        // var file = new Blob([data], {type: 'application/pdf'});
+                        // new File("/path/to/file");
+                        // let file = new File([data], img_link, metadata);
+                        // document.getElementById('form__img').files[0] = file;
+                    }
+                });
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                var data = XMLHttpRequest.responseText;
+                var jsonResponse = JSON.parse(data);
+                alert(jsonResponse["message"]), alert(textStatus);
+            }
+        });
+    </script>
 </body>
 
 </html>
