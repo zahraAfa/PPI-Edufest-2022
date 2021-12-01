@@ -1,8 +1,8 @@
 .footer-container{
     width: 100vw;
     height: 300px;
-    background: rgb(43,17,85);
-    background: linear-gradient(142deg, rgba(43,17,85,1) 7%, rgba(89,0,0,1) 100%);
+    background: var(--veryLightGrey);
+    border: 5px solid var(--softBlack);
 }
 
 .footer-wrapper{
@@ -15,9 +15,9 @@
 }
 
 .footer-cr{
-    font-family: Roboto;
     text-align: right;
-    color: rgb(197, 197, 197);
+    color: var(--softBlack);
+    font-size: 15px;
 }
 .f-col{
     display: flex;
@@ -32,7 +32,7 @@
 }
 
 .footer-col1-box1{
-    border-right: 1px solid rgb(197, 197, 197);
+    border-right: 5px solid var(--softBlack);
     padding-right: 20px;
     margin-right: 20px;
     display: flex;
@@ -56,13 +56,14 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    color: white;
+    color: var(--softBlack);
 }
 
 .f-nav-list{
-    color: white;
+    color: var(--softBlack);
     text-align: left;
     text-decoration: none!important;
+    font-weight: 600;
 }
 
 .footer-col2{
@@ -73,24 +74,25 @@
 }
 
 .footer-h1{
-    color: white;
+    color: var(--softBlack);
     font-size: 15px;
     text-align: center;
     transform: translateY(-30%);
+    font-weight: 600;
 }
 
 .fa{
     color: var(--DarkGrey);
-    font-size: 30px;
+    font-size: 26px;
 }
 
 .f-soc{
     display: inline-block;
     text-decoration: none;
     width: 50px;
-	margin:2px;
+	margin: 2px;
     height: 50px;
-    line-height: 50px;
+    line-height: 55px;
     font-size: 23px;
 	color:white;
     border-radius: 30px;
@@ -99,9 +101,10 @@
     overflow: hidden;
     font-weight: bold;
     transition: .3s;
+    border: 5px solid var(--softBlack);
 }
 .f-soc .fa {
-    line-height:50px;
+    line-height: 40px;
     color: white;
 }
 .f-soc:hover{
@@ -115,7 +118,7 @@
 .f-soc.shig {background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
 
 .footer-col1 .footer-nav-lists .f-nav-list:hover{
-    color: #fdf497!important;
+    color: var(--customRed)!important;
 }
 
 #footer-ppid-logo{
@@ -131,6 +134,10 @@
     flex-direction: row;
     gap: 5px;
     transform: translateY(-30%);
+}
+
+.footer-col2-row1 a:hover{
+    background: var(--veryLightGrey);
 }
 
 .footer-col2-row1 a:hover .fa:first-child{
@@ -187,7 +194,7 @@
         font-size: 18px;
     }
     .f-soc .fa {
-        line-height:45px;
+        line-height:35px;
         color: white;
     }
     .f-nav-list{

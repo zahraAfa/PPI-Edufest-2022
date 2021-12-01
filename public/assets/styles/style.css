@@ -5,8 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   /* Colors */
@@ -23,6 +24,11 @@
   --BrightBlue: #3d94fe;
   --SkyBlue: #a4cbfc;
   --DarkGreen: #1f3625;
+
+  /* New Colors */
+  --veryLightGrey: #F2F2F2;
+  --softBlack: #3F3F3F;
+  --customRed: #E44B55;
 
   /* Base Colour */
   --BaseLightGreen: rgb(224, 243, 240);
@@ -73,7 +79,7 @@ body {
 }
 
 * {
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-weight: 400;
 }
 
