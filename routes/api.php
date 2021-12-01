@@ -47,6 +47,7 @@ Route::prefix('/faqs')->group(function() {
 //Sponsor unprotected routes
 Route::prefix('/sponsors')->group(function() {
     Route::get('/read', [SponsorController::class, 'read']);
+    Route::put('/image/{id}', [SponsorController::class, 'updateImage']);
 });
 
 //Partner unprotected routes
@@ -64,7 +65,7 @@ Route::prefix('/events')->group(function() {
 Route::prefix('/speakers')->group(function() {
     Route::get('/read', [SpeakerController::class, 'read']);
     Route::get('/read/{id}', [SpeakerController::class, 'readDetail']);
-    Route::post('/image/{id}', [SpeakerController::class, 'updateImage']);
+    Route::put('/image/{id}', [SpeakerController::class, 'updateImage']);
 
 });
 

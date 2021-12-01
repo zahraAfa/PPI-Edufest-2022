@@ -121,7 +121,7 @@
             formData.append('picture', files);
             $.ajax({
                 type: "POST",
-                url: '../../../api/partners/image/{{ request()->route('id') }}?_method=PUT',
+                url: '../../../api/sponsors/image/{{ request()->route('id') }}?_method=PUT',
                 data: formData,
                 processData: false,
                 contentType: false,

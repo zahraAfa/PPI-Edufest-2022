@@ -20,19 +20,19 @@ class SponsorController extends Controller
         ]);
 
         // get partner data by id
-        $partner = Sponsor::find($id);
-        $oldPicturePath = public_path() . '/storage/img/partners/' . $partner->name;
-        $oldFile = $oldPicturePath . '/' . $partner->picture;
+        $sponsor = Sponsor::find($id);
+        $oldPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->name;
+        $oldFile = $oldPicturePath . '/' . $sponsor->picture;
 
         // replace old picture name
         $pictureName = request('picture')->getClientOriginalName();
-        $partner->picture = $pictureName;
-        $partner->save();
+        $sponsor->picture = $pictureName;
+        $sponsor->save();
 
         // add new picture to storage
         request('picture')->move($oldPicturePath, $pictureName);
 
-        return $partner;
+        return $sponsor;
     }
 
     public function insert() {
