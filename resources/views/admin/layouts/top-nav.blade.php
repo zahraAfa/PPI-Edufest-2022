@@ -65,7 +65,7 @@
         $("#logout__btn").click(function(){
             $.ajaxSetup({
                 type: "GET",
-                url: "../../api/auth/logout",
+                url: "../../../../api/auth/logout",
                 headers: {
                             "Authorization": "Bearer {{ Auth::user()->api_token }}"
                         },
