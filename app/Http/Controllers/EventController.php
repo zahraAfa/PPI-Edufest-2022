@@ -13,6 +13,28 @@ class EventController extends Controller
         return $events;
     }
 
+    public function updateImage($id)
+    {
+        request()->validate([
+            'picture' => ['required', 'image']
+        ]);
+
+        // get partner data by id
+        $events = Event::find($id);
+        $oldPicturePath = public_path() . '/storage/img/events/' . $events->id;
+        $oldFile = $oldPicturePath . '/' . $events->picture;
+
+        // replace old picture name
+        $pictureName = request('picture')->getClientOriginalName();
+        $events->picture = $pictureName;
+        $events->save();
+
+        // add new picture to storage
+        request('picture')->move($oldPicturePath, $pictureName);
+
+        return $events;
+    }
+
     public function insert() {
         request()->validate([
             'title' => ['required', 'string'],
