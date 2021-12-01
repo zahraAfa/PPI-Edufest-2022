@@ -1,7 +1,10 @@
 <div class="sponsor-transition"></div>
 <section class="sponsors-partners-container">
     <div class="sponsors-wrapper">
-        <h1 class="h1-section-title">Our Sponsors</h1>
+        <div class="sponsor-header-att">
+            <p>OUR</p>
+            <p>SPONSORS</p>
+        </div>
         <div class="sponsor-items sponsor-slider">
             <a class="sponsor-item" data-bs-toggle="modal" data-bs-target="#sponsor-modal" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
                 <div class="sponsor-img-wrapper">
@@ -36,7 +39,11 @@
         </div>
     </div>
     <div class="partners-wrapper">
-        <h1 class="h1-section-title">Partners</h1>
+        <div class="partner-header-att">
+            <p>OUR</p>
+            <p>PARTNERS</p>
+        </div>
+        <img class="edufest-text-bg" src="../../../assets/img/bg/edufests-text.svg" alt="">
         <div class="partner-items partner-slider">
             <div class="partner-item" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
                 <div class="partner-img-wrapper">
