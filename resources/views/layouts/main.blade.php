@@ -37,7 +37,7 @@
     <!-- Favicon end -->
 </head>
 
-<body>
+<body class="main-page">
     <div class="page-loader">
         <img class="loading-image" src="assets/img/gif/page-loader-white.gif" alt="Loading..." />
     </div>

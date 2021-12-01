@@ -29,6 +29,8 @@
   --veryLightGrey: #F2F2F2;
   --softBlack: #3F3F3F;
   --customRed: #E44B55;
+  --customYellow: #FCD757;
+  --customGreen: #5DA3B2;
 
   /* Base Colour */
   --BaseLightGreen: rgb(224, 243, 240);
@@ -44,6 +46,7 @@
   --Gradient1: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,175,29,1) 75%, rgba(252,121,69,1) 100%);
   --Gradient2: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,121,69,1) 100%);
   --Gradient3: linear-gradient(217deg, rgba(164,203,252,1) 18%, rgba(103,88,157,1) 100%);
+  --Gradient4: linear-gradient(140.4deg, #FCD757 0%, #5DA3B2 100%);
 
   /* z index */
   --znav: 100;
@@ -63,6 +66,10 @@
   --borderRadiusSm: 20px;
   --borderRadiusLg: 30px;
 
+}
+/* Custom cursor */
+.main-page{
+    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sad.png"), auto;
 }
 
 /* Unable selction */
