@@ -52,7 +52,6 @@ Route::prefix('/sponsors')->group(function() {
 //Partner unprotected routes
 Route::prefix('/partners')->group(function() {
     Route::get('/read', [PartnerController::class, 'read']);
-    Route::put('/image/{id}', [PartnerController::class, 'updateImage']);
 });
 
 //Event unprotected routes
@@ -97,6 +96,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/partners')->group(function() {
         Route::post('/insert', [PartnerController::class, 'insert']);
         Route::put('/update/{id}', [PartnerController::class, 'update']);
+        Route::put('/image/{id}', [PartnerController::class, 'updateImage']);
         Route::delete('/delete/{id}', [PartnerController::class, 'delete']);
     });
 
