@@ -1,29 +1,44 @@
 .footer-container{
     width: 100vw;
     height: 300px;
-    background-color: white;
+    background: rgb(43,17,85);
+    background: linear-gradient(142deg, rgba(43,17,85,1) 7%, rgba(89,0,0,1) 100%);
 }
 
 .footer-wrapper{
-    background-color: white;
-    height: 270px;
-    padding: 20px 10%;
+    height: 100%;
+    padding: 30px 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: auto;
 }
 
 .footer-cr{
-    background-color: white;
     font-family: Roboto;
-    text-align: center;
-    color: var(--DarkGrey);
-    box-shadow: 0 -1px 0 var(--LightGrey);
+    text-align: right;
+    color: rgb(197, 197, 197);
+}
+.f-col{
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-col1{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-col1-box1{
+    border-right: 1px solid rgb(197, 197, 197);
+    padding-right: 20px;
+    margin-right: 20px;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
 
 .contact-footer{
@@ -33,16 +48,35 @@
 .footer-logos{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-nav-lists{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.f-nav-list{
+    color: white;
+    text-align: left;
+    text-decoration: none!important;
 }
 
 .footer-col2{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
 
 .footer-h1{
-    color: var(--Purple);
+    color: white;
     font-size: 15px;
+    text-align: center;
+    transform: translateY(-30%);
 }
 
 .fa{
@@ -50,10 +84,116 @@
     font-size: 30px;
 }
 
-#footer-ppid-logo, #footer-felari-logo{
+.f-soc{
+    display: inline-block;
+    text-decoration: none;
     width: 50px;
+	margin:2px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 23px;
+	color:white;
+    border-radius: 30px;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    font-weight: bold;
+    transition: .3s;
+}
+.f-soc .fa {
+    line-height:50px;
+    color: white;
+}
+.f-soc:hover{
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+.f-soc.shfb {background: #6680d8;}
+.f-soc.shwa {background: #7bda72;}
+.f-soc.shml {background: #fd6969;}
+.f-soc.shig {background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
+
+.footer-col1 .footer-nav-lists .f-nav-list:hover{
+    color: #fdf497!important;
+}
+
+#footer-ppid-logo{
+    height: 70px;
+}
+#footer-felari-logo{
+    padding-top: 5px;
+    height: 65px;
+}
+
+.footer-col2-row1{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    transform: translateY(-30%);
 }
 
 .footer-col2-row1 a:hover .fa:first-child{
-    color: var(--Orange);
+    color: var(--DarkGrey);
+}
+
+.section1-f-soc{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 767px) {
+    .footer-col2-row1{
+        transform: translateY(-10%);
+    }
+    .section1-f-soc{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-h1{
+        transform: translateY(-20%);
+    }
+}
+
+@media screen and (max-width: 605px) {
+    .footer-wrapper{
+        flex-direction: column;
+    }
+    .footer-col2-row1{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        transform: translateY(-30%);
+        flex-wrap: wrap;
+    }
+    .section1-f-soc{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 449px) {
+    .footer-logos{
+        gap: 10px;
+    }
+    .footer-cr{
+        font-size: 10px;
+    }
+    .f-soc{
+        width: 45px;
+        margin:2px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 18px;
+    }
+    .f-soc .fa {
+        line-height:45px;
+        color: white;
+    }
+    .f-nav-list{
+        font-size: 14px;
+    }
+    .footer-h1{
+        font-size: 14px;
+    }
 }

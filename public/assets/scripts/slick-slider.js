@@ -19,10 +19,10 @@ $(document).ready(function(){
         nextArrow:"<a class='custom-arrow slick-next pull-right'><span class='material-icons-round'>arrow_forward_ios</span></a>",
         responsive: [
           {
-            breakpoint: 1024,
+            breakpoint: 1314,
             settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
+              slidesToShow: 2,
+              slidesToScroll: 2,
               infinite: true,
             }
           },
@@ -35,11 +35,12 @@ $(document).ready(function(){
             }
           },
           {
-            breakpoint: 738,
+            breakpoint: 910,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
               infinite: true,
+              centerMode: true,
             }
           }
         ]
@@ -63,4 +64,4 @@ $(document).ready(function(){
         centerMode: true,
         infinite: true,
       });
-});           
+});

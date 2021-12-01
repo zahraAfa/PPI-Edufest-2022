@@ -44,44 +44,44 @@
                 <h1 class="h1-section-title h1-section-agenda">Agenda</h1>
             </div>
             <div class="agenda-section responsive-slider">
-                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <img class="card-img-top" src="assets/img/header/sky.png" alt="Card image cap" style="border-radius: 20px;">
+                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                    <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                        <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="custom-card-btn">Go somewhere</a>
+                        <h5 class="card-title event-title-agenda-sec">Event Title</h5>
+                        <p class="card-text event-date-agenda-sec">2022-01-01</p>
+                        {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
                     </div>
                 </div>
-                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <img class="card-img-top" src="assets/img/header/sky.png" alt="Card image cap" style="border-radius: 20px;">
+                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                    <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                        <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="custom-card-btn">Go somewhere</a>
+                        <h5 class="card-title event-title-agenda-sec">Event Title</h5>
+                        <p class="card-text event-date-agenda-sec">2022-01-01</p>
+                        {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
                     </div>
                 </div>
-                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <img class="card-img-top" src="assets/img/header/sky.png" alt="Card image cap" style="border-radius: 20px;">
+                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                    <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                        <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="custom-card-btn">Go somewhere</a>
+                        <h5 class="card-title event-title-agenda-sec">Event Title</h5>
+                        <p class="card-text event-date-agenda-sec">2022-01-01</p>
+                        {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
                     </div>
                 </div>
-                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <img class="card-img-top" src="assets/img/header/sky.png" alt="Card image cap" style="border-radius: 20px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="custom-card-btn">Go somewhere</a>
+                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                    <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                        <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
                     </div>
-                </div>
-                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px;" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <img class="card-img-top" src="assets/img/header/sky.png" alt="Card image cap" style="border-radius: 20px;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="custom-card-btn">Go somewhere</a>
+                        <h5 class="card-title event-title-agenda-sec">Event Title</h5>
+                        <p class="card-text event-date-agenda-sec">2022-01-01</p>
+                        {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
                     </div>
                 </div>
             </div>
