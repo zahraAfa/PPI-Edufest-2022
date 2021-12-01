@@ -65,7 +65,7 @@ Route::prefix('/events')->group(function() {
 Route::prefix('/speakers')->group(function() {
     Route::get('/read', [SpeakerController::class, 'read']);
     Route::get('/read/{id}', [SpeakerController::class, 'readDetail']);
-    Route::put('/image/{id}', [SpeakerController::class, 'updateImage']);
+    
 
 });
 
@@ -115,6 +115,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/speakers')->group(function() {
         Route::post('/insert', [SpeakerController::class, 'insert']);
         Route::put('/update/{id}', [SpeakerController::class, 'update']);
+        Route::put('/image/{id}', [SpeakerController::class, 'updateImage']);
         Route::delete('/delete/{id}', [SpeakerController::class, 'delete']);
     });
 });
