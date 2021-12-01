@@ -40,11 +40,9 @@
 <section>
     <div class="agenda-container">
         <div class="agenda-wrapper">
-            <div class="h1-title-wrapper">
-                <h1 class="h1-section-title h1-section-agenda">Agenda</h1>
-            </div>
+            <h1 class="agenda-sec-h1 effect-pop-up">AGENDA</h1>
             <div class="agenda-section responsive-slider">
-                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                <a href="../../acara" class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
                     <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
                         <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
                     </div>
@@ -53,8 +51,8 @@
                         <p class="card-text event-date-agenda-sec">2022-01-01</p>
                         {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
                     </div>
-                </div>
-                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                </a>
+                <a href="../../acara" class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
                     <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
                         <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
                     </div>
@@ -63,8 +61,8 @@
                         <p class="card-text event-date-agenda-sec">2022-01-01</p>
                         {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
                     </div>
-                </div>
-                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                </a>
+                <a href="../../acara" class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
                     <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
                         <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
                     </div>
@@ -73,8 +71,8 @@
                         <p class="card-text event-date-agenda-sec">2022-01-01</p>
                         {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
                     </div>
-                </div>
-                <div class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+                </a>
+                <a href="../../acara" class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
                     <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
                         <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
                     </div>
@@ -83,7 +81,7 @@
                         <p class="card-text event-date-agenda-sec">2022-01-01</p>
                         {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

@@ -56,7 +56,7 @@
   --marginSm: 10px;
 
   /* Box Shadow */
-  --Shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --Shadow: rgba(70, 70, 70, 0.2) 0px 2px 8px 0px;
 
   /* Border */
   --borderWidth: 5px;
@@ -210,11 +210,18 @@ h1 {
     transform: translateY(-10px);
 }
 
-.effect-pop-slide{
+.effect-pop-slide-l{
     transition: transform 250ms;
   }
-.effect-pop-slide:hover{
+.effect-pop-slide-l:hover{
     transform: translateX(-10px);
+}
+
+.effect-pop-slide-r{
+    transition: transform 250ms;
+  }
+.effect-pop-slide-r:hover{
+    transform: translateX(10px);
 }
 
 @media screen and (max-width: 357px){
