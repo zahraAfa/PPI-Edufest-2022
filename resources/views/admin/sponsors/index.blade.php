@@ -121,7 +121,7 @@
 
                 var sponsorItems ='';
                 $.each(result, function(key, sponsor){
-                    sponsorItems += '<tr>'+'<td><img class="rounded-circle me-2" width="30" height="30" src="../../storage/img/sponsors/'+sponsor["name"]+'/'+sponsor["picture"]+'"></td>'+
+                    sponsorItems += '<tr>'+'<td><img class="rounded-circle me-2" width="150" height="150" src="../../storage/img/sponsors/'+sponsor["id"]+'/'+sponsor["picture"]+'"></td>'+
                                         '<td id="sponsor__name-crud">'+sponsor["name"]+'</td>'+
                                         '<td id="sponsor__detail-crud">'+sponsor["detail"]+'</td>'+
                                         '<td>'+

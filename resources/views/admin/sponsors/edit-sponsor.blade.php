@@ -146,7 +146,7 @@
             success: function(data) {
                 $.each(data, function(key, sponsor) {
                     if (sponsor["id"] === {{ request()->route('id') }}) {
-                        var img_link = '/storage/img/sponsors/' + sponsor["name"] + '/' + sponsor[
+                        var img_link = '/storage/img/sponsors/' + sponsor["id"] + '/' + sponsor[
                             "picture"];
 
                         $("#before__img").after(
@@ -167,18 +167,19 @@
 
             e.preventDefault();
             var form = $("#sponsor__edit-form");
-            var formData = new FormData();
-            var files = $('#form__img')[0].files[0];
-            formData.append('picture', files);
-            formData.append('name', $('#form__sponsor-name').val());
-            formData.append('detail', $('#form__sponsor-detail').val());
-            var urlpost = '../../../api/sponsors/insert';
+            const data = {
+                "name" : $('#form__sponsor-name').val(),
+                "detail" : $('#form__sponsor-detail').val()
+            }
+            // formData.append('name', $('#form__sponsor-name').val());
+            // formData.append('detail', $('#form__sponsor-detail').val());
+            var urlpost = '../../../api/sponsors/update/{{ request()->route('id') }}';
             $.ajax({
-                type: "POST",
+                type: "PUT",
                 url: urlpost,
-                data: formData,
+                data: JSON.stringify(data),
                 processData: false,
-                contentType: false,
+                contentType: "application/json; charset=utf-8",
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
