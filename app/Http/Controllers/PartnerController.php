@@ -28,6 +28,7 @@ class PartnerController extends Controller
         $oldFile = $oldPicturePath . '/' . $partner->picture;
 
         // replace old picture name
+        array_map('unlink', glob("$oldPicturePath/*.*"));
         $pictureName = request('picture')->getClientOriginalName();
         $partner->picture = $pictureName;
         $partner->save();
@@ -65,56 +66,21 @@ class PartnerController extends Controller
         return $partner;
     }
 
-    public function update($id, Request $request)
-    {
+
+    public function update($id, Request $request) {
+        request()->validate([
+            'name' => [
+                'required',
+                'string',
+                Rule::unique('partners')->ignore($id)
+            ]
+        ]);
 
         $partner = Partner::where('id', $id)->first();
-        // $oldPicturePath = public_path() . '/storage/img/partners/' . $partner->name;
-        // $oldFile = $oldPicturePath . '/' . $partner->picture;
 
-
-        //     request()->validate([
-        //         'name' => [
-        //             'required',
-        //             'string',
-        //             Rule::unique('partners')->ignore($id)
-        //         ],
-        //     ]);
-        //     $currentpic = $partner->picture;
-        //     $partnerData = [
-        //         'name' => $request->name,
-        //         'picture' => $currentpic
-        //     ];
-        //     $newPicturePath = public_path() . '/storage/img/partners/' . $request->name;
-        //     // $partner->update($partnerData);
-        //     // $newFile = $oldPicturePath . '/' . $partner->picture;
-        //     // Storage::put($oldFile, $newFile);
-        //     $contents = Storage::get($oldFile);
-        //     // Storage::put($newPicturePath, $contents);
-        //     request('picture')->move($newPicturePath, $contents);
-
-            request()->validate([
-                'name' => [
-                    'required',
-                    'string',
-                    Rule::unique('partners')->ignore($id)
-                ],
-                'picture' => ['required', 'image']
-            ]);
-
-            //Delete directory and picture
-            // array_map('unlink', glob("$oldPicturePath/*.*"));
-            // rmdir($oldPicturePath);
-
-            $pictureName = $request->file('picture')->getClientOriginalName();
-
-            $partnerData = [
-                'name' => $request->name,
-                'picture' => $pictureName
-            ];
-
-            $newPicturePath = public_path() . '/storage/img/partners/' . $partner->name;
-            request('picture')->move($newPicturePath, $pictureName);
+        $partnerData = [
+            'name' => $request->name
+        ];
 
         $partner->update($partnerData);
 
@@ -128,47 +94,6 @@ class PartnerController extends Controller
 
         return $response;
     }
-
-
-    // public function update($id, Request $request) {
-    //     request()->validate([
-    //         'name' => [
-    //             'required',
-    //             'string',
-    //             Rule::unique('partners')->ignore($id)
-    //         ],
-    //         'picture' => ['required', 'image']
-    //     ]);
-
-    //     $partner = Partner::where('id', $id)->first();
-
-    //     //Delete directory and picture
-    //     $oldPicturePath = public_path() . '/storage/img/partners/' . $partner->name;
-    //     array_map('unlink', glob("$oldPicturePath/*.*"));
-    //     rmdir($oldPicturePath);
-
-    //     $pictureName = $request->file('picture')->getClientOriginalName();
-
-    //     $partnerData = [
-    //         'name' => $request->name,
-    //         'picture' => $pictureName
-    //     ];
-
-    //     $partner->update($partnerData);
-    //     $newPicturePath = public_path() . '/storage/img/partners/' . $partner->name;
-
-    //     request('picture')->move($newPicturePath, $pictureName);
-
-    //     $response = [
-    //         "partner" => [
-    //             'id' => $partner->id,
-    //             'name' => $partner->name,
-    //             'picture' => $partner->picture
-    //         ]
-    //     ];
-
-    //     return $response;
-    // }
 
     public function delete($id)
     {
