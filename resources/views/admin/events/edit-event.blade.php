@@ -213,63 +213,33 @@
         $("#event__edit-form").submit(function(e) {
 
             e.preventDefault();
-            var form = $("#event__edit-form");
-            var formData = new FormData();
-            var files = $('#form__img')[0].files[0];
-            formData.append('picture', files);
-            formData.append('title', $('#form__event-title').val());
-            formData.append('region', $('#form__event-region').val());
-            formData.append('date', $('#form__event-date').val());
-            formData.append('form_link', $('#form__event-link').val());
-            formData.append('detail', $('#form__event-detail').val());
 
-            if (files === undefined) {
-                $.ajax({
-                    type: 'GET',
-                    url: '../../../api/events/read',
-                    success: function(data) {
-                        $.each(data, function(key, event) {
-                            if (event["id"] === {{ request()->route('id') }}) {
-                                var img_link = '/storage/img/events/' + event["id"] + '/' +
-                                    event["picture"];
-                                jQuery.ajax({
-                                    url: '../../..' + img_link,
-                                    cache: false,
-                                    xhr: function() {
-                                        var xhr = new XMLHttpRequest();
-                                        xhr.responseType = 'blob'
-                                        return xhr;
-                                    },
-                                    success: function(data) {
-                                        console.log(data)
-                                        // document.getElementById('form__img').files[0] = data;
-                                        // var files = data[0].files[0];
+            // formData.append('title', $('#form__event-title').val());
+            // formData.append('region', $('#form__event-region').val());
+            // formData.append('date', $('#form__event-date').val());
+            // formData.append('form_link', $('#form__event-link').val());
+            // formData.append('detail', $('#form__event-detail').val());
 
-                                        var fd = new FormData();
-                                        var files = data[0].files;
-
-                                        // var imgHandler = URL.createObjectURL(data)
-                                        formData.append('picture', files);
-                                    },
-                                    error: function() {
-                                        console.log("Fail to get img");
-                                    }
-                                });
-                            }
-                        });
-                    },
-                });
+            const data = {
+                "title" : $('#form__event-title').val(),
+                "region" : $('#form__event-region').val(),
+                "date" : $('#form__event-date').val(),
+                "form_link" : $('#form__event-link').val(),
+                "detail" : $('#form__event-detail').val(),
             }
+
+            var urlpost = '../../../api/events/update/{{ request()->route('id') }}';
             $.ajax({
-                type: "POST",
-                url: '../../../api/events/update/{{ request()->route('id') }}?_method=PUT',
-                data: formData,
+                type: "PUT",
+                url: urlpost,
+                data: JSON.stringify(data),
                 processData: false,
-                contentType: false,
+                contentType: "application/json; charset=utf-8",
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
                 success: function(data) {
+                    console.log('after ajax')
                     window.location.href = "{{ route('admin-events-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -278,6 +248,7 @@
                     alert(jsonResponse["message"]);
                 }
             });
+
         });
     </script>
 </body>

@@ -145,7 +145,7 @@
                         region = "Asia dan Oseania";
                         break;
                     }
-                    eventItems += '<tr>'+'<td><img class="rounded-circle me-2" width="30" height="30" src="../../storage/img/events/'+event["id"]+'/'+event["picture"]+'">'+event["title"]+'</td>'+
+                    eventItems += '<tr>'+'<td><img class="rounded-circle me-2" width="150" height="150" src="../../storage/img/events/'+event["id"]+'/'+event["picture"]+'">'+event["title"]+'</td>'+
                                         // '<td id="num-participant-crud"></td>'+
                                         '<td id="event__region-crud">'+region+'</td>'+
                                         '<td id="event__date-crud">'+event["date"]+'</td>'+
