@@ -47,13 +47,11 @@ Route::prefix('/faqs')->group(function() {
 //Sponsor unprotected routes
 Route::prefix('/sponsors')->group(function() {
     Route::get('/read', [SponsorController::class, 'read']);
-    Route::put('/image/{id}', [SponsorController::class, 'updateImage']);
 });
 
 //Partner unprotected routes
 Route::prefix('/partners')->group(function() {
     Route::get('/read', [PartnerController::class, 'read']);
-    Route::get('/image/{id}', [PartnerController::class, 'updateImage']);
 });
 
 //Event unprotected routes
@@ -65,8 +63,6 @@ Route::prefix('/events')->group(function() {
 Route::prefix('/speakers')->group(function() {
     Route::get('/read', [SpeakerController::class, 'read']);
     Route::get('/read/{id}', [SpeakerController::class, 'readDetail']);
-    
-
 });
 
 
@@ -94,6 +90,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/sponsors')->group(function() {
         Route::post('/insert', [SponsorController::class, 'insert']);
         Route::put('/update/{id}', [SponsorController::class, 'update']);
+        Route::put('/image/{id}', [SponsorController::class, 'updateImage']);
         Route::delete('/delete/{id}', [SponsorController::class, 'delete']);
     });
 
@@ -115,7 +112,6 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/speakers')->group(function() {
         Route::post('/insert', [SpeakerController::class, 'insert']);
         Route::put('/update/{id}', [SpeakerController::class, 'update']);
-        Route::put('/image/{id}', [SpeakerController::class, 'updateImage']);
         Route::delete('/delete/{id}', [SpeakerController::class, 'delete']);
     });
 });

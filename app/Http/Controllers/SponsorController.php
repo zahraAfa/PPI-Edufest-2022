@@ -19,9 +19,9 @@ class SponsorController extends Controller
             'picture' => ['required', 'image']
         ]);
 
-        // get partner data by id
+        // get sponsor data by id
         $sponsor = Sponsor::find($id);
-        $oldPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->name;
+        $oldPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->id;
         $oldFile = $oldPicturePath . '/' . $sponsor->picture;
 
         // replace old picture name
@@ -55,7 +55,7 @@ class SponsorController extends Controller
         ];
         $sponsor = Sponsor::create($sponsorData);
 
-        $newPath = public_path() . '/storage/img/sponsors/' . $sponsor->name;
+        $newPath = public_path() . '/storage/img/sponsors/' . $sponsor->id;
 
         request('picture')->move($newPath, $pictureName);
 
@@ -69,36 +69,23 @@ class SponsorController extends Controller
                 'string',
                 Rule::unique('sponsors')->ignore($id)
             ],
-            'detail' => ['required', 'string'],
-            'picture' => ['required', 'image']
+            'detail' => ['required', 'string']
         ]);
 
         $sponsor = Sponsor::where('id', $id)->first();
-
-        //Delete directory and picture
-        $oldPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->name;
-        array_map('unlink', glob("$oldPicturePath/*.*"));
-        rmdir($oldPicturePath);
-        
-        $pictureName = $request->file('picture')->getClientOriginalName();
         
         $sponsorData = [
             'name' => $request->name,
-            'detail' => $request->detail,
-            'picture' => $pictureName
+            'detail' => $request->detail
         ];
         
         $sponsor->update($sponsorData);
-        $newPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->name;
-
-        request('picture')->move($newPicturePath, $pictureName);
 
         $response = [
             "sponsor" => [
                 'id' => $sponsor->id,
                 'name' => $sponsor->name,
-                'detail' => $sponsor->detail,
-                'picture' => $sponsor->picture
+                'detail' => $sponsor->detail
             ]
         ];
 
