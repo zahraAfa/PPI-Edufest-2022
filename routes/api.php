@@ -104,7 +104,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/events')->group(function() {
         Route::post('/insert', [EventController::class, 'insert']);
         Route::put('/update/{id}', [EventController::class, 'update']);
-        Route::post('/image/{id}', [EventController::class, 'updateImage']);
+        Route::put('/image/{id}', [EventController::class, 'updateImage']);
         Route::delete('/delete/{id}', [EventController::class, 'delete']);
     });
 
