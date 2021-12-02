@@ -170,7 +170,6 @@
                 },
                 success: function(data) {
                     location.reload()
-                    // window.location.href = "{{ route('admin-partners-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data = XMLHttpRequest.responseText;
@@ -196,11 +195,6 @@
                         $('#form__event-date').val(event["date"]);
                         $('#form__event-link').val(event["form_link"]);
                         $('#form__event-detail').val(event["detail"]);
-                        // $('#form__img').val(event["picture"]);
-                        // var file = new Blob([data], {type: 'application/pdf'});
-                        // new File("/path/to/file");
-                        // let file = new File([data], img_link, metadata);
-                        // document.getElementById('form__img').files[0] = file;
                     }
                 });
             },
@@ -211,15 +205,7 @@
             }
         });
         $("#event__edit-form").submit(function(e) {
-
             e.preventDefault();
-
-            // formData.append('title', $('#form__event-title').val());
-            // formData.append('region', $('#form__event-region').val());
-            // formData.append('date', $('#form__event-date').val());
-            // formData.append('form_link', $('#form__event-link').val());
-            // formData.append('detail', $('#form__event-detail').val());
-
             const data = {
                 "title" : $('#form__event-title').val(),
                 "region" : $('#form__event-region').val(),
@@ -227,7 +213,6 @@
                 "form_link" : $('#form__event-link').val(),
                 "detail" : $('#form__event-detail').val(),
             }
-
             var urlpost = '../../../api/events/update/{{ request()->route('id') }}';
             $.ajax({
                 type: "PUT",
@@ -248,7 +233,6 @@
                     alert(jsonResponse["message"]);
                 }
             });
-
         });
     </script>
 </body>

@@ -146,7 +146,6 @@
                         break;
                     }
                     eventItems += '<tr>'+'<td><img class="rounded-circle me-2" width="150" height="150" src="../../storage/img/events/'+event["id"]+'/'+event["picture"]+'">'+event["title"]+'</td>'+
-                                        // '<td id="num-participant-crud"></td>'+
                                         '<td id="event__region-crud">'+region+'</td>'+
                                         '<td id="event__date-crud">'+event["date"]+'</td>'+
                                         '<td id="event__detail-crud">'+event["detail"]+'</td>'+
