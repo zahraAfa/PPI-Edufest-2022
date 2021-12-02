@@ -22,9 +22,9 @@ class SponsorController extends Controller
         // get sponsor data by id
         $sponsor = Sponsor::find($id);
         $oldPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->id;
-        $oldFile = $oldPicturePath . '/' . $sponsor->picture;
-
+        
         // replace old picture name
+        array_map('unlink', glob("$oldPicturePath/*.*"));
         $pictureName = request('picture')->getClientOriginalName();
         $sponsor->picture = $pictureName;
         $sponsor->save();
@@ -97,7 +97,7 @@ class SponsorController extends Controller
         $sponsorObject = $sponsor->first();
 
         //Delete directory and picture
-        $picturePath = public_path() . '/storage/img/sponsors/' . $sponsorObject->name;
+        $picturePath = public_path() . '/storage/img/sponsors/' . $sponsorObject->id;
         array_map('unlink', glob("$picturePath/*.*"));
         rmdir($picturePath);
 
