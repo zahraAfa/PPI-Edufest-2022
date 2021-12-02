@@ -27,9 +27,9 @@ class SpeakerController extends Controller
         // get partner data by id
         $events = Speaker::find($id);
         $oldPicturePath = public_path() . '/storage/img/speakers/' . $events->id;
-        $oldFile = $oldPicturePath . '/' . $events->picture;
 
         // replace old picture name
+        array_map('unlink', glob("$oldPicturePath/*.*"));
         $pictureName = request('picture')->getClientOriginalName();
         $events->picture = $pictureName;
         $events->save();
@@ -90,18 +90,10 @@ class SpeakerController extends Controller
             'major' => ['required', 'string'],
             'school' => ['required', 'string'],
             'detail' => ['required', 'string'],
-            'picture' => ['required', 'image'],
             'event_id' => ['required', 'integer']
         ]);
 
         $speaker = Speaker::where('id', $id)->first();
-
-        //Delete directory and picture
-        $oldPicturePath = public_path() . '/storage/img/speakers/' . $speaker->id;
-        array_map('unlink', glob("$oldPicturePath/*.*"));
-        rmdir($oldPicturePath);
-
-        $pictureName = request('picture')->getClientOriginalName();
     
         $speakerData = [
             'name' => request('name'),
@@ -110,15 +102,9 @@ class SpeakerController extends Controller
             'major' => request('major'),
             'school' => request('school'),
             'detail' => request('detail'),
-            'event_id' => request('event_id'),
-            'picture' => $pictureName
+            'event_id' => request('event_id')
         ];
 
-        $speaker->update($speakerData);
-        $newPicturePath = public_path() . '/storage/img/speakers/' . $speaker->id;
-        
-        request('picture')->move($newPicturePath, $pictureName);
-        
         $response = [
             "speaker" => [
                 'name' => $speaker->name,
