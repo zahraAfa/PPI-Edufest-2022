@@ -25,19 +25,19 @@ class SpeakerController extends Controller
         ]);
 
         // get partner data by id
-        $events = Speaker::find($id);
-        $oldPicturePath = public_path() . '/storage/img/speakers/' . $events->id;
+        $speaker = Speaker::find($id);
+        $oldPicturePath = public_path() . '/storage/img/speakers/' . $speaker->id;
 
         // replace old picture name
         array_map('unlink', glob("$oldPicturePath/*.*"));
         $pictureName = request('picture')->getClientOriginalName();
-        $events->picture = $pictureName;
-        $events->save();
+        $speaker->picture = $pictureName;
+        $speaker->save();
 
         // add new picture to storage
         request('picture')->move($oldPicturePath, $pictureName);
 
-        return $events;
+        return $speaker;
     }
 
     public function insert() {
@@ -105,6 +105,8 @@ class SpeakerController extends Controller
             'event_id' => request('event_id')
         ];
 
+        $speaker->update($speakerData);
+        
         $response = [
             "speaker" => [
                 'name' => $speaker->name,
