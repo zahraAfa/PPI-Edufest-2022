@@ -16,10 +16,12 @@
 </header>
 <section>
     <div class="carousel-container">
-        <div class="carousel-section carousel-slider" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+        <img src="assets/img/header/header-frame-front.png" alt="" class="carousel-container-frame">
+        <div class="carousel-section carousel-slider" data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="1000" style="overflow: hidden; border-radius: 0px 0px 20px 20px!important;">
             <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
             <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
         </div>
+        <img src="assets/img/header/header-frame-back.png" alt="" class="carousel-container-frame2">
     </div>
 </section>
 <section>
