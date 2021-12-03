@@ -2,7 +2,7 @@
 .agenda-container{
     width: 100vw;
     /* height: 70vh; */
-    background: var(--veryBrightGrey);
+    background: var(--brownOrange);
     padding-bottom: 6%;
     border: var(--borderWidth) solid var(--softBlack)!important;
     box-sizing: border-box;

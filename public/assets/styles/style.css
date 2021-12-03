@@ -31,6 +31,11 @@
   --customRed: #E44B55;
   --customYellow: #FCD757;
   --customGreen: #5DA3B2;
+  --brownOrange: #DB8957;
+  --pinkOrange: #FF7362;
+  --darkPink: #FF807E;
+  --softPink: #FF9F9C;
+  --lightPink: #FFBCDB;
 
   /* Base Colour */
   --BaseLightGreen: rgb(224, 243, 240);
@@ -242,3 +247,48 @@ h1 {
         border: 2px solid var(--BaseLightGreen);
     }
 }
+
+/* Btn start */
+
+.button-56 {
+  align-items: center;
+  /* background-color: #fee6e3; */
+  border: 3px solid var(--softBlack);
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  box-shadow: 8px 8px 0 var(--softBlack);
+  transition: .2s ease-out;
+}
+
+.button-56:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.button-56:hover {
+  outline: 0;
+  box-shadow: 0px 0px 0 var(--softBlack);
+}
+
+@media (min-width: 768px) {
+  .button-56 {
+    padding: 0 40px;
+  }
+}
+  /* btn end */

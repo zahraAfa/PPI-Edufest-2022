@@ -11,7 +11,6 @@
     flex-wrap: wrap;
     width: 100vw;
     justify-content: center;
-    /* background: var(--Gradient4); */
     border-top: var(--borderWidth) solid var(--softBlack);
     border-left: var(--borderWidth) solid var(--softBlack);
     border-right: var(--borderWidth) solid var(--softBlack);
@@ -109,6 +108,10 @@
     margin: auto;
 }
 
+.desc-cont .button-56 {
+    background-color: var(--veryLightGrey);
+}
+
 @media screen and (max-width: 1063px) {
     .desc-cont p{
         font-size: 14px;
@@ -138,6 +141,9 @@
     }
     .desc-cont h1{
         text-align: center;
+    }
+    .desc-cont .button-56 {
+        margin: auto;
     }
 }
 
