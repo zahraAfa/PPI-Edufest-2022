@@ -14,15 +14,23 @@ $(document).ready(function(){
         infinite: true,
         speed: 400,
         slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToScroll: 1,
         prevArrow:"<a class='custom-arrow slick-prev pull-left'><span class='material-icons-round'>arrow_back_ios</span></i></a>",
         nextArrow:"<a class='custom-arrow slick-next pull-right'><span class='material-icons-round'>arrow_forward_ios</span></a>",
         responsive: [
           {
             breakpoint: 1314,
             settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+            }
+          },
+          {
+            breakpoint: 1010,
+            settings: {
               slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
               infinite: true,
             }
           },
@@ -42,7 +50,7 @@ $(document).ready(function(){
               infinite: true,
               centerMode: true,
             }
-          }
+          },
         ]
       });
 
