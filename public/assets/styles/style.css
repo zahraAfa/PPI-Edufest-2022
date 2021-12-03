@@ -74,7 +74,19 @@
 }
 /* Custom cursor */
 .main-page{
-    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/sad.png"), auto;
+    cursor: url("../icons/cursors/cursor.svg") 5 5, auto;
+}
+
+a{
+    cursor: url("../icons/cursors/cursor-pointer.svg") 5 5, pointer!important;
+}
+
+button{
+    cursor: url("../icons/cursors/cursor-pointer.svg") 5 5, pointer!important;
+}
+
+.youtube-cont{
+    cursor: url("../icons/cursors/cursor-play.svg") 5 5, pointer!important;
 }
 
 /* Unable selction */
