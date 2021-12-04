@@ -123,7 +123,7 @@
             success: function(data) {
                 $.each(data, function(key, partner) {
                     if (partner["id"] === {{ request()->route('id') }}) {
-                        var img_link = '/storage/img/partners/' + partner["name"] + '/' + partner[
+                        var img_link = '/storage/img/partners/' + partner["id"] + '/' + partner[
                             "picture"];
 
                         $("#before__img").after(
@@ -159,7 +159,7 @@
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
                 success: function(data) {
-                    // location.reload();
+                    location.reload();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data = XMLHttpRequest.responseText;
