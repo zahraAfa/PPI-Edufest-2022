@@ -130,11 +130,6 @@
                             '<img id="partner__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="' +
                             img_link + '"">');
                         $('#form__partner-name').val(partner["name"]);
-                        // $('#form__img').val(partner["picture"]);
-                        // var file = new Blob([data], {type: 'application/pdf'});
-                        // new File("/path/to/file");
-                        // let file = new File([data], img_link, metadata);
-                        // document.getElementById('form__img').files[0] = file;
                     }
                 });
             },
@@ -164,8 +159,7 @@
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
                 success: function(data) {
-                    location.reload();
-                    // window.location.href = "{{ route('admin-partners-index') }}";
+                    // location.reload();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data = XMLHttpRequest.responseText;
@@ -178,58 +172,21 @@
 
         $("#form__btn2").click(function(e) {
             e.preventDefault();
-            var formData = new FormData();
-            var files = $('#form__img')[0].files[0];
-            formData.append('picture', files);
-            formData.append('name', $('#form__partner-name').val());
-            // if(files === undefined){
-            //     $.ajax({
-            //         type: 'GET',
-            //         url: '../../../api/partners/read',
-            //         success: function(data) {
-            //             $.each(data, function(key, partner){
-            //                 if(partner["id"]==={{ request()->route('id') }}){
-            //                     var img_link = '/storage/img/partners/'+partner["id"]+'/'+partner["picture"];
-            //                     jQuery.ajax({
-            //                                 url:'../../..'+img_link,
-            //                                 cache:false,
-            //                                 xhr:function(){
-            //                                     var xhr = new XMLHttpRequest();
-            //                                     xhr.responseType= 'blob'
-            //                                     return xhr;
-            //                                 },
-            //                                 success: function(data){
-            //                                     console.log(data)
-            //                                     // document.getElementById('form__img').files[0] = data;
-            //                                     // var files = data[0].files[0];
-
-            //                                     var fd = new FormData();
-            //                                     var files = data[0].files;
-
-            //                                     // var imgHandler = URL.createObjectURL(data)
-            //                                     formData.append('picture', files);
-            //                                 },
-            //                                 error:function(){
-            //                                     console.log("Fail to get img");
-            //                                 }
-            //                     });
-            //                 }
-            //             });
-            //         },
-            //     });
-            // }
+            const data = {
+                "name" : $('#form__partner-name').val(),
+            }
             $.ajax({
-                type: "POST",
+                type: "PUT",
                 url: '../../../api/partners/update/{{ request()->route('id') }}?_method=PUT',
-                data: formData,
+                data: JSON.stringify(data),
                 processData: false,
-                contentType: false,
+                contentType: "application/json; charset=utf-8",
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
                 success: function(data) {
                     alert("check")
-                    // window.location.href = "{{ route('admin-partners-index') }}";
+                    window.location.href = "{{ route('admin-partners-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data = XMLHttpRequest.responseText;
