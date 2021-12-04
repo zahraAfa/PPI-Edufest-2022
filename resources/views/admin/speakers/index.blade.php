@@ -137,7 +137,7 @@
                                         var speakerItems ='';
                                         // console.log(details.email)
                                         // console.log(details["email"])
-                                        speakerItems += '<tr>'+'<td id="speaker__name-crud"><img class="rounded-circle me-2" width="30" height="30" src="../../storage/img/speakers/'+speaker["id"]+'/'+speaker["picture"]+'">'+speaker["name"]+'</td>'+
+                                        speakerItems += '<tr>'+'<td id="speaker__name-crud"><img class="rounded-circle me-2" width="150" height="150" src="../../storage/img/speakers/'+speaker["id"]+'/'+speaker["picture"]+'">'+speaker["name"]+'</td>'+
                                         '<td id="speaker__ppi-crud">'+speaker["ppi"]+'</td>'+
                                         '<td id="speaker__major-crud">'+speaker["major"]+'</td>'+
                                         '<td id="speaker__school-crud">'+speaker["school"]+'</td>';

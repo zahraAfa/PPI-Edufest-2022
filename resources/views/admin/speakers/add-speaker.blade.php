@@ -91,26 +91,6 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="mb-3"><label class="form-label"
-                                                                for="form__speaker-degree"><strong>Degree</strong><br></label>
-                                                            <select class="form-select" id="form__speaker-degree"
-                                                                name="degree">
-                                                                <optgroup label="All Degree">
-                                                                    <option value="Associate of ">Associate Degree
-                                                                    </option>
-                                                                    <option value="Bachelor of ">Bachelor's Degree
-                                                                    </option>
-                                                                    <option value="Master of ">Master's Degree</option>
-                                                                    <option value="Doctor of ">Doctoral Degree</option>
-                                                                    <option class="d-none" value="">Professional
-                                                                        degrees</option>
-                                                                    <option class="d-none" value="Doctor of ">
-                                                                        Post-Doctoral degrees</option>
-                                                                </optgroup>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label"
                                                                 for="form__speaker-major"><strong>Major</strong><br></label><input
                                                                 class="form-control" type="text"
                                                                 id="form__speaker-major" placeholder="Major"
@@ -175,7 +155,6 @@
         $("#speaker__add-form").submit(function(e) {
 
             e.preventDefault();
-            var majorName = $('#form__speaker-degree').val() + $('#form__speaker-major').val();
             var formData = new FormData();
             var files = $('#form__img')[0].files[0];
             formData.append('picture', files);
@@ -183,7 +162,7 @@
             formData.append('email', $('#form__speaker-email').val());
             formData.append('ppi', $('#form__speaker-ppi').val());
             formData.append('school', $('#form__speaker-school').val());
-            formData.append('major', majorName);
+            formData.append('major', $('#form__speaker-major').val());
             formData.append('event_id', $('#form__speaker-event').val());
             formData.append('detail', $('#form__speaker-detail').val());
             var urlpost = '../../../api/speakers/insert';

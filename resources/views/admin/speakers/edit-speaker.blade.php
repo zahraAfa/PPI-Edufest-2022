@@ -114,26 +114,6 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="mb-3"><label class="form-label"
-                                                                for="form__speaker-degree"><strong>Degree</strong><br></label>
-                                                            <select class="form-select" id="form__speaker-degree"
-                                                                name="degree">
-                                                                <optgroup label="All Degree">
-                                                                    <option value="Associate of ">Associate Degree
-                                                                    </option>
-                                                                    <option value="Bachelor of ">Bachelor's Degree
-                                                                    </option>
-                                                                    <option value="Master of ">Master's Degree</option>
-                                                                    <option value="Doctor of ">Doctoral Degree</option>
-                                                                    <option class="d-none" value="">Professional
-                                                                        degrees</option>
-                                                                    <option class="d-none" value="Doctor of ">
-                                                                        Post-Doctoral degrees</option>
-                                                                </optgroup>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="mb-3"><label class="form-label"
                                                                 for="form__speaker-major"><strong>Major</strong><br></label><input
                                                                 class="form-control" type="text"
                                                                 id="form__speaker-major" placeholder="Major"
@@ -156,8 +136,8 @@
                                                         id="form__speaker-detail" placeholder="Speaker Detail"
                                                         name="detail" rows="3"></textarea>
                                                 </div>
-                                                <div class="mb-3"><button class="btn btn-primary btn-sm"
-                                                        type="submit">Save Changes</button></div>
+                                                <div class="mb-3"><button id="form__btn2"
+                                                        class="btn btn-primary btn-sm">Save Changes</button></div>
                                             </div>
                                         </div>
                                     </div>
@@ -236,15 +216,10 @@
                         $('#form__speaker-ppi').val(speaker["ppi"]);
                         $('#form__speaker-email').val(speaker["email"]);
                         $('#form__speaker-school').val(speaker["school"]);
-                        $('#form__speaker-degree').val(speaker["degree"]);
                         $('#form__speaker-major').val(speaker["major"]);
                         $('#form__speaker-detail').val(speaker["detail"]);
                         $('#form__speaker-event').val(speaker["event_id"]);
                         $('#form__img').val(speaker["picture"]);
-                        // var file = new Blob([data], {type: 'application/pdf'});
-                        // new File("/path/to/file");
-                        // let file = new File([data], img_link, metadata);
-                        // document.getElementById('form__img').files[0] = file;
                     }
                 });
             },
@@ -253,6 +228,37 @@
                 var jsonResponse = JSON.parse(data);
                 alert(jsonResponse["message"]), alert(textStatus);
             }
+        });
+        $("#form__btn2").click(function(e) {
+            e.preventDefault();
+            const data = {
+                "name": $('#form__speaker-name').val(),
+                "ppi": $('#form__speaker-ppi').val(),
+                "email": $('#form__speaker-email').val(),
+                "school": $('#form__speaker-school').val(),
+                "major": $('#form__speaker-major').val(),
+                "detail": $('#form__speaker-detail').val(),
+                "event_id": $('#form__speaker-event').val(),
+            }
+            $.ajax({
+                type: "PUT",
+                url: '../../../api/speakers/update/{{ request()->route('id') }}?_method=PUT',
+                data: JSON.stringify(data),
+                processData: false,
+                contentType: "application/json; charset=utf-8",
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
+                },
+                success: function(data) {
+                    alert("check")
+                    window.location.href = "{{ route('admin-partners-index') }}";
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    var data = XMLHttpRequest.responseText;
+                    var jsonResponse = JSON.parse(data);
+                    alert(jsonResponse["message"]);
+                }
+            });
         });
     </script>
 </body>
