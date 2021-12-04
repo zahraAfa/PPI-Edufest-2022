@@ -87,10 +87,10 @@
     font-weight: 600;
 }
 
-.fa{
+/* .fa{
     color: var(--DarkGrey);
     font-size: 26px;
-}
+} */
 
 .f-soc{
     display: inline-block;
@@ -100,7 +100,6 @@
     height: 50px;
     line-height: 55px;
     font-size: 23px;
-	color:white;
     border-radius: var(--borderRadiusLg);
     text-align: center;
     vertical-align: middle;
@@ -111,20 +110,24 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    background-color: white;
 }
 .f-soc .fa {
     line-height: 40px;
-    color: white;
+    color: var(--softBlack);
+}
+.f-soc:hover  .fa{
+    color: white!important;
 }
 .f-soc:hover{
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
 }
-.f-soc.shfb {background: #6680d8;}
-.f-soc.shwa {background: #7bda72;}
-.f-soc.shml {background: #fd6969;}
-.f-soc.shig {background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
+.f-soc.shfb:hover {background: #6680d8;}
+.f-soc.shwa:hover {background: #7bda72;}
+.f-soc.shml:hover {background: #fd6969;}
+.f-soc.shig:hover {background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);}
 
 .footer-col1 .footer-nav-lists .f-nav-list:hover{
     color: var(--customRed)!important;

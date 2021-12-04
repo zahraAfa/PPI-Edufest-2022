@@ -2,7 +2,7 @@
 .agenda-container{
     width: 100vw;
     /* height: 70vh; */
-    background: var(--brownOrange);
+    background: var(--brightPurple);
     padding-bottom: 6%;
     border: var(--borderWidth) solid var(--softBlack)!important;
     box-sizing: border-box;
@@ -10,24 +10,23 @@
     -webkit-box-sizing: border-box;
 }
 
-.agenda-section{
-    max-width: 85vw;
+#lightSlider-agenda-section{
+    list-style: none;
+}
+
+.agenda-section .custom-card{
+    margin: 20px auto 0 auto;
+}
+
+.agenda-section, #lightSlider-agenda-section{
+    width: 95%;
     display: flex;
     flex-direction: row;
-    /* overflow-x: scroll; */
-    margin-top: 5%;
-}
-
-.agenda-card{
-    border: var(--borderWidth) solid var(--softBlack)!important;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    text-decoration: none!important;
-}
-
-.agenda-card:hover{
-    border: var(--borderWidth) solid var(--customRed)!important;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 .agenda-wrapper{
@@ -53,20 +52,22 @@
     z-index: 10;
     font-style: italic;
 }
-/* .agenda-sec-h1:after {
-    content: "";
-    position: relative;
-    display: block;
-    background: inherit;
-    border-radius: inherit;
-    border: inherit;
-    left: 2px;
-    top: 2px;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  } */
 
+.swipe-for-more{
+    display: none;
+    color: white;
+    font-family: 'Work Sans';
+    font-size: 15px;
+    text-align: right;
+}
+@media (max-width: 517px) {
+    .swipe-for-more{
+        display: inline;
+    }
+    .agenda-section, #lightSlider-agenda-section{
+        height: 358px;
+    }
+  }
 
 @media (min-width: 768px) {
   .agenda-sec-h1 {
@@ -77,14 +78,16 @@
 .custom-arrow{
     display: block;
     text-align: center;
-    background-color: var(--DarkGrey);
+    background-color: white;
     text-decoration: none!important;
     height: 37px;
     width: 50px;
     border-radius: 20px;
-    padding: 5px;
+    padding: 5px 3px;
     margin: auto;
     cursor: pointer;
+    border: 3px solid var(--softBlack);
+    box-sizing: border-box;
 }
 
 .custom-arrow span{
@@ -93,7 +96,7 @@
     line-height: 100%;
     text-align: center;
     text-decoration: none!important;
-    color: white;
+    color: var(--softBlack);
 }
 
 .img-cont-agenda-sec{
@@ -118,7 +121,12 @@
     text-align: center;
     color: #8db0db;
 }
-
+@media screen and (max-width: 614px) {
+    .agenda-section, #lightSlider-agenda-section{
+        max-width: 90vw;
+        padding-left: 0;
+    }
+}
 
 @media screen and (max-width: 569px) {
     .agenda-section{

@@ -1,7 +1,7 @@
 .desc-container{
     width: 100vw;
     /* height: 100vh; */
-    background-color: var(--BaseLightBeige);
+    background-color: var(--veryLightGrey);
     /* overflow: hidden; */
 }
 
@@ -35,7 +35,7 @@
 .desc-cont{
     padding: 5% 5%;
     width: 35%;
-    background: var(--Gradient4);
+    background: var(--Gradient5);
     border-left: var(--borderWidth) solid var(--softBlack);
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -44,15 +44,15 @@
 
 .desc-cont h1{
     font-family: 'Work Sans';
-    color: var(--DarkGreen);
+    color: var(--softBlack);
     font-weight: 800;
     font-style: italic;
-    text-align: left;
+    text-align: right;
 }
 
 .desc-cont p{
     font-family: 'Outfit';
-    color: rgb(87, 87, 87);
+    color: var(--softBlack);
     line-height: 2em;
     text-align: justify;
     font-weight: 500;
@@ -66,13 +66,7 @@
 .carousel-container{
     position: relative;
     padding: 10%;
-    /* background-image: url("../img/header/header-frame-back.png");
-    background-repeat: no-repeat;
-    background-attachment: local;
-    background-position: 53% 50%;
-    background-size: auto; */
-    /* background-size: 60% 60%; */
-    background-color: var(--BaseMediumBeige);
+    background-color: var(--brightPurple);
 }
 
 .carousel-container-frame{
@@ -81,7 +75,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -56%);
+    transform: translate(-48.5%, -52%);
 }
 
 .carousel-container-frame2{
@@ -110,6 +104,11 @@
 
 .desc-cont .button-56 {
     background-color: var(--veryLightGrey);
+}
+
+.desc-cont .button-56 {
+    margin-left: auto;
+    margin-right: 0
 }
 
 @media screen and (max-width: 1063px) {
@@ -182,13 +181,13 @@
     } */
 
     .carousel-container-frame{
-        width: 780px;
+        width: 805px;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -56%);
+        transform: translate(-48.5%, -52%);
     }
     .carousel-container-frame2{
-        width: 780px;
+        width: 805px;
         top: 53%;
         left: 52%;
         transform: translate(-50%, -56%);
@@ -203,13 +202,13 @@
         padding: 10%;
     } */
     .carousel-container-frame{
-        width: 690px;
+        width: 715px;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -56%);
+        transform: translate(-48.5%, -52%);
     }
     .carousel-container-frame2{
-        width: 690px;
+        width: 710px;
         top: 53%;
         left: 52%;
         transform: translate(-50%, -56%);
@@ -224,13 +223,13 @@
         padding: 10% 0;
     }
     .carousel-container-frame{
-        width: 540px;
+        width: 560px;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -56%);
+        transform: translate(-48.5%, -52%);
     }
     .carousel-container-frame2{
-        width: 540px;
+        width: 560px;
         top: 53%;
         left: 52%;
         transform: translate(-50%, -56%);
@@ -248,13 +247,13 @@
         padding: 0;
     }
     .carousel-container-frame{
-        width: 450px;
+        width: 470px;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -56%);
+        transform: translate(-48.5%, -52%);
     }
     .carousel-container-frame2{
-        width: 450px;
+        width: 470px;
         top: 53%;
         left: 52%;
         transform: translate(-50%, -56%);
@@ -269,13 +268,13 @@
         padding: 10% 0;
     }
     .carousel-container-frame{
-        width: 360px;
+        width: 375px;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -56%);
+        transform: translate(-48.5%, -52%);
     }
     .carousel-container-frame2{
-        width: 360px;
+        width: 375px;
         top: 53%;
         left: 52%;
         transform: translate(-50%, -56%);
@@ -290,13 +289,13 @@
         padding: 10% 0;
     }
     .carousel-container-frame{
-        width: 300px;
+        width: 312px;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -56%);
+        transform: translate(-48.5%, -52%);
     }
     .carousel-container-frame2{
-        width: 300px;
+        width: 312px;
         top: 53%;
         left: 52%;
         transform: translate(-50%, -56%);
@@ -311,13 +310,13 @@
         padding: 10% 0;
     }
     .carousel-container-frame{
-        width: 255px;
+        width: 264px;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -56%);
+        transform: translate(-48.5%, -52%);
     }
     .carousel-container-frame2{
-        width: 255px;
+        width: 264px;
         top: 53%;
         left: 52%;
         transform: translate(-50%, -56%);

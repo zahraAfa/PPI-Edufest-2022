@@ -16,12 +16,12 @@
 </header>
 <section>
     <div class="carousel-container">
-        <img src="assets/img/header/header-frame-front.png" alt="" class="carousel-container-frame">
+        <img src="assets/img/header/header-frame-front2.svg" alt="" class="carousel-container-frame">
         <div class="carousel-section carousel-slider" data-aos="zoom-in-up" data-aos-delay="0" data-aos-duration="1000" style="overflow: hidden; border-radius: 0px 0px 20px 20px!important;">
             <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
             <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
         </div>
-        <img src="assets/img/header/header-frame-back.png" alt="" class="carousel-container-frame2">
+        <img src="assets/img/header/header-frame-back2.svg" alt="" class="carousel-container-frame2">
     </div>
 </section>
 <section>
@@ -33,8 +33,8 @@
             </div>
             <div class="desc-cont">
                 <div class="edufest-desc-h1" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <h1>PPI Edufest</h1>
-                    <h1>2022</h1>
+                    <h1 class="effect-pop-slide-r">PPI Edufest</h1>
+                    <h1 class="effect-pop-slide-r">2022</h1>
                 </div>
                 <p data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">PPI Edufest 2021: Journey of The World’s Education across Indonesia adalah program yang mempertemukan pelajar Indonesia di luar negeri dan pelajar Indonesia dalam negeri yang ingin melanjutkan pendidikan ke luar negeri melalui pameran pendidikan yang diinisiasi oleh Festival Luar Negeri (FELARI) Perhimpunan Pelajar Indonesia Dunia (PPI Dunia) dan didukung oleh Duta Felari PPI Dunia di 34 provinsi di seluruh Indonesia</p>
                 <button class="button-56" role="button">merchandise</button>
@@ -46,48 +46,96 @@
     <div class="agenda-container">
         <div class="agenda-wrapper">
             <h1 class="agenda-sec-h1 effect-pop-up">AGENDA</h1>
-            <div class="agenda-section responsive-slider">
-                <a href="../../acara" class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
-                        <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title event-title-agenda-sec">Event Title</h5>
-                        <p class="card-text event-date-agenda-sec">2022-01-01</p>
-                        {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
-                    </div>
-                </a>
-                <a href="../../acara" class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
-                        <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title event-title-agenda-sec">Event Title</h5>
-                        <p class="card-text event-date-agenda-sec">2022-01-01</p>
-                        {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
-                    </div>
-                </a>
-                <a href="../../acara" class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
-                        <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title event-title-agenda-sec">Event Title</h5>
-                        <p class="card-text event-date-agenda-sec">2022-01-01</p>
-                        {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
-                    </div>
-                </a>
-                <a href="../../acara" class="card agenda-card" style="border-radius: 20px; width: 100px!important; padding: 20px; margin-right: 5px; margin-left: 5px; max-width: 380px" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                    <div class="img-cont-agenda-sec" style="border-radius: 20px; margin: auto; overflow: hidden; display: flex; justify-content: center; align-items: center;">
-                        <img class="card-img-top" src="assets/img/header/carousel1.jpg" alt="Card image cap" style="height: 100%; width: auto;">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title event-title-agenda-sec">Event Title</h5>
-                        <p class="card-text event-date-agenda-sec">2022-01-01</p>
-                        {{-- <a href="#" class="custom-card-btn">Go somewhere</a> --}}
-                    </div>
-                </a>
+            <div class="agenda-section">
+                <ul id="lightSlider-agenda-section" class="responsive-slider">
+                    <li>
+                        <a href="" class="custom-card">
+                            <div class="img__card-container">
+                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                            </div>
+                            <div class="card__overlay">
+                              <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                  <h3 class="card__title">Event Title Event Title</h3>
+                                  <span class="card__status">2022-01-01</span>
+                                </div>
+                              </div>
+                              <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="custom-card">
+                            <div class="img__card-container">
+                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                            </div>
+                            <div class="card__overlay">
+                              <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                  <h3 class="card__title">Event Title Event Title</h3>
+                                  <span class="card__status">2022-01-01</span>
+                                </div>
+                              </div>
+                              <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="custom-card">
+                            <div class="img__card-container">
+                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                            </div>
+                            <div class="card__overlay">
+                              <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                  <h3 class="card__title">Event Title Event Title</h3>
+                                  <span class="card__status">2022-01-01</span>
+                                </div>
+                              </div>
+                              <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="custom-card">
+                            <div class="img__card-container">
+                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                            </div>
+                            <div class="card__overlay">
+                              <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                  <h3 class="card__title">Event Title Event Title</h3>
+                                  <span class="card__status">2022-01-01</span>
+                                </div>
+                              </div>
+                              <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="custom-card">
+                            <div class="img__card-container">
+                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                            </div>
+                            <div class="card__overlay">
+                              <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                  <h3 class="card__title">Event Title Event Title</h3>
+                                  <span class="card__status">2022-01-01</span>
+                                </div>
+                              </div>
+                              <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
+            <p class="swipe-for-more">Swipe for more >></p>
         </div>
     </div>
 </section>

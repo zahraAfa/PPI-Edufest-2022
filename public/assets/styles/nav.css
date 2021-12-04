@@ -55,7 +55,7 @@
 .nav-items li a {
   text-decoration: none !important;
   list-style: none !important;
-  text-shadow: 2px 1px 7px #000000;
+  text-shadow: 0px 1px 2px #ffffff,0px -1px 2px #ffffff,1px 0px 2px #ffffff,-1px 0px 2px #ffffff;
   font-weight: 600;
 }
 .nav-items li {
@@ -65,8 +65,8 @@
 .nav-items li a {
   padding: 20px 15px;
   font-size: 0.9em;
-  font-weight: 500;
-  color: var(--White);
+  font-weight: 800;
+  color: var(--softBlack);
 }
 
 .nav-items li :hover {
@@ -74,15 +74,11 @@
   border-radius: 30px;
   transition: 0.4s;
 }
-/* .nav-color .nav-items li :hover,
-.nav-items li a:active {
-  color: var(--Black);
-  transition: 0.8s;
-} */
+
 .nav-transparent .nav-items li :hover,
 .nav-items li a:active {
   color: var(--BrightRed);
-  transition: 0.8s;
+  transition: 0.4s;
   text-shadow: none;
 }
 
