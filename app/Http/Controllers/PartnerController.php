@@ -24,7 +24,7 @@ class PartnerController extends Controller
 
         // get partner data by id
         $partner = Partner::find($id);
-        $oldPicturePath = public_path() . '/storage/img/partners/' . $partner->name;
+        $oldPicturePath = public_path() . '/storage/img/partners/' . $partner->id;
         $oldFile = $oldPicturePath . '/' . $partner->picture;
 
         // replace old picture name
@@ -59,7 +59,7 @@ class PartnerController extends Controller
         ];
         $partner = Partner::create($partnerData);
 
-        $newPath = public_path() . '/storage/img/partners/' . $partner->name;
+        $newPath = public_path() . '/storage/img/partners/' . $partner->id;
 
         request('picture')->move($newPath, $pictureName);
 
@@ -101,7 +101,7 @@ class PartnerController extends Controller
         $partnerObject = $partner->first();
 
         //Delete directory and picture
-        $picturePath = public_path() . '/storage/img/partners/' . $partnerObject->name;
+        $picturePath = public_path() . '/storage/img/partners/' . $partnerObject->id;
         array_map('unlink', glob("$picturePath/*.*"));
         rmdir($picturePath);
 
