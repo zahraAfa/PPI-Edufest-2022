@@ -34,9 +34,10 @@
 
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Speakers</h3>
-                    <a class="btn btn-info btn-icon-split" role="button" style="margin-bottom: 15px;" href="{{ route('admin-speaker-add') }}"><span class="text-white-50 icon"><i
+                    <a class="btn btn-info btn-icon-split" role="button" style="margin-bottom: 15px;"
+                        href="{{ route('admin-speaker-add') }}"><span class="text-white-50 icon"><i
                                 class="fas fa-plus" style="color: rgb(255,255,255);"></i></span>
-                                <span class="text-white text">New Speaker</span></a>
+                        <span class="text-white text">New Speaker</span></a>
                     <div class="card shadow" style="border-radius: 20px;">
                         <div class="card-header py-3"
                             style="border-top-left-radius: 20px;border-top-right-radius: 20px;">
@@ -52,12 +53,14 @@
                                                 <option value="25">25</option>
                                                 <option value="50">50</option>
                                                 <option value="100">100</option>
-                                            </select>&nbsp;</label></div>
+                                            </select>&nbsp;</label>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="text-md-end dataTables_filter" id="dataTable_filter"><label
-                                            class="form-label"><input type="search" class="form-control form-control-sm"
-                                                aria-controls="dataTable" placeholder="Search"></label></div>
+                                            class="form-label"><input type="search"
+                                                class="form-control form-control-sm" aria-controls="dataTable"
+                                                placeholder="Search"></label></div>
                                 </div>
                             </div>
                             <div class="table-responsive table mt-2" id="dataTable" role="grid"
@@ -69,7 +72,6 @@
                                             <th>PPI</th>
                                             <th>Major</th>
                                             <th>School</th>
-                                            <th>Email</th>
                                             <th>Event</th>
                                             <th>Detail</th>
                                             <th>Actions</th>
@@ -94,7 +96,8 @@
                                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
                                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                                             <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                            <li class="page-item"><a class="page-link" href="#"
+                                                    aria-label="Next"><span aria-hidden="true">»</span></a></li>
                                         </ul>
                                     </nav>
                                 </div>
@@ -113,43 +116,66 @@
     <script src="../../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../assets/admin-template/js/script.min.js"></script>
     <script>
-        $(document).ready( function(){
+        $(document).ready(function() {
             $.ajax({
                 type: "GET",
                 url: "../../../api/events/read",
-                success: function (events) {
+                success: function(events) {
                     $.ajax({
                         type: "GET",
                         url: "../../../api/speakers/read",
-                        success: function (speakers) {
+                        success: function(speakers) {
                             // var speakerItems ='';
-                            $.each(speakers, function(key, speaker){
+                            $.each(speakers, function(key, speaker) {
                                 $.ajax({
                                     type: "GET",
-                                    url: "../../../api/speakers/read/"+speaker["id"],
-                                    success: function (details) {
+                                    url: "../../../api/speakers/read/" +
+                                        speaker["id"],
+                                    success: function(details) {
                                         var eventTitle;
-                                        $.each(events, function(key, event){
-                                            if(speaker["event_id"]===event["id"]){
-                                                eventTitle = event["title"];
+                                        $.each(events, function(key,
+                                            event) {
+                                            if (speaker[
+                                                    "event_id"
+                                                ] === event[
+                                                    "id"]) {
+                                                eventTitle =
+                                                    event[
+                                                        "title"
+                                                    ];
                                             }
                                         });
-                                        var speakerItems ='';
+                                        var speakerItems = '';
                                         // console.log(details.email)
                                         // console.log(details["email"])
-                                        speakerItems += '<tr>'+'<td id="speaker__name-crud"><img class="rounded-circle me-2" width="150" height="150" src="../../storage/img/speakers/'+speaker["id"]+'/'+speaker["picture"]+'">'+speaker["name"]+'</td>'+
-                                        '<td id="speaker__ppi-crud">'+speaker["ppi"]+'</td>'+
-                                        '<td id="speaker__major-crud">'+speaker["major"]+'</td>'+
-                                        '<td id="speaker__school-crud">'+speaker["school"]+'</td>';
-                                        speakerItems += '<td id="speaker__email-crud">'+details.email+'</td>'+
-                                                        '<td id="speaker__event-crud">'+eventTitle+'</td>'+
-                                                        '<td id="speaker__detail-crud">'+speaker["detail"]+'</td>'+
-                                                        '<td>'+
-                                                        '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="speaker__edit" href="../../admin/speakers/edit/'+speaker["id"]+'"><i class="fas fa-edit text-white"></i></a>'+
-                                                        '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1 delete-btn-speaker" role="button" id="'+speaker["id"]+'"><i class="fas fa-trash text-white"></i></a>'+
-                                                        '</td>'+
-                                                        '</tr>';
-                                        $('#speakers__row').after(speakerItems);
+                                        speakerItems += '<tr>' +
+                                            '<td id="speaker__name-crud"><img class="rounded-circle me-2" width="150" height="150" src="../../storage/img/speakers/' +
+                                            speaker["id"] + '/' +
+                                            speaker["picture"] + '">' +
+                                            speaker["name"] + '</td>' +
+                                            '<td id="speaker__ppi-crud">' +
+                                            speaker["ppi"] + '</td>' +
+                                            '<td id="speaker__major-crud">' +
+                                            speaker["major"] + '</td>' +
+                                            '<td id="speaker__school-crud">' +
+                                            speaker["school"] + '</td>';
+                                        speakerItems +=
+                                            '<td id="speaker__event-crud">' +
+                                            eventTitle + '</td>' +
+                                            '<td id="speaker__detail-crud">' +
+                                            speaker["detail"] +
+                                            '</td>' +
+                                            '<td>' +
+                                            '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="speaker__edit" href="../../admin/speakers/edit/' +
+                                            speaker["id"] +
+                                            '"><i class="fas fa-edit text-white"></i></a>' +
+                                            '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1 delete-btn-speaker" role="button" id="' +
+                                            speaker["id"] +
+                                            '"><i class="fas fa-trash text-white"></i></a>' +
+                                            '</td>' +
+                                            '</tr>';
+                                        $('#speakers__row').after(
+                                            speakerItems);
                                     }
                                 });
                             });
@@ -158,28 +184,27 @@
                 }
             });
         });
-        $(document).on('click',".delete-btn-speaker",function() {
+        $(document).on('click', ".delete-btn-speaker", function() {
 
-                var del_id = $(this).attr('id');
-                $.ajax({
-                    type: "DELETE",
-                    url: '../../../api/speakers/delete/'+del_id,
-                    data: 'id='+del_id ,
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
-                    },
-                    success: function(data)
-                    {
-                        alert(data["response"]);
-                        location.reload();
-                    },
-                    error: function(XMLHttpRequest, textStatus, errorThrown) {
-                        var data=XMLHttpRequest.responseText;
-                        var jsonResponse = JSON.parse(data);
-                        alert(jsonResponse["message"]);
-                    }
-                });
+            var del_id = $(this).attr('id');
+            $.ajax({
+                type: "DELETE",
+                url: '../../../api/speakers/delete/' + del_id,
+                data: 'id=' + del_id,
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
+                },
+                success: function(data) {
+                    alert(data["response"]);
+                    location.reload();
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    var data = XMLHttpRequest.responseText;
+                    var jsonResponse = JSON.parse(data);
+                    alert(jsonResponse["message"]);
+                }
             });
+        });
     </script>
 </body>
 

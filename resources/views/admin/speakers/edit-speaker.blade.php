@@ -81,7 +81,7 @@
                                                         <div class="mb-3"><label class="form-label"
                                                                 for="form__speaker-name"><strong>Speaker
                                                                     Name</strong><br></label><input id=""
-                                                                class="form-control" type="text"
+                                                                class="form-control form-nama" type="text"
                                                                 id="form__speaker-name" placeholder="Speaker Name"
                                                                 name="name"></div>
                                                     </div>
@@ -202,26 +202,24 @@
         });
         $.ajax({
             type: 'GET',
-            url: '../../../api/speakers/read',
-            success: function(data) {
-                $.each(data, function(key, speaker) {
-                    if (speaker["id"] === {{ request()->route('id') }}) {
-                        var img_link = '/storage/img/speakers/' + speaker["id"] + '/' + speaker[
-                            "picture"];
+            url: '../../../api/speakers/read/{{ request()->route('id') }}',
+            success: function(speaker) {
+                console.log(speaker);
+                console.log(speaker[0]["name"]);
+                
+                var img_link = '/storage/img/speakers/' + speaker[0]["id"] + '/' + speaker[0][
+                    "picture"];
 
-                        $("#before__img").after(
-                            '<img id="speaker__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="' +
-                            img_link + '"">');
-                        $('#form__speaker-name').val(speaker["name"]);
-                        $('#form__speaker-ppi').val(speaker["ppi"]);
-                        $('#form__speaker-email').val(speaker["email"]);
-                        $('#form__speaker-school').val(speaker["school"]);
-                        $('#form__speaker-major').val(speaker["major"]);
-                        $('#form__speaker-detail').val(speaker["detail"]);
-                        $('#form__speaker-event').val(speaker["event_id"]);
-                        $('#form__img').val(speaker["picture"]);
-                    }
-                });
+                $("#before__img").after(
+                    '<img id="speaker__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="' +
+                    img_link + '"">');
+                $('.form-nama').val(speaker[0]["name"]);
+                $('#form__speaker-ppi').val(speaker[0]["ppi"]);
+                $('#form__speaker-email').val(speaker[1]);
+                $('#form__speaker-school').val(speaker[0]["school"]);
+                $('#form__speaker-major').val(speaker[0]["major"]);
+                $('#form__speaker-detail').val(speaker[0]["detail"]);
+                $('#form__speaker-event').val(speaker[0]["event_id"]);
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 var data = XMLHttpRequest.responseText;
@@ -232,7 +230,7 @@
         $("#form__btn2").click(function(e) {
             e.preventDefault();
             const data = {
-                "name": $('#form__speaker-name').val(),
+                "name": $('.form-nama').val(),
                 "ppi": $('#form__speaker-ppi').val(),
                 "email": $('#form__speaker-email').val(),
                 "school": $('#form__speaker-school').val(),
@@ -251,7 +249,7 @@
                 },
                 success: function(data) {
                     alert("check")
-                    window.location.href = "{{ route('admin-partners-index') }}";
+                    window.location.href = "{{ route('admin-speakers-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data = XMLHttpRequest.responseText;
