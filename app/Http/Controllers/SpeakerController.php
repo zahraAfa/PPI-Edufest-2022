@@ -15,7 +15,8 @@ class SpeakerController extends Controller
 
     public function readDetail($id) {
         $speaker = Speaker::where('id', $id)->first();
-        return $speaker;
+        $data = [$speaker, $speaker->email];
+        return $data;
     }
 
     public function updateImage($id)
