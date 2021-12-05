@@ -39,6 +39,7 @@
     --softPink: #ff9f9c;
     --lightPink: #ffbcdb;
     --brightPurple: #5f62ca;
+    --softPurple: #D6BAFF;
     --veryLightPurple: #e0e2ed;
 
     /* Base Colour */
@@ -73,6 +74,23 @@
         95.06deg,
         #87e9ca 7.82%,
         #deec90 53.84%,
+        #fcd757 100%
+    );
+    --Gradient7: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), radial-gradient(56.39% 113.21% at 9.17% 18.56%, #FE4531 0%, #5F62CA 100%);
+
+    /* Gradient for btn */
+    --BtnGradient1: linear-gradient(
+        94.75deg,
+        #f2f2f2 45.96%,
+        #87e9ca 66.13%,
+        #deec90 95.54%,
+        #fcd757 100%
+    );
+    --BtnGradient2: linear-gradient(
+        94.75deg,
+        #f2f2f2 45.96%,
+        #e44b55 66.13%,
+        #FF7300 87.54%,
         #fcd757 100%
     );
 
@@ -287,23 +305,18 @@ h1 {
 
 .button-56 {
     align-items: center;
-    background: linear-gradient(
-        94.75deg,
-        #f2f2f2 45.96%,
-        #87e9ca 66.13%,
-        #deec90 95.54%,
-        #fcd757 100%
-    );
+    background: var(--BtnGradient2);
     background-position: 0% 50%;
     background-size: 300% 300%;
     border: 3px solid var(--softBlack);
     border-radius: 20px;
     box-sizing: border-box;
-    color: #111;
+    color: var(--softBlack);
     cursor: pointer;
     display: flex;
     font-family: Inter, sans-serif;
     font-size: 16px;
+    font-weight: 500;
     height: 48px;
     justify-content: center;
     line-height: 24px;
@@ -328,6 +341,7 @@ h1 {
     outline: 0;
     box-shadow: 0px 0px 0 var(--softBlack);
     background-position: 99% 50%;
+    color: white;
 }
 
 @media (min-width: 768px) {

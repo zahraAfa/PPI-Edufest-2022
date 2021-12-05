@@ -56,7 +56,7 @@
                         <li><a href="{{ ($title === "Docs")?'#':'/dokumentasi' }}" class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
-                        <a href="{{ ($title === "Home")?'#':'/' }}" class="gohome"><img src="assets/img/logos/edufest-logo.png" alt="Edufest Logo"></a>
+                        <a href="{{ ($title === "Home")?'#':'/' }}" class="gohome"><img src="assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
                     </div>
                     <div class="nav-wrap">
                         <div class="menu-toggle">
