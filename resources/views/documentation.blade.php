@@ -5,7 +5,6 @@
 <section>
     <div class="docs-container">
         <div class="docs-header">
-            {{-- <h1  data-aos="fade-down" data-aos-delay="20" data-aos-duration="2000">Dokumentasi</h1> --}}
             <div class="docs-headerbox">
                 <h1>Dokumen-</h1>
                 <div class="doc-row">
