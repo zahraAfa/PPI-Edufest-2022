@@ -10,7 +10,15 @@ header{
     height: 100vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+/* header::before{
+    position: fixed;
+    content: '';
+} */
 
 header:after{
     content: '';
@@ -23,43 +31,53 @@ header:after{
     z-index: 25;
 }
 
-.header-layer1{
+.header-outer-layer-right{
     position: absolute;
-    bottom: -400px;
-    width: 2000px;
-    right: -300px;
-    z-index: 19;
-}
-
-.header-outer-layer{
-    position: absolute;
-    width: 650px;
-    bottom: -100px;
-    left: -70px;
+    width: 100vw;
+    /* height: 100vh; */
+    /* bottom: -100px; */
     z-index: 20;
 }
 
+.header-outer-layer-left{
+    position: absolute;
+    width: 100vw;
+    /* height: 100vh; */
+    /* bottom: -100px; */
+    z-index: 20;
+}
+
+.header-layer1{
+    position: absolute;
+    /* bottom: -200px; */
+    width: 100vw;
+    /* height: 100vh; */
+    z-index: 19;
+}
+
+
 .header-layer2{
     position: absolute;
-    width: 1800px;
-    bottom: -400px;
-    left: -270px;
+    width: 100vw;
+    /* height: 100vh; */
+    /* bottom: -400px; */
     z-index: 18;
 }
 
 .header-layer3{
     position: absolute;
-    width: 900px;
-    bottom: 150px;
+    width: 100vw;
+    /* height: 100vh; */
+    /* bottom: 150px; */
     right: 0;
     z-index: 17;
 }
 
 .header-back-layer{
     position: absolute;
-    /* width: 2100px; */
-    height: 150vh;
-    bottom: -100px;
+    /* width: 100vw; */
+    height: 100vh;
+    /* bottom: -100px; */
     right: 0;
     left: 0;
 }
@@ -89,6 +107,29 @@ header:after{
     /* background: linear-gradient(to top, #151515, transparent); */
 }
 
+.flags-container{
+    position: relative;
+    height: 100px;
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.flags-flowing{
+    height: 100%;
+    position: absolute;
+    animation: flag-moves 40s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flag-moves {
+    from {transform: translateX(-80%);}
+    to {transform: translateX(0%);}
+}
+
 .carousel-slider img{
     width: 100vw;
     /* transform: translate(0%, 0%); */
@@ -100,4 +141,9 @@ header:after{
 .carousel-slide{
     /* SEMENTARA */
     background-color: black;
+}
+
+.home-blank-transition{
+    height: 20vh;
+    background-color: var(--mainBlue);
 }

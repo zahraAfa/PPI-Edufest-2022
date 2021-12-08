@@ -41,6 +41,19 @@
     --brightPurple: #5f62ca;
     --softPurple: #D6BAFF;
     --veryLightPurple: #e0e2ed;
+    /* New Palette */
+    --mainBlue: #2A289E;
+    --mainGreen: #007538;
+    --mainYellow: #FFA000;
+    --mainOrange: #FF6900;
+    --mainBlack: #19191C;
+    --mainWhite: #F5F0E9;
+    --mainSoftPurple: #7C9BFA;
+    --mainRed: #FF1200;
+    --mainBrokenRed: #FF685B;
+    --mainSoftBlue: #006B9A;
+    --mainPurple: #7E59A8;
+    --mainSoftGreen: #2CCFDC;
 
     /* Base Colour */
     --BaseLightGreen: rgb(224, 243, 240);
@@ -52,12 +65,7 @@
     --BaseDarkBeige: rgb(212, 208, 202);
 
     /* Gradient Backgrounds */
-    --Gradient1: linear-gradient(
-        90deg,
-        rgba(131, 58, 180, 1) 0%,
-        rgba(253, 175, 29, 1) 75%,
-        rgba(252, 121, 69, 1) 100%
-    );
+    --Gradient1: linear-gradient(153deg, rgba(255,104,91,1) 0%, rgba(220,183,255,1) 82%);
     --Gradient2: linear-gradient(
         90deg,
         rgba(131, 58, 180, 1) 0%,
@@ -89,9 +97,9 @@
     --BtnGradient2: linear-gradient(
         94.75deg,
         #f2f2f2 45.96%,
-        #e44b55 66.13%,
-        #FF7300 87.54%,
-        #fcd757 100%
+        #2A289E 66.13%,
+        #2A289E 80.54%,
+        #7C9BFA 100%
     );
 
     /* z index */
@@ -108,7 +116,8 @@
     --Shadow: rgba(70, 70, 70, 0.2) 0px 2px 8px 0px;
 
     /* Border */
-    --borderWidth: 5px;
+    --borderWidth: 0px;
+    --border-w2: 2px;
     --borderRadiusSm: 20px;
     --borderRadiusLg: 30px;
 }
@@ -147,7 +156,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    background-color: var(--BaseLightBeige);
+    background-color: var(--mainBlue);
 }
 
 * {
@@ -308,10 +317,10 @@ h1 {
     background: var(--BtnGradient2);
     background-position: 0% 50%;
     background-size: 300% 300%;
-    border: 3px solid var(--softBlack);
+    border: 3px solid var(--mainBlack);
     border-radius: 20px;
     box-sizing: border-box;
-    color: var(--softBlack);
+    color: var(--mainBlack);
     cursor: pointer;
     display: flex;
     font-family: Inter, sans-serif;
@@ -328,7 +337,7 @@ h1 {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    box-shadow: 8px 8px 0 var(--softBlack);
+    box-shadow: 8px 8px 0 var(--mainBlack);
     transition: 0.2s ease-out;
 }
 
@@ -339,7 +348,7 @@ h1 {
 
 .button-56:hover {
     outline: 0;
-    box-shadow: 0px 0px 0 var(--softBlack);
+    box-shadow: 0px 0px 0 var(--mainBlack);
     background-position: 99% 50%;
     color: white;
 }
@@ -369,7 +378,7 @@ h1 {
     text-decoration: none;
     box-sizing: border-box;
     margin: 10px;
-    border: var(--borderWidth) solid var(--softBlack);
+    border: var(--borderWidth) solid var(--mainBlack);
 }
 
 .img__card-container {
@@ -396,7 +405,7 @@ h1 {
     right: 0;
     z-index: 1;
     border-radius: calc(var(--curve) * 1px);
-    background-color: var(--veryLightGrey);
+    background-color: var(--mainOrange);
     transform: translateY(100%);
     transition: 0.2s ease-in-out;
     box-sizing: border-box;
@@ -413,7 +422,7 @@ h1 {
     gap: 2em;
     padding: 2em;
     border-radius: calc(var(--curve) * 1px) 0 0 0;
-    background-color: var(--veryLightGrey);
+    background-color: var(--mainOrange);
     transform: translateY(-100%);
     transition: 0.2s ease-in-out;
     box-sizing: border-box;
@@ -430,7 +439,7 @@ h1 {
 }
 
 .card__arc path {
-    fill: var(--veryLightGrey);
+    fill: var(--mainOrange);
     d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
     box-sizing: border-box;
 }
@@ -439,9 +448,9 @@ h1 {
     transform: translateY(0);
 }
 
-.custom-card:hover .card__image {
+/* .custom-card:hover .card__image {
     height: 150%;
-}
+} */
 
 .card__thumb {
     flex-shrink: 0;
@@ -456,7 +465,7 @@ h1 {
     font-weight: 700;
     font-size: 1em;
     margin: 0 0 0.3em;
-    color: var(--softBlack);
+    color: var(--mainBlack);
     box-sizing: border-box;
 }
 
@@ -465,20 +474,20 @@ h1 {
     margin: 1em 0;
     font-family: "Outfit";
     font-size: 0.8em;
-    color: #80905e;
+    color: var(--mainWhite);
     box-sizing: border-box;
 }
 
 .card__status {
     font-size: 0.8em;
-    color: #80905e;
+    color: var(--mainWhite);
     box-sizing: border-box;
 }
 
 .card__description {
     padding: 0 2em 2em;
     margin: 0;
-    color: #80905e;
+    color: var(--mainWhite);
     font-family: "Outfit";
     display: -webkit-box;
     -webkit-box-orient: vertical;

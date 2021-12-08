@@ -6,10 +6,7 @@
 
 .sponsor-transition {
     /* background-color: var(--veryLightPurple); */
-    background-color: black;
-    background-image: url(../img/bg/black-paper.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: var(--mainBlue);
     height: 100px;
     display: flex;
 }
@@ -32,11 +29,11 @@
     padding-top: 40px;
     padding-bottom: 100px;
     /* background-color: var(--veryLightPurple); */
-    background-color: black;
-    background-image: url(../img/bg/black-paper.jpg);
+    background-color: var(--mainBlue);
+    /* background-image: url(../img/bg/black-paper.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     overflow-x: hidden;
 }
 
@@ -103,6 +100,39 @@
     /* color: var(--softBlack); */
     color: white;
     margin: 0;
+}
+
+.sponsors-cont{
+    display: flex;
+    flex-wrap: wrap;
+    width: 85vw;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: auto;
+    gap: 10px;
+}
+
+.sponsor-wrapper{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--mainWhite);
+    border-radius: 20px;
+    height: 200px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.sponsor-wrapper img{
+    max-width:100%;
+    max-height:100%;
+}
+
+.sponsor-wrapper:hover{
+    background-color: var(--mainBlack);
+    border: 2px solid var(--mainBlack);
 }
 
 .partner-header-att {
@@ -174,17 +204,18 @@
 }
 
 .partner-img {
-    width: auto;
-    height: 200px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .partner-img-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    height: 200px;
+    width: 130px;
+    height: 130px;
     overflow: hidden;
+    padding: 10px;
 }
 
 /* Forcing bootstrap modal styling */

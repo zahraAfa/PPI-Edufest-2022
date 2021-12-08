@@ -1,7 +1,7 @@
 .desc-container{
     width: 100vw;
     /* height: 100vh; */
-    background-color: var(--veryLightGrey);
+    background-color: var(--mainBlue);
     /* overflow: hidden; */
 }
 
@@ -23,6 +23,10 @@
     width: 65%;
     display: flex;
     padding: 5% 5%;
+    background-image: url('../img/bg/edufest-text-deco.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
     /* border: 1px solid red; */
 }
 
@@ -35,16 +39,18 @@
 .desc-cont{
     padding: 5% 5%;
     width: 35%;
-    background: var(--Gradient5);
+    background: var(--Gradient1);
     border-left: var(--borderWidth) solid var(--softBlack);
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    border-bottom-left-radius: 100px;
+    border-top-left-radius: 50px;
 }
 
 .desc-cont h1{
     font-family: 'Work Sans';
-    color: var(--softBlack);
+    color: var(--mainBlack);
     font-weight: 800;
     font-style: italic;
     text-align: right;
@@ -52,7 +58,7 @@
 
 .desc-cont p{
     font-family: 'Outfit';
-    color: var(--softBlack);
+    color: var(--mainBlack);
     line-height: 2em;
     text-align: justify;
     font-weight: 500;
@@ -66,7 +72,7 @@
 .carousel-container{
     position: relative;
     padding: 10%;
-    background-color: var(--brightPurple);
+    background-color: var(--mainBlue);
 }
 
 .carousel-container-frame{

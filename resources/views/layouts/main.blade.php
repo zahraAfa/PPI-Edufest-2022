@@ -49,14 +49,14 @@
             <div class="nav-body">
                 <div class="nav-sections">
                     <ul class="nav-items">
-                        <li><a href="{{ ($title === "Home")?'#':'/' }}" class="nav-beranda">Beranda</a></li>
-                        <li><a href="{{ ($title === "Pembicara")?'#':'/pembicara' }}" class="nav-pembicara">Pembicara</a></li>
-                        <li><a href="{{ ($title === "Agenda")?'#':'/agenda' }}" class="nav-agenda">Agenda</a></li>
+                        <li><a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="nav-beranda">Beranda</a></li>
+                        <li><a href="{{ ($title === "Pembicara")?'#': route('usr-speaker') }}" class="nav-pembicara">Pembicara</a></li>
+                        <li><a href="{{ ($title === "Agenda")?'#': route('usr-agenda') }}" class="nav-agenda">Agenda</a></li>
                         <li><a href="#" class="nav-writingcont">Writing Contest</a></li>
-                        <li><a href="{{ ($title === "Docs")?'#':'/dokumentasi' }}" class="nav-dokumentasi">Dokumentasi</a></li>
+                        <li><a href="{{ ($title === "Docs")?'#': route('usr-docs')}}" class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
-                        <a href="{{ ($title === "Home")?'#':'/' }}" class="gohome"><img src="assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
+                        <a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="gohome"><img src="assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
                     </div>
                     <div class="nav-wrap">
                         <div class="menu-toggle">
