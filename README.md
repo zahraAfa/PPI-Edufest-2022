@@ -18,10 +18,11 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Getting started with laravel
-Command that u need to execute beforehand
+## Running in Local Environment
 
-Installing all dependencies
+### XAMPP
+
+Install all dependencies
 
 ```bash
     composer install
@@ -39,9 +40,9 @@ Generate a new application key
     php artisan key:generate
 ```
 
->
-> Create Database on DBMS (Navicat, mysql workbench, or phpmyadmin) called as **ppi_edufest_2022**
->
+
+Create Database on DBMS (Navicat, mysql workbench, or phpmyadmin) called as **ppi_edufest_2022**
+
 
 Migrate the database schema
 
@@ -68,3 +69,47 @@ Start the local development server
 ```
 
 You can now access the server at <http://localhost:8000>
+
+### Docker
+
+For docker, make sure to set`DB_HOST` in `.env` file to database container name. In this case, it should be set to `database`
+
+Run `docker compose`
+
+``` bash
+docker compose up -d
+```
+
+-d for daemonize (running in background)
+
+For `php artisan` command, use `docker compose exec [application-container-name] php artisan [command]`
+
+Generate a new application key
+
+```bash
+    docker compose exec app php artisan key:generate
+```
+
+
+Create Database on DBMS (Navicat, mysql workbench, or phpmyadmin) called as **ppi_edufest_2022**
+
+
+Migrate the database schema
+
+```bash
+    docker compose exec app php artisan migrate
+```
+
+Fresh the database schema just in case you want to drop and rebuild the schema
+
+```bash
+    docker compose exec app php artisan migrate:fresh
+```
+
+Seed the database
+
+```bash
+    docker compose exec app php artisan db:seed
+```
+
+Database should persist regardless the container state (running, stopped, removed)
