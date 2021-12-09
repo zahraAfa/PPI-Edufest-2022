@@ -96,11 +96,11 @@
 .f-soc{
     display: inline-block;
     text-decoration: none;
-    width: 50px;
-	margin: 2px;
-    height: 50px;
-    line-height: 55px;
-    font-size: 23px;
+    width: 40px;
+	margin: 5px;
+    height: 40px;
+    line-height: 50px;
+    font-size: 25px;
     border-radius: var(--borderRadiusLg);
     text-align: center;
     vertical-align: middle;

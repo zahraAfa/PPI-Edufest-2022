@@ -1,7 +1,7 @@
 /* Button */
 .faq-btn-float{
   padding: 0px 10px;
-  background-color: var(--customRed);
+  background-color: var(--mainRed);
   text-decoration: none!important;
   position: fixed;
   bottom: 80px;
@@ -13,21 +13,21 @@
   z-index: 299;
   box-shadow: var(--Shadow);
   cursor: help;
-  border: var(--borderWidth) solid var(--softBlack);
+  border: var(--borderWidth) solid var(--mainBlack);
 }
 
 .faq-btn-float:hover{
-  background-color: var(--veryLightGrey);
+  background-color: var(--mainWhite);
 }
 .faq-btn-float:hover .faq-btn-icon{
-    color: var(--softBlack);
+    color: var(--mainBlack);
 }
 
 #faq-title-h1{
     font-family: "Work Sans";
     font-style: italic;
     font-weight: 800;
-    color: var(--softBlack);
+    color: var(--mainBlack);
 }
 
 .faq-btn-icon{
@@ -42,11 +42,11 @@
 /* Modal */
 .faq-modal{
   display: none;
-  border: var(--borderWidth) solid var(--softBlack);
+  border: var(--borderWidth) solid var(--mainBlack);
   width: 60vw;
   height: 70vh;
   overflow-y: scroll;
-  background-color: var(--veryLightGrey);
+  background-color: var(--mainWhite);
   border-radius: 30px;
   position: fixed;
   z-index: 300;
@@ -69,7 +69,7 @@
 }
 
 .close-modal{
-  color: black;
+  color: var(--mainBlack);
   display: flex;
   justify-content: end;
   transform: translate(-5%, 50%);
@@ -82,12 +82,12 @@
 }
 
 .faq-accordion {
-    background-color: white;
-    color: var(--softBlack);
+    background-color: var(--mainPurple);
+    color: var(--mainWhite);
     cursor: pointer;
-    padding: 10px;
+    padding: 15px 15px 10px 15px;
     width: 100%;
-    border: var(--borderWidth) solid var(--softBlack);
+    border: var(--borderWidth) solid var(--mainBlack);
     text-align: left;
     outline: none;
     font-size: 10px;
@@ -96,6 +96,7 @@
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+    line-height: 20px;
   }
 
   .faq-accordion h3{
@@ -105,12 +106,12 @@
 
   .active,
   .faq-accordion:hover {
-    background-color: var(--customRed);
+    background-color: var(--mainSoftPurple);
   }
 
   .faq-accordion:after {
     content: "\002B";
-    color: black;
+    color: var(--mainBlack);
     font-weight: bold;
     margin-left: 5px;
   }
@@ -121,7 +122,7 @@
 
   .faq-panel {
     padding: 0 20px;
-    background-color: var(--veryLightGrey);
+    background-color: var(--mainWhite);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -147,23 +148,23 @@
   }
 
   .telegram-btn{
-    background-color: #0088cc;
-    color: white;
+    background-color: var(--mainBlue);
+    color: var(--mainWhite);
     padding: 10px;
     border-radius: 20px;
     text-align: center;
     text-decoration: none!important;
-    justify-content: end;
+    justify-content: center;
     font-size: 15px;
     display: flex;
     width: 150px;
     margin: 10px auto;
-    border: var(--borderWidth) solid var(--softBlack);
   }
 
   .telegram-btn:hover{
-    background-color: white;
-    color: #0088cc;
+    background-color: var(--mainWhite);
+    color: var(--mainBlue);
+    border: 2px solid var(--mainBlue);
   }
 
   @media screen and (max-width: 500px) {

@@ -2,14 +2,14 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    overflow: hidden;
+    overflow: hidden!important;
 }
 
 header{
     width: 100vw;
     height: 100vh;
     position: relative;
-    overflow: hidden;
+    overflow: hidden!important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,83 +28,74 @@ header:after{
     left: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.05);
+    overflow: hidden!important;
     z-index: 25;
 }
 
-.header-outer-layer-right{
+.header-layer1-text{
     position: absolute;
-    width: 100vw;
-    /* height: 100vh; */
-    /* bottom: -100px; */
+    max-width: 30vw;
+    z-index: 21;
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+}
+
+.header-layer1-right{
+    position: absolute;
+    bottom: 120px;
+    max-width: 30vw;
+    left: 63%;
     z-index: 20;
 }
 
-.header-outer-layer-left{
+.header-layer1-left{
     position: absolute;
-    width: 100vw;
-    /* height: 100vh; */
-    /* bottom: -100px; */
+    bottom: 100px;
+    max-width: 27vw;
+    right: 63%;
     z-index: 20;
 }
 
-.header-layer1{
+.header-layer2-right{
     position: absolute;
-    /* bottom: -200px; */
-    width: 100vw;
-    /* height: 100vh; */
+    max-width: 20vw;
+    left: 67%;
     z-index: 19;
+    bottom: 200px;
+}
+
+.header-layer2-left{
+    position: absolute;
+    max-width: 20vw;
+    right: 63%;
+    z-index: 19;
+    bottom: 20%;
 }
 
 
-.header-layer2{
+.header-layer3-right{
     position: absolute;
-    width: 100vw;
-    /* height: 100vh; */
-    /* bottom: -400px; */
+    max-width: 20vw;
+    left: 72%;
     z-index: 18;
+    top: 100px;
 }
 
-.header-layer3{
+.header-layer3-left{
     position: absolute;
-    width: 100vw;
-    /* height: 100vh; */
-    /* bottom: 150px; */
-    right: 0;
+    max-width: 25vw;
+    right: 70%;
     z-index: 17;
+    top: 100px;
 }
 
 .header-back-layer{
     position: absolute;
-    /* width: 100vw; */
-    height: 100vh;
-    /* bottom: -100px; */
+    max-width: 50vw;
+    margin: auto;
     right: 0;
     left: 0;
-}
-
-.big-title{
-    position: absolute;
-    z-index: 30;
-    line-height: 4rem;
-    top: calc(50% - 2rem);
-    width: 100%;
-    text-align: center;
-    font-size: 5rem;
-    font-weight: 600;
-    color: #fff;
-    font-family: 'Permanent Marker', cursive;
-    font-weight: 700;
-}
-
-.shadow{
-    position: absolute;
-    bottom: 100%;
-    height: 300px;
-    width: 100%;
-    left: 0;
-    z-index: 20;
-    /* background-color: aqua; */
-    /* background: linear-gradient(to top, #151515, transparent); */
 }
 
 .flags-container{
@@ -146,4 +137,191 @@ header:after{
 .home-blank-transition{
     height: 20vh;
     background-color: var(--mainBlue);
+}
+
+@media screen and (max-width:1025px) {
+    .header-layer1-text{
+        position: absolute;
+        max-width: 60vw;
+        z-index: 21;
+        /* top: 50%;
+        left: 50%; */
+        /* transform: translate(-50%, -50%); */
+    }
+
+    .header-back-layer{
+        position: absolute;
+        max-width: 80vw;
+        margin: auto;
+        right: 0;
+        left: 0;
+    }
+    .header-layer1-right{
+        position: absolute;
+        bottom: 120px;
+        max-width: 48vw;
+        left: 50%;
+        z-index: 20;
+    }
+
+    .header-layer1-left{
+        position: absolute;
+        bottom: 100px;
+        max-width: 48vw;
+        right: 53%;
+        z-index: 20;
+    }
+
+    .header-layer2-right{
+        position: absolute;
+        max-width: 40vw;
+        left: 77%;
+        z-index: 19;
+        bottom: 200px;
+    }
+
+    .header-layer2-left{
+        position: absolute;
+        max-width: 40vw;
+        right: 73%;
+        z-index: 19;
+        bottom: 200px;
+    }
+
+
+    .header-layer3-right{
+        position: absolute;
+        max-width: 50vw;
+        left: 62%;
+        z-index: 18;
+        top: 200px;
+    }
+
+    .header-layer3-left{
+        position: absolute;
+        max-width: 45vw;
+        right: 60%;
+        z-index: 17;
+        top: 200px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .header-layer1-text{
+        position: absolute;
+        max-width: 50vw;
+        z-index: 21;
+        /* top: 50%;
+        left: 50%; */
+        /* transform: translate(-50%, -50%); */
+    }
+
+    .header-back-layer{
+        position: absolute;
+        max-width: 100vw;
+        margin: auto;
+        right: 0;
+        left: 0;
+    }
+}
+@media screen and (max-width:800px) {
+    .header-layer1-right{
+        position: absolute;
+        bottom: 120px;
+        max-width: 43vw;
+        left: 50%;
+        z-index: 20;
+    }
+
+    .header-layer1-left{
+        position: absolute;
+        bottom: 100px;
+        max-width: 40vw;
+        right: 53%;
+        z-index: 20;
+    }
+
+    .header-layer2-right{
+        position: absolute;
+        max-width: 30vw;
+        left: 77%;
+        z-index: 19;
+        bottom: 200px;
+    }
+
+    .header-layer2-left{
+        position: absolute;
+        max-width: 30vw;
+        right: 73%;
+        z-index: 19;
+        bottom: 200px;
+    }
+
+
+    .header-layer3-right{
+        position: absolute;
+        max-width: 30vw;
+        left: 62%;
+        z-index: 18;
+        top: 200px;
+    }
+
+    .header-layer3-left{
+        position: absolute;
+        max-width: 35vw;
+        right: 60%;
+        z-index: 17;
+        top: 200px;
+    }
+}
+
+@media screen and (max-width:509px) {
+    .header-layer1-right{
+        position: absolute;
+        bottom: 120px;
+        max-width: 53vw;
+        left: 45%;
+        z-index: 20;
+    }
+
+    .header-layer1-left{
+        position: absolute;
+        bottom: 100px;
+        max-width: 50vw;
+        right: 70%;
+        z-index: 20;
+    }
+
+    .header-layer2-right{
+        position: absolute;
+        max-width: 40vw;
+        left: 60%;
+        z-index: 19;
+        bottom: 180px;
+    }
+
+    .header-layer2-left{
+        position: absolute;
+        max-width: 40vw;
+        right: 60%;
+        z-index: 19;
+        bottom: 180px;
+    }
+
+
+    .header-layer3-right{
+        position: absolute;
+        max-width: 50vw;
+        left: 62%;
+        z-index: 18;
+        top: 200px;
+    }
+
+    .header-layer3-left{
+        position: absolute;
+        max-width: 55vw;
+        right: 60%;
+        z-index: 17;
+        top: 200px;
+    }
 }

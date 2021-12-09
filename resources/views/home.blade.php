@@ -3,16 +3,14 @@
 @section('Home')
 
 <header>
-    <img src="assets/img/header/main-header-front.svg" class="header-outer-layer-right translate" data-speed="1" alt="Header">
-    <img src="assets/img/header/main-header-people-front-left.svg" class="header-outer-layer-right translate" data-speed="1" alt="Header">
-    <img src="assets/img/header/main-header-people-front-right.svg" class="header-outer-layer-right translate" data-speed="1" alt="Header">
-    <img src="assets/img/header/main-header-people-middle-left.svg" class="header-layer1 translate" data-speed="-0.3" alt="Header">
-    <img src="assets/img/header/main-header-people-middle-right.svg" class="header-layer1 translate" data-speed="-0.3" alt="Header">
-    <img src="assets/img/header/main-header-people-back-left.svg" class="header-layer2 translate" data-speed="-0.4" alt="Header">
-    <img src="assets/img/header/main-header-people-back-right.svg" class="header-layer2 translate" data-speed="-0.4" alt="Header">
-    <img src="assets/img/header/main-header-deco-back-left.svg" class="header-layer3 translate" data-speed="0.6" alt="Header">
-    <img src="assets/img/header/main-header-deco-back-right.svg" class="header-layer3 translate" data-speed="0.6" alt="Header">
-    <img src="assets/img/header/main-header-map.svg" class=".header-back-layer translate" data-speed="-0.9" alt="Header">
+    <img src="assets/img/header/main-header-text.png" class="header-layer1-text translate" data-speed="0.6" alt="Header">
+    <img src="assets/img/header/main-header-layer1-left.png" class="header-layer1-left translate" data-speed="-0.6" alt="Header">
+    <img src="assets/img/header/main-header-layer1-right.png" class="header-layer1-right translate" data-speed="-0.6" alt="Header">
+    <img src="assets/img/header/main-header-layer2-left.png" class="header-layer2-left translate" data-speed="1" alt="Header">
+    <img src="assets/img/header/main-header-layer2-right.png" class="header-layer2-right translate" data-speed="1" alt="Header">
+    <img src="assets/img/header/main-header-layer3-left.png" class="header-layer3-left translate" data-speed="0.1" alt="Header">
+    <img src="assets/img/header/main-header-layer3-right.png" class="header-layer3-right translate" data-speed="0.1" alt="Header">
+    <img src="assets/img/header/main-header-map.png" class="header-back-layer translate" data-speed="-0.9" alt="Header">
 </header>
 <div class="flags-container">
     <img src="assets/img/header/main-header-flags.svg" class="flags-flowing" alt="flag">
@@ -32,14 +30,14 @@
     <div class="desc-container">
         <div class="desc-section">
             <div class="youtube-cont">
-                <iframe data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000" src="https://www.youtube.com/embed/73CQ4pkrauA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe data-aos="fade-right" data-aos-delay="20" data-aos-duration="1000" src="https://www.youtube.com/embed/73CQ4pkrauA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <div class="desc-cont">
-                <div class="edufest-desc-h1" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
+            <div class="desc-cont" data-aos="fade-left" data-aos-delay="20" data-aos-duration="1000">
+                <div class="edufest-desc-h1">
                     <h1 class="effect-pop-slide-r">PPI Edufest</h1>
                     <h1 class="effect-pop-slide-r">2022</h1>
                 </div>
-                <p data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">PPI Edufest 2021: Journey of The World’s Education across Indonesia adalah program yang mempertemukan pelajar Indonesia di luar negeri dan pelajar Indonesia dalam negeri yang ingin melanjutkan pendidikan ke luar negeri melalui pameran pendidikan yang diinisiasi oleh Festival Luar Negeri (FELARI) Perhimpunan Pelajar Indonesia Dunia (PPI Dunia) dan didukung oleh Duta Felari PPI Dunia di 34 provinsi di seluruh Indonesia</p>
+                <p>PPI Edufest 2021: Journey of The World’s Education across Indonesia adalah program yang mempertemukan pelajar Indonesia di luar negeri dan pelajar Indonesia dalam negeri yang ingin melanjutkan pendidikan ke luar negeri melalui pameran pendidikan yang diinisiasi oleh Festival Luar Negeri (FELARI) Perhimpunan Pelajar Indonesia Dunia (PPI Dunia) dan didukung oleh Duta Felari PPI Dunia di 34 provinsi di seluruh Indonesia</p>
                 <button class="button-56" role="button">merchandise</button>
             </div>
         </div>
