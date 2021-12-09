@@ -17,12 +17,12 @@
 </div>
 <section>
     <div class="carousel-container">
-        <img src="assets/img/header/header-frame-front.svg" alt="" class="carousel-container-frame">
-        <div class="carousel-section carousel-slider" style="overflow: hidden; border-radius: 0px 0px 20px 20px!important;">
+        <img src="assets/img/header/header-frame-front-white.svg" alt="" class="carousel-container-frame">
+        <div class="carousel-section carousel-slider" style="overflow: hidden; border-radius: 0px 0px 15px 15px!important;">
             <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
             <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
         </div>
-        <img src="assets/img/header/header-frame-back.svg" alt="" class="carousel-container-frame2">
+        <img src="assets/img/header/header-frame-back-white.svg" alt="" class="carousel-container-frame2">
     </div>
 </section>
 <section>

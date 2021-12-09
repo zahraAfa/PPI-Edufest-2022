@@ -5,7 +5,7 @@
 <section>
     <div class="sp-speakers-container">
         <div class="sp-speaker-col">
-            <h1>Bintang Tamu<br/>Spesial</h1>
+            <h1>BINTANG TAMU<br/>SPECIAL</h1>
             <div class="sp-speaker-img-cont">
                 <img src="assets/img/header/bintang-tamu-special-test.png" alt="Bintang Tamu Spesial">
             </div>
@@ -20,10 +20,11 @@
         </div>
         <div class="sp-edufest-rounded"><img src="../assets/img/logos/edufest-round-text.svg" alt="edufest 2022"></div>
     </div>
+    <div class="speaker-blank-transition"></div>
     <div class="speakers-container">
         <div class="speakers-wrapper">
             <div class="speakers-h1">
-                <h1 class="speakers-title" data-aos="fade-down" data-aos-delay="30" data-aos-duration="2000">Pembicara</h1>
+                <h1 class="speakers-title" data-aos="fade-down" data-aos-delay="30" data-aos-duration="2000">PEMBICARA</h1>
             </div>
             <div class="speakers-content">
                 <div class="filters-div">
@@ -36,48 +37,86 @@
                         <option value="aerop">Eropa dan Amerika</option>
                     </select>
                 </div>
-                {{-- Both grid and the card has not designed yet --}}
                 <div class="speakers-grid">
-                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                        <div class="speaker-img-cont">
-                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                    <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
+                        <div class="img__card-container">
+                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
                         </div>
-                        <div class="speaker-text-cont"></div>
+                        <div class="card__overlay">
+                          <div class="card__header">
+                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                            <div class="card__header-text">
+                              <h3 class="card__title speaker__name">Anisa Fatimah Azzahra</h3>
+                              <span class="card__status speaker__ppi">PPI Malaysia</span>
+                            </div>
+                          </div>
+                          <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                        </div>
                     </div>
-                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                        <div class="speaker-img-cont">
-                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                    <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
+                        <div class="img__card-container">
+                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
                         </div>
-                        <div class="speaker-text-cont"></div>
+                        <div class="card__overlay">
+                          <div class="card__header">
+                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                            <div class="card__header-text">
+                              <h3 class="card__title speaker__name">Anisa Fatimah Azzahra</h3>
+                              <span class="card__status speaker__ppi">PPI Malaysia</span>
+                            </div>
+                          </div>
+                          <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                        </div>
                     </div>
-                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                        <div class="speaker-img-cont">
-                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                    <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
+                        <div class="img__card-container">
+                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
                         </div>
-                        <div class="speaker-text-cont"></div>
+                        <div class="card__overlay">
+                          <div class="card__header">
+                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                            <div class="card__header-text">
+                              <h3 class="card__title speaker__name">Anisa Fatimah Azzahra</h3>
+                              <span class="card__status speaker__ppi">PPI Malaysia</span>
+                            </div>
+                          </div>
+                          <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                        </div>
                     </div>
-                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                        <div class="speaker-img-cont">
-                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                    <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
+                        <div class="img__card-container">
+                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
                         </div>
-                        <div class="speaker-text-cont"></div>
+                        <div class="card__overlay">
+                          <div class="card__header">
+                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                            <div class="card__header-text">
+                              <h3 class="card__title speaker__name">Anisa Fatimah Azzahra</h3>
+                              <span class="card__status speaker__ppi">PPI Malaysia</span>
+                            </div>
+                          </div>
+                          <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                        </div>
                     </div>
-                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                        <div class="speaker-img-cont">
-                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                    <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
+                        <div class="img__card-container">
+                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
                         </div>
-                        <div class="speaker-text-cont"></div>
-                    </div>
-                    <div class="speaker-card" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1000">
-                        <div class="speaker-img-cont">
-                            <img src="assets/img/header/carousel1.jpeg" alt="Speaker">
+                        <div class="card__overlay">
+                          <div class="card__header">
+                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                            <div class="card__header-text">
+                              <h3 class="card__title speaker__name">Anisa Fatimah Azzahra</h3>
+                              <span class="card__status speaker__ppi">PPI Malaysia</span>
+                            </div>
+                          </div>
+                          <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
                         </div>
-                        <div class="speaker-text-cont"></div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="speaker-blank-transition"></div>
     </div>
 </section>
-
 @endsection

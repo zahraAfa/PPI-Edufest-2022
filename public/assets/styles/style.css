@@ -30,7 +30,7 @@
     --veryLightGrey: #f3f3f3;
     --softBlack: #3f3f3f;
     --customRed: #e44b55;
-    --customYellow: #fcd757;
+    --customYellow: #fffb00;
     --neonYellow: #DEEC90;
     --customGreen: #5da3b2;
     --brownOrange: #db8957;
@@ -227,19 +227,22 @@ h1 {
 }
 
 .filters-div {
-    /* border: 1px solid red; */
     padding: 10px auto;
     display: flex;
     flex-direction: row;
     background-color: white;
     box-shadow: var(--Shadow);
-    width: 100%;
+    /* width: 100%; */
+    max-width: 500px;
+    margin: auto;
     justify-content: end;
-    border-radius: 20px;
+    border-radius: 50px;
+    height: 50px;
+    overflow: hidden;
 }
 
 .filter-separator {
-    background-color: var(--BaseLightGreen);
+    background-color: var(--mainSoftPurple);
     height: auto;
     width: 3px;
     padding: 3px 0;
@@ -248,7 +251,7 @@ h1 {
 
 .search-bar {
     min-width: 100px;
-    max-width: auto;
+    max-width: 500px;
     border: 0;
 }
 
@@ -258,6 +261,7 @@ h1 {
     color: var(--DarkGrey);
     min-width: auto;
     max-width: 400px;
+    margin: auto 3px;
 }
 
 .custom-card-btn {
@@ -299,15 +303,22 @@ h1 {
     transform: translateX(10px);
 }
 
-@media screen and (max-width: 357px) {
+@media screen and (max-width: 500px) {
     .filters-div {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        height: 70px;
     }
     .filter-separator {
         display: none;
     }
     .filter-bar {
-        border: 2px solid var(--BaseLightGreen);
+        border-top: 1px solid var(--mainSoftPurple);
+    }
+    .filters-div select{
+        height: 40px;
     }
 }
 
@@ -393,6 +404,8 @@ h1 {
 }
 
 .card__image {
+    /* max-width: 100%;
+    max-height: 100%; */
     width: auto;
     height: 100%;
     box-sizing: border-box;

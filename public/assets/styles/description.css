@@ -39,7 +39,8 @@
 .desc-cont{
     padding: 5% 5%;
     width: 35%;
-    background: var(--Gradient1);
+    /* background: var(--Gradient1); */
+    background-color: var(--mainWhite);
     border-left: var(--borderWidth) solid var(--softBlack);
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -73,7 +74,9 @@
     position: relative;
     padding: 10%;
     background-color: var(--mainBlue);
+    /* border: 100px solid var(--mainWhite); */
 }
+
 
 .carousel-container-frame{
     position: absolute;

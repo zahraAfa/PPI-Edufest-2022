@@ -1,17 +1,17 @@
 <section class="sponsors-partners-container">
     <div class="sponsors-wrapper">
-        <div class="sponsor-header-att">
+        <div class="sponsor-header-att" data-aos="fade-left" data-aos-delay="20" data-aos-duration="1000">
             <p class="effect-pop-slide-l">OUR</p>
             <p class="effect-pop-slide-l">SP<span>O</span>NS<span>O</span>R<span>S</span></p>
         </div>
         <div class="sponsors-cont">
-            <a href="" data-bs-toggle="modal" data-bs-target="#sponsor-modal" class="sponsor-wrapper">
+            <a href="" data-bs-toggle="modal" data-bs-target="#sponsor-modal" class="sponsor-wrapper" data-aos="zoom-in-up" data-aos-delay="20" data-aos-duration="1000">
                 <img src="../../../../assets/img/logos/Logo-Edufest-NoBG.png" alt="">
             </a>
-            <a href="" data-bs-toggle="modal" data-bs-target="#sponsor-modal" class="sponsor-wrapper">
+            <a href="" data-bs-toggle="modal" data-bs-target="#sponsor-modal" class="sponsor-wrapper" data-aos="zoom-in-up" data-aos-delay="20" data-aos-duration="1000">
                 <img src="../../../../assets/img/logos/Logo-Edufest.png" alt="">
             </a>
-            <a href="" data-bs-toggle="modal" data-bs-target="#sponsor-modal" class="sponsor-wrapper">
+            <a href="" data-bs-toggle="modal" data-bs-target="#sponsor-modal" class="sponsor-wrapper" data-aos="zoom-in-up" data-aos-delay="20" data-aos-duration="1000">
                 <img src="../../../../assets/img/logos/PPI Dunia.png" alt="">
             </a>
         </div>
@@ -59,7 +59,7 @@
         </div> --}}
     </div>
     <div class="partners-wrapper">
-        <div class="partner-header-att">
+        <div class="partner-header-att" data-aos="fade-right" data-aos-delay="20" data-aos-duration="1000">
             <p class="effect-pop-slide-r">OUR</p>
             <p class="effect-pop-slide-r">P<span>A</span>RTN<span>E</span>R<span>S</span></p>
         </div>
