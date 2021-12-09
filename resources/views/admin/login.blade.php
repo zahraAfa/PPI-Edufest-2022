@@ -87,7 +87,7 @@
                     let token = 'Bearer '+Object.values(data);
                     // alert(token);
                     headers.append('Authorization', token);
-                    window.location.href = "/admin/dashboard";
+                    window.location.href = "/admin";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data=XMLHttpRequest.responseText;
