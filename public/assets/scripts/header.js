@@ -1,4 +1,5 @@
 const translate = document.querySelectorAll(".translate");
+const translateX = document.querySelectorAll(".translateX");
 // const big_title = document.querySelector(".big-title");
 const header = document.querySelector("header");
 // const shadow = document.querySelector(".shadow");
@@ -24,6 +25,10 @@ function update() {
     translate.forEach(element => {
         let speed = element.dataset.speed;
         element.style.transform = `translateY(${latestKnownScrollY * speed}px)`;
+    });
+    translateX.forEach(element => {
+        let speed = element.dataset.speed;
+        element.style.transform = `translateX(${latestKnownScrollY * speed}px)`;
     });
 
     // opacity.forEach(element => {

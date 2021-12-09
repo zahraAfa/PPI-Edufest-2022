@@ -143,6 +143,11 @@
         /* overflow-x: scroll; */
         margin-top: 5%;
     }
+    .agenda-section, #lightSlider-agenda-section{
+        max-width: 90vw;
+        padding-left: 0;
+        min-height: 400px;
+    }
     .agenda-card{
         height: 300px;
         width: 100%;
@@ -296,7 +301,7 @@
         font-size: 40px;
     }
 }
-@media screen and (max-width: 471px){
+@media screen and (max-width: 520px){
     .agenda-page-card{
         width: 230px;
         height: 420px;

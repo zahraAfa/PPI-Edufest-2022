@@ -135,10 +135,12 @@
         text-align: center;
     }
     .youtube-cont{
+        margin-top: 10%;
         width: 100vw;
         padding: 0;
     }
     .desc-cont{
+        margin-top: 10%;
         padding-top: 10%;
         border-top: var(--borderWidth) solid var(--softBlack);
         border-left: none;

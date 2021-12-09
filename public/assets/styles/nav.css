@@ -70,7 +70,7 @@
 
 .nav-transparent .nav-items li :hover,
 .nav-items li a:active {
-  color: var(--customRed);
+  color: var(--mainRed);
   transition: 0.4s;
   text-shadow: none;
 }

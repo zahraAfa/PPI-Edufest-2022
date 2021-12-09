@@ -4,8 +4,8 @@
 
 <header>
     <img src="assets/img/header/main-header-text.png" class="header-layer1-text translate" data-speed="0.6" alt="Header">
-    <img src="assets/img/header/main-header-layer1-left.png" class="header-layer1-left translate" data-speed="-0.6" alt="Header">
-    <img src="assets/img/header/main-header-layer1-right.png" class="header-layer1-right translate" data-speed="-0.6" alt="Header">
+    <img src="assets/img/header/main-header-layer1-left.png" class="header-layer1-left translateX" data-speed="-0.6" alt="Header">
+    <img src="assets/img/header/main-header-layer1-right.png" class="header-layer1-right translateX" data-speed="0.6" alt="Header">
     <img src="assets/img/header/main-header-layer2-left.png" class="header-layer2-left translate" data-speed="1" alt="Header">
     <img src="assets/img/header/main-header-layer2-right.png" class="header-layer2-right translate" data-speed="1" alt="Header">
     <img src="assets/img/header/main-header-layer3-left.png" class="header-layer3-left translate" data-speed="0.1" alt="Header">
