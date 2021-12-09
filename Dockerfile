@@ -1,14 +1,14 @@
 # separate project build with production to save space
-FROM composer:2 AS build
+FROM composer:2.1 AS build
 WORKDIR /app
 COPY . /app
 # don't install dev-dependencies
 # RUN composer install --no-dev
-RUN composer install
+RUN composer install --no-dev
 
 # production image
 
-FROM php:8-fpm
+FROM php:8.1-fpm
 
 # set working directory
 WORKDIR /var/www
@@ -38,7 +38,9 @@ RUN docker-php-ext-install bcmath ctype fileinfo \
     # json \
     mbstring \
     # openssl \ # installed by default
-    pdo_mysql tokenizer xml
+    pdo_mysql \
+    # tokenizer \ # installed by default by php:8.1
+    xml
 
 # add user for laravel application
 RUN groupadd -g 1000 www
