@@ -4,40 +4,21 @@
 
 <section>
     <div class="sp-speakers-container">
-        <div class="sp-header-row">
-            <div class="sp-speaker-headerbox">
-                <h1>Bintang</h1>
-                <h1>Tamu</h1>
-                <div class="sp-speaker-row">
-                    <h1>Spesial / </h1><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="13.5" cy="13.5" r="13.5" fill="#DEEC90"/></svg>
-                </div>
+        <div class="sp-speaker-col">
+            <h1>Bintang Tamu<br/>Spesial</h1>
+            <div class="sp-speaker-img-cont">
+                <img src="assets/img/header/bintang-tamu-special-test.png" alt="Bintang Tamu Spesial">
             </div>
-            <div class="scroll-sp-x-cont">
-                <div class="sp-speakers-items">
-                    <div class="sp-speakers-img-container">
-                        <img src="assets/img/bg/bg2.jpg" alt="Speakers">
-                    </div>
-                    <div class="sp-speakers-img-container">
-                        <img src="assets/img/bg/bg2.jpg" alt="Speakers">
-                    </div>
-                    <div class="sp-speakers-img-container">
-                        <img src="assets/img/bg/bg2.jpg" alt="Speakers">
-                    </div>
-                    <div class="sp-speakers-img-container">
-                        <img src="assets/img/bg/bg2.jpg" alt="Speakers">
-                    </div>
-                    <div class="sp-speakers-img-container">
-                        <img src="assets/img/bg/bg2.jpg" alt="Speakers">
-                    </div>
-                </div>
-            </div>
-            {{-- <p>Swipe for more >></p> --}}
         </div>
-        <div class="docs-scroll-down">
+        <header class="sp-speaker-header-deco">
+            <img class="translateX" data-speed="0.6" src="assets/img/header/header-deco-right.png" alt="">
+            <img class="translateX" data-speed="-0.6" src="assets/img/header/header-deco-left.png" alt="">
+        </header>
+        <div class="sp-scroll-down">
             <p>Scroll Down</p>
             <i class="fa fa-angle-double-down" aria-hidden="true"></i>
         </div>
-        <div class="docs-edufest-rounded"><img src="../assets/img/logos/edufest-round-text.svg" alt="edufest 2022"></div>
+        <div class="sp-edufest-rounded"><img src="../assets/img/logos/edufest-round-text.svg" alt="edufest 2022"></div>
     </div>
     <div class="speakers-container">
         <div class="speakers-wrapper">
