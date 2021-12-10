@@ -12,13 +12,14 @@
 .sp-speaker-col{
     display: flex;
     flex-direction: column;
-    max-width: 85%;
+    /* max-width: 85%; */
     max-height: 80%;
     margin-top: auto;
     margin-left: auto;
     margin-right: auto;
     position: relative;
     z-index: 14;
+    gap: 10px;
 }
 
 .sp-speaker-col h1{
@@ -28,6 +29,8 @@
     /* font-style: italic; */
     color: var(--mainWhite);
     font-size: 70px;
+    max-width: 80%;
+    margin: auto;
 }
 
 .sp-speaker-img-cont{
@@ -113,6 +116,12 @@
         top: 10%;
         left: 2%;
         z-index: 13;
+    }
+    .sp-speaker-col h1{
+        font-size: 50px;
+    }
+    .sp-speaker-col{
+        gap: 50px;
     }
 }
 
@@ -227,10 +236,6 @@
     align-items: center;
     box-sizing: border-box;
 }
-
-
-
-
 
 @media screen and (max-width: 1350px){
     /* .speakers-grid{

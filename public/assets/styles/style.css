@@ -55,6 +55,16 @@
     --mainSoftBlue: #006B9A;
     --mainPurple: #7E59A8;
     --mainSoftGreen: #2CCFDC;
+    --mainBrightBlue: #008FFF;
+    --mainBrightOrange: #F44123;
+    --mainPink: #FFB8DC;
+    --mainBrown: #C04200;
+    --mainBrightBrown: #E8854B;
+    --mainSofterPurple: #DCB7FF;
+    --mainHotPink: #FF00A7;
+    --mainSoftCoral: #FF9999;
+    --mainDarkPurple: #3B2A59;
+
 
     /* Base Colour */
     --BaseLightGreen: rgb(224, 243, 240);
@@ -129,6 +139,7 @@
 
 a,
 button,
+select,
 .close-modal {
     cursor: url("../icons/cursors/cursor-pointer.svg") 5 5, pointer !important;
 }
