@@ -73,7 +73,7 @@
                                                             <select class="form-select" id="form__event-region"
                                                                 name="region">
                                                                 <optgroup label="Region">
-                                                                    <option value="all">All Region</option>
+                                                                    <option value="all_region">All Region</option>
                                                                     <option value="timtengka">Timur Tengah dan Afrika
                                                                     </option>
                                                                     <option value="amerop">Amerika dan Eropa</option>

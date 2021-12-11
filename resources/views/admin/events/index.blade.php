@@ -120,9 +120,31 @@
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure want to delete this event?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="modal_delete" class="btn btn-primary">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../assets/admin-template/js/script.min.js"></script>
     <script>
+        // get modal element
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+            keyboard: false
+        });
         $(document).ready(function() {
             // $('#dataTable').dataTable();
             $.ajax({
@@ -134,45 +156,65 @@
                 success: function(result) {
 
                     var eventItems = '';
-                    $.each(result, function(key, event) {
+                    if (result.length === 0) {
+                        $('#events__row').after(
+                            '<td colspan="6" class="text-center" >There is no data exist here</td>');
+                    } else {
+                        $.each(result, function(key, event) {
 
-                        var region = '';
-                        switch (event["region"]) {
-                            case 'timtengka':
-                                region = "Timur Tengah dan Afrika";
-                                break;
-                            case 'amerop':
-                                region = "Amerika dan Eropa";
-                                break;
-                            case 'asia_oseania':
-                                region = "Asia dan Oseania";
-                                break;
-                        }
-                        eventItems += '<tr>' +
-                            '<td><img class="rounded-circle me-2" width="150" height="150" src="../../storage/img/events/' +
-                            event["id"] + '/' + event["picture"] + '">' + event["title"] +
-                            '</td>' +
-                            '<td id="event__region-crud">' + region + '</td>' +
-                            '<td id="event__date-crud">' + event["date"] + '</td>' +
-                            '<td id="event__detail-crud">' + event["detail"] + '</td>' +
-                            '<td><a style="background-color:#858796!important;" class="btn btn-secondary btn-icon-split" role="button" href="' +
-                            event["form_link"] +
-                            '"><span class="text-white-50 icon"><i class="fas fa-share-square" style="color: rgb(255,255,255);"></i></span><span class="text-white text">Form</span></a></td>' +
-                            '<td>' +
-                            '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="event__edit" href="../../admin/events/edit/' +
-                            event["id"] + '"><i class="fas fa-edit text-white"></i></a>' +
-                            '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1 delete-btn-event" role="button" id="' +
-                            event["id"] + '"><i class="fas fa-trash text-white"></i></a>' +
-                            '</td>' +
-                            '</tr>';
-                    });
-                    $('#events__row').after(eventItems);
+                            var region = '';
+                            switch (event["region"]) {
+                                case 'timtengka':
+                                    region = "Timur Tengah dan Afrika";
+                                    break;
+                                case 'amerop':
+                                    region = "Amerika dan Eropa";
+                                    break;
+                                case 'asia_oseania':
+                                    region = "Asia dan Oseania";
+                                    break;
+                                case 'all_region':
+                                    region = "All Region";
+                                    break;
+                            }
+                            eventItems += '<tr>' +
+                                '<td><img class="rounded-circle me-2" width="150" height="150" src="../../storage/img/events/' +
+                                event["id"] + '/' + event["picture"] + '">' + event["title"] +
+                                '</td>' +
+                                '<td id="event__region-crud">' + region + '</td>' +
+                                '<td id="event__date-crud">' + event["date"] + '</td>' +
+                                '<td id="event__detail-crud">' + event["detail"] + '</td>' +
+                                '<td><a style="background-color:#858796!important;" class="btn btn-secondary btn-icon-split" role="button" href="' +
+                                event["form_link"] +
+                                '"><span class="text-white-50 icon"><i class="fas fa-share-square" style="color: rgb(255,255,255);"></i></span><span class="text-white text">Form</span></a></td>' +
+                                '<td>' +
+                                '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="event__edit" href="../../admin/events/edit/' +
+                                event["id"] + '"><i class="fas fa-edit text-white"></i></a>' +
+                                '<a style="background-color:#e74a3b!important;" class="btn btn-danger btn-circle ms-1 delete-btn-event" role="button" id="' +
+                                event["id"] + '"><i class="fas fa-trash text-white"></i></a>' +
+                                '</td>' +
+                                '</tr>';
+                        });
+                        $('#events__row').after(eventItems);
+                    }
                 }
             });
         });
+
         $(document).on('click', ".delete-btn-event", function() {
 
             var del_id = $(this).attr('id');
+
+            myModal.show();
+
+            $("#modal_delete").attr("delete-id", del_id);
+
+
+        });
+
+        $(document).on('click', "#modal_delete", function() {
+            let del_id = $(this).attr('delete-id');
+
             $.ajax({
                 type: "DELETE",
                 url: '../../../api/events/delete/' + del_id,
@@ -181,7 +223,6 @@
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
                 success: function(data) {
-                    alert(data["response"]);
                     location.reload();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -190,6 +231,7 @@
                     alert(jsonResponse["message"]);
                 }
             });
+            myModal.hide();
         });
     </script>
 </body>
