@@ -113,11 +113,34 @@
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Success update partner.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="modal_update" class="btn btn-primary">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="../../../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../../assets/admin-template/js/script.min.js"></script>
     <script>
+        var myModal = new bootstrap.Modal(document.getElementById('updateModal'), {
+            keyboard: false
+        })
+        $(document).on('click', "#modal_update", function() {
+            window.location.href = "{{ route('admin-partners-index') }}";
+        });
         $.ajax({
             type: 'GET',
             url: '../../../api/partners/read',
@@ -186,8 +209,7 @@
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
                 success: function(data) {
-                    alert("check")
-                    window.location.href = "{{ route('admin-partners-index') }}";
+                    myModal.show();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data = XMLHttpRequest.responseText;
