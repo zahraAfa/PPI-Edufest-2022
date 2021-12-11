@@ -209,6 +209,9 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 50px;
+    max-width: 1150px;
+    margin: auto;
 }
 
 .speakers-grid{

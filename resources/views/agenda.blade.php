@@ -37,7 +37,37 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title speaker__name">Event Name</h3>
-                                  <span class="card__status speaker__ppi">2022-01-01</span>
+                                  <span class="card__status speaker__ppi"><i class="material-icons-round">event</i>2022-01-01</span>
+                                </div>
+                              </div>
+                              <p class="card__description speaker__desc">Lorem ipsum dolor</p>
+                            </div>
+                        </a>
+                        <a href="{{ route('usr-event') }}" class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
+                            <div class="img__card-container">
+                                <img src="assets/img/bg/event-img-test.png" class="card__image" alt="Speaker" />
+                            </div>
+                            <div class="card__overlay">
+                              <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                  <h3 class="card__title speaker__name">Event Name</h3>
+                                  <span class="card__status speaker__ppi"><i class="material-icons-round">event</i></i>2022-01-01</span>
+                                </div>
+                              </div>
+                              <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                            </div>
+                        </a>
+                        <a href="{{ route('usr-event') }}" class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
+                            <div class="img__card-container">
+                                <img src="assets/img/bg/event-img-test.png" class="card__image" alt="Speaker" />
+                            </div>
+                            <div class="card__overlay">
+                              <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                <div class="card__header-text">
+                                  <h3 class="card__title speaker__name">Sumatera - Sesi 2 Edisi Jerman dan Belanda</h3>
+                                  <span class="card__status speaker__ppi"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -52,7 +82,7 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title speaker__name">Event Name</h3>
-                                  <span class="card__status speaker__ppi">2022-01-01</span>
+                                  <span class="card__status speaker__ppi"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -67,7 +97,7 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title speaker__name">Event Name</h3>
-                                  <span class="card__status speaker__ppi">2022-01-01</span>
+                                  <span class="card__status speaker__ppi"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -82,7 +112,7 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title speaker__name">Event Name</h3>
-                                  <span class="card__status speaker__ppi">2022-01-01</span>
+                                  <span class="card__status speaker__ppi"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -97,37 +127,7 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title speaker__name">Event Name</h3>
-                                  <span class="card__status speaker__ppi">2022-01-01</span>
-                                </div>
-                              </div>
-                              <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-                            </div>
-                        </a>
-                        <a href="{{ route('usr-event') }}" class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
-                            <div class="img__card-container">
-                                <img src="assets/img/bg/event-img-test.png" class="card__image" alt="Speaker" />
-                            </div>
-                            <div class="card__overlay">
-                              <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                <div class="card__header-text">
-                                  <h3 class="card__title speaker__name">Event Name</h3>
-                                  <span class="card__status speaker__ppi">2022-01-01</span>
-                                </div>
-                              </div>
-                              <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-                            </div>
-                        </a>
-                        <a href="{{ route('usr-event') }}" class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
-                            <div class="img__card-container">
-                                <img src="assets/img/bg/event-img-test.png" class="card__image" alt="Speaker" />
-                            </div>
-                            <div class="card__overlay">
-                              <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                <div class="card__header-text">
-                                  <h3 class="card__title speaker__name">Event Name</h3>
-                                  <span class="card__status speaker__ppi">2022-01-01</span>
+                                  <span class="card__status speaker__ppi"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>

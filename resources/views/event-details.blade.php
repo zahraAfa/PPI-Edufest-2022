@@ -31,7 +31,7 @@
                             <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                             <div class="card__header-text">
                               <h3 class="card__title speaker__name">Anisa Fatimah Azzahra</h3>
-                              <span class="card__status speaker__ppi">PPI Malaysia</span>
+                              <span class="card__status speaker__ppi"><i class="material-icons-round">public</i>PPI Malaysia</span>
                             </div>
                           </div>
                           <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -46,7 +46,7 @@
                             <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                             <div class="card__header-text">
                               <h3 class="card__title speaker__name">Anisa Fatimah Azzahra</h3>
-                              <span class="card__status speaker__ppi">PPI Malaysia</span>
+                              <span class="card__status speaker__ppi"><i class="material-icons-round">public</i>PPI Malaysia</span>
                             </div>
                           </div>
                           <p class="card__description speaker__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>

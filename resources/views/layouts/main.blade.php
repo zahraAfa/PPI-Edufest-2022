@@ -37,7 +37,7 @@
     <!-- Favicon end -->
 </head>
 
-<body class="main-page">
+<body class="main-page" id="top-page">
     <div class="page-loader">
         <img class="loading-image" src="assets/img/gif/page-loader-white.gif" alt="Loading..." />
     </div>
@@ -72,6 +72,7 @@
     @include('layouts.sponsors-partners')
     @include('layouts.faq')
     @include('layouts.footer')
+    <a href="#top-page" class="fa fa-arrow-up go-top"></a>
 
     <script src="assets/scripts/nav.js"></script>
     <script src="assets/scripts/faq.js"></script>

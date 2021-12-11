@@ -449,8 +449,8 @@ h1 {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 2em;
-    padding: 2em;
+    gap: 1.7em;
+    padding: 1.5em;
     border-radius: calc(var(--curve) * 1px) 0 0 0;
     background-color: var(--mainOrange);
     transform: translateY(-100%);
@@ -491,18 +491,19 @@ h1 {
 }
 
 .card__title {
-    font-family: "Work Sans";
+    font-family: "Montserrat";
     font-weight: 700;
     font-size: 1em;
     margin: 0 0 0.3em;
     color: var(--mainBlack);
     box-sizing: border-box;
+    margin-bottom: 0;
 }
 
 .card__tagline {
     display: block;
     margin: 1em 0;
-    font-family: "Outfit";
+    font-family: "Montserrat";
     font-size: 0.8em;
     color: var(--mainWhite);
     box-sizing: border-box;
@@ -512,6 +513,15 @@ h1 {
     font-size: 0.8em;
     color: var(--mainWhite);
     box-sizing: border-box;
+    font-family: "Montserrat";
+    line-height: 25px;
+    font-weight: 700;
+}
+
+.card__status i{
+    font-size: 18px;
+    vertical-align:middle;
+    margin-right: 4px;
 }
 
 .card__description {
@@ -522,7 +532,7 @@ h1 {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    overflow: hidden;
+    overflow: scroll;
     box-sizing: border-box;
 }
 
@@ -542,4 +552,31 @@ h1 {
         align-items: center;
         box-sizing: border-box;
     }
+}
+
+.go-top{
+    background-color: rgba(255, 255, 255, 0.6);
+    position: fixed;
+    bottom: 150px;
+    right: 30px;
+    padding: 0px 10px;
+    text-decoration: none!important;
+    border-radius: 30px;
+    width: 45px;
+    line-height: 45px;
+    box-sizing: border-box;
+    z-index: 299;
+    box-shadow: var(--Shadow);
+    text-align: center;
+    color: var(--mainWhite);
+    display: none;
+}
+
+.go-top:hover{
+    background-color: var(--customYellow);
+    color: var(--mainBlack);
+}
+
+.show-scroll{
+    display: block;
 }

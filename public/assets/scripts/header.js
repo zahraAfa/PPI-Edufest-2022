@@ -28,7 +28,7 @@ function update() {
     });
     translateX.forEach(element => {
         let speed = element.dataset.speed;
-        element.style.transform = `translateX(${latestKnownScrollY * speed}px)`;
+        element.style.transform = `translate(${latestKnownScrollY * speed}px)`;
     });
 
     // opacity.forEach(element => {

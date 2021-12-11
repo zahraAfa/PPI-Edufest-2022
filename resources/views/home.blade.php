@@ -20,7 +20,7 @@
         <img src="assets/img/header/header-frame-front-white.svg" alt="" class="carousel-container-frame">
         <div class="carousel-section carousel-slider" style="overflow: hidden; border-radius: 0px 0px 15px 15px!important;">
             <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
-            <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
+            <div class="carousel-slide"><img src="assets/img/header/carousel2.jpeg" alt=""></div>
         </div>
         <img src="assets/img/header/header-frame-back-white.svg" alt="" class="carousel-container-frame2">
     </div>
@@ -60,7 +60,7 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title">Event Title Event Title</h3>
-                                  <span class="card__status">2022-01-01</span>
+                                  <span class="card__status"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -77,7 +77,7 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title">Event Title Event Title</h3>
-                                  <span class="card__status">2022-01-01</span>
+                                  <span class="card__status"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -94,7 +94,7 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title">Event Title Event Title</h3>
-                                  <span class="card__status">2022-01-01</span>
+                                  <span class="card__status"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -111,7 +111,7 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title">Event Title Event Title</h3>
-                                  <span class="card__status">2022-01-01</span>
+                                  <span class="card__status"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
@@ -128,7 +128,7 @@
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
                                 <div class="card__header-text">
                                   <h3 class="card__title">Event Title Event Title</h3>
-                                  <span class="card__status">2022-01-01</span>
+                                  <span class="card__status"><i class="material-icons-round">event</i>2022-01-01</span>
                                 </div>
                               </div>
                               <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
