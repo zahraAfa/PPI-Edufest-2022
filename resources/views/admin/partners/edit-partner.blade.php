@@ -53,7 +53,8 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button id="save-picture" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+                                    <button id="save-picture" type="button" class="btn btn-primary"
+                                        data-bs-dismiss="modal">Save changes</button>
                                 </div>
                             </div>
                         </div>
@@ -66,9 +67,9 @@
                                     <div id="before__img"></div>
                                     <div class="my-3 mx-5">
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#exampleModal">
-                                                 Update Photo
-                                            </button>
+                                            data-bs-target="#exampleModal">
+                                            Update Photo
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -173,7 +174,7 @@
         $("#form__btn2").click(function(e) {
             e.preventDefault();
             const data = {
-                "name" : $('#form__partner-name').val(),
+                "name": $('#form__partner-name').val(),
             }
             $.ajax({
                 type: "PUT",
