@@ -67,7 +67,8 @@
                                                     <div class="mb-3"><label class="form-label"
                                                             for="form__event-region"><strong>Region</strong><br></label>
                                                             <select class="form-select" id="form__event-region" name="region">
-                                                                <optgroup label="All Region">
+                                                                <optgroup label="Region">
+                                                                    <option value="all">All Region</option>
                                                                     <option value="timtengka">Timur Tengah dan Afrika</option>
                                                                     <option value="amerop">Amerika dan Eropa</option>
                                                                     <option value="asia_oseania">Asia dan Oseania</option>
