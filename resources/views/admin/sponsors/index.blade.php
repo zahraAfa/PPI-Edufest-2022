@@ -122,7 +122,7 @@
                     Are you sure want to delete this sponsor?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancle</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                     <button type="button" id="modal_delete" class="btn btn-primary">Delete</button>
                 </div>
             </div>
