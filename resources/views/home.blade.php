@@ -53,7 +53,7 @@
                     <li>
                         <a href="" class="custom-card">
                             <div class="img__card-container">
-                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                                <img src="assets/img/bg/event-img-test.png" class="card__image" alt="" />
                             </div>
                             <div class="card__overlay">
                               <div class="card__header">
@@ -70,7 +70,7 @@
                     <li>
                         <a href="" class="custom-card">
                             <div class="img__card-container">
-                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                                <img src="assets/img/bg/event-img-test.png" class="card__image" alt="" />
                             </div>
                             <div class="card__overlay">
                               <div class="card__header">
@@ -87,7 +87,7 @@
                     <li>
                         <a href="" class="custom-card">
                             <div class="img__card-container">
-                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                                <img src="assets/img/bg/event-img-test.png" class="card__image" alt="" />
                             </div>
                             <div class="card__overlay">
                               <div class="card__header">
@@ -104,7 +104,7 @@
                     <li>
                         <a href="" class="custom-card">
                             <div class="img__card-container">
-                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                                <img src="assets/img/bg/event-img-test.png" class="card__image" alt="" />
                             </div>
                             <div class="card__overlay">
                               <div class="card__header">
@@ -121,7 +121,7 @@
                     <li>
                         <a href="" class="custom-card">
                             <div class="img__card-container">
-                                <img src="assets/img/header/carousel1.jpg" class="card__image" alt="" />
+                                <img src="assets/img/bg/event-img-test.png" class="card__image" alt="" />
                             </div>
                             <div class="card__overlay">
                               <div class="card__header">

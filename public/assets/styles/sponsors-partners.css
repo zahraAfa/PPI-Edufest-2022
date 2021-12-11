@@ -28,12 +28,7 @@
     height: auto;
     padding-top: 40px;
     padding-bottom: 100px;
-    /* background-color: var(--veryLightPurple); */
     background-color: var(--mainBlue);
-    /* background-image: url(../img/bg/black-paper.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
     overflow-x: hidden;
 }
 
@@ -220,22 +215,29 @@
 
 /* Forcing bootstrap modal styling */
 .modal-content {
-    border: var(--borderWidth) solid var(--softBlack) !important;
-    background-color: var(--veryLightGrey) !important;
+    border: var(--borderWidth) solid var(--mainBlack) !important;
+    background-color: var(--mainWhite) !important;
     border-radius: var(--borderRadiusSm) !important;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
 }
 .modal-content .modal-header .modal-title {
-    font-family: Work Sans;
+    font-family: "Montserrat";
     font-style: italic;
     font-weight: 800;
     font-size: 30px;
     line-height: 47px;
     letter-spacing: 0.11em;
-    color: var(--softBlack);
+    color: var(--mainBlack);
+    text-align: center;
 }
+
+.modal-content .modal-header .btn-close{
+    color: var(--mainBlack);
+}
+
+/* Card (Not used) */
 
 .card-sponsor {
     position: relative;

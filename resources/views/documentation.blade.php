@@ -4,22 +4,22 @@
 
 <section>
     <div class="docs-container">
-        <div class="docs-header">
-            <div class="docs-headerbox">
+        <header class="docs-header">
+            <div class="docs-headerbox translate" data-speed="0.6">
                 <h1>Dokumen-</h1>
                 <div class="doc-row">
-                    <h1>tasi / </h1><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="13.5" cy="13.5" r="13.5" fill="#DEEC90"/></svg>
+                    <h1>tasi / </h1><svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="13.5" cy="13.5" r="13.5" fill="#fffb00"/></svg>
                 </div>
+                <img src="../assets/img/header/mascot-head-smile.png" alt="">
             </div>
             <div class="docs-scroll-down">
                 <p>Scroll Down</p>
                 <i class="fa fa-angle-double-down" aria-hidden="true"></i>
             </div>
             <div class="docs-edufest-rounded"><img src="../assets/img/logos/edufest-round-text.svg" alt="edufest 2022"></div>
-        </div>
-        {{-- <img src="assets/img/bg/paper-transition-purple.svg" alt="" class="docs-paper-texture-trans"> --}}
+        </header>
         <div class="docs-box-container">
-            <div class="docs-box"></div>
+            <div class="docs-box" data-aos="zoom-in-up" data-aos-delay="30" data-aos-duration="1000"></div>
         </div>
     </div>
 </section>

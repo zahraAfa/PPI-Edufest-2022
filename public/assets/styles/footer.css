@@ -192,7 +192,7 @@
     }
 }
 
-@media screen and (max-width: 449px) {
+@media screen and (max-width: 453px) {
     .footer-logos{
         gap: 10px;
     }
@@ -200,15 +200,15 @@
         font-size: 10px;
     }
     .f-soc{
-        width: 45px;
+        width: 40px;
         margin:2px;
-        height: 45px;
-        line-height: 45px;
-        font-size: 18px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 19px;
     }
     .f-soc .fa {
         line-height:35px;
-        color: white;
+        color: var(--mainBlack);
     }
     .f-nav-list{
         font-size: 14px;

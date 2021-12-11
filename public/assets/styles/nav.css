@@ -48,7 +48,6 @@
 .nav-items li a {
   text-decoration: none !important;
   list-style: none !important;
-  /* text-shadow: 0px 1px 2px #ffffff,0px -1px 2px #ffffff,1px 0px 2px #ffffff,-1px 0px 2px #ffffff; */
   font-weight: 600;
 }
 .nav-items li {
@@ -106,7 +105,7 @@
     font-size: 1.3em;
     font-weight: 700;
     text-shadow: none;
-    color: var(--LightGrey);
+    color: var(--mainWhite);
     padding: 0;
   }
 
@@ -128,7 +127,7 @@
     height: 105vh;
     width: 105vw;
     /* background-color: transparent; */
-    background-color: var(--softBlack);
+    background-color: var(--mainBlue);
     /* color: ; */
   }
 

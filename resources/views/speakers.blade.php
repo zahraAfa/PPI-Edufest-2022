@@ -23,7 +23,7 @@
     <div class="speaker-blank-transition"></div>
     <div class="speakers-container">
         <div class="speakers-wrapper">
-            <div class="speakers-h1">
+            <div class="speakers-h1 effect-pop-up">
                 <h1 class="speakers-title" data-aos="fade-down" data-aos-delay="30" data-aos-duration="2000">PEMBICARA</h1>
             </div>
             <div class="speakers-content">
@@ -40,7 +40,7 @@
                 <div class="speakers-grid">
                     <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
                         <div class="img__card-container">
-                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
+                            <img src="assets/img/bg/speaker1.jpeg" class="card__image" alt="Speaker" />
                         </div>
                         <div class="card__overlay">
                           <div class="card__header">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
                         <div class="img__card-container">
-                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
+                            <img src="assets/img/bg/speaker1.jpeg" class="card__image" alt="Speaker" />
                         </div>
                         <div class="card__overlay">
                           <div class="card__header">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
                         <div class="img__card-container">
-                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
+                            <img src="assets/img/bg/speaker1.jpeg" class="card__image" alt="Speaker" />
                         </div>
                         <div class="card__overlay">
                           <div class="card__header">
@@ -85,7 +85,7 @@
                     </div>
                     <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
                         <div class="img__card-container">
-                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
+                            <img src="assets/img/bg/speaker1.jpeg" class="card__image" alt="Speaker" />
                         </div>
                         <div class="card__overlay">
                           <div class="card__header">
@@ -100,7 +100,7 @@
                     </div>
                     <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
                         <div class="img__card-container">
-                            <img src="assets/img/header/bintang-tamu-special-test.png" class="card__image" alt="Speaker" />
+                            <img src="assets/img/bg/speaker2.png" class="card__image" alt="Speaker" />
                         </div>
                         <div class="card__overlay">
                           <div class="card__header">

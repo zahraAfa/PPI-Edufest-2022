@@ -21,7 +21,7 @@ $(document).ready(function(){
         nextArrow:"<a class='custom-arrow slick-next pull-right'><span class='material-icons-round'>arrow_forward_ios</span></a>",
         responsive: [
           {
-            breakpoint: 1314,
+            breakpoint: 1214,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
@@ -37,15 +37,7 @@ $(document).ready(function(){
             }
           },
           {
-            breakpoint: 952,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              infinite: true,
-            }
-          },
-          {
-            breakpoint: 910,
+            breakpoint: 800,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
