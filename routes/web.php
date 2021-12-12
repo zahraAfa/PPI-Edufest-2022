@@ -50,6 +50,12 @@ Route::get('/dokumentasi', function () {
     ]);
 });
 
+Route::get('/writing-contest', function () {
+    return view('writing-contest', [
+        "title" => "Writing Contest",
+    ]);
+})->name('usr-wc');
+
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
