@@ -1,11 +1,11 @@
-<a class="faq-btn-float">
+<a class="faq-btn-float effect-pop-up">
   <i class="faq-btn-icon">?</i>
 </a>
 <div class="faq-modal ">
   <div class="faq-modal-wrapper">
     <i class="close-modal material-icons-round">close</i>
     <div class="faq-container">
-      <h1 id="faq-title-h1">FAQ</h1> 
+      <h1 id="faq-title-h1">FAQ</h1>
       <button class="faq-accordion faq-acc-1" style="display: none">
         <h3 id="faq-q"></h3>
       </button>

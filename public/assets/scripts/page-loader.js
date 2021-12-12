@@ -1,9 +1,33 @@
 // Page Loader
-$(document).ready(function () {
-  $(window).on("load", function () {
-    // setTimeout(function(){ $('.page-loader').hide("slow"); }, 1000);
-    setTimeout(function () {
-      $(".page-loader").fadeOut(500, "linear");
-    }, 100);
-  });
-});
+const preloader = document.querySelector('.page-loader');
+
+const fadeEffect = setInterval(() => {
+    if (!preloader.style.opacity) {
+      preloader.style.opacity = 1;
+    }
+    if (preloader.style.opacity > 0) {
+      preloader.style.opacity -= 0.1;
+      if (preloader.style.opacity < 0){
+        preloader.style.display="none";
+      }
+    } else {
+      clearInterval(fadeEffect);
+      preloader.style.display="none";
+    }
+  }, 100);
+
+window.addEventListener('load', fadeEffect);
+// window.addEventListener('load', setInterval(function(){
+//     if (!preloader.style.opacity) {
+//         preloader.style.opacity = 1;
+//       }
+//       if (preloader.style.opacity > 0) {
+//         preloader.style.opacity -= 0.1;
+//         if (preloader.style.opacity < 0){
+//           preloader.style.display="none";
+//         }
+//       } else {
+//         clearInterval(fadeEffect);
+//         preloader.style.display="none";
+//       }
+// }, 100));

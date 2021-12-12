@@ -18,37 +18,37 @@ Route::get('/', function () {
     return view('home', [
         "title" => "Home",
     ]);
-});
+})->name('usr-home');
 
 Route::get('/pembicara', function () {
     return view('speakers', [
         "title" => "Pembicara",
     ]);
-});
+})->name('usr-speaker');
 
 Route::get('/agenda', function () {
     return view('agenda', [
         "title" => "Agenda",
     ]);
-});
+})->name('usr-agenda');
 
 Route::get('/acara', function () {
     return view('event-details', [
         "title" => "Acara",
     ]);
-});
+})->name('usr-event');
 
 Route::get('/merchandise', function () {
     return view('merchandise', [
         "title" => "Merchandise",
     ]);
-});
+})->name('usr-merch');
 
 Route::get('/dokumentasi', function () {
     return view('documentation', [
         "title" => "Docs",
     ]);
-});
+})->name('usr-docs');
 
 Route::get('/writing-contest', function () {
     return view('writing-contest/index', [

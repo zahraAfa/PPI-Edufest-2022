@@ -17,11 +17,6 @@
   transition: top 0.3s;
 }
 
-/* .nav-color {
-    background-color: var(--LightGreen);
-    color: var(--bgWhite);
-  } */
-
 .nav-transparent {
   background-color: transparent;
   color: var(--White);
@@ -37,7 +32,6 @@
   font-size: 1.1em;
   position: absolute;
   top: 30px;
-  /* left: 50%;*/
   transform: translate(0%, -50%);
   left: 20;
 }
@@ -47,7 +41,6 @@
   margin: 0;
   padding: 0;
   align-items: center;
-  /* border: 1px solid red; */
   justify-content: space-between;
 }
 
@@ -55,7 +48,6 @@
 .nav-items li a {
   text-decoration: none !important;
   list-style: none !important;
-  text-shadow: 2px 1px 7px #000000;
   font-weight: 600;
 }
 .nav-items li {
@@ -65,8 +57,8 @@
 .nav-items li a {
   padding: 20px 15px;
   font-size: 0.9em;
-  font-weight: 500;
-  color: var(--White);
+  font-weight: 800;
+  color: var(--mainWhite);
 }
 
 .nav-items li :hover {
@@ -74,15 +66,11 @@
   border-radius: 30px;
   transition: 0.4s;
 }
-/* .nav-color .nav-items li :hover,
-.nav-items li a:active {
-  color: var(--Black);
-  transition: 0.8s;
-} */
+
 .nav-transparent .nav-items li :hover,
 .nav-items li a:active {
-  color: var(--BrightRed);
-  transition: 0.8s;
+  color: var(--mainRed);
+  transition: 0.4s;
   text-shadow: none;
 }
 
@@ -105,6 +93,7 @@
   transform: translateY(-100%);
   transition: all 0.3s ease-in-out;
 }
+
 .scrolled-up {
   transform: translateY(0);
   transition: all 0.3s ease-in-out;
@@ -116,7 +105,7 @@
     font-size: 1.3em;
     font-weight: 700;
     text-shadow: none;
-    color: var(--LightGrey);
+    color: var(--mainWhite);
     padding: 0;
   }
 
@@ -132,13 +121,13 @@
     justify-content: center;
     position: absolute;
     top: 0;
-    right: 50%;
+    right: 0%;
     transform: translate(150%, 0%);
     transition: 0.4s;
-    height: 100vh;
-    width: 100vw;
+    height: 105vh;
+    width: 105vw;
     /* background-color: transparent; */
-    background-color: var(--DarkGrey);
+    background-color: var(--mainBlue);
     /* color: ; */
   }
 
@@ -202,7 +191,7 @@
   }
 
   .nav-sections ul.slide{
-    transform: translateX(50%);
+    transform: translateX(1%);
     z-index: -1;
   }
 }

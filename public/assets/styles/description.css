@@ -1,76 +1,123 @@
 .desc-container{
     width: 100vw;
     /* height: 100vh; */
-    background-color: var(--BaseLightBeige);
-    /* overflow: hidden; */
+    background-color: var(--mainBlue);
+    overflow: hidden;
 }
 
 .desc-section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* height: 100vh; */
     width: 100vw;
     justify-content: center;
-    padding: 5% 0;
-    /* background-color: black; */
-    /* background-color: beige; */
-    background-color: var(--BaseLightBeige);
+    border-top: var(--borderWidth) solid var(--softBlack);
+    border-left: var(--borderWidth) solid var(--softBlack);
+    border-right: var(--borderWidth) solid var(--softBlack);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 .youtube-cont{
-    /* background-color: black; */
-    width: 60vw;
+    width: 65%;
     display: flex;
+    padding: 5% 5%;
+    background-image: url('../img/bg/edufest-text-deco.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
     /* border: 1px solid red; */
 }
 
 .youtube-cont iframe{
     width: 50vw;
     height: 50vh;
-    /* width:580; height:335; */
     box-shadow: var(--Shadow);
 }
 
 .desc-cont{
-    width: 30vw;
-    /* padding: 0 3%; */
-    /* border: 1px solid red; */
+    padding: 5% 5%;
+    width: 35%;
+    /* background: var(--Gradient1); */
+    background-color: var(--mainWhite);
+    border-left: var(--borderWidth) solid var(--softBlack);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom-left-radius: 100px;
+    border-top-left-radius: 50px;
 }
 
 .desc-cont h1{
-    text-align: center;
-    /* font-family: 'Roboto'; */
-    font-family: 'Permanent Marker', cursive;
-    color: var(--DarkGreen);
-    font-weight: 600;
+    font-family: 'Work Sans';
+    color: var(--mainBlack);
+    font-weight: 800;
+    font-style: italic;
+    text-align: right;
 }
 
 .desc-cont p{
-    font-family: 'Roboto';
-    color: rgb(87, 87, 87);
+    font-family: 'Outfit';
+    color: var(--mainBlack);
     line-height: 2em;
     text-align: justify;
+    font-weight: 500;
+}
+
+.edufest-desc-h1{
+    display: flex;
+    flex-direction: column;
 }
 
 .carousel-container{
+    position: relative;
     padding: 10%;
-    /* background: linear-gradient(24deg, rgba(183,255,96,1) 22%, rgba(231,233,82,1) 51%, rgba(246,255,184,1) 100%); */
-    background-color: var(--BaseMediumBeige);
+    background-color: var(--mainBlue);
+    /* border: 100px solid var(--mainWhite); */
+}
+
+
+.carousel-container-frame{
+    position: absolute;
+    z-index: 20;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48.5%, -52%);
+}
+
+.carousel-container-frame2{
+    position: absolute;
+    /* z-index: 10; */
+    position: absolute;
+    top: 52%;
+    left: 51%;
+    transform: translate(-50%, -56%);
 }
 
 .carousel-section{
     width: 900px;
     height: 300px;
     box-shadow: var(--Shadow);
+    position: relative;
+    z-index: 12;
 }
 
 .carousel-section .carousel-slide img{
     box-sizing: border-box;
     height: auto;
     width: 100%;
-    /* width: 100%; */
     margin: auto;
+}
+
+.desc-cont .button-56 {
+    background-color: var(--veryLightGrey);
+}
+
+.desc-cont .button-56 {
+    margin-left: auto;
+    margin-right: 0
 }
 
 @media screen and (max-width: 1063px) {
@@ -83,15 +130,30 @@
 }
 
 @media screen and (max-width: 959px) {
-    .desc-cont{
-        width: 60vw;
-        padding-top: 10%;
-    }
     .youtube-cont iframe{
         width: 80vw;
+        margin: auto;
     }
     .desc-cont p{
         text-align: center;
+    }
+    .youtube-cont{
+        margin-top: 10%;
+        width: 100vw;
+        padding: 0;
+    }
+    .desc-cont{
+        margin-top: 10%;
+        padding-top: 10%;
+        border-top: var(--borderWidth) solid var(--softBlack);
+        border-left: none;
+        width: 100vw;
+    }
+    .desc-cont h1{
+        text-align: center;
+    }
+    .desc-cont .button-56 {
+        margin: auto;
     }
 }
 
@@ -100,9 +162,13 @@
         width: 100vw;
     }
     .youtube-cont{
-        /* background-color: black; */
         width: 100vw;
-        /* border: 1px solid red; */
+        padding: 0;
+    }
+    .desc-cont{
+        border-top: var(--borderWidth) solid var(--softBlack);
+        border-left: none;
+        width: 100vw;
     }
 }
 
@@ -110,19 +176,32 @@
     .carousel-section{
         width: 900px;
         height: 300px;
-        
+
     }
     .carousel-container{
-        padding: 5%;
+        padding: 10% 5%;
     }
 }
-@media screen and (max-width: 986px) {
+@media screen and (max-width: 1010px) {
     .carousel-section{
         width: 780px;
         height: 260px;
     }
-    .carousel-container{
-        padding: 5%;
+    /* .carousel-container{
+        padding: 10%;
+    } */
+
+    .carousel-container-frame{
+        width: 805px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48.5%, -52%);
+    }
+    .carousel-container-frame2{
+        width: 805px;
+        top: 53%;
+        left: 52%;
+        transform: translate(-50%, -56%);
     }
 }
 @media screen and (max-width: 867px) {
@@ -130,8 +209,20 @@
         width: 690px;
         height: 230px;
     }
-    .carousel-container{
-        padding: 5%;
+    /* .carousel-container{
+        padding: 10%;
+    } */
+    .carousel-container-frame{
+        width: 715px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48.5%, -52%);
+    }
+    .carousel-container-frame2{
+        width: 710px;
+        top: 53%;
+        left: 52%;
+        transform: translate(-50%, -56%);
     }
 }
 @media screen and (max-width: 765px) {
@@ -140,36 +231,105 @@
         height: 180px;
     }
     .carousel-container{
-        padding: 5% 0;
+        padding: 10% 0;
+    }
+    .carousel-container-frame{
+        width: 560px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48.5%, -52%);
+    }
+    .carousel-container-frame2{
+        width: 560px;
+        top: 53%;
+        left: 52%;
+        transform: translate(-50%, -56%);
     }
 }
-@media screen and (max-width: 551px) {
+@media screen and (max-width: 599px) {
     .carousel-section{
         width: 450px;
         height: 150px;
     }
     .carousel-container{
-        padding: 5% 0;
+        padding: 10% 0;
     }
     .desc-section{
-        padding: 5% 0;
+        padding: 0;
+    }
+    .carousel-container-frame{
+        width: 470px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48.5%, -52%);
+    }
+    .carousel-container-frame2{
+        width: 470px;
+        top: 53%;
+        left: 52%;
+        transform: translate(-50%, -56%);
     }
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 506px) {
     .carousel-section{
         width: 360px;
         height: 120px;
     }
     .carousel-container{
-        padding: 5% 0;
+        padding: 10% 0;
+    }
+    .carousel-container-frame{
+        width: 375px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48.5%, -52%);
+    }
+    .carousel-container-frame2{
+        width: 375px;
+        top: 53%;
+        left: 52%;
+        transform: translate(-50%, -56%);
     }
 }
-@media screen and (max-width: 367px) {
+@media screen and (max-width: 397px) {
     .carousel-section{
         width: 300px;
         height: 100px;
     }
     .carousel-container{
-        padding: 5% 0;
+        padding: 10% 0;
+    }
+    .carousel-container-frame{
+        width: 312px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48.5%, -52%);
+    }
+    .carousel-container-frame2{
+        width: 312px;
+        top: 53%;
+        left: 52%;
+        transform: translate(-50%, -56%);
+    }
+}
+@media screen and (max-width: 323px) {
+    .carousel-section{
+        width: 255px;
+        height: 85px;
+    }
+    .carousel-container{
+        padding: 10% 0;
+    }
+    .carousel-container-frame{
+        width: 264px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-48.5%, -52%);
+    }
+    .carousel-container-frame2{
+        width: 264px;
+        top: 53%;
+        left: 52%;
+        transform: translate(-50%, -56%);
     }
 }
