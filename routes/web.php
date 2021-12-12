@@ -51,7 +51,7 @@ Route::get('/dokumentasi', function () {
 });
 
 Route::get('/writing-contest', function () {
-    return view('writing-contest', [
+    return view('writing-contest/index', [
         "title" => "Writing Contest",
     ]);
 })->name('usr-wc');
