@@ -13,7 +13,28 @@
         <img class="wc-curve-l translateX" data-speed="-0.6" src="../../assets/img/header/header-curve-left.png" alt="">
     </header>
     <div class="wc-index-body">
+        <div class="wc-index-body-cont">
+            <a class="wc-index-list1 effect-pop-up">
+                <div class="wc-folder-tag1">ketentuan umum >></div>
+                <div class="wc-folder-outerbox1">
+                    <div class="wc-folder-outerbox1-box"></div>
+                </div>
+            </a>
+            <a class="wc-index-list2 effect-pop-up">
+                <div class="wc-folder-tag2">pendaftaran >></div>
+                <div class="wc-folder-outerbox2">
+                    <div class="wc-folder-outerbox2-box"></div>
 
+                </div>
+            </a>
+            <a class="wc-index-list3 effect-pop-up">
+                <div class="wc-folder-tag3">arsip >></div>
+                <div class="wc-folder-outerbox3">
+                    <div class="wc-folder-outerbox3-box"></div>
+
+                </div>
+            </a>
+        </div>
     </div>
 </section>
 
