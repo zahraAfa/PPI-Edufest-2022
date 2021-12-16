@@ -89,6 +89,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/sponsors')->group(function() {
         Route::post('/insert', [SponsorController::class, 'insert']);
         Route::put('/update/{id}', [SponsorController::class, 'update']);
+        Route::put('/image/{id}', [SponsorController::class, 'updateImage']);
         Route::delete('/delete/{id}', [SponsorController::class, 'delete']);
     });
 
