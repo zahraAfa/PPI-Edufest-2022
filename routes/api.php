@@ -65,7 +65,6 @@ Route::prefix('/speakers')->group(function() {
     Route::get('/read/{id}', [SpeakerController::class, 'readDetail']);
 });
 
-
 /*
 |--------------------------------------------------------------------------
 | API Protected Routes
@@ -90,6 +89,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/sponsors')->group(function() {
         Route::post('/insert', [SponsorController::class, 'insert']);
         Route::put('/update/{id}', [SponsorController::class, 'update']);
+        Route::put('/image/{id}', [SponsorController::class, 'updateImage']);
         Route::delete('/delete/{id}', [SponsorController::class, 'delete']);
     });
 
@@ -97,6 +97,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/partners')->group(function() {
         Route::post('/insert', [PartnerController::class, 'insert']);
         Route::put('/update/{id}', [PartnerController::class, 'update']);
+        Route::put('/image/{id}', [PartnerController::class, 'updateImage']);
         Route::delete('/delete/{id}', [PartnerController::class, 'delete']);
     });
 
@@ -104,6 +105,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/events')->group(function() {
         Route::post('/insert', [EventController::class, 'insert']);
         Route::put('/update/{id}', [EventController::class, 'update']);
+        Route::put('/image/{id}', [EventController::class, 'updateImage']);
         Route::delete('/delete/{id}', [EventController::class, 'delete']);
     });
 
@@ -111,6 +113,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/speakers')->group(function() {
         Route::post('/insert', [SpeakerController::class, 'insert']);
         Route::put('/update/{id}', [SpeakerController::class, 'update']);
+        Route::put('/image/{id}', [SpeakerController::class, 'updateImage']);
         Route::delete('/delete/{id}', [SpeakerController::class, 'delete']);
     });
 });

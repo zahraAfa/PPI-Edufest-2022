@@ -13,6 +13,28 @@ class SponsorController extends Controller
         return $sponsors;
     }
 
+    public function updateImage($id)
+    {
+        request()->validate([
+            'picture' => ['required', 'image']
+        ]);
+
+        // get sponsor data by id
+        $sponsor = Sponsor::find($id);
+        $oldPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->id;
+        
+        // replace old picture name
+        array_map('unlink', glob("$oldPicturePath/*.*"));
+        $pictureName = request('picture')->getClientOriginalName();
+        $sponsor->picture = $pictureName;
+        $sponsor->save();
+
+        // add new picture to storage
+        request('picture')->move($oldPicturePath, $pictureName);
+
+        return $sponsor;
+    }
+
     public function insert() {
         request()->validate([
             'name' => ['required', 'string'],
@@ -33,7 +55,7 @@ class SponsorController extends Controller
         ];
         $sponsor = Sponsor::create($sponsorData);
 
-        $newPath = public_path() . '/storage/img/sponsors/' . $sponsor->name;
+        $newPath = public_path() . '/storage/img/sponsors/' . $sponsor->id;
 
         request('picture')->move($newPath, $pictureName);
 
@@ -47,36 +69,23 @@ class SponsorController extends Controller
                 'string',
                 Rule::unique('sponsors')->ignore($id)
             ],
-            'detail' => ['required', 'string'],
-            'picture' => ['required', 'image']
+            'detail' => ['required', 'string']
         ]);
 
         $sponsor = Sponsor::where('id', $id)->first();
-
-        //Delete directory and picture
-        $oldPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->name;
-        array_map('unlink', glob("$oldPicturePath/*.*"));
-        rmdir($oldPicturePath);
-        
-        $pictureName = $request->file('picture')->getClientOriginalName();
         
         $sponsorData = [
             'name' => $request->name,
-            'detail' => $request->detail,
-            'picture' => $pictureName
+            'detail' => $request->detail
         ];
         
         $sponsor->update($sponsorData);
-        $newPicturePath = public_path() . '/storage/img/sponsors/' . $sponsor->name;
-
-        request('picture')->move($newPicturePath, $pictureName);
 
         $response = [
             "sponsor" => [
                 'id' => $sponsor->id,
                 'name' => $sponsor->name,
-                'detail' => $sponsor->detail,
-                'picture' => $sponsor->picture
+                'detail' => $sponsor->detail
             ]
         ];
 
@@ -88,7 +97,7 @@ class SponsorController extends Controller
         $sponsorObject = $sponsor->first();
 
         //Delete directory and picture
-        $picturePath = public_path() . '/storage/img/sponsors/' . $sponsorObject->name;
+        $picturePath = public_path() . '/storage/img/sponsors/' . $sponsorObject->id;
         array_map('unlink', glob("$picturePath/*.*"));
         rmdir($picturePath);
 
