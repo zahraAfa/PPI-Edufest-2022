@@ -1,76 +1,102 @@
-<div class="sponsor-transition"></div>
 <section class="sponsors-partners-container">
     <div class="sponsors-wrapper">
-        <h1 class="h1-section-title">Our Sponsors</h1>
-        <div class="sponsor-items sponsor-slider">
-            <a class="sponsor-item" data-bs-toggle="modal" data-bs-target="#sponsor-modal" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
-                <div class="sponsor-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="sponsor-img">
-                </div>
-                <h2 class="sponsor-name">Test</h2>
+        <div class="sponsor-header-att" data-aos="fade-left" data-aos-delay="20" data-aos-duration="1000">
+            <p class="effect-pop-slide-l">OUR</p>
+            <p class="effect-pop-slide-l">SP<span>O</span>NS<span>O</span>R<span>S</span></p>
+        </div>
+        <div class="sponsors-cont">
+            <a href="" data-bs-toggle="modal" data-bs-target="#sponsor-modal" class="sponsor-wrapper" data-aos="zoom-in-up" data-aos-delay="20" data-aos-duration="1000">
+                <img src="../../../../assets/img/logos/Logo-Edufest-NoBG.png" alt="">
             </a>
-            <a class="sponsor-item" data-bs-toggle="modal" data-bs-target="#sponsor-modal" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
-                <div class="sponsor-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="sponsor-img">
-                </div>
-                <h2 class="sponsor-name">Test</h2>
+            <a href="" data-bs-toggle="modal" data-bs-target="#sponsor-modal" class="sponsor-wrapper" data-aos="zoom-in-up" data-aos-delay="20" data-aos-duration="1000">
+                <img src="../../../../assets/img/logos/Logo-Edufest.png" alt="">
             </a>
-            <a class="sponsor-item" data-bs-toggle="modal" data-bs-target="#sponsor-modal" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
-                <div class="sponsor-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="sponsor-img">
-                </div>
-                <h2 class="sponsor-name">Test</h2>
-            </a>
-            <a class="sponsor-item" data-bs-toggle="modal" data-bs-target="#sponsor-modal" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
-                <div class="sponsor-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="sponsor-img">
-                </div>
-                <h2 class="sponsor-name">Test</h2>
-            </a>
-            <a class="sponsor-item" data-bs-toggle="modal" data-bs-target="#sponsor-modal" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
-                <div class="sponsor-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="sponsor-img">
-                </div>
-                <h2 class="sponsor-name">Test</h2>
+            <a href="" data-bs-toggle="modal" data-bs-target="#sponsor-modal" class="sponsor-wrapper" data-aos="zoom-in-up" data-aos-delay="20" data-aos-duration="1000">
+                <img src="../../../../assets/img/logos/PPI Dunia.png" alt="">
             </a>
         </div>
+        {{-- <div class="sponsor-items sponsor-slider">
+            <a class="card-sponsor" data-bs-toggle="modal" data-bs-target="#sponsor-modal">
+                <div class="imgBx">
+                    <img src="../../../assets/img/bg/edufests-text.svg" alt="images">
+                </div>
+                <div class="sponsor-card-details">
+                    <h2>Sponsor Name</h2>
+                </div>
+            </a>
+            <a class="card-sponsor" data-bs-toggle="modal" data-bs-target="#sponsor-modal">
+                <div class="imgBx">
+                    <img src="../../../assets/img/bg/edufests-text.svg" alt="images">
+                </div>
+                <div class="sponsor-card-details">
+                    <h2>Sponsor Name</h2>
+                </div>
+            </a>
+            <a class="card-sponsor" data-bs-toggle="modal" data-bs-target="#sponsor-modal">
+                <div class="imgBx">
+                    <img src="../../../assets/img/bg/edufests-text.svg" alt="images">
+                </div>
+                <div class="sponsor-card-details">
+                    <h2>Sponsor Name</h2>
+                </div>
+            </a>
+            <a class="card-sponsor" data-bs-toggle="modal" data-bs-target="#sponsor-modal">
+                <div class="imgBx">
+                    <img src="../../../assets/img/bg/edufests-text.svg" alt="images">
+                </div>
+                <div class="sponsor-card-details">
+                    <h2>Sponsor Name</h2>
+                </div>
+            </a>
+            <a class="card-sponsor" data-bs-toggle="modal" data-bs-target="#sponsor-modal">
+                <div class="imgBx">
+                    <img src="../../../assets/img/bg/edufests-text.svg" alt="images">
+                </div>
+                <div class="sponsor-card-details">
+                    <h2>Sponsor Name</h2>
+                </div>
+            </a>
+        </div> --}}
     </div>
     <div class="partners-wrapper">
-        <h1 class="h1-section-title">Partners</h1>
+        <div class="partner-header-att" data-aos="fade-right" data-aos-delay="20" data-aos-duration="1000">
+            <p class="effect-pop-slide-r">OUR</p>
+            <p class="effect-pop-slide-r">P<span>A</span>RTN<span>E</span>R<span>S</span></p>
+        </div>
         <div class="partner-items partner-slider">
-            <div class="partner-item" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
+            <div class="partner-item">
                 <div class="partner-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="partner-img">
+                    <img src="../../../../assets/img/logos/Logo-Edufest.png" alt="Partner" class="partner-img">
                 </div>
                 <h2 class="partner-name"></h2>
             </div>
-            <div class="partner-item" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
+            <div class="partner-item">
                 <div class="partner-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="partner-img">
+                    <img src="../../../../assets/img/logos/PPI Dunia.png" alt="Partner" class="partner-img">
                 </div>
                 <h2 class="partner-name"></h2>
             </div>
-            <div class="partner-item" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
+            <div class="partner-item">
                 <div class="partner-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="partner-img">
+                    <img src="../../../../assets/img/logos/Logo-Edufest.png" alt="Partner" class="partner-img">
                 </div>
                 <h2 class="partner-name"></h2>
             </div>
-            <div class="partner-item" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
+            <div class="partner-item">
                 <div class="partner-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="partner-img">
+                    <img src="../../../../assets/img/logos/PPI Dunia.png" alt="Partner" class="partner-img">
                 </div>
                 <h2 class="partner-name"></h2>
             </div>
-            <div class="partner-item" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
+            <div class="partner-item">
                 <div class="partner-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="partner-img">
+                    <img src="../../../../assets/img/logos/Logo-Edufest.png" alt="Partner" class="partner-img">
                 </div>
                 <h2 class="partner-name"></h2>
             </div>
-            <div class="partner-item" data-aos="zoom-in" data-aos-delay="10" data-aos-duration="1000">
+            <div class="partner-item">
                 <div class="partner-img-wrapper">
-                    <img src="assets/img/header/carousel1.jpeg" alt="Sponsor" class="partner-img">
+                    <img src="../../../../assets/img/logos/Logo-Edufest.png" alt="Partner" class="partner-img">
                 </div>
                 <h2 class="partner-name"></h2>
             </div>
@@ -81,7 +107,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Sponsor Title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
