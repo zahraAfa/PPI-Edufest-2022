@@ -15,6 +15,29 @@ class SpeakerController extends Controller
 
     public function readDetail($id) {
         $speaker = Speaker::where('id', $id)->first();
+        $data = [$speaker, $speaker->email];
+        return $data;
+    }
+
+    public function updateImage($id)
+    {
+        request()->validate([
+            'picture' => ['required', 'image']
+        ]);
+
+        // get partner data by id
+        $speaker = Speaker::find($id);
+        $oldPicturePath = public_path() . '/storage/img/speakers/' . $speaker->id;
+
+        // replace old picture name
+        array_map('unlink', glob("$oldPicturePath/*.*"));
+        $pictureName = request('picture')->getClientOriginalName();
+        $speaker->picture = $pictureName;
+        $speaker->save();
+
+        // add new picture to storage
+        request('picture')->move($oldPicturePath, $pictureName);
+
         return $speaker;
     }
 
@@ -68,18 +91,10 @@ class SpeakerController extends Controller
             'major' => ['required', 'string'],
             'school' => ['required', 'string'],
             'detail' => ['required', 'string'],
-            'picture' => ['required', 'image'],
             'event_id' => ['required', 'integer']
         ]);
 
         $speaker = Speaker::where('id', $id)->first();
-
-        //Delete directory and picture
-        $oldPicturePath = public_path() . '/storage/img/speakers/' . $speaker->id;
-        array_map('unlink', glob("$oldPicturePath/*.*"));
-        rmdir($oldPicturePath);
-
-        $pictureName = request('picture')->getClientOriginalName();
     
         $speakerData = [
             'name' => request('name'),
@@ -88,14 +103,10 @@ class SpeakerController extends Controller
             'major' => request('major'),
             'school' => request('school'),
             'detail' => request('detail'),
-            'event_id' => request('event_id'),
-            'picture' => $pictureName
+            'event_id' => request('event_id')
         ];
 
         $speaker->update($speakerData);
-        $newPicturePath = public_path() . '/storage/img/speakers/' . $speaker->id;
-        
-        request('picture')->move($newPicturePath, $pictureName);
         
         $response = [
             "speaker" => [
