@@ -65,7 +65,6 @@ Route::prefix('/speakers')->group(function() {
     Route::get('/read/{id}', [SpeakerController::class, 'readDetail']);
 });
 
-
 /*
 |--------------------------------------------------------------------------
 | API Protected Routes
@@ -97,6 +96,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/partners')->group(function() {
         Route::post('/insert', [PartnerController::class, 'insert']);
         Route::put('/update/{id}', [PartnerController::class, 'update']);
+        Route::put('/image/{id}', [PartnerController::class, 'updateImage']);
         Route::delete('/delete/{id}', [PartnerController::class, 'delete']);
     });
 
