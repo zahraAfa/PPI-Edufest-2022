@@ -49,14 +49,19 @@
                                         </div>
                                         <div class="card-body">
                                             <form id="faq__edit-form">
-                                                <div class="mb-3"><label class="form-label" for="question__faq"><strong>Question</strong></label>
-                                                    <input class="form-control" type="text" id="question__faq" placeholder="Question" name="question">
+                                                <div class="mb-3"><label class="form-label"
+                                                        for="question__faq"><strong>Question</strong></label>
+                                                    <input class="form-control" type="text" id="question__faq"
+                                                        placeholder="Question" name="question">
                                                 </div>
-                                                <div class="mb-3"><label class="form-label" for="answer__faq"><strong>Answer</strong></label>
-                                                    <textarea class="form-control" type="text" id="answer__faq" placeholder="Answer" name="answer" rows="3"></textarea>
+                                                <div class="mb-3"><label class="form-label"
+                                                        for="answer__faq"><strong>Answer</strong></label>
+                                                    <textarea class="form-control" type="text" id="answer__faq"
+                                                        placeholder="Answer" name="answer" rows="3"></textarea>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <button class="btn btn-primary btn-sm"type="submit">Save Changes</button>
+                                                    <button class="btn btn-primary btn-sm" type="submit">Save
+                                                        Changes</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -82,18 +87,18 @@
             url: '../../../api/faqs/read',
             success: function(data) {
                 console.log('success');
-                $.each(data, function(key, faq){
-                    if(faq["id"]==={{ request()->route('id') }}){
+                $.each(data, function(key, faq) {
+                    if (faq["id"] === {{ request()->route('id') }}) {
                         $('#question__faq').val(faq["question"]);
                         $('#answer__faq').val(faq["answer"]);
                     }
                 });
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    var data=XMLHttpRequest.responseText;
-                    var jsonResponse = JSON.parse(data);
-                    alert(jsonResponse["message"]), alert(textStatus);
-                }
+                var data = XMLHttpRequest.responseText;
+                var jsonResponse = JSON.parse(data);
+                alert(jsonResponse["message"]), alert(textStatus);
+            }
         });
         $("#faq__edit-form").submit(function(e) {
 
@@ -103,18 +108,19 @@
                 type: "PUT",
                 url: '../../../api/faqs/update/{{ request()->route('id') }}',
                 data: form.serialize(),
-                beforeSend: function (xhr) {
+                beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
-                success: function(data)
-                {
-                    let headers = new Headers({'Content-Type': 'application/json'});
+                success: function(data) {
+                    let headers = new Headers({
+                        'Content-Type': 'application/json'
+                    });
                     let token = 'Bearer {{ Auth::user()->api_token }}';
                     headers.append('Authorization', token);
                     window.location.href = "{{ route('admin-faqs-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    var data=XMLHttpRequest.responseText;
+                    var data = XMLHttpRequest.responseText;
                     var jsonResponse = JSON.parse(data);
                     alert(jsonResponse["message"]);
                 }

@@ -13,6 +13,29 @@ class EventController extends Controller
         return $events;
     }
 
+    public function updateImage($id)
+    {
+        request()->validate([
+            'picture' => ['required', 'image']
+        ]);
+
+        // get partner data by id
+        $events = Event::find($id);
+        $oldPicturePath = public_path() . '/storage/img/events/' . $events->id;
+        $oldFile = $oldPicturePath . '/' . $events->picture;
+
+        // replace old picture name
+        array_map('unlink', glob("$oldPicturePath/*.*"));
+        $pictureName = request('picture')->getClientOriginalName();
+        $events->picture = $pictureName;
+        $events->save();
+
+        // add new picture to storage
+        request('picture')->move($oldPicturePath, $pictureName);
+
+        return $events;
+    }
+
     public function insert() {
         request()->validate([
             'title' => ['required', 'string'],
@@ -57,32 +80,20 @@ class EventController extends Controller
             'form_link' => ['required', 'string'],
             'date' => ['required', 'date'],
             'detail' => ['required', 'string'],
-            'region' => ['required', 'string'],
-            'picture' => ['required', 'image']
+            'region' => ['required', 'string']
         ]);
 
         $event = Event::where('id', $id)->first();
-
-        //Delete directory and picture
-        $oldPicturePath = public_path() . '/storage/img/events/' . $event->id;
-        array_map('unlink', glob("$oldPicturePath/*.*"));
-        rmdir($oldPicturePath);
-
-        $pictureName = request('picture')->getClientOriginalName();
 
         $eventData = [
             'title' => request('title'),
             'form_link' => request('form_link'),
             'date' => request('date'),
             'detail' => request('detail'),
-            'region' => request('region'),
-            'picture' => $pictureName
+            'region' => request('region')
         ];
 
         $event->update($eventData);
-        $newPicturePath = public_path() . '/storage/img/events/' . $event->id;
-
-        request('picture')->move($newPicturePath, $pictureName);
 
         $response = [
             "event" => [
