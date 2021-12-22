@@ -14,26 +14,23 @@
     </header>
     <div class="wc-index-body">
         <div class="wc-index-body-cont">
-            <a class="wc-index-list1 effect-pop-up">
-                <div class="wc-folder-tag1">ketentuan umum >></div>
-                <div class="wc-folder-outerbox1">
-                    <div class="wc-folder-outerbox1-box"></div>
+            <a class="wc-index-list1 effect-pop-up" style="text-decoration: none!important">
+                <div class="wc-folder-outerbox1"></div>
+                <div class="wc-folder-box1">
+                   <div class="wc-folder-box1-tag" style="text-decoration: none!important;">Pendaftaran</div>
+                   <div class="wc-folder-box1-arrow"><i class="fa fa-arrow-right"></i></div>
                 </div>
             </a>
-            <a class="wc-index-list2 effect-pop-up">
-                <div class="wc-folder-tag2">pendaftaran >></div>
-                <div class="wc-folder-outerbox2">
-                    <div class="wc-folder-outerbox2-box"></div>
-
+            <a class="wc-index-list2 effect-pop-up" style="text-decoration: none!important">
+                <div class="wc-folder-outerbox2"></div>
+                <div class="wc-folder-box2">
+                    <div class="wc-folder-box2-tag" style="text-decoration: none!important;">Arsip<br>Writing Contest<br>2021</div>
+                    <div class="wc-folder-box2-arrow"><i class="fa fa-arrow-right"></i></div>
                 </div>
             </a>
-            <a class="wc-index-list3 effect-pop-up">
-                <div class="wc-folder-tag3">arsip >></div>
-                <div class="wc-folder-outerbox3">
-                    <div class="wc-folder-outerbox3-box"></div>
-
-                </div>
-            </a>
+        </div>
+        <div class="wc-index-body-cont2">
+            <h1>Keterangan Umum</h1>
         </div>
     </div>
 </section>
