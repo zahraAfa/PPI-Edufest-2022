@@ -2,54 +2,49 @@ version: "3"
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: ppi-edufest-app
     restart: unless-stopped
     environment:
       SERVICE_NAME: app
-      SERVICE_TAGS: dev
     working_dir: /var/www
-    volumes:
-      - .:/var/www
-      # - apppublicdata:/var/www/public
+    expose:
+      - "9000"
+    depends_on:
+      database:
+        condition: service_healthy
     networks:
-      - ppi-edufest-network
+      - network-1
 
   webserver:
-    # build:
-    #   context: ./docker/webserver
-    #   dockerfile: Dockerfile
-    image: nginx:1.20-alpine
     container_name: ppi-edufest-webserver
     restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
-    volumes:
-      - ./docker/webserver/conf.d/:/etc/nginx/conf.d/
-      - .:/var/www:ro
+    depends_on:
+      app:
+        condition: service_started
+      database:
+        condition: service_healthy
     networks:
-      - ppi-edufest-network
+      - network-1
 
   database:
     image: mariadb:10.6
     container_name: ppi-edufest-database
     restart: unless-stopped
-    ports:
-      - "3306:3306"
+    expose:
+      - "3306"
     environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_USER: ${DB_USERNAME}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
       SERVICE_NAME: db
-      SERVICE_TAGS: prod
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "${DB_USERNAME}", "-p${DB_PASSWORD}"]
+      timeout: 10s
+      retries: 10
     volumes:
       - dbdata:/var/lib/mysql
     networks:
-      - ppi-edufest-network
+      - network-1
 
   phpmyadmin:
     image: phpmyadmin:5.1
@@ -58,12 +53,15 @@ services:
     ports:
       - "8080:80"
     networks:
-      - ppi-edufest-network
+      - network-1
     environment:
-      PMA_ARBITRARY: 1
+      PMA_HOST: database
+    depends_on:
+      database:
+        condition: service_healthy
 
 networks:
-  ppi-edufest-network:
+  network-1:
     driver: bridge
 
 volumes:

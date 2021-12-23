@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ppi-edufest/app:latest
+    entrypoint: ["app-entrypoint.sh"]
+    command: ["php-fpm"]
+    environment:
+      SERVICE_TAGS: dev
+      DB_HOST:
+      DB_DATABASE:
+      DB_USERNAME:
+      DB_PASSWORD:
+    volumes:
+      - .:/var/www
+      - ./app-entrypoint.sh:/usr/bin/app-entrypoint.sh:ro
+
+  webserver:
+    image: nginx:1.20-alpine
+    volumes:
+      - ./docker/webserver/conf.d:/etc/nginx/conf.d:ro
+      - .:/var/www:ro
+
+  database:
+    environment:
+      SERVICE_TAGS: dev
+      MARIADB_DATABASE: ${DB_DATABASE}
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+      MARIADB_USER: ${DB_USERNAME}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
