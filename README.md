@@ -40,9 +40,7 @@ Generate a new application key
     php artisan key:generate
 ```
 
-
 Create Database on DBMS (Navicat, mysql workbench, or phpmyadmin) called as **ppi_edufest_2022**
-
 
 Migrate the database schema
 
@@ -74,7 +72,7 @@ You can now access the server at <http://localhost:8000>
 
 For docker, make sure to set`DB_HOST` in `.env` file to database container name. In this case, it should be set to `database`
 
-Run `docker compose`
+- Make sure to set`DB_HOST` in `.env` file to database container name. In this case, it should be set to `database`.
 
 ``` bash
 docker compose up -d
@@ -82,34 +80,16 @@ docker compose up -d
 
 -d for daemonize (running in background)
 
-For `php artisan` command, use `docker compose exec [application-container-name] php artisan [command]`
-
-Generate a new application key
-
-```bash
-    docker compose exec app php artisan key:generate
+- Container networking is handled by `traefik`, acting as entry points to all incoming connections.
+- SSL/TLS/HTTPS also handled by `traefik`. Connection from outside into server is encrypted. Connection between services is unencrypted.
+``` 
+                    ___________________________
+                   / docker compose/swarm node
+                   | 
+incoming request <=============> traefik <================> app
+                   | encrypted             unencrypted \
+                   |  traffic                traffic    \
+                   |                                     => phpmyadmin
+                   |
 ```
-
-
-Create Database on DBMS (Navicat, mysql workbench, or phpmyadmin) called as **ppi_edufest_2022**
-
-
-Migrate the database schema
-
-```bash
-    docker compose exec app php artisan migrate
-```
-
-Fresh the database schema just in case you want to drop and rebuild the schema
-
-```bash
-    docker compose exec app php artisan migrate:fresh
-```
-
-Seed the database
-
-```bash
-    docker compose exec app php artisan db:seed
-```
-
-Database should persist regardless the container state (running, stopped, removed)
+- Database tables and entries should persist between container restarts. This is achieved with `app-entrypoint.sh`, which check whether database tables exist within `dbdata` volume.
