@@ -30,7 +30,7 @@
             </a>
         </div>
         <div class="wc-index-body-cont2">
-            <h1>Keterangan Umum</h1>
+            <h1>Ketentuan Umum</h1>
         </div>
     </div>
 </section>
