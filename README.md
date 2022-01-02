@@ -70,18 +70,25 @@ You can now access the server at <http://localhost:8000>
 
 ### Docker
 
-For docker, make sure to set`DB_HOST` in `.env` file to database container name. In this case, it should be set to `database`
+#### First Time Run
+- Create new self-signed SSL certificate.
+``` bash
+mkcert -cert-file docker/traefik/certs/local-cert.pem -key-file docker/traefik/certs/local-key.pem "docker.localhost" "*.docker.localhost" "domain.local" "*.domain.local"
+```
 
 - Make sure to set`DB_HOST` in `.env` file to database container name. In this case, it should be set to `database`.
 
+#### Subsequent Run
+- Run `docker compose`. To daemonize, use `-d` (running in background). Database should persist between container restarts.
 ``` bash
 docker compose up -d
 ```
 
--d for daemonize (running in background)
+#### Inner Workings
 
 - Container networking is handled by `traefik`, acting as entry points to all incoming connections.
 - SSL/TLS/HTTPS also handled by `traefik`. Connection from outside into server is encrypted. Connection between services is unencrypted.
+- Database tables and entries should persist between container restarts. This is achieved with `app-entrypoint.sh`, which checks whether database tables exist within `dbdata` volume.
 ``` 
                     ___________________________
                    / docker compose/swarm node
@@ -92,4 +99,3 @@ incoming request <=============> traefik <================> app
                    |                                     => phpmyadmin
                    |
 ```
-- Database tables and entries should persist between container restarts. This is achieved with `app-entrypoint.sh`, which check whether database tables exist within `dbdata` volume.
