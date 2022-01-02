@@ -2,106 +2,79 @@ version: "3"
 
 services:
   traefik:
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
     image: traefik:2.5
-    # image: reverse-proxy:latest
-    container_name: ppi-edufest-traefik
     restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
+    container_name: ppi-edufest-traefik
     ports:
-      # Web
       - 80:80
       - 443:443
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      # Map the static conf into the container
-      - ./docker/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
-      # Map the dynamic conf into the container
-      - ./docker/traefik/config.yml:/etc/traefik/config.yml:ro
-      # Map the certificates into the container
-      - ./docker/traefik/certs:/etc/traefik/certs
     networks:
       - network-1
-    # labels:
-      # Enable this container to be mapped by traefik
-      # For more information, see: https://docs.traefik.io/providers/docker/#exposedbydefault
-      # - "traefik.enable=true"
-      # Use "traefik" router configuration defined into the dynamic config file: ./traefik/config.yml
-      # - "traefik.http.routers.traefik=true"
-
-  app:
-    container_name: ppi-edufest-app
-    restart: unless-stopped
-    environment:
-      SERVICE_NAME: app
-    working_dir: /var/www
-    expose:
-      - "9000"
-    depends_on:
-      database:
-        condition: service_healthy
-    networks:
-      - network-1
+    security_opt:
+      - no-new-privileges:true
 
   webserver:
-    container_name: ppi-edufest-webserver
     restart: unless-stopped
-    # ports:
-    #   - "80:80"
-    #   - "443:443"
+    container_name: ppi-edufest-webserver
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.webserver.tls=true"
+    networks:
+      - network-1
     depends_on:
       app:
         condition: service_started
       database:
         condition: service_healthy
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.webserver.rule=Host(`ppiedufest.docker.localhost`)"
-      - "traefik.http.routers.webserver.tls=true"
+
+  app:
+    restart: unless-stopped
+    command: ["php-fpm"]
+    working_dir: /var/www
+    container_name: ppi-edufest-app
+    expose:
+      - "9000"
     networks:
       - network-1
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      SERVICE_NAME: app
 
   database:
     image: mariadb:10.6
-    container_name: ppi-edufest-database
     restart: unless-stopped
+    container_name: ppi-edufest-database
     expose:
       - "3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - network-1
     environment:
       SERVICE_NAME: db
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "${DB_USERNAME}", "-p${DB_PASSWORD}"]
       timeout: 10s
       retries: 10
-    volumes:
-      - dbdata:/var/lib/mysql
-    networks:
-      - network-1
 
   phpmyadmin:
     image: phpmyadmin:5.1
-    container_name: ppi-edufest-phpmyadmin
     restart: unless-stopped
-    # ports:
-    #   - "8080:80"
+    container_name: ppi-edufest-phpmyadmin
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.phpmyadmin.tls=true"
     networks:
       - network-1
-    environment:
-      PMA_HOST: database
     depends_on:
       database:
         condition: service_healthy
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.phpmyadmin.rule=Host(`pma.docker.localhost`)"
-      - "traefik.http.routers.phpmyadmin.tls=true"
-
-networks:
-  network-1:
-    driver: bridge
+    environment:
+      PMA_HOST: database
 
 volumes:
   dbdata:
