@@ -1,16 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Event;
+use App\Models\Speaker;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
     public function read() {
         $events = Event::all();
         return $events;
+    }
+
+    public function detail($id){
+        return view('event-details', [
+            "title" => "Acara " . $id,
+            "event" => Event::findOrFail($id),
+            "speakers" => DB::table('speakers')->where('event_id', $id)->get()
+        ]);
     }
 
     public function updateImage($id)
