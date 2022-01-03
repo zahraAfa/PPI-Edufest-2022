@@ -58,15 +58,7 @@
                             </div>`;
                     });
                     $('#list-partners').append(partnerItems);
-                    $('.partner-slider').slick({
-                        slidesToShow: 5,
-                        slidesToScroll: 3,
-                        autoplay: true,
-                        autoplaySpeed: 2000,
-                        arrows: false,
-                        centerMode: true,
-                        infinite: true,
-                    });
+                    partnerSlider();
                 }
             }
         });
