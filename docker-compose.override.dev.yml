@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+  traefik:
+  #   build:
+  #    context: ./docker/traefik
+  #    dockerfile: Dockerfile
+    volumes:
+      - ./docker/traefik/certs:/etc/traefik/certs
+      - ./docker/traefik/config.dev.yml:/etc/traefik/config.yml:ro
+      - ./docker/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+
+  webserver:
+    image: nginx:1.20-alpine
+    # build:
+    #   context: ./docker/webserver
+    #   dockerfile: Dockerfile
+    labels:
+      - "traefik.http.routers.webserver.rule=Host(`ppiedufest.mangkoran.xyz`)"
+    volumes:
+      - appdata:/var/www:ro
+      - ./docker/webserver/conf.d:/etc/nginx/conf.d:ro
+
+  app:
+    image: mangkoran/ppi_edufest-app:latest
+    entrypoint: ["app-entrypoint.sh"]
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    volumes:
+      - appdata:/var/www
+    environment:
+      SERVICE_TAGS: dev
+      DB_HOST:
+      DB_DATABASE:
+      DB_USERNAME:
+      DB_PASSWORD:
+
+  database:
+    environment:
+      SERVICE_TAGS: dev
+      MARIADB_USER: ${DB_USERNAME}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_DATABASE: ${DB_DATABASE}
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+
+  phpmyadmin:
+    labels:
+      - "traefik.http.routers.phpmyadmin.rule=Host(`pma.mangkoran.xyz`)"
+
+networks:
+  network-1:
+    driver: bridge
