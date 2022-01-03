@@ -87,13 +87,4 @@ $(document).ready(function(){
         centerMode: true,
         infinite: true,
       });
-      $('.partner-slider').slick({
-        slidesToShow: 5,
-        slidesToScroll: 3,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: false,
-        centerMode: true,
-        infinite: true,
-      });
 });
