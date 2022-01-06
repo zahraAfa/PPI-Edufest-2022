@@ -129,7 +129,7 @@ Route::middleware('auth:api')->group(function () {
     Route::prefix('/articles')->group(function() {
         Route::post('/insert', [ArticleController::class, 'insert']);
         Route::put('/update/{id}', [ArticleController::class, 'update']);
-        Route::post('/image/{id}', [ArticleController::class, 'updateImage']);
+        Route::put('/image/{id}', [ArticleController::class, 'updateImage']);
         Route::delete('/delete/{id}', [ArticleController::class, 'delete']);
     });
 });
