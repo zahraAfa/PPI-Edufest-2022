@@ -24,7 +24,8 @@ class EventController extends Controller
 
     public function readDetail($id) {
         $event = Event::where('id', $id)->first();
-        $data = [$event];
+        $speaker = Speaker::where('event_id', $id)->get();
+        $data = [$event, $speaker];
         return $data;
     }
 
