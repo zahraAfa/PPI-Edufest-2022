@@ -29,7 +29,7 @@
                         <p id="event_detail"></p>
                     </div>
                 </div>
-                <div class="event-form-section"></div>
+                <div class="event-form-section"><iframe id="event_form" width="100%" height="677" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
             </div>
         </div>
     </section>
@@ -38,7 +38,7 @@
         $(document).ready(function() {
             $.ajax({
                 type: "GET",
-                url: "../../../api/events/read/2",
+                url: "../../../api/events/read/{{ request()->route('id') }}",
                 success: function(result) {
                     console.log(result);
 
@@ -59,6 +59,7 @@
                             $(this).append(result[0]["date"]);
                         });
                         $('#event_detail').append(result[0]["detail"]);
+                        $('#event_form').attr("src" ,result[0]["form_link"]);
 
 
                         result[1].forEach((speaker) => {
