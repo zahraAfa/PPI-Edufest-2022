@@ -22,6 +22,12 @@ class EventController extends Controller
         ]);
     }
 
+    public function readDetail($id) {
+        $event = Event::where('id', $id)->first();
+        $data = [$event];
+        return $data;
+    }
+
     public function updateImage($id)
     {
         request()->validate([
