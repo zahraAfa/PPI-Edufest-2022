@@ -1,0 +1,37 @@
+.articles-main-header{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.articles-main-header h1{
+    color: var(--mainWhite);
+    text-align: center;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
+
+.articles-main-content{
+}
+
+.articles-main-content-wrapper{
+    width: 85vw;
+    border: 1px solid red;
+    margin: auto;
+    padding: 5% 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.articles-box{
+    background-color: var(--mainWhite);
+    height: 200px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    /* margin: auto; */
+}
