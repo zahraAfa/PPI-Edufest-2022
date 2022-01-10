@@ -30,7 +30,7 @@
                 @include('admin.layouts.top-nav')
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">New Article</h3>
-                    <form id="sponsor__add-form" method="post" enctype="multipart/form-data">
+                    <form id="article_form" method="post" enctype="multipart/form-data">
                         <div class="row mb-3">
                             <div class="col-lg-4">
                                 <div class="card mb-3">
@@ -38,7 +38,7 @@
                                         <div id="before__img"></div>
                                         <div class="my-3 mx-5">
                                             <label for="formFile" class="form-label">Add Photo</label>
-                                            <input class="form-control" type="file" accept="image/*" name="picture"
+                                            <input class="form-control" multiple type="file" accept="image/*" name="picture"
                                                 id="form__img">
                                         </div>
                                     </div>
@@ -56,37 +56,37 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="mb-3"><label class="form-label"
-                                                                for="form__sponsor-name"><strong>Writer</strong><br></label><input
-                                                                class="form-control" type="text"
-                                                                id="form__sponsor-name" placeholder="Writer Name"
-                                                                name="name"></div>
+                                                                for="article_writter"><strong>Writer</strong><br></label><input
+                                                                class="form-control" type="text" id="article_writer"
+                                                                placeholder="Writer Name" name="name"></div>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3"><label class="form-label"
-                                                        for="form__sponsor-detail"><strong>Title</strong></label>
-                                                    <input class="form-control" type="text" id="form__sponsor-detail"
+                                                        for="article_title"><strong>Title</strong></label>
+                                                    <input class="form-control" type="text" id="article_title"
                                                         placeholder="Title" name="detail" rows="3">
                                                 </div>
                                                 <div class="mb-3"><label class="form-label"
-                                                        for="form__sponsor-detail"><strong>Description</strong></label>
+                                                        for="article_description"><strong>Description</strong></label>
                                                     <textarea class="form-control" type="text"
-                                                        id="form__sponsor-detail" placeholder="Title" name="detail"
+                                                        id="article_description" placeholder="Description" name="detail"
                                                         rows="3"></textarea>
                                                 </div>
                                                 <div class="mb-3"><label class="form-label"
-                                                        for="form__sponsor-detail"><strong>School</strong></label>
-                                                    <input class="form-control" type="text" id="form__sponsor-detail"
+                                                        for="article_school"><strong>School</strong></label>
+                                                    <input class="form-control" type="text" id="article_school"
                                                         placeholder="Writer School" name="detail" rows="3">
                                                 </div>
                                                 <div class="mb-3"><label class="form-label"
-                                                        for="form__sponsor-detail"><strong>PPI</strong></label>
-                                                    <input class="form-control" type="text" id="form__sponsor-detail"
+                                                        for="article_ppi"><strong>PPI</strong></label>
+                                                    <input class="form-control" type="text" id="article_ppi"
                                                         placeholder="Writer PPI" name="detail" rows="3">
                                                 </div>
+                                                
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                         type="submit">Add Article</button></div>
-                                            </div>
-                                        </div>
+                                            </div>  
+                                        </div>          
                                     </div>
                                 </div>
                             </div>
@@ -104,16 +104,21 @@
     <script src="../../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../assets/admin-template/js/script.min.js"></script>
     <script>
-        $("#sponsor__add-form").submit(function(e) {
-
+        $("#article_form").submit(function(e) {
             e.preventDefault();
-            var form = $("#sponsor__add-form");
+            var form = $("#article_form");
             var formData = new FormData();
-            var files = $('#form__img')[0].files[0];
-            formData.append('picture', files);
-            formData.append('name', $('#form__sponsor-name').val());
-            formData.append('detail', $('#form__sponsor-detail').val());
-            var urlpost = '../../../api/sponsors/insert';
+            var files = $('#form__img')[0].files;
+            console.log(files);
+            Array.from(files).forEach(function(item){
+                formData.append('picture[]', item);
+            });
+            formData.append('writer', $('#article_writer').val());
+            formData.append('title', $('#article_title').val());
+            formData.append('writer_school', $('#article_school').val());
+            formData.append('writer_ppi', $('#article_ppi').val());
+            formData.append('description', $('#article_description').val());
+            var urlpost = '../../../api/articles/insert';
             $.ajax({
                 type: "POST",
                 url: urlpost,
@@ -125,7 +130,7 @@
                 },
                 success: function(data) {
                     console.log('after ajax')
-                    window.location.href = "{{ route('admin-sponsors-index') }}";
+                    window.location.href = "{{ route('admin-article-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data = XMLHttpRequest.responseText;
