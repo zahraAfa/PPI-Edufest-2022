@@ -79,31 +79,30 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="mb-3"><label class="form-label"
-                                                                for="form__sponsor-name"><strong>Writer</strong><br></label><input
-                                                                class="form-control" type="text"
-                                                                id="form__sponsor-name" placeholder="Writer Name"
-                                                                name="name"></div>
+                                                                for="article_writter"><strong>Writer</strong><br></label><input
+                                                                class="form-control" type="text" id="article_writer"
+                                                                placeholder="Writer Name" name="name"></div>
                                                     </div>
                                                 </div>
                                                 <div class="mb-3"><label class="form-label"
-                                                        for="form__sponsor-detail"><strong>Title</strong></label>
-                                                    <input class="form-control" type="text" id="form__sponsor-detail"
+                                                        for="article_title"><strong>Title</strong></label>
+                                                    <input class="form-control" type="text" id="article_title"
                                                         placeholder="Title" name="detail" rows="3">
                                                 </div>
                                                 <div class="mb-3"><label class="form-label"
-                                                        for="form__sponsor-detail"><strong>Description</strong></label>
+                                                        for="article_description"><strong>Description</strong></label>
                                                     <textarea class="form-control" type="text"
-                                                        id="form__sponsor-detail" placeholder="Title" name="detail"
+                                                        id="article_description" placeholder="Description" name="detail"
                                                         rows="3"></textarea>
                                                 </div>
                                                 <div class="mb-3"><label class="form-label"
-                                                        for="form__sponsor-detail"><strong>School</strong></label>
-                                                    <input class="form-control" type="text" id="form__sponsor-detail"
+                                                        for="article_school"><strong>School</strong></label>
+                                                    <input class="form-control" type="text" id="article_school"
                                                         placeholder="Writer School" name="detail" rows="3">
                                                 </div>
                                                 <div class="mb-3"><label class="form-label"
-                                                        for="form__sponsor-detail"><strong>PPI</strong></label>
-                                                    <input class="form-control" type="text" id="form__sponsor-detail"
+                                                        for="article_ppi"><strong>PPI</strong></label>
+                                                    <input class="form-control" type="text" id="article_ppi"
                                                         placeholder="Writer PPI" name="detail" rows="3">
                                                 </div>
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm"
