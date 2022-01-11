@@ -45,6 +45,7 @@
     /* New Palette */
     --mainBlue: #2A289E;
     --mainGreen: #007538;
+    --mainLightGreen: #3faf1d;
     --mainYellow: #FFA000;
     --mainOrange: #FF6900;
     --mainBlack: #19191C;
@@ -473,8 +474,8 @@ h1 {
     background-color: var(--mainRed) !important;
 }
 .path_green {
-    fill: var(--mainGreen) !important;
-    background-color: var(--mainGreen) !important;
+    fill: var(--mainLightGreen) !important;
+    background-color: var(--mainLightGreen) !important;
 }
 
 .card__arc path {
