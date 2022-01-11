@@ -75,6 +75,7 @@
                                 <table class="table my-0" id="dataTable">
                                     <thead>
                                         <tr>
+                                            <th>Poster</th>
                                             <th>Title</th>
                                             <th class="d-none">Num. Participants</th>
                                             <th>Region</th>
@@ -146,7 +147,6 @@
             keyboard: false
         });
         $(document).ready(function() {
-            // $('#dataTable').dataTable();
             $.ajax({
                 type: "GET",
                 url: "../../../api/events/read",
@@ -178,9 +178,10 @@
                                     break;
                             }
                             eventItems += '<tr>' +
-                                '<td><img class="rounded-circle me-2" width="150" height="150" src="../../storage/img/events/' +
-                                event["id"] + '/' + event["picture"] + '">' + event["title"] +
+                                '<td><img class="me-2" width="150" height="150" src="../../storage/img/events/' +
+                                event["id"] + '/' + event["picture"] + '">' + 
                                 '</td>' +
+                                '<td id="event__region-crud">' + event["title"] + '</td>' +
                                 '<td id="event__region-crud">' + region + '</td>' +
                                 '<td id="event__date-crud">' + event["date"] + '</td>' +
                                 '<td id="event__detail-crud">' + event["detail"] + '</td>' +
