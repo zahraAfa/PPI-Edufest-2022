@@ -57,6 +57,7 @@
                     let container = $('.paginate');
                     container.pagination({
                         dataSource: result,
+                        className: 'paginationjs-theme-red',
                         callback: function(data, pagination) {
                             var listSpeaker = '';
                             $.each(data, function(key, speaker) {
