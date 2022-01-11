@@ -40,8 +40,8 @@
                     </div>
                     <div class="speakers-grid">
                     </div>
-                    <div class="pagination justify-content-center " data-aos="fade-up" data-aos-delay="30"
-                        data-aos-duration="2000"></div>
+                    <div class="paginate d-flex mt-5 justify-content-center " data-aos="fade-up" data-aos-delay="1"
+                        data-aos-duration="1500"></div>
                 </div>
             </div>
             <div class="speaker-blank-transition"></div>
@@ -52,34 +52,9 @@
             $.ajax({
                 type: "GET",
                 url: "../../../api/speakers/read",
+                className: 'paginationjs-theme-red',
                 success: function(result) {
-                    // var listSpeaker = '';
-                    // $.each(result, function(key, speaker) {
-                    //     listSpeaker +=
-                    //         `
-                    //           <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
-                    //           <div class="img__card-container">
-                    //             <img src="../../storage/img/speakers/${speaker["id"]}/${speaker["picture"]}" class="card__image" alt="Speaker" />
-                    //           </div>
-                    //           <div class="card__overlay">
-                    //             <div class="card__header">
-                    //                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                    //                     <path />
-                    //                 </svg>
-                    //                 <div class="card__header-text">
-                    //                     <h3 class="card__title speaker__name">${speaker['name']}</h3>
-                    //                     <span class="card__status speaker__ppi"><i
-                    //                             class="material-icons-round">public</i>${speaker['ppi']}</span>
-                    //                 </div>
-                    //             </div>
-                    //             <p class="card__description speaker__desc">${speaker['detail']}</p>
-                    //           </div>
-                    //           </div>
-                    //         `
-                    // });
-                    // $('.speakers-grid').append(listSpeaker);
-
-                    let container = $('.pagination');
+                    let container = $('.paginate');
                     container.pagination({
                         dataSource: result,
                         callback: function(data, pagination) {
@@ -107,7 +82,14 @@
                               </div>
                             `
                             });
-                            $('.speakers-grid').append(listSpeaker);
+                            $('.speakers-grid').html(listSpeaker);
+                            $(".paginationjs-pages").click(function() {
+                                $([document.documentElement, document.body])
+                                    .animate({
+                                        scrollTop: $(".speakers-grid")
+                                            .offset().top
+                                    }, 100);
+                            });
                         }
                     });
                 }
