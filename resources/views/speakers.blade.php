@@ -40,6 +40,8 @@
                     </div>
                     <div class="speakers-grid">
                     </div>
+                    <div class="pagination justify-content-center " data-aos="fade-up" data-aos-delay="30"
+                        data-aos-duration="2000"></div>
                 </div>
             </div>
             <div class="speaker-blank-transition"></div>
@@ -51,10 +53,40 @@
                 type: "GET",
                 url: "../../../api/speakers/read",
                 success: function(result) {
-                    var listSpeaker = '';
-                    $.each(result, function(key, speaker) {
-                        listSpeaker +=
-                            `
+                    // var listSpeaker = '';
+                    // $.each(result, function(key, speaker) {
+                    //     listSpeaker +=
+                    //         `
+                    //           <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
+                    //           <div class="img__card-container">
+                    //             <img src="../../storage/img/speakers/${speaker["id"]}/${speaker["picture"]}" class="card__image" alt="Speaker" />
+                    //           </div>
+                    //           <div class="card__overlay">
+                    //             <div class="card__header">
+                    //                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                    //                     <path />
+                    //                 </svg>
+                    //                 <div class="card__header-text">
+                    //                     <h3 class="card__title speaker__name">${speaker['name']}</h3>
+                    //                     <span class="card__status speaker__ppi"><i
+                    //                             class="material-icons-round">public</i>${speaker['ppi']}</span>
+                    //                 </div>
+                    //             </div>
+                    //             <p class="card__description speaker__desc">${speaker['detail']}</p>
+                    //           </div>
+                    //           </div>
+                    //         `
+                    // });
+                    // $('.speakers-grid').append(listSpeaker);
+
+                    let container = $('.pagination');
+                    container.pagination({
+                        dataSource: result,
+                        callback: function(data, pagination) {
+                            var listSpeaker = '';
+                            $.each(data, function(key, speaker) {
+                                listSpeaker +=
+                                    `
                               <div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
                               <div class="img__card-container">
                                 <img src="../../storage/img/speakers/${speaker["id"]}/${speaker["picture"]}" class="card__image" alt="Speaker" />
@@ -74,8 +106,10 @@
                               </div>
                               </div>
                             `
+                            });
+                            $('.speakers-grid').append(listSpeaker);
+                        }
                     });
-                    $('.speakers-grid').append(listSpeaker);
                 }
             });
         });
