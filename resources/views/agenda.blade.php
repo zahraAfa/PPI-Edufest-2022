@@ -30,6 +30,12 @@
                         </div>
                         <div class="agenda-page-grid">
                         </div>
+                        <div class="pagination justify-content-center " data-aos="fade-up" data-aos-delay="30"
+                            data-aos-duration="2000">
+                            {{-- <li class="page-item disabled previous-page"><a class="page-link" href="">Prev</a></li>
+                            <li class="page-item active current-page"><a class="page-link" href="">1</a></li>
+                            <li class="page-item next-page"><a class="page-link" href="">Next</a></li> --}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,12 +48,66 @@
                 url: "../../../api/events/read",
                 success: function(result) {
 
-                    var listEvent = '';
-                    var eventItems = '';
-                    var ToDate = new Date();
-                    $.each(result, function(key, event) {
-                        if (new Date(event["date"]).getTime() <= ToDate.getTime()) {
-                            listEvent += `
+                    // var listEvent = '';
+                    // var eventItems = '';
+                    // var ToDate = new Date();
+                    // $.each(result, function(key, event) {
+                    //     if (new Date(event["date"]).getTime() <= ToDate.getTime()) {
+                    //         listEvent += `
+                //         <a href="{{ route('usr-event') }}" class="custom-card" data-aos="fade-up"
+                //             data-aos-delay="30" data-aos-duration="2000">
+                //             <div class="img__card-container">
+                //                 <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
+                //             </div>
+                //             <div class="card__overlay path_red">
+                //                 <div class="card__header path_red">
+                //                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                //                         <path class="path_red" ><path />
+                //                     </svg>
+                //                     <div class="card__header-text">
+                //                         <h3 class="card__title speaker__name">${event["title"]}</h3>
+                //                         <span class="card__status speaker__ppi"><i
+                //                                 class="material-icons-round">event</i>${event["date"]}</span>
+                //                     </div>
+                //                 </div>
+                //                 <p class="card__description speaker__desc path_red">${event["detail"]}</p>
+                //             </div>
+                //         </a>`;
+                    //     } else {
+                    //         listEvent += `
+                //         <a href="{{ route('usr-event') }}" class="custom-card" data-aos="fade-up"
+                //             data-aos-delay="30" data-aos-duration="2000">
+                //             <div class="img__card-container">
+                //                 <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
+                //             </div>
+                //             <div class="card__overlay path_green">
+                //                 <div class="card__header path_green">
+                //                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                //                         <path class="path_green"><path />
+                //                     </svg>
+                //                     <div class="card__header-text">
+                //                         <h3 class="card__title speaker__name">${event["title"]}</h3>
+                //                         <span class="card__status speaker__ppi"><i
+                //                                 class="material-icons-round">event</i>${event["date"]}</span>
+                //                     </div>
+                //                 </div>
+                //                 <p class="card__description speaker__desc">${event["detail"]}</p>
+                //             </div>
+                //         </a>`;
+                    //     }
+                    // });
+                    // $('.agenda-page-grid').append(listEvent);
+                    let container = $('.pagination');
+                    container.pagination({
+                        dataSource: result,
+                        callback: function(data, pagination) {
+                            var listEvent = '';
+                            var eventItems = '';
+                            var ToDate = new Date();
+                            $.each(data, function(key, event) {
+                                if (new Date(event["date"]).getTime() <= ToDate
+                                    .getTime()) {
+                                    listEvent += `
                             <a href="{{ route('usr-event') }}" class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
@@ -67,8 +127,8 @@
                                     <p class="card__description speaker__desc path_red">${event["detail"]}</p>
                                 </div>
                             </a>`;
-                        } else {
-                            listEvent += `
+                                } else {
+                                    listEvent += `
                             <a href="{{ route('usr-event') }}" class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
@@ -88,9 +148,12 @@
                                     <p class="card__description speaker__desc">${event["detail"]}</p>
                                 </div>
                             </a>`;
+                                }
+                            });
+                            $(".agenda-page-grid").append(listEvent);
+                            $(".paginationjs-page .active:after").css("content", "");
                         }
-                    });
-                    $('.agenda-page-grid').append(listEvent);
+                    })
 
                 }
             });
