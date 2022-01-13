@@ -540,3 +540,33 @@
         font-size: 30px;
     }
 }
+
+.agenda-modal-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.agenda-modal-body{
+    margin: auto;
+}
+
+.agenda-modal-col{
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+}
+
+.agenda-modal-green{
+    background-color: var(--mainLightGreen);
+}
+.agenda-modal-orange{
+    background-color: var(--mainOrange);
+}
+.agenda-modal-red{
+    background-color: var(--mainRed);
+}
+.agenda-modal-grey{
+    background-color: var(--DarkGrey);
+}

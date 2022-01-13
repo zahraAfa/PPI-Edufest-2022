@@ -40,8 +40,41 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="agendaDescModal" tabindex="-1" aria-labelledby="agendaDescModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Keterangan Warna Acara</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body agenda-modal-body">
+                  <div class="agenda-modal-body-wrapper">
+                    <div class="agenda-modal-row">
+                        <div class="agenda-modal-col agenda-modal-grey"></div>
+                        <p class="agenda-modal-desc">Coming Soon</p>
+                    </div>
+                    <div class="agenda-modal-row">
+                        <div class="agenda-modal-col agenda-modal-green"></div>
+                        <p class="agenda-modal-desc">Open Registration</p>
+                    </div>
+                    <div class="agenda-modal-row">
+                      <div class="agenda-modal-col agenda-modal-orange"></div>
+                      <p class="agenda-modal-desc">Acara Sudah Dekat</p>
+                    </div>
+                    <div class="agenda-modal-row">
+                      <div class="agenda-modal-col agenda-modal-red"></div>
+                      <p class="agenda-modal-desc">Selesai</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </section>
     <script>
+        $(window).on('load', function() {
+            $('#agendaDescModal').modal('show');
+        });
         $(document).ready(function() {
             $.ajax({
                 type: "GET",
