@@ -89,10 +89,10 @@
                                 <div class="img__card-container">
                                     <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                 </div>
-                                <div class="card__overlay path_green">
-                                    <div class="card__header path_green">
+                                <div class="card__overlay">
+                                    <div class="card__header">
                                         <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                            <path class="path_green"><path />
+                                            <path class=""><path />
                                         </svg>
                                         <div class="card__header-text">
                                             <h3 class="card__title speaker__name">${event["title"]}</h3>
@@ -110,10 +110,10 @@
                                 <div class="img__card-container">
                                     <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                 </div>
-                                <div class="card__overlay ">
-                                    <div class="card__header ">
+                                <div class="card__overlay path_green">
+                                    <div class="card__header path_green">
                                         <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                            <path class=""><path />
+                                            <path class="path_green"><path />
                                         </svg>
                                         <div class="card__header-text">
                                             <h3 class="card__title speaker__name">${event["title"]}</h3>
