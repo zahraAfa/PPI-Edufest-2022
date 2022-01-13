@@ -3,7 +3,7 @@
 @section('Articles')
 
 <section class="articles-section">
-    <div class="articles-main-header">
+    <header class="articles-main-header">
         <div class="articles-main-h1">
             <h1>"Artikel."</h1>
         </div>
@@ -14,7 +14,7 @@
             <img class="articles-header-bg1" src="../../../../../../assets/img/header/articles-deco.png" alt="">
             <img class="articles-header-bg2" src="../../../../../../assets/img/header/articles-deco-back.png" alt="">
         </div>
-    </div>
+    </header>
     <div class="articles-main-content">
         <div class="articles-main-content-wrapper">
             <div class="articles-box">

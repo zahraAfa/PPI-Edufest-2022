@@ -1,5 +1,5 @@
 .articles-main-header{
-    height: 50vh;
+    height: 70vh;
     display: flex;
     flex-direction: row;
     margin-top: 70px;
@@ -10,6 +10,7 @@
     justify-content: start;
     align-items: flex-end;
     width: 80%;
+    margin-top: auto;
 }
 .articles-main-h1 h1{
     color: var(--mainWhite);
@@ -27,6 +28,7 @@
     font-weight: 700;
     justify-content: end;
     align-items: flex-start;
+    margin-bottom: auto;
 }
 .articles-main-header-deco h1{
     font-family: 'Fira Mono', monospace;
@@ -45,17 +47,14 @@
     position: absolute;
     z-index: 15;
     width: 340px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    bottom: 50%;
+    transform: translate(0%, 50%);
 }
 
 .articles-header-bg2{
     position: absolute;
     z-index: 14;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(0%, -50%);
 }
 
 @media screen and (max-width: 1015px) {
@@ -68,16 +67,21 @@
     }
     .articles-header-bg1{
         width: 300px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 50%);
     }
 
     .articles-header-bg2{
         width: 270px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 0%);
+    }
+}
+@media screen and (max-width: 867px) {
+    .articles-header-bg1{
+        width: 300px;
+        transform: translate(-20%, 50%);
+    }
+
+    .articles-header-bg2{
+        width: 270px;
+        transform: translate(-20%, -50%);
     }
 }
 @media screen and (max-width: 490px) {
@@ -90,16 +94,19 @@
     }
     .articles-header-bg1{
         width: 200px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 100%);
     }
 
     .articles-header-bg2{
         width: 200px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 30%);
+    }
+}
+@media screen and (max-width: 397px) {
+    .articles-header-bg1{
+        transform: translate(-25%, 50%);
+    }
+
+    .articles-header-bg2{
+        transform: translate(-25%, -50%);
     }
 }
 
