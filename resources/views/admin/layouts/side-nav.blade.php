@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if(Route::is('admin-participants-index')) active @endif" href="{{ route('admin-participants-index') }}">
+                <a class="nav-link @if(Route::is('admin-participants-index')) active @endif" href="">
                     <i class="fa fa-users" style="color: var(--bs-gray-800);"></i>
                     <span style="color: var(--bs-gray-800);">Participants</span>
                 </a>
