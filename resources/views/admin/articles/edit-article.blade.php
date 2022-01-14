@@ -161,9 +161,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body articles-modal-body">
-                    {{-- <iframe class="mx-auto"
-                        src="https://drive.google.com/file/d/1z6tiBJtsczVlEcLYKPRaDlCWsxSBJXQl/preview"
-                        allow="autoplay"></iframe> --}}
                 </div>
             </div>
         </div>
@@ -186,11 +183,6 @@
                             article["id"] +
                             '/' +
                             article["file"] + '" allow="autoplay"></iframe>'
-
-                            // '<a href="{{ url('/storage/file/articles/') }}/' + article["id"] +
-                            // '/' +
-                            // article["file"] + '">Link File</a>'
-                            // '<img id="article__img" class="rounded-circle mb-3 mt-4" width="160" height="160" src="' + img_link + '"">'
                         );
                         $('#article_writer').val(article["writer"]);
                         $('#article_title').val(article["title"]);
