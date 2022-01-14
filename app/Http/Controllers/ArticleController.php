@@ -14,11 +14,7 @@ class ArticleController extends Controller
 
     public function readDetail($id) {
         $article = Article::where('id', $id)->first();
-        $picturesName = explode(",", $article->picture);
-        $data = [
-            $article,
-            $picturesName
-        ];
+        $data = [$article];
         return $data;
     }
     
@@ -29,23 +25,14 @@ class ArticleController extends Controller
             'description' => ['required', 'string'],
             'writer_school' => ['required', 'string'],
             'writer_ppi' => ['required', 'string'],
-            'picture' => ['required']
+            'file' => ['required']
         ]);
 
         $check = Article::where('title', request('title'))->first();
         if ($check)
             abort(400, 'Sorry, cannot insert the same article\'s title as the existing one');
         
-        $picturesName = [];
-        if (request()->hasFile('picture')) {
-            foreach (request()->file('picture') as $file) {
-                $name = $file->getClientOriginalName();
-                $picturesName[] = $name;
-            }
-        }
-
-        //Store name of files using string
-        $storedPicturesName = implode(",", $picturesName);
+        $fileName = request('file')->getClientOriginalName();
 
         $articleData = [
             'title' => request('title'),
@@ -53,64 +40,36 @@ class ArticleController extends Controller
             'description' => request('description'),
             'writer_school' => request('writer_school'),
             'writer_ppi' => request('writer_ppi'),
-            'picture' => $storedPicturesName
+            'file' => $fileName
         ];
 
         $article = Article::create($articleData);
 
-        $newPath = public_path() . '/storage/img/articles/' . $article->id;
+        $newPath = public_path() . '/storage/file/articles/' . $article->id;
 
-        //Store all files to the article path
-        foreach (request()->file('picture') as $file) {
-            $name = $file->getClientOriginalName();
-            $file->move($newPath, $name);
-        }
+        //Store a file to the article path
+        request('file')->move($newPath, $fileName);
 
-        $response = [
-            "article" => [
-                'title' => $article->title,
-                'writer' => $article->writer,
-                'description' => $article->description,
-                'writer_school' => $article->writer_school,
-                'writer_ppi' => $article->writer_ppi,
-                'picture' => $article->picture
-            ]
-        ];
-
-        return $response;
+        return $articleData;
     }
 
-    public function updateImage($id) {
+    public function updateFile($id) {
         request()->validate([
-            'picture' => ['required']
+            'file' => ['required']
         ]);
     
         // get article by id
         $article = Article::find($id);
-        $oldPicturePath = public_path() . '/storage/img/articles/' . $article->id;
+        $oldFilePath = public_path() . '/storage/file/articles/' . $article->id;
 
         //replace old picture name
-        array_map('unlink', glob("$oldPicturePath/*.*"));
-
-        $picturesName = [];
-        if (request()->hasFile('picture')) {
-            foreach (request()->file('picture') as $file) {
-                $name = $file->getClientOriginalName();
-                $picturesName[] = $name;
-            }
-        }
-
-        //Store name of files using string
-        $storedPicturesName = implode(",", $picturesName);
-        
-        $article->picture = $storedPicturesName;
+        array_map('unlink', glob("$oldFilePath/*.*"));
+        $fileName = request('file')->getClientOriginalName();        
+        $article->file = $fileName;
         $article->save();
 
-        // Add new picture to storage
-        foreach (request()->file('picture') as $file) {
-            $name = $file->getClientOriginalName();
-            $file->move($oldPicturePath, $name);
-        }
+        // Add new file to storage
+        request('file')->move($oldFilePath, $fileName);
 
         return $article;
     }
@@ -143,7 +102,7 @@ class ArticleController extends Controller
                 'description' => $article->description,
                 'writer_school' => $article->writer_school,
                 'writer_ppi' => $article->writer_ppi,
-                'picture' => $article->picture
+                'file' => $article->file
             ]
         ];
 
@@ -155,9 +114,9 @@ class ArticleController extends Controller
         $articleObject = $article->first();
 
         //Delete directory and pictures
-        $picturePath = public_path() . '/storage/img/articles/' . $articleObject->id;
-        array_map('unlink', glob("$picturePath/*.*"));
-        rmdir($picturePath);
+        $filePath = public_path() . '/storage/file/articles/' . $articleObject->id;
+        array_map('unlink', glob("$filePath/*.*"));
+        rmdir($filePath);
 
         $deleteArticle = $article->delete();
         $msg = "success to delete";

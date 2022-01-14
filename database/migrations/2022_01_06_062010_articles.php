@@ -21,7 +21,7 @@ class Articles extends Migration
             $table->string('description');
             $table->string('writer_school');
             $table->string('writer_ppi');
-            $table->string('picture');
+            $table->string('file');
             $table->timestamps();
         });
     }
