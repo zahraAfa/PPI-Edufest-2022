@@ -24,26 +24,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
-        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <!-- Favicon start -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/edufest-icon.png">
     <!-- Favicon end -->
-
-    <style>
-        .slick-prev:before {
-            color: black !important;
-            background-color: #eee;
-        }
-
-        .slick-next:before {
-            color: black !important;
-            background-color: #eee;
-        }
-
-    </style>
 </head>
 
 <body id="page-top">
@@ -92,7 +76,7 @@
                                 <table class="table my-0" id="dataTable">
                                     <thead>
                                         <tr>
-                                            <th>Picture</th>
+                                            <th>File</th>
                                             <th>Writer</th>
                                             <th>Title</th>
                                             <th>Description</th>
@@ -163,7 +147,6 @@
     </div>
     <script src="../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/admin-template/js/script.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         // get modal element
         var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
@@ -185,29 +168,27 @@
                             '<td colspan="6" class="text-center" >There is no data exist here</td>');
                     } else {
                         $.each(result, function(key, article) {
-
-                            let pictures = article['picture'].split(',');
-
-                            let pictureItem = '';
-                            pictures.forEach((picture) =>
-                                pictureItem +=
-                                `<img class="me-2" width="150px" height="150px" src="../../storage/img/articles/${article["id"]}/${picture}">`
-                            );
-
-                            console.log(pictureItem);
-                            console.log(pictures);
-
+                            let img_link = '/storage/img/articles/' + article["id"] + '/' +
+                                article["file"];
                             items += '<tr>' +
                                 '<td style="width:150px !important; height:150px !important;" class="w-25 h-25 article_picture">' +
-                                pictureItem +
+                                    '<iframe class="mx-auto" src="{{ url('/storage/file/articles/') }}/' +
+                                article["id"] +
+                                '/' +
+                                article["file"] + '" allow="autoplay"></iframe>' +
                                 '</td>' +
-                                '<td class="align-middle" id="article__region-crud">' + article["title"] + '</td>' +
-                                '<td class="align-middle" id="article__detail-crud">' + article["description"] +
-                                '<td class="align-middle" id="article__writer-crud">' + article["writer"] + '</td>' +
+                                '<td class="align-middle" id="article__region-crud">' + article[
+                                    "writer"] + '</td>' +
+                                '<td class="align-middle" id="article__detail-crud">' + article[
+                                    "title"] +
+                                '<td class="align-middle" id="article__writer-crud">' + article[
+                                    "description"] + '</td>' +
                                 '</td>' +
-                                '<td class="align-middle" id="article__school-crud">' + article["writer_school"] +
+                                '<td class="align-middle" id="article__school-crud">' + article[
+                                    "writer_school"] +
                                 '</td>' +
-                                '<td class="align-middle" id="article__ppi-crud">' + article["writer_ppi"] +
+                                '<td class="align-middle" id="article__ppi-crud">' + article[
+                                    "writer_ppi"] +
                                 '</td>' +
                                 '<td class="align-middle" >' +
                                 '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="article__edit" href="../../admin/articles/edit/' +
@@ -219,7 +200,6 @@
                                 '</tr>';
                         });
                         $('#articles__row').append(items);
-                        $('.article_picture').slick();
                     }
                 }
             });

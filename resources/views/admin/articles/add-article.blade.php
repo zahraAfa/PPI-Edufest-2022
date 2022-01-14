@@ -37,8 +37,8 @@
                                     <div class="card-body text-center shadow">
                                         <div id="before__img"></div>
                                         <div class="my-3 mx-5">
-                                            <label for="formFile" class="form-label">Add Photo</label>
-                                            <input class="form-control" multiple type="file" accept="image/*" name="picture"
+                                            <label for="formFile" class="form-label">Add File</label>
+                                            <input class="form-control" type="file" accept="application/pdf" name="picture"
                                                 id="form__img">
                                         </div>
                                     </div>
@@ -82,11 +82,11 @@
                                                     <input class="form-control" type="text" id="article_ppi"
                                                         placeholder="Writer PPI" name="detail" rows="3">
                                                 </div>
-                                                
+
                                                 <div class="mb-3"><button class="btn btn-primary btn-sm"
                                                         type="submit">Add Article</button></div>
-                                            </div>  
-                                        </div>          
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -106,18 +106,13 @@
     <script>
         $("#article_form").submit(function(e) {
             e.preventDefault();
-            var form = $("#article_form");
             var formData = new FormData();
-            var files = $('#form__img')[0].files;
-            console.log(files);
-            Array.from(files).forEach(function(item){
-                formData.append('picture[]', item);
-            });
             formData.append('writer', $('#article_writer').val());
             formData.append('title', $('#article_title').val());
             formData.append('writer_school', $('#article_school').val());
             formData.append('writer_ppi', $('#article_ppi').val());
             formData.append('description', $('#article_description').val());
+            formData.append('file', $('#form__img')[0].files[0]);
             var urlpost = '../../../api/articles/insert';
             $.ajax({
                 type: "POST",
