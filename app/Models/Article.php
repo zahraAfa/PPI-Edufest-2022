@@ -19,6 +19,6 @@ class Article extends Model
         'description',
         'writer_school',
         'writer_ppi',
-        'picture'
+        'file'
     ];
 }
