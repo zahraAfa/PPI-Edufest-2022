@@ -4,13 +4,29 @@ namespace App\Http\Controllers;
 
 use App\Models\Speaker;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
 class SpeakerController extends Controller
 {
-    public function read() {
-        $speakers = Speaker::all();
-        return $speakers;
+    public function read(Request $request) {
+        $query = DB::table('speakers')
+            ->join('events', 'speakers.event_id', '=', 'events.id');
+
+        if (request('search')) {
+            $query = $query->where(function($builder) use ($request){
+                $builder->where('name', 'LIKE', "%{$request->search}%")
+                    ->orWhere('ppi', 'LIKE', "%{$request->search}%");
+            });
+        }
+
+        if (request('region')) {
+            $query = $query->where(function($builder) use ($request){
+                $builder->where('region', 'LIKE', "%{$request->region}%");
+            });
+        }
+        $query = $query->get();
+        return $query;
     }
 
     public function readDetail($id) {
