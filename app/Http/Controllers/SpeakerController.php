@@ -11,7 +11,7 @@ class SpeakerController extends Controller
 {
     public function read(Request $request) {
         $query = DB::table('speakers')
-            ->join('events', 'speakers.id', '=', 'events.id');
+            ->join('events', 'speakers.event_id', '=', 'events.id');
 
         if (request('search')) {
             $query = $query->where(function($builder) use ($request){
