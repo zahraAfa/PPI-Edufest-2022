@@ -17,96 +17,6 @@
         </header>
         <div class="articles-main-content">
             <div class="articles-main-content-wrapper" id="list_article">
-                <div class="articles-box">
-                    <div class="articles-box-row">
-                        <h1 class="articles-box-title">Membaca Peluang dan Tantangan Kehidupan Luar Negeri bagi Generasi
-                            Muda Indonesia</h1>
-                        <h2 class="articles-box-subtitle">Nurul Khair</h2>
-                    </div>
-                    <div class="articles-box-row">
-                        <p class="articles-box-desc">
-                            “Kalau pemuda berusia 21-22 tahun sama sekali tidak berjuang, tak bercita-
-                            cita, tak bergiat untuk tanah air dan bangsa, pemuda begini baiknya
-                            digunduli saja kepalanya” Ir. Seokarno
-                        </p>
-                    </div>
-                    <div class="articles-box-row">
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#articlePdfModal"
-                            class="btn button-56">Baca</a>
-                    </div>
-                </div>
-                <div class="articles-box">
-                    <div class="articles-box-row">
-                        <h1 class="articles-box-title">Membaca Peluang dan Tantangan Kehidupan Luar Negeri bagi Generasi
-                            Muda Indonesia</h1>
-                        <h2 class="articles-box-subtitle">Nurul Khair</h2>
-                    </div>
-                    <div class="articles-box-row">
-                        <p class="articles-box-desc">
-                            “Kalau pemuda berusia 21-22 tahun sama sekali tidak berjuang, tak bercita-
-                            cita, tak bergiat untuk tanah air dan bangsa, pemuda begini baiknya
-                            digunduli saja kepalanya” Ir. Seokarno
-                        </p>
-                    </div>
-                    <div class="articles-box-row">
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#articlePdfModal"
-                            class="btn button-56">Baca</a>
-                    </div>
-                </div>
-                <div class="articles-box">
-                    <div class="articles-box-row">
-                        <h1 class="articles-box-title">Membaca Peluang dan Tantangan Kehidupan Luar Negeri bagi Generasi
-                            Muda Indonesia</h1>
-                        <h2 class="articles-box-subtitle">Nurul Khair</h2>
-                    </div>
-                    <div class="articles-box-row">
-                        <p class="articles-box-desc">
-                            “Kalau pemuda berusia 21-22 tahun sama sekali tidak berjuang, tak bercita-
-                            cita, tak bergiat untuk tanah air dan bangsa, pemuda begini baiknya
-                            digunduli saja kepalanya” Ir. Seokarno
-                        </p>
-                    </div>
-                    <div class="articles-box-row">
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#articlePdfModal"
-                            class="btn button-56">Baca</a>
-                    </div>
-                </div>
-                <div class="articles-box">
-                    <div class="articles-box-row">
-                        <h1 class="articles-box-title">Membaca Peluang dan Tantangan Kehidupan Luar Negeri bagi Generasi
-                            Muda Indonesia</h1>
-                        <h2 class="articles-box-subtitle">Nurul Khair</h2>
-                    </div>
-                    <div class="articles-box-row">
-                        <p class="articles-box-desc">
-                            “Kalau pemuda berusia 21-22 tahun sama sekali tidak berjuang, tak bercita-
-                            cita, tak bergiat untuk tanah air dan bangsa, pemuda begini baiknya
-                            digunduli saja kepalanya” Ir. Seokarno
-                        </p>
-                    </div>
-                    <div class="articles-box-row">
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#articlePdfModal"
-                            class="btn button-56">Baca</a>
-                    </div>
-                </div>
-                <div class="articles-box">
-                    <div class="articles-box-row">
-                        <h1 class="articles-box-title">Membaca Peluang dan Tantangan Kehidupan Luar Negeri bagi Generasi
-                            Muda Indonesia</h1>
-                        <h2 class="articles-box-subtitle">Nurul Khair</h2>
-                    </div>
-                    <div class="articles-box-row">
-                        <p class="articles-box-desc">
-                            “Kalau pemuda berusia 21-22 tahun sama sekali tidak berjuang, tak bercita-
-                            cita, tak bergiat untuk tanah air dan bangsa, pemuda begini baiknya
-                            digunduli saja kepalanya” Ir. Seokarno
-                        </p>
-                    </div>
-                    <div class="articles-box-row">
-                        <a type="button" data-bs-toggle="modal" data-bs-target="#articlePdfModal"
-                            class="btn button-56">Baca</a>
-                    </div>
-                </div>
             </div>
             <div class="paginate d-flex mt-5 justify-content-center " data-aos="fade-up" data-aos-delay="1"
                 data-aos-duration="1500"></div>
@@ -142,7 +52,7 @@
                             let list = '';
                             $.each(data, function(key, article) {
 
-                                list += `<div class="articles-box">
+                                list += `<div class="articles-box" data-aos="fade-up" data-aos-delay="200" data-aos-duration="2000">
                                     <div class="articles-box-row">
                                         <h1 class="articles-box-title">${article['title']}</h1>
                                         <h2 class="articles-box-subtitle">${article['writer']}</h2>
