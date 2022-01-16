@@ -42,34 +42,34 @@
         </div>
         <div class="modal fade" id="agendaDescModal" tabindex="-1" aria-labelledby="agendaDescModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Keterangan Warna Acara</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Keterangan Warna Acara</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body agenda-modal-body">
+                        <div class="agenda-modal-body-wrapper">
+                            <div class="agenda-modal-row">
+                                <div class="agenda-modal-col agenda-modal-grey"></div>
+                                <p class="agenda-modal-desc">Coming Soon</p>
+                            </div>
+                            <div class="agenda-modal-row">
+                                <div class="agenda-modal-col agenda-modal-green"></div>
+                                <p class="agenda-modal-desc">Open Registration</p>
+                            </div>
+                            <div class="agenda-modal-row">
+                                <div class="agenda-modal-col agenda-modal-orange"></div>
+                                <p class="agenda-modal-desc">Acara Sudah Dekat</p>
+                            </div>
+                            <div class="agenda-modal-row">
+                                <div class="agenda-modal-col agenda-modal-red"></div>
+                                <p class="agenda-modal-desc">Selesai</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body agenda-modal-body">
-                  <div class="agenda-modal-body-wrapper">
-                    <div class="agenda-modal-row">
-                        <div class="agenda-modal-col agenda-modal-grey"></div>
-                        <p class="agenda-modal-desc">Coming Soon</p>
-                    </div>
-                    <div class="agenda-modal-row">
-                        <div class="agenda-modal-col agenda-modal-green"></div>
-                        <p class="agenda-modal-desc">Open Registration</p>
-                    </div>
-                    <div class="agenda-modal-row">
-                      <div class="agenda-modal-col agenda-modal-orange"></div>
-                      <p class="agenda-modal-desc">Acara Sudah Dekat</p>
-                    </div>
-                    <div class="agenda-modal-row">
-                      <div class="agenda-modal-col agenda-modal-red"></div>
-                      <p class="agenda-modal-desc">Selesai</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
     </section>
     <script>
         $(window).on('load', function() {
@@ -89,9 +89,11 @@
                             var listEvent = '';
                             var eventItems = '';
                             var ToDate = new Date();
-                            ToDate = ToDate.setDate(ToDate.getDate() - 1);
                             var date2days = new Date();
+                            var date2weeks = new Date();
+                            ToDate = ToDate.setDate(ToDate.getDate() - 1);
                             date2days = date2days.setDate(date2days.getDate() + 2);
+                            date2weeks = date2weeks.setDate(date2weeks.getDate() + 14);
                             $.each(data, function(key, event) {
                                 if (new Date(event["date"]).getTime() < ToDate) {
                                     listEvent += `
@@ -114,8 +116,9 @@
                                     <p class="card__description speaker__desc path_red">${event["detail"]}</p>
                                 </div>
                             </a>`;
-                                } else if (new Date(event["date"]).getTime() <= date2days
-                                    ) {
+                                } else if (new Date(event["date"]).getTime() <=
+                                    date2days
+                                ) {
                                     listEvent += `
                             <a href="/acara/${ event['id'] }" class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
@@ -136,7 +139,33 @@
                                     <p class="card__description speaker__desc">${event["detail"]}</p>
                                 </div>
                             </a>`;
-                                } else {
+                                } 
+                                
+                                else if (new Date(event["date"]).getTime() >
+                                    date2weeks) {
+                                    listEvent += `
+                            <a href="/acara/${ event['id'] }" class="custom-card" data-aos="fade-up"
+                                data-aos-delay="30" data-aos-duration="2000">
+                                <div class="img__card-container">
+                                    <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
+                                </div>
+                                <div class="card__overlay path_grey">
+                                    <div class="card__header path_grey">
+                                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="path_grey"><path />
+                                        </svg>
+                                        <div class="card__header-text">
+                                            <h3 class="card__title speaker__name">${event["title"]}</h3>
+                                            <span class="card__status speaker__ppi"><i
+                                                    class="material-icons-round">event</i>${event["date"]}</span>
+                                        </div>
+                                    </div>
+                                    <p class="card__description speaker__desc">${event["detail"]}</p>
+                                </div>
+                            </a>`;
+                                }
+                                
+                                else {
                                     listEvent += `
                             <a href="/acara/${ event['id'] }" class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
