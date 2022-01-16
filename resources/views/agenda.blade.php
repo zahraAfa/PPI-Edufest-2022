@@ -201,7 +201,7 @@
                 } else if (new Date(event["date"]).getTime() >
                     date2weeks) {
                     listEvent += `
-                            <a href="/acara/${ event['id'] }" class="custom-card" data-aos="fade-up"
+                            <a href="#" class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
                                     <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />

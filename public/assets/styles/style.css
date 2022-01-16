@@ -478,8 +478,8 @@ h1 {
     background-color: var(--mainLightGreen) !important;
 }
 .path_grey {
-    fill: var(--LightGrey) !important;
-    background-color: var(--LightGrey) !important;
+    fill: var(--DarkGrey) !important;
+    background-color: var(--DarkGrey) !important;
 }
 
 .card__arc path {
