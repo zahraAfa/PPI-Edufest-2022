@@ -18,8 +18,10 @@
                     </div>
                     <div class="agenda-page-body-container">
                         <div class="filters-div agenda-page-filters">
-                            <input class="form-control search-bar agenda-page-search-bar" id="search-input" type="text"
-                                placeholder="Search..">
+                            <form id="form_speaker" class="m-0">
+                                <input class="form-control search-bar agenda-page-search-bar" id="search-input" type="text"
+                                    placeholder="Search..">
+                            </form>
                             <div class="filter-separator"></div>
                             <select name="Kawasan" id="kawasan-filter" class="filter-bar">
                                 <option value="all">Show all</option>
@@ -72,6 +74,14 @@
         </div>
     </section>
     <script>
+        $("#form_speaker").submit(function(e) {
+            e.preventDefault();
+            searchSpeakerByName();
+        });
+        $('#kawasan-filter').on('change', function() {
+            console.log("oke serach")
+            searchSpeakerByRegion();
+        })
         $(window).on('load', function() {
             $('#agendaDescModal').modal('show');
         });
@@ -86,17 +96,66 @@
                         className: 'paginationjs-theme-red',
                         pageSize: 12,
                         callback: function(data, pagination) {
-                            var listEvent = '';
-                            var eventItems = '';
-                            var ToDate = new Date();
-                            var date2days = new Date();
-                            var date2weeks = new Date();
-                            ToDate = ToDate.setDate(ToDate.getDate() - 1);
-                            date2days = date2days.setDate(date2days.getDate() + 2);
-                            date2weeks = date2weeks.setDate(date2weeks.getDate() + 14);
-                            $.each(data, function(key, event) {
-                                if (new Date(event["date"]).getTime() < ToDate) {
-                                    listEvent += `
+                            injectData(data, pagination);
+                        }
+                    })
+                }
+            });
+        });
+
+        function searchSpeakerByName() {
+            console.log("oke search")
+            let searchString = $("#search-input").val();
+            $.ajax({
+                type: "GET",
+                url: `../../../api/events/read?search=${searchString}`,
+                className: 'paginationjs-theme-red',
+                success: function(result) {
+                    let container = $('.paginate');
+                    container.pagination({
+                        dataSource: result,
+                        pageSize: 12,
+                        className: 'paginationjs-theme-red',
+                        callback: function(data, pagination) {
+                            injectData(data, pagination);
+                        }
+                    });
+                }
+            });
+        }
+
+        function searchSpeakerByRegion() {
+            let searchString = $("#kawasan-filter").val();
+            $.ajax({
+                type: "GET",
+                url: `../../../api/events/read?region=${searchString}`,
+                className: 'paginationjs-theme-red',
+                success: function(result) {
+                    let container = $('.paginate');
+                    container.pagination({
+                        dataSource: result,
+                        pageSize: 12,
+                        className: 'paginationjs-theme-red',
+                        callback: function(data, pagination) {
+                            injectData(data, pagination);
+                        }
+                    });
+                }
+            });
+        }
+
+        function injectData(data, pagination) {
+            var listEvent = '';
+            var eventItems = '';
+            var ToDate = new Date();
+            var date2days = new Date();
+            var date2weeks = new Date();
+            ToDate = ToDate.setDate(ToDate.getDate() - 1);
+            date2days = date2days.setDate(date2days.getDate() + 2);
+            date2weeks = date2weeks.setDate(date2weeks.getDate() + 14);
+            $.each(data, function(key, event) {
+                if (new Date(event["date"]).getTime() < ToDate) {
+                    listEvent += `
                             <a href="/acara/${ event['id'] }" class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
@@ -116,10 +175,10 @@
                                     <p class="card__description speaker__desc path_red">${event["detail"]}</p>
                                 </div>
                             </a>`;
-                                } else if (new Date(event["date"]).getTime() <=
-                                    date2days
-                                ) {
-                                    listEvent += `
+                } else if (new Date(event["date"]).getTime() <=
+                    date2days
+                ) {
+                    listEvent += `
                             <a href="/acara/${ event['id'] }" class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
@@ -139,11 +198,9 @@
                                     <p class="card__description speaker__desc">${event["detail"]}</p>
                                 </div>
                             </a>`;
-                                } 
-                                
-                                else if (new Date(event["date"]).getTime() >
-                                    date2weeks) {
-                                    listEvent += `
+                } else if (new Date(event["date"]).getTime() >
+                    date2weeks) {
+                    listEvent += `
                             <a href="/acara/${ event['id'] }" class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
@@ -163,10 +220,8 @@
                                     <p class="card__description speaker__desc">${event["detail"]}</p>
                                 </div>
                             </a>`;
-                                }
-                                
-                                else {
-                                    listEvent += `
+                } else {
+                    listEvent += `
                             <a href="/acara/${ event['id'] }" class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
@@ -186,22 +241,17 @@
                                     <p class="card__description speaker__desc">${event["detail"]}</p>
                                 </div>
                             </a>`;
-                                }
-                            });
-                            $(".agenda-page-grid").html(listEvent);
-                            $(".paginationjs-pages").click(function() {
-                                $([document.documentElement, document.body])
-                                    .animate({
-                                        scrollTop: $(".agenda-page-grid")
-                                            .offset().top
-                                    }, 100);
-                            });
-                        }
-                    })
-
                 }
             });
-        });
+            $(".agenda-page-grid").html(listEvent);
+            $(".paginationjs-pages").click(function() {
+                $([document.documentElement, document.body])
+                    .animate({
+                        scrollTop: $(".agenda-page-grid")
+                            .offset().top
+                    }, 100);
+            });
+        }
     </script>
 
 @endsection

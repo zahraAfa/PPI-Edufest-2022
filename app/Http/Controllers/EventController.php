@@ -6,7 +6,7 @@ use App\Models\Speaker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\DB;
+;
 
 class EventController extends Controller
 {
