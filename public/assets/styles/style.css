@@ -477,6 +477,10 @@ h1 {
     fill: var(--mainLightGreen) !important;
     background-color: var(--mainLightGreen) !important;
 }
+.path_grey {
+    fill: var(--LightGrey) !important;
+    background-color: var(--LightGrey) !important;
+}
 
 .card__arc path {
     fill: var(--mainOrange);
