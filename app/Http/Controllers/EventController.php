@@ -6,7 +6,6 @@ use App\Models\Speaker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller
 {
@@ -28,7 +27,7 @@ class EventController extends Controller
 
     public function detail($id){
         return view('event-details', [
-            "title" => "Acara " . $id,
+            "title" => "Detail Acara",
             "event" => Event::findOrFail($id),
             "speakers" => DB::table('speakers')->where('event_id', $id)->get()
         ]);
@@ -92,7 +91,7 @@ class EventController extends Controller
         $event = Event::create($eventData);
 
         $newPath = public_path() . '/storage/img/events/' . $event->id;
-        
+
         request('picture')->move($newPath, $pictureName);
 
         return $event;
@@ -101,7 +100,7 @@ class EventController extends Controller
     public function update($id) {
         request()->validate([
             'title' => [
-                'required', 
+                'required',
                 'string',
                 Rule::unique('events')->ignore($id)
             ],
