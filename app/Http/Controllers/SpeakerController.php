@@ -10,8 +10,19 @@ use Illuminate\Validation\Rule;
 class SpeakerController extends Controller
 {
     public function read(Request $request) {
-        $query = DB::table('speakers')
-            ->join('events', 'speakers.event_id', '=', 'events.id');
+        $query = DB::table('speakers as s')
+            ->join('events as e', 's.event_id', '=', 'e.id')
+            ->select(
+                's.id',
+                's.event_id',
+                's.name',
+                's.ppi',
+                's.picture',
+                's.major',
+                's.school',
+                's.detail',
+                'e.region'
+            );
 
         if (request('search')) {
             $query = $query->where(function($builder) use ($request){
