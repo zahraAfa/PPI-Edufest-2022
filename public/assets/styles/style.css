@@ -273,6 +273,30 @@ h1 {
     height: 100%;
 }
 
+.search-bar, .agenda-page-search-bar:focus{
+    outline: none!important;
+    outline-width: 0!important;
+}
+
+.search-submit{
+    height: 100%;
+    border-radius: 30px;
+    background-color: var(--mainPink);
+    border: none;
+    color: white;
+    width: 60px;
+}
+
+.search-submit:hover{
+    background-color: var(--mainSoftCoral);
+}
+
+#form_speaker{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
 .dropdown-toggle {
     background-color: white;
     border: 0;
@@ -298,6 +322,7 @@ h1 {
 
 .filter-bar {
     border: 0;
+    padding-left: 10px;
 }
 
 .effect-pop-up {

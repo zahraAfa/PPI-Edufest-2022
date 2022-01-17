@@ -18,11 +18,6 @@
                     </div>
                     <div class="agenda-page-body-container">
                         <div class="filters-div agenda-page-filters">
-                            <form id="form_speaker" class="m-0">
-                                <input class="form-control search-bar agenda-page-search-bar" id="search-input" type="text"
-                                    placeholder="Search..">
-                            </form>
-                            <div class="filter-separator"></div>
                             <select name="Kawasan" id="kawasan-filter" class="filter-bar">
                                 <option value="">Show all</option>
                                 {{-- <option value="all_region">All Region</option> --}}
@@ -30,6 +25,12 @@
                                 <option value="asia_oseania">Asia dan Oseania</option>
                                 <option value="amerop">Eropa dan Amerika</option>
                             </select>
+                            <div class="filter-separator"></div>
+                            <form id="form_speaker" class="m-0">
+                                <input class="form-control search-bar agenda-page-search-bar" id="search-input" type="text"
+                                    placeholder="Search..">
+                                <button class="search-submit" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </form>
                         </div>
                         <div class="agenda-page-grid">
                         </div>
@@ -157,7 +158,7 @@
             $.each(data, function(key, event) {
                 if (new Date(event["date"]).getTime() < ToDate) {
                     listEvent += `
-                            <a href="/acara/${ event['id'] }" class="custom-card" data-aos="fade-up"
+                            <a class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
                                     <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
@@ -202,7 +203,7 @@
                 } else if (new Date(event["date"]).getTime() >
                     date2weeks) {
                     listEvent += `
-                            <a href="#" class="custom-card" data-aos="fade-up"
+                            <a class="custom-card" data-aos="fade-up"
                                 data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
                                     <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
