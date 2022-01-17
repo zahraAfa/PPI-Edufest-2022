@@ -270,6 +270,7 @@ h1 {
     min-width: 100px;
     max-width: 500px;
     border: 0;
+    height: 100%;
 }
 
 .dropdown-toggle {
