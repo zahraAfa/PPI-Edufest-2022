@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Event;
+use App\Models\Speaker;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
@@ -23,6 +23,21 @@ class EventController extends Controller
         }
         $query = $query->get();
         return $query;
+    }
+
+    public function detail($id){
+        return view('event-details', [
+            "title" => "Detail Acara",
+            "event" => Event::findOrFail($id),
+            "speakers" => DB::table('speakers')->where('event_id', $id)->get()
+        ]);
+    }
+
+    public function readDetail($id) {
+        $event = Event::where('id', $id)->first();
+        $speakers = Speaker::where('event_id', $id)->get();
+        $data = [$event, $speakers];
+        return $data;
     }
 
     public function updateImage($id)
@@ -76,7 +91,7 @@ class EventController extends Controller
         $event = Event::create($eventData);
 
         $newPath = public_path() . '/storage/img/events/' . $event->id;
-        
+
         request('picture')->move($newPath, $pictureName);
 
         return $event;
@@ -85,7 +100,7 @@ class EventController extends Controller
     public function update($id) {
         request()->validate([
             'title' => [
-                'required', 
+                'required',
                 'string',
                 Rule::unique('events')->ignore($id)
             ],
