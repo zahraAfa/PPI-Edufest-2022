@@ -28,17 +28,18 @@
                 </div>
                 <div class="speakers-content">
                     <div class="filters-div">
-                        <form id="form_speaker" class="m-0">
-                            <input class="form-control search-bar speakers-search-bar" id="search-input" type="text"
-                                placeholder="Search..">
-                        </form>
-                        <div class="filter-separator"></div>
                         <select name="Kawasan" id="kawasan-filter" class="filter-bar">
                             <option value="all">Show all</option>
                             <option value="timtengka">Timur Tengah dan Afrika</option>
                             <option value="aseo">Asia dan Oseania</option>
                             <option value="aerop">Eropa dan Amerika</option>
                         </select>
+                        <div class="filter-separator"></div>
+                        <form id="form_speaker" class="m-0">
+                            <input class="form-control search-bar speakers-search-bar" id="search-input" type="text"
+                                placeholder="Search..">
+                            <button class="search-submit" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
                     </div>
                     <div class="speakers-grid">
                     </div>
