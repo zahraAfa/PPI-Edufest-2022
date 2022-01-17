@@ -4,13 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
 class EventController extends Controller
 {
-    public function read() {
-        $events = Event::all();
-        return $events;
+    public function read(Request $request) {
+        $query = DB::table('events');
+        if (request('search')) {
+            $query = $query->where(function($builder) use ($request){
+                $builder->where('title', 'LIKE', "%{$request->search}%");
+            });
+        }
+        if (request('region')) {
+            $query = $query->where(function($builder) use ($request){
+                $builder->where('region', 'LIKE', "%{$request->region}%");
+            });
+        }
+        $query = $query->get();
+        return $query;
     }
 
     public function updateImage($id)
