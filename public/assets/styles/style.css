@@ -357,8 +357,8 @@ h1 {
     .filter-separator {
         display: none;
     }
-    .filter-bar {
-        border-top: 1px solid var(--mainSoftPurple);
+    #form_speaker{
+        border-top: 2px solid rgb(207, 207, 207);
     }
     .filters-div select{
         height: 40px;
