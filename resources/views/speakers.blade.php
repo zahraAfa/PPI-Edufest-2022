@@ -30,7 +30,6 @@
                     <div class="filters-div">
                         <select name="Kawasan" id="kawasan-filter" class="filter-bar">
                             <option value="">Show all</option>
-                            <option value="all_region">All Region</option>
                             <option value="timtengka">Timur Tengah dan Afrika</option>
                             <option value="asia_oseania">Asia dan Oseania</option>
                             <option value="amerop">Eropa dan Amerika</option>
