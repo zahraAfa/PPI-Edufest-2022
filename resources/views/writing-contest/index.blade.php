@@ -21,13 +21,13 @@
                    <div class="wc-folder-box1-arrow"><i class="fa fa-arrow-right"></i></div>
                 </div>
             </a>
-            <a class="wc-index-list2 effect-pop-up" style="text-decoration: none!important">
+            {{-- <a class="wc-index-list2 effect-pop-up" style="text-decoration: none!important">
                 <div class="wc-folder-outerbox2"></div>
                 <div class="wc-folder-box2">
                     <div class="wc-folder-box2-tag" style="text-decoration: none!important;">Arsip<br>Writing Contest<br>2021</div>
                     <div class="wc-folder-box2-arrow"><i class="fa fa-arrow-right"></i></div>
                 </div>
-            </a>
+            </a> --}}
         </div>
         <div class="wc-ku-body-row ku-row-date">
             <div class="wc-ku-row-date-wrapper">
