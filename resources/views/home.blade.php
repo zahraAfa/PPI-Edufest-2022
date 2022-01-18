@@ -102,7 +102,7 @@
                             if (!(new Date(event["date"]).getTime() <= ToDate.getTime())) {
                                 listEvent +=
                                     `<li>
-                                    <a href="" class="custom-card">
+                                    <a href="/acara/${event["id"]}" class="custom-card">
                                         <div class="img__card-container">
                                             <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                         </div>
@@ -124,7 +124,6 @@
                             }
                         });
                         $('#lightSlider-agenda-section').append(listEvent);
-                        console.log(agendaSlider);
                     }
                     agendaSlider();
                 }
