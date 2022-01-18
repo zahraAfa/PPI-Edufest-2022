@@ -18,8 +18,18 @@ $( ".faq-btn-float" ).click(function() {
     $( ".faq-modal" ).toggleClass( "show-faq" );
   });
 });
-$( ".close-modal" ).click(function() {
+$( ".close-modal-faq" ).click(function() {
   $( ".faq-modal" ).slideToggle( "slow", function() {
     $( ".faq-modal" ).toggleClass( "show-faq" );
+  });
+});
+$( ".cp-btn-float" ).click(function() {
+  $( ".cp-modal" ).slideToggle( "slow", function() {
+    $( ".cp-modal" ).toggleClass( "show-cp" );
+  });
+});
+$( ".close-modal-cp" ).click(function() {
+  $( ".cp-modal" ).slideToggle( "slow", function() {
+    $( ".cp-modal" ).toggleClass( "show-cp" );
   });
 });
