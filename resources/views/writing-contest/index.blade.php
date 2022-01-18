@@ -29,6 +29,27 @@
                 </div>
             </a>
         </div>
+        <div class="wc-ku-body-row ku-row-date">
+            <div class="wc-ku-row-date-wrapper">
+                <i class="wc-date-title fa fa-calendar" aria-hidden="true"></i>
+                <div class="wc-ku-row-date-row">
+                    <h1 class="wc-date-date1">01-Feb-22</h1>
+                    <h3 class="wc-date-desc1">Pembukaan</h3>
+                </div>
+                <div class="wc-ku-row-date-row">
+                    <h1 class="wc-date-date1">20-Mar-22</h1>
+                    <h3 class="wc-date-desc1">Penutupan</h3>
+                </div>
+                <div class="wc-ku-row-date-row">
+                    <h1 class="wc-date-date1">21-Mar ~<br>02-Apr-22</h1>
+                    <h3 class="wc-date-desc1">Penjurian</h3>
+                </div>
+                <div class="wc-ku-row-date-row">
+                    <h1 class="wc-date-date1">03-Apr-22</h1>
+                    <h3 class="wc-date-desc1">Pengumuman</h3>
+                </div>
+            </div>
+        </div>
         <div class="wc-index-body-cont2">
             <div class="wc-ku-title">
                 <h1>Ketentuan Umum</h1>
@@ -139,6 +160,37 @@
         </div>
         <div class="wc-ku-body-row ku-row-7"></div>
     </div>
+    <div class="modal fade" id="writing-cont-modal" tabindex="-1" aria-labelledby="writing-cont-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Waktu Pelaksanaan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body wc-index-modal-body">
+                    <div class="wc-index-modal-body-wrapper">
+                        <div class="wc-index-modal-col">
+                            <h2 class="wc-index-modal-title">Pembukaan: </h2>
+                            <h2 class="wc-index-modal-title">Penutupan: </h2>
+                            <h2 class="wc-index-modal-title">Penjurian: </h2>
+                            <h2 class="wc-index-modal-title">Pengumuman: </h2>
+                        </div>
+                        <div class="wc-index-modal-col">
+                            <p class="wc-index-modal-desc">1 Februari 2022</p>
+                            <p class="wc-index-modal-desc">20 Maret 2022</p>
+                            <p class="wc-index-modal-desc">21 Maret – 2 April 2022</p>
+                            <p class="wc-index-modal-desc">3 April 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+<script>
+    $(window).on('load', function() {
+        $('#writing-cont-modal').modal('show');
+    });
+</script>
 
 @endsection
