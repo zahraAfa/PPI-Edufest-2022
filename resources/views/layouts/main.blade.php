@@ -36,13 +36,13 @@
     <!-- Style end -->
 
     <!-- Favicon start -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/edufest-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/edufest-icon.png">
     <!-- Favicon end -->
 </head>
 
 <body class="main-page" id="top-page">
     <div class="page-loader">
-        <img class="loading-image" src="assets/img/gif/page-loader-white.gif" alt="Loading..." />
+        <img class="loading-image" src="/assets/img/gif/page-loader-white.gif" alt="Loading..." />
     </div>
     <nav id="navbar">
         <div class="nav-container nav-transparent">
@@ -60,8 +60,7 @@
                                 class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
-                        <a href="{{ $title === 'Home' ? '#' : route('usr-home') }}" class="gohome"><img
-                                src="assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
+                        <a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="gohome"><img src="/assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
                     </div>
                     <div class="nav-wrap">
                         <div class="menu-toggle">
@@ -77,15 +76,16 @@
     </nav>
 
     @yield($title)
+    @yield('Acara')
     @include('layouts.sponsors-partners')
     @include('layouts.faq')
     @include('layouts.footer')
     <a href="#top-page" class="fa fa-arrow-up go-top"></a>
 
-    <script src="assets/scripts/nav.js"></script>
-    <script src="assets/scripts/faq.js"></script>
-    <script src="assets/scripts/header.js"></script>
-    <script src="assets/scripts/page-loader.js"></script>
+    <script src="/assets/scripts/nav.js"></script>
+    <script src="/assets/scripts/faq.js"></script>
+    <script src="/assets/scripts/header.js"></script>
+    <script src="/assets/scripts/page-loader.js"></script>
 
     <script>
         AOS.init();
@@ -96,10 +96,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.js"
         integrity="sha512-h1Xtd9Xz5HglyzafV0MQ2j9RU30SbD+QdVRJXxdIdMixcGLiljJqtuu1W8Ig20IzYI8lskIKEppDJbF/zkdRtA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="assets/scripts/slick-slider.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    {{-- <script type="text/javascript" src="slick/slick.min.js"></script> --}}
+    <script src="/assets/scripts/slick-slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>

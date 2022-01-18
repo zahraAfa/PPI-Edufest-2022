@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FaqController;
+use App\Http\Controllers\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +32,7 @@ Route::get('/agenda', function () {
     ]);
 })->name('usr-agenda');
 
-Route::get('/acara', function () {
-    return view('event-details', [
-        "title" => "Acara",
-    ]);
-})->name('usr-event');
+Route::get('/acara/{id}', [EventController::class, 'detail'] );
 
 Route::get('/merchandise', function () {
     return view('merchandise', [
@@ -147,11 +143,11 @@ Route::get('/admin/speakers', function () {
 })->middleware('auth')->name('admin-speakers-index');
 
 Route::get('/admin/speakers/edit/{id}', function () {
-    return view('admin/speakers/edit-article');
+    return view('admin/speakers/edit-speaker');
 })->middleware('auth')->name('admin-speaker-edit');
 
 Route::get('/admin/speakers/add', function () {
-    return view('admin/speakers/add-article');
+    return view('admin/speakers/add-speaker');
 })->middleware('auth')->name('admin-speaker-add');
 
 // Articles routes

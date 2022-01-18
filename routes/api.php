@@ -59,6 +59,7 @@ Route::prefix('/partners')->group(function() {
 //Event unprotected routes
 Route::prefix('/events')->group(function() {
     Route::get('/read', [EventController::class, 'read']);
+    Route::get('/read/{id}', [EventController::class, 'readDetail']);
 });
 
 //Speaker unprotected routes
