@@ -47,13 +47,29 @@
                         <h1 class="effect-pop-slide-r">PPI Edufest</h1>
                         <h1 class="effect-pop-slide-r">2022</h1>
                     </div>
-                    <p>PPI Edufest 2021: Journey of The World’s Education across Indonesia adalah program yang mempertemukan
+                    <p>PPI Edufest 2022: Journey of The World’s Education across Indonesia adalah program yang mempertemukan
                         pelajar Indonesia di luar negeri dan pelajar Indonesia dalam negeri yang ingin melanjutkan
                         pendidikan ke luar negeri melalui pameran pendidikan yang diinisiasi oleh Festival Luar Negeri
                         (FELARI) Perhimpunan Pelajar Indonesia Dunia (PPI Dunia) dan didukung oleh Duta Felari PPI Dunia di
                         34 provinsi di seluruh Indonesia</p>
                     <button class="button-56" role="button">merchandise</button>
                 </div>
+            </div>
+        </div>
+    </section>
+    <div class="home-blank-transition"></div>
+    <section>
+        <div class="home-timeline-container">
+            <div class="home-timeline-wrapper">
+                <img class="home-timeline-map" src="" alt="">
+            </div>
+        </div>
+    </section>
+    <div class="home-blank-transition"></div>
+    <section>
+        <div class="home-articles-container">
+            <div class="home-articles-wrapper">
+                <button class="home-articles-button button-56" role="button">Lihat Artikel</button>
             </div>
         </div>
     </section>

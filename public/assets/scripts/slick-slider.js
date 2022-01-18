@@ -47,6 +47,22 @@ function agendaSlider() {
             "<a class='custom-arrow slick-next pull-right'><span class='material-icons-round'>arrow_forward_ios</span></a>",
         responsive: [
             {
+                breakpoint: 1604,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                },
+            },
+            {
+                breakpoint: 1444,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                },
+            },
+            {
                 breakpoint: 1214,
                 settings: {
                     slidesToShow: 2,
