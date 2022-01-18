@@ -76,13 +76,30 @@
     <div class="home-blank-transition"></div>
     <section>
         <div class="agenda-container">
+            
             <div class="agenda-wrapper">
                 <h1 class="agenda-sec-h1 effect-pop-up">- AGENDA -</h1>
+                <div class="agenda-modal-body-wrapper d-lg-flex align-self-center justify-content-lg-evenly justify-content-sm-center text-white">
+                    <div class="agenda-modal-row me-5">
+                        <div class="agenda-modal-col agenda-modal-grey"></div>
+                        <p class="agenda-modal-desc">Coming Soon</p>
+                    </div>
+                    <div class="agenda-modal-row me-5">
+                        <div class="agenda-modal-col agenda-modal-green"></div>
+                        <p class="agenda-modal-desc">Open Registration</p>
+                    </div>
+                    <div class="agenda-modal-row me-5">
+                        <div class="agenda-modal-col agenda-modal-orange"></div>
+                        <p class="agenda-modal-desc">Acara Sudah Dekat</p>
+                    </div>
+                </div>
                 <div class="agenda-section">
                     <ul id="lightSlider-agenda-section" class="responsive-slider">
                     </ul>
                 </div>
-                <p class="swipe-for-more">Swipe for more >></p>
+                <p class="swipe-for-more ">Swipe for more >></p>
+                <a href="/agenda" class="text-decoration-none"><button class="home-agenda-button button-56 mt-sm-2 mt-lg-5 "
+                        role="button">Lihat Semua Agenda</button></a>
             </div>
         </div>
     </section>
