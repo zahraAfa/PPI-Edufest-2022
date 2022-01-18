@@ -468,6 +468,15 @@ h1 {
     box-sizing: border-box;
 }
 
+.path_red {
+    fill: var(--mainRed) !important;
+    background-color: var(--mainRed) !important;
+}
+.path_green {
+    fill: var(--mainGreen) !important;
+    background-color: var(--mainGreen) !important;
+}
+
 .card__arc path {
     fill: var(--mainOrange);
     d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");

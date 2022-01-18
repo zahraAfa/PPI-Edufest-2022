@@ -34,13 +34,13 @@
     <!-- Style end -->
 
     <!-- Favicon start -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/edufest-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/edufest-icon.png">
     <!-- Favicon end -->
 </head>
 
 <body class="main-page" id="top-page">
     <div class="page-loader">
-        <img class="loading-image" src="assets/img/gif/page-loader-white.gif" alt="Loading..." />
+        <img class="loading-image" src="/assets/img/gif/page-loader-white.gif" alt="Loading..." />
     </div>
     <nav id="navbar">
         <div class="nav-container nav-transparent">
@@ -54,7 +54,7 @@
                         <li><a href="{{ ($title === "Docs")?'#': route('usr-docs')}}" class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
-                        <a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="gohome"><img src="assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
+                        <a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="gohome"><img src="/assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
                     </div>
                     <div class="nav-wrap">
                         <div class="menu-toggle">
@@ -70,15 +70,16 @@
     </nav>
 
     @yield($title)
+    @yield('Acara')
     @include('layouts.sponsors-partners')
     @include('layouts.faq')
     @include('layouts.footer')
     <a href="#top-page" class="fa fa-arrow-up go-top"></a>
 
-    <script src="assets/scripts/nav.js"></script>
-    <script src="assets/scripts/faq.js"></script>
-    <script src="assets/scripts/header.js"></script>
-    <script src="assets/scripts/page-loader.js"></script>
+    <script src="/assets/scripts/nav.js"></script>
+    <script src="/assets/scripts/faq.js"></script>
+    <script src="/assets/scripts/header.js"></script>
+    <script src="/assets/scripts/page-loader.js"></script>
 
     <script>
         AOS.init();
@@ -87,7 +88,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     {{-- <script type="text/javascript" src="slick/slick.min.js"></script> --}}
-    <script src="assets/scripts/slick-slider.js"></script>
+    <script src="/assets/scripts/slick-slider.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

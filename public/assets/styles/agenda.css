@@ -414,6 +414,7 @@
 .event-header-row img{
     height: 200px;
     margin-top: auto;
+    background-color: var(--White);
 }
 
 .event-wrapper{
@@ -486,6 +487,7 @@
     background-color: var(--mainWhite);
     border-radius: 20px;
     height: 600px;
+    overflow: scroll;
 }
 
 @media screen and (max-width: 547px) {
