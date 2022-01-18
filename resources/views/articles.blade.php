@@ -57,7 +57,7 @@
                                         <h1 class="articles-box-title">${article['title']}</h1>
                                         <h2 class="articles-box-subtitle">${article['writer']}</h2>
                                     </div>
-                                    <div class="articles-box-row">
+                                    <div class="articles-box-row  articles-box2">
                                         <p class="articles-box-desc">
                                             ${article['description']}
                                         </p>
