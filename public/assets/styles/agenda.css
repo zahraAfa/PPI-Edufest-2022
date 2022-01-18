@@ -177,8 +177,9 @@
 }
 
 .agenda-page-body-container{
-    margin-top: 10%;
-    margin-bottom: 10%;
+    /* margin-top: 10%;
+    margin-bottom: 10%; */
+    margin: auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
