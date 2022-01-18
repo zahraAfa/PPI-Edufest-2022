@@ -18,7 +18,6 @@ $(document).ready(function () {
         centerMode: true,
         infinite: true,
     });
-    agendaSlider();
 });
 
 function partnerSlider() {

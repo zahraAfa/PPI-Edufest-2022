@@ -13,6 +13,19 @@
         <img class="wc-curve-l translateX" data-speed="-0.6" src="../../assets/img/header/header-curve-left.png" alt="">
     </header>
     <div class="wc-index-body">
+        <div class="agenda-container">
+            
+            <div class="agenda-wrapper">
+                <h1 class="agenda-sec-h1 effect-pop-up">- Artikel -</h1>
+                <div class="agenda-section">
+                    <ul id="lightSlider-agenda-section" class="responsive-slider">
+                    </ul>
+                </div>
+                <p class="swipe-for-more ">Swipe for more >></p>
+                <a href="/artikel" class="text-decoration-none"><button class="home-agenda-button button-56 mt-sm-2 mt-lg-5 "
+                        role="button">Lihat Semua Artikel</button></a>
+            </div>
+        </div>
         <div class="wc-index-body-cont">
             <a class="wc-index-list1 effect-pop-up" style="text-decoration: none!important">
                 <div class="wc-folder-outerbox1"></div>
@@ -187,9 +200,68 @@
         </div>
     </div>
 </section>
+<div class="modal fade" id="articlePdfModal" tabindex="-1" aria-labelledby="articlePdfModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body articles-modal-body" id="data_iframe">
+                <iframe class="mx-auto"
+                    src="https://drive.google.com/file/d/1z6tiBJtsczVlEcLYKPRaDlCWsxSBJXQl/preview"
+                    allow="autoplay"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $(window).on('load', function() {
         $('#writing-cont-modal').modal('show');
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            type: "GET",
+            url: "../../../api/articles/read",
+            success: function(result) {
+                var list = '';
+                if (result.length === 0) {
+
+                } else {
+                    $.each(result, function(key, article) {
+                        
+                        list += `<div class="articles-box">
+                                    <div class="articles-box-row">
+                                        <h1 class="articles-box-title">${article['title']}</h1>
+                                        <h2 class="articles-box-subtitle">${article['writer']}</h2>
+                                    </div>
+                                    <div class="articles-box-row  articles-box2">
+                                        <p class="articles-box-desc">
+                                            ${article['description']}
+                                        </p>
+                                    </div>
+                                    <div class="articles-box-row">
+                                        <a type="button" data-article="${article['file']}" data-id="${article['id']}" data-bs-toggle="modal" data-bs-target="#articlePdfModal" class="btn button-56 link_read">Baca</a>
+                                    </div>
+                                </div>`;
+                    });
+                    $('#lightSlider-agenda-section').append(list);
+                    $(".link_read").click(function() {
+                                let picture = $(this).attr("data-article");
+                                let id = $(this).attr("data-id");
+                                $("#data_iframe").html(
+                                    '<iframe class="mx-auto" src="{{ url('/storage/file/articles/') }}/' +
+                                    id +
+                                    '/' +
+                                    picture +
+                                    '" allow="autoplay"></iframe>'
+                                )
+                            })
+                }
+                agendaSlider();
+            }
+        });
     });
 </script>
 
