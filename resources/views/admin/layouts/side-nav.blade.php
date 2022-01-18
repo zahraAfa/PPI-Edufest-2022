@@ -58,8 +58,8 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link @if (Route::is('admin-article-index')) active @endif" href="{{ route('admin-article-index') }}">
-                    <i class="fa fa-handshake-o" style="color: var(--bs-gray-800);"></i>
-                    <span style="color: var(--bs-gray-800);">Article</span>
+                    <i class="fa fa-pencil" style="color: var(--bs-gray-800);"></i>
+                    <span style="color: var(--bs-gray-800);">Articles</span>
                 </a>
             </li>
         </ul>
