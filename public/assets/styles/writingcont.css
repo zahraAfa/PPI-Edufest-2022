@@ -74,7 +74,7 @@
 
 .wc-index-body-cont{
     width: 85%;
-    margin: auto;
+    margin: 100px auto auto auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -753,4 +753,9 @@
     .wc-date-desc1{
         font-size: 20px;
     }
+}
+
+.wc-index-body .articles-box{
+    margin: auto 5px;
+    max-width: 350px!important;
 }
