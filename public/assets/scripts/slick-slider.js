@@ -8,7 +8,6 @@ $(document).ready(function () {
         centerMode: false,
         infinite: true,
     });
-    
     $(".sponsor-slider").slick({
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -18,6 +17,10 @@ $(document).ready(function () {
         centerMode: true,
         infinite: true,
     });
+    agendaSlider();
+});
+
+function partnerSlider() {
     $(".partner-slider").slick({
         slidesToShow: 5,
         slidesToScroll: 3,
@@ -27,7 +30,7 @@ $(document).ready(function () {
         centerMode: true,
         infinite: true,
     });
-});
+}
 
 function agendaSlider() {
     $(".responsive-slider").slick({
