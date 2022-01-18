@@ -34,10 +34,11 @@
                         </form>
                         <div class="filter-separator"></div>
                         <select name="Kawasan" id="kawasan-filter" class="filter-bar">
-                            <option value="all">Show all</option>
+                            <option value="">Show all</option>
+                            <option value="all_region">All Region</option>
                             <option value="timtengka">Timur Tengah dan Afrika</option>
-                            <option value="aseo">Asia dan Oseania</option>
-                            <option value="aerop">Eropa dan Amerika</option>
+                            <option value="asia_oseania">Asia dan Oseania</option>
+                            <option value="amerop">Eropa dan Amerika</option>
                         </select>
                     </div>
                     <div class="speakers-grid">
