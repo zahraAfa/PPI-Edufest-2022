@@ -76,10 +76,11 @@
     <div class="home-blank-transition"></div>
     <section>
         <div class="agenda-container">
-            
+
             <div class="agenda-wrapper">
                 <h1 class="agenda-sec-h1 effect-pop-up">- AGENDA -</h1>
-                <div class="agenda-modal-body-wrapper d-lg-flex align-self-center justify-content-lg-evenly justify-content-sm-center text-white">
+                <div
+                    class="agenda-modal-body-wrapper d-lg-flex align-self-center justify-content-lg-evenly justify-content-sm-center text-white">
                     <div class="agenda-modal-row me-5">
                         <div class="agenda-modal-col agenda-modal-grey"></div>
                         <p class="agenda-modal-desc">Coming Soon</p>
@@ -114,6 +115,9 @@
                     var ToDate = new Date();
                     var date2days = new Date();
                     var date2weeks = new Date();
+                    ToDate = ToDate.setDate(ToDate.getDate() - 1);
+                    date2days = date2days.setDate(date2days.getDate() + 2);
+                    date2weeks = date2weeks.setDate(date2weeks.getDate() + 14);
                     if (result.length === 0) {
 
                     } else {
