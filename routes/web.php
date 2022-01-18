@@ -34,12 +34,6 @@ Route::get('/agenda', function () {
 
 Route::get('/acara/{id}', [EventController::class, 'detail'] );
 
-Route::get('/acara', function () {
-    return view('event-details', [
-        "title" => "Acara",
-    ]);
-});
-
 Route::get('/merchandise', function () {
     return view('merchandise', [
         "title" => "Merchandise",
