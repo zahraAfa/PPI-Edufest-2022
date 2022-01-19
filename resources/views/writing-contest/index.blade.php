@@ -45,19 +45,19 @@
         <div class="wc-ku-body-row ku-row-date">
             <div class="wc-ku-row-date-wrapper">
                 <i class="wc-date-title fa fa-calendar" aria-hidden="true"></i>
-                <div class="wc-ku-row-date-row">
+                <div class="wc-ku-row-date-row effect-pop-up">
                     <h1 class="wc-date-date1">01-Feb-22</h1>
                     <h3 class="wc-date-desc1">Pembukaan</h3>
                 </div>
-                <div class="wc-ku-row-date-row">
+                <div class="wc-ku-row-date-row effect-pop-up">
                     <h1 class="wc-date-date1">20-Mar-22</h1>
                     <h3 class="wc-date-desc1">Penutupan</h3>
                 </div>
-                <div class="wc-ku-row-date-row">
+                <div class="wc-ku-row-date-row effect-pop-up">
                     <h1 class="wc-date-date1">21-Mar ~<br>02-Apr-22</h1>
                     <h3 class="wc-date-desc1">Penjurian</h3>
                 </div>
-                <div class="wc-ku-row-date-row">
+                <div class="wc-ku-row-date-row effect-pop-up">
                     <h1 class="wc-date-date1">03-Apr-22</h1>
                     <h3 class="wc-date-desc1">Pengumuman</h3>
                 </div>
@@ -71,7 +71,7 @@
         <div class="wc-ku-body-row ku-row-1">
             <div class="ku-row-1-wrapper">
                 <h2 class="wc-ku-row1-sec1">Tema</h2>
-                <h1 class="wc-ku-row1-sec2">"Sepenggal kisah dari penjuru dunia, sejuta inspirasi untuk Indonesia"</h1>
+                <h1 class="wc-ku-row1-sec2 effect-pop-up">"Sepenggal kisah dari penjuru dunia, sejuta inspirasi untuk Indonesia"</h1>
             </div>
         </div>
         <div class="wc-ku-body-row ku-row-2">
@@ -80,13 +80,13 @@
                     <h1>Subtema</h1>
                 </div>
                 <div class="wc-ku-row2-sec2">
-                    <div class="wc-ku-row2-sec2-box">
+                    <div class="wc-ku-row2-sec2-box effect-pop-slide-l ">
                         <p>"Suka duka  mahasiswa Indonesia di luar negeri."</p>
                     </div>
-                    <div class="wc-ku-row2-sec2-box">
+                    <div class="wc-ku-row2-sec2-box effect-pop-slide-l ">
                         <p>"Kontribusi mahasiswa di luar negeri untuk bangsa Indonesia."</p>
                     </div>
-                    <div class="wc-ku-row2-sec2-box">
+                    <div class="wc-ku-row2-sec2-box effect-pop-slide-l ">
                         <p>"Perjuangan pelajar meraih beasiswa di luar negeri."</p>
                     </div>
                 </div>
@@ -94,14 +94,14 @@
         </div>
         <div class="wc-ku-body-row ku-row-3">
             <div class="wc-ku-row-3-wrapper">
-                <div class="wc-ku-row3-sec1">
+                <div class="wc-ku-row3-sec1 effect-pop-up">
                     <h1 class="wc-ku-row3-sec1-tema">Syarat Peserta</h1>
                     <div class="wc-ku-row3-sec1-lists">
                         <p>1. Pelajar Indonesia yang aktif menempuh pendidikan di luar negeri.</p>
                         <p>2. Follow akun PPI Edufest.</p>
                     </div>
                 </div>
-                <div class="wc-ku-row3-sec2">
+                <div class="wc-ku-row3-sec2 effect-pop-up">
                     <h1 class="wc-ku-row3-sec2-tema">Ketentuan Penulisan</h1>
                     <div class="wc-ku-row3-sec2-lists">
                         <p>1. Naskah merupakan cerita pendek, memiliki tokoh dan berdialog.</p>
@@ -122,16 +122,16 @@
             <div class="wc-ku-row-4-wrapper">
                 <h1 class="wc-ku-row4-sec1">Penilaian</h1>
                 <div class="wc-ku-row4-sec2">
-                    <div class="wc-ku-row4-sec2-box">
+                    <div class="wc-ku-row4-sec2-box effect-pop-up">
                         <p>1. Orisinalitas dan kreativitas.</p>
                     </div>
-                    <div class="wc-ku-row4-sec2-box">
+                    <div class="wc-ku-row4-sec2-box effect-pop-up">
                         <p>2. Premis yang disuguhkan.</p>
                     </div>
-                    <div class="wc-ku-row4-sec2-box">
+                    <div class="wc-ku-row4-sec2-box effect-pop-up">
                         <p>3. Kesesuaian dengan tema.</p>
                     </div>
-                    <div class="wc-ku-row4-sec2-box">
+                    <div class="wc-ku-row4-sec2-box effect-pop-up">
                         <p>4. Gaya bahasa dan teknik kepenulisan.</p>
                     </div>
                 </div>
@@ -144,7 +144,7 @@
         </div>
         <div class="wc-ku-body-row ku-row-6">
             <div class="wc-ku-row-6-wrapper">
-                <div class="wc-ku-row6-sec1">
+                <div class="wc-ku-row6-sec1 effect-pop-up">
                     <div class="wc-ku-row6-sec1-box">
                         <h2 class="wc-ku-row6-sec1-tema">Juara 1</h2>
                         <p class="wc-ku-row6-sec1-text">Rp. 2.000.000</p>
@@ -153,13 +153,13 @@
                     </div>
                 </div>
                 <div class="wc-ku-row6-sec1">
-                    <div class="wc-ku-row6-sec1-box">
+                    <div class="wc-ku-row6-sec1-box effect-pop-up">
                         <h2 class="wc-ku-row6-sec1-tema">Juara 2</h2>
                         <p class="wc-ku-row6-sec1-text">Rp. 1.500.000,</p>
                         <p class="wc-ku-row6-sec1-text">Piagam</p>
                         <p class="wc-ku-row6-sec1-text">Merchandise Edufest</p>
                     </div>
-                    <div class="wc-ku-row6-sec1-box">
+                    <div class="wc-ku-row6-sec1-box effect-pop-up">
                         <h2 class="wc-ku-row6-sec1-tema">Juara 3</h2>
                         <p class="wc-ku-row6-sec1-text">Rp. 1.000.000,</p>
                         <p class="wc-ku-row6-sec1-text">Piagam</p>
