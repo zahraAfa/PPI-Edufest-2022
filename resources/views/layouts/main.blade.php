@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="assets/styles/sponsors-partners.css" />
     <link rel="stylesheet" href="assets/styles/merchandise.css" />
     <link rel="stylesheet" href="assets/styles/docs.css" />
+    <link rel="stylesheet" href="assets/styles/writingcont.css" />
     <link rel="stylesheet" href="assets/styles/articles.css" />
     <!-- Style end -->
 
@@ -49,15 +50,11 @@
             <div class="nav-body">
                 <div class="nav-sections">
                     <ul class="nav-items">
-                        <li><a href="{{ $title === 'Home' ? '#' : route('usr-home') }}"
-                                class="nav-beranda">Beranda</a></li>
-                        <li><a href="{{ $title === 'Pembicara' ? '#' : route('usr-speaker') }}"
-                                class="nav-pembicara">Pembicara</a></li>
-                        <li><a href="{{ $title === 'Agenda' ? '#' : route('usr-agenda') }}"
-                                class="nav-agenda">Agenda</a></li>
-                        <li><a href="#" class="nav-writingcont">Writing Contest</a></li>
-                        <li><a href="{{ $title === 'Docs' ? '#' : route('usr-docs') }}"
-                                class="nav-dokumentasi">Dokumentasi</a></li>
+                        <li><a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="nav-beranda">Beranda</a></li>
+                        <li><a href="{{ ($title === "Pembicara")?'#': route('usr-speaker') }}" class="nav-pembicara">Pembicara</a></li>
+                        <li><a href="{{ ($title === "Agenda")?'#': route('usr-agenda') }}" class="nav-agenda">Agenda</a></li>
+                        <li><a href="{{ ($title === "Writing Contest")?'#': route('usr-wc') }}" class="nav-writingcont">Writing Contest</a></li>
+                        <li><a href="{{ ($title === "Docs")?'#': route('usr-docs')}}" class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
                         <a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="gohome"><img src="/assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>

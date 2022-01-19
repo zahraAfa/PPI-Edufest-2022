@@ -46,6 +46,11 @@ Route::get('/dokumentasi', function () {
     ]);
 })->name('usr-docs');
 
+Route::get('/writing-contest', function () {
+    return view('writing-contest/index', [
+        "title" => "Writing Contest",
+    ]);
+})->name('usr-wc');
 Route::get('/artikel', function () {
     return view('articles', [
         "title" => "Articles",
