@@ -119,7 +119,7 @@
                     date2days = date2days.setDate(date2days.getDate() + 2);
                     date2weeks = date2weeks.setDate(date2weeks.getDate() + 14);
                     if (result.length === 0) {
-
+                        $(".agenda-container").hide();
                     } else {
                         $.each(result, function(key, event) {
                             if (new Date(event["date"]).getTime() < ToDate) {

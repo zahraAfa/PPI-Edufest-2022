@@ -14,6 +14,18 @@
     list-style: none;
 }
 
+.off-responsive-slider{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .agenda-section .custom-card{
     margin: 20px auto 0 auto;
 }
