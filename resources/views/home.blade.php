@@ -69,7 +69,6 @@
     <section>
         <div class="home-articles-container">
             <div class="home-articles-wrapper">
-                <button class="home-articles-button button-56" role="button">Lihat Artikel</button>
             </div>
         </div>
     </section>
