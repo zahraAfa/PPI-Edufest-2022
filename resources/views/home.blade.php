@@ -52,23 +52,24 @@
                         pendidikan ke luar negeri melalui pameran pendidikan yang diinisiasi oleh Festival Luar Negeri
                         (FELARI) Perhimpunan Pelajar Indonesia Dunia (PPI Dunia) dan didukung oleh Duta Felari PPI Dunia di
                         34 provinsi di seluruh Indonesia</p>
-                    <button class="button-56" role="button">merchandise</button>
+                    <button class="button-56" role="button">merchandise(coming soon)</button>
                 </div>
             </div>
         </div>
     </section>
     <div class="home-blank-transition"></div>
-    <section>
-        <div class="home-timeline-container">
-            <div class="home-timeline-wrapper">
-                <img class="home-timeline-map" src="" alt="">
-            </div>
-        </div>
-    </section>
-    <div class="home-blank-transition"></div>
-    <section>
+    {{-- <section>
         <div class="home-articles-container">
             <div class="home-articles-wrapper">
+            </div>
+        </div>
+    </section> --}}
+    <div class="home-blank-transition"></div>
+    <section>
+        <div class="home-timeline-container">
+            <h1 class="agenda-sec-h1 effect-pop-up">- TIMELINE -</h1>
+            <div class="home-timeline-wrapper">
+                <img class="home-timeline-map" src="../../../assets/img/bg/roadmap-website.png" alt="timeline">
             </div>
         </div>
     </section>
@@ -123,7 +124,7 @@
                         $.each(result, function(key, event) {
                             if (new Date(event["date"]).getTime() < ToDate) {
                                 listEvent += `<li>
-                                <a href="/acara/${event["id"]}" class="custom-card">
+                                <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
                                         <div class="img__card-container">
                                             <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                         </div>
@@ -145,7 +146,7 @@
                             } else if (new Date(event["date"]).getTime() >
                                 date2weeks) {
                                 listEvent += `<li>
-                                    <a href="/acara/${event["id"]}" class="custom-card">
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
                                             <div class="img__card-container">
                                                 <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                             </div>
@@ -166,7 +167,7 @@
                                     </li>`;
                             } else {
                                 listEvent += `<li>
-                                    <a href="/acara/${event["id"]}" class="custom-card">
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
                                             <div class="img__card-container">
                                                 <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                             </div>
