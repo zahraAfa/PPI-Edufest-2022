@@ -14,7 +14,7 @@
     </header>
     <div class="wc-index-body">
         <div class="agenda-container">
-            
+
             <div class="agenda-wrapper">
                 <h1 class="agenda-sec-h1 effect-pop-up">- Artikel -</h1>
                 <div class="agenda-section">
@@ -230,8 +230,8 @@
 
                 } else {
                     $.each(result, function(key, article) {
-                        
-                        list += `<div class="articles-box">
+
+                        list += `<li><div class="articles-box">
                                     <div class="articles-box-row">
                                         <h1 class="articles-box-title">${article['title']}</h1>
                                         <h2 class="articles-box-subtitle">${article['writer']}</h2>
@@ -244,7 +244,7 @@
                                     <div class="articles-box-row">
                                         <a type="button" data-article="${article['file']}" data-id="${article['id']}" data-bs-toggle="modal" data-bs-target="#articlePdfModal" class="btn button-56 link_read">Baca</a>
                                     </div>
-                                </div>`;
+                                </div></li>`;
                     });
                     $('#lightSlider-agenda-section').append(list);
                     $(".link_read").click(function() {
@@ -259,7 +259,7 @@
                                 )
                             })
                 }
-                agendaSlider();
+                articleSlider();
             }
         });
     });

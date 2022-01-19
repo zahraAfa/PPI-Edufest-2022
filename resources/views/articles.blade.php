@@ -76,7 +76,6 @@
                                     }, 100);
                             });
                             $(".link_read").click(function() {
-                                console.log("ok click")
                                 let picture = $(this).attr("data-article");
                                 let id = $(this).attr("data-id");
                                 $("#data_iframe").html(
