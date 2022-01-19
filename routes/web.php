@@ -46,6 +46,12 @@ Route::get('/dokumentasi', function () {
     ]);
 })->name('usr-docs');
 
+Route::get('/artikel', function () {
+    return view('articles', [
+        "title" => "Articles",
+    ]);
+})->name('usr-articles');
+
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
