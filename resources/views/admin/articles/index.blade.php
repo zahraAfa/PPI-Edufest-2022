@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard - Edufest</title>
+    <title>Articles - Edufest</title>
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />
     <link rel="icon" type="image/png" sizes="292x292" href="../../../assets/icons/edufest-icon.png" />

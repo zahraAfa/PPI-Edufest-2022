@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Edit Speaker - Edufest</title>
+    <title>Edit Article - Edufest</title>
     <link rel="stylesheet" href="../../../assets/admin-template/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Edit Speaker</h3>
+                    <h3 class="text-dark mb-4">Edit Article</h3>
                     <form id="speaker__edit-form">
                     <div class="row mb-3">
                         <div class="col-lg-4">
@@ -87,7 +87,7 @@
                                 <div class="col">
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">Speaker Detail</p>
+                                            <p class="text-primary m-0 fw-bold">Article Detail</p>
                                         </div>
                                         <div class="card-body">
                                             <div class="row">
@@ -146,7 +146,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Success to update speaker.
+                    Success to update article.
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="modal_update" class="btn btn-primary">Ok</button>
