@@ -46,6 +46,17 @@ Route::get('/dokumentasi', function () {
     ]);
 })->name('usr-docs');
 
+Route::get('/writing-contest', function () {
+    return view('writing-contest/index', [
+        "title" => "Writing Contest",
+    ]);
+})->name('usr-wc');
+Route::get('/artikel', function () {
+    return view('articles', [
+        "title" => "Articles",
+    ]);
+})->name('usr-articles');
+
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
@@ -143,3 +154,16 @@ Route::get('/admin/speakers/edit/{id}', function () {
 Route::get('/admin/speakers/add', function () {
     return view('admin/speakers/add-speaker');
 })->middleware('auth')->name('admin-speaker-add');
+
+// Articles routes
+Route::get('/admin/articles', function () {
+    return view('admin/articles/index');
+})->middleware('auth')->name('admin-article-index');
+
+Route::get('/admin/articles/edit/{id}', function () {
+    return view('admin/articles/edit-article');
+})->middleware('auth')->name('admin-article-edit');
+
+Route::get('/admin/articles/add', function () {
+    return view('admin/articles/add-article');
+})->middleware('auth')->name('admin-article-add');

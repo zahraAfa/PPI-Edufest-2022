@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FaqController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\SponsorController;
 use App\Models\Admin;
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -66,6 +68,12 @@ Route::prefix('/speakers')->group(function() {
     Route::get('/read/{id}', [SpeakerController::class, 'readDetail']);
 });
 
+//Article unprotected routes
+Route::prefix('/articles')->group(function() {
+    Route::get('/read', [ArticleController::class, 'read']);
+    Route::get('/read/{id}', [ArticleController::class, 'readDetail']);
+});
+
 /*
 |--------------------------------------------------------------------------
 | API Protected Routes
@@ -116,5 +124,13 @@ Route::middleware('auth:api')->group(function () {
         Route::put('/update/{id}', [SpeakerController::class, 'update']);
         Route::put('/image/{id}', [SpeakerController::class, 'updateImage']);
         Route::delete('/delete/{id}', [SpeakerController::class, 'delete']);
+    });
+
+    //Artilce API routes
+    Route::prefix('/articles')->group(function() {
+        Route::post('/insert', [ArticleController::class, 'insert']);
+        Route::put('/update/{id}', [ArticleController::class, 'update']);
+        Route::put('/file/{id}', [ArticleController::class, 'updateFile']);
+        Route::delete('/delete/{id}', [ArticleController::class, 'delete']);
     });
 });

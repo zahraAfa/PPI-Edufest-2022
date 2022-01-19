@@ -17,24 +17,23 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- PaginationJS start -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css"
         integrity="sha512-QmxybGIvkSI8+CGxkt5JAcGOKIzHDqBMs/hdemwisj4EeGLMXxCm9h8YgoCwIvndnuN1NdZxT4pdsesLXSaKaA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="/assets/styles/style.css" />
-    <link rel="stylesheet" href="/assets/styles/nav.css" />
-    <link rel="stylesheet" href="/assets/styles/header.css" />
-    <link rel="stylesheet" href="/assets/styles/description.css" />
-    <link rel="stylesheet" href="/assets/styles/agenda.css" />
-    <link rel="stylesheet" href="/assets/styles/speakers.css" />
-    <link rel="stylesheet" href="/assets/styles/faq.css" />
-    <link rel="stylesheet" href="/assets/styles/footer.css" />
-    <link rel="stylesheet" href="/assets/styles/sponsors-partners.css" />
-    <link rel="stylesheet" href="/assets/styles/merchandise.css" />
-    <link rel="stylesheet" href="/assets/styles/docs.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="stylesheet" href="assets/styles/nav.css" />
+    <link rel="stylesheet" href="assets/styles/header.css" />
+    <link rel="stylesheet" href="assets/styles/description.css" />
+    <link rel="stylesheet" href="assets/styles/agenda.css" />
+    <link rel="stylesheet" href="assets/styles/speakers.css" />
+    <link rel="stylesheet" href="assets/styles/faq.css" />
+    <link rel="stylesheet" href="assets/styles/footer.css" />
+    <link rel="stylesheet" href="assets/styles/sponsors-partners.css" />
+    <link rel="stylesheet" href="assets/styles/merchandise.css" />
+    <link rel="stylesheet" href="assets/styles/docs.css" />
+    <link rel="stylesheet" href="assets/styles/writingcont.css" />
+    <link rel="stylesheet" href="assets/styles/articles.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->
@@ -51,15 +50,11 @@
             <div class="nav-body">
                 <div class="nav-sections">
                     <ul class="nav-items">
-                        <li><a href="{{ $title === 'Home' ? '#' : route('usr-home') }}"
-                                class="nav-beranda">Beranda</a></li>
-                        <li><a href="{{ $title === 'Pembicara' ? '#' : route('usr-speaker') }}"
-                                class="nav-pembicara">Pembicara</a></li>
-                        <li><a href="{{ $title === 'Agenda' ? '#' : route('usr-agenda') }}"
-                                class="nav-agenda">Agenda</a></li>
-                        <li><a href="#" class="nav-writingcont">Writing Contest</a></li>
-                        <li><a href="{{ $title === 'Docs' ? '#' : route('usr-docs') }}"
-                                class="nav-dokumentasi">Dokumentasi</a></li>
+                        <li><a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="nav-beranda">Beranda</a></li>
+                        <li><a href="{{ ($title === "Pembicara")?'#': route('usr-speaker') }}" class="nav-pembicara">Pembicara</a></li>
+                        <li><a href="{{ ($title === "Agenda")?'#': route('usr-agenda') }}" class="nav-agenda">Agenda</a></li>
+                        <li><a href="{{ ($title === "Writing Contest")?'#': route('usr-wc') }}" class="nav-writingcont">Writing Contest</a></li>
+                        <li><a href="{{ ($title === "Docs")?'#': route('usr-docs')}}" class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
                         <a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="gohome"><img src="/assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
