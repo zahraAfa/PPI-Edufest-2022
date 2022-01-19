@@ -32,6 +32,7 @@
 
 .agenda-section, #lightSlider-agenda-section{
     width: 95%;
+    max-width: 1500px;
     display: flex;
     flex-direction: row;
     height: 400px;
