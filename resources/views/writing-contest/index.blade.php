@@ -227,10 +227,11 @@
             success: function(result) {
                 var list = '';
                 if (result.length === 0) {
+                    $(".agenda-container").hide();
+                } 
 
-                } else {
+                else if(result.length <= 3){
                     $.each(result, function(key, article) {
-
                         list += `<li><div class="articles-box">
                                     <div class="articles-box-row">
                                         <h1 class="articles-box-title">${article['title']}</h1>
@@ -259,7 +260,38 @@
                                 )
                             })
                 }
-                articleSlider();
+                
+                else {
+                    $.each(result, function(key, article) {
+                        list += `<li><div class="articles-box">
+                                    <div class="articles-box-row">
+                                        <h1 class="articles-box-title">${article['title']}</h1>
+                                        <h2 class="articles-box-subtitle">${article['writer']}</h2>
+                                    </div>
+                                    <div class="articles-box-row  articles-box2">
+                                        <p class="articles-box-desc">
+                                            ${article['description']}
+                                        </p>
+                                    </div>
+                                    <div class="articles-box-row">
+                                        <a type="button" data-article="${article['file']}" data-id="${article['id']}" data-bs-toggle="modal" data-bs-target="#articlePdfModal" class="btn button-56 link_read">Baca</a>
+                                    </div>
+                                </div></li>`;
+                    });
+                    $('#lightSlider-agenda-section').append(list);
+                    $(".link_read").click(function() {
+                                let picture = $(this).attr("data-article");
+                                let id = $(this).attr("data-id");
+                                $("#data_iframe").html(
+                                    '<iframe class="mx-auto" src="{{ url('/storage/file/articles/') }}/' +
+                                    id +
+                                    '/' +
+                                    picture +
+                                    '" allow="autoplay"></iframe>'
+                                )
+                            })
+                            articleSlider();
+                }
             }
         });
     });
