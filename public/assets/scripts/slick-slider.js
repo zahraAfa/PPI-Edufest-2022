@@ -70,7 +70,7 @@ function agendaSlider() {
                 },
             },
             {
-                breakpoint: 1010,
+                breakpoint: 1138,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,

@@ -52,24 +52,24 @@
                         pendidikan ke luar negeri melalui pameran pendidikan yang diinisiasi oleh Festival Luar Negeri
                         (FELARI) Perhimpunan Pelajar Indonesia Dunia (PPI Dunia) dan didukung oleh Duta Felari PPI Dunia di
                         34 provinsi di seluruh Indonesia</p>
-                    <button class="button-56" role="button">merchandise</button>
+                    <button class="button-56" role="button">merchandise(coming soon)</button>
                 </div>
             </div>
         </div>
     </section>
     <div class="home-blank-transition"></div>
-    <section>
-        <div class="home-timeline-container">
-            <div class="home-timeline-wrapper">
-                <img class="home-timeline-map" src="" alt="">
-            </div>
-        </div>
-    </section>
-    <div class="home-blank-transition"></div>
-    <section>
+    {{-- <section>
         <div class="home-articles-container">
             <div class="home-articles-wrapper">
-                <button class="home-articles-button button-56" role="button">Lihat Artikel</button>
+            </div>
+        </div>
+    </section> --}}
+    <div class="home-blank-transition"></div>
+    <section>
+        <div class="home-timeline-container">
+            <h1 class="agenda-sec-h1 effect-pop-up">- TIMELINE -</h1>
+            <div class="home-timeline-wrapper">
+                <img class="home-timeline-map" src="../../../assets/img/bg/roadmap-website.png" alt="timeline">
             </div>
         </div>
     </section>
@@ -120,11 +120,11 @@
                     date2weeks = date2weeks.setDate(date2weeks.getDate() + 14);
                     if (result.length === 0) {
                         $(".agenda-container").hide();
-                    } else {
+                    } else if (result.length <= 3) {
                         $.each(result, function(key, event) {
                             if (new Date(event["date"]).getTime() < ToDate) {
                                 listEvent += `<li>
-                                <a href="/acara/${event["id"]}" class="custom-card">
+                                <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
                                         <div class="img__card-container">
                                             <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                         </div>
@@ -146,7 +146,7 @@
                             } else if (new Date(event["date"]).getTime() >
                                 date2weeks) {
                                 listEvent += `<li>
-                                    <a href="/acara/${event["id"]}" class="custom-card">
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
                                             <div class="img__card-container">
                                                 <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                             </div>
@@ -167,7 +167,7 @@
                                     </li>`;
                             } else {
                                 listEvent += `<li>
-                                    <a href="/acara/${event["id"]}" class="custom-card">
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
                                             <div class="img__card-container">
                                                 <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                             </div>
@@ -189,8 +189,77 @@
                             }
                         });
                         $('#lightSlider-agenda-section').append(listEvent);
+                    } else {
+                        $.each(result, function(key, event) {
+                            if (new Date(event["date"]).getTime() < ToDate) {
+                                listEvent += `<li>
+                                <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
+                                        <div class="img__card-container">
+                                            <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
+                                        </div>
+                                        <div class="card__overlay">
+                                            <div class="card__header">
+                                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                                    <path />
+                                                </svg>
+                                                <div class="card__header-text">
+                                                    <h3 class="card__title">${event["title"]}</h3>
+                                                    <span class="card__status"><i
+                                                            class="material-icons-round">event</i>${event["date"]}</span>
+                                                </div>
+                                            </div>
+                                            <p class="card__description">${event["detail"]}</p>
+                                        </div>
+                                    </a>
+                                </li>`;
+                            } else if (new Date(event["date"]).getTime() >
+                                date2weeks) {
+                                listEvent += `<li>
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
+                                            <div class="img__card-container">
+                                                <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
+                                            </div>
+                                            <div class="card__overlay path_grey">
+                                                <div class="card__header path_grey">
+                                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                                        <path class="path_grey" />
+                                                    </svg>
+                                                    <div class="card__header-text">
+                                                        <h3 class="card__title">${event["title"]}</h3>
+                                                        <span class="card__status"><i
+                                                                class="material-icons-round">event</i>${event["date"]}</span>
+                                                    </div>
+                                                </div>
+                                                <p class="card__description">${event["detail"]}</p>
+                                            </div>
+                                        </a>
+                                    </li>`;
+                            } else {
+                                listEvent += `<li>
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
+                                            <div class="img__card-container">
+                                                <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
+                                            </div>
+                                            <div class="card__overlay path_green">
+                                                <div class="card__header path_green">
+                                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                                        <path class="path_green" />
+                                                    </svg>
+                                                    <div class="card__header-text">
+                                                        <h3 class="card__title">${event["title"]}</h3>
+                                                        <span class="card__status"><i
+                                                                class="material-icons-round">event</i>${event["date"]}</span>
+                                                    </div>
+                                                </div>
+                                                <p class="card__description">${event["detail"]}</p>
+                                            </div>
+                                        </a>
+                                    </li>`;
+                            }
+                        });
+                        $('#lightSlider-agenda-section').append(listEvent);
+                        agendaSlider();
                     }
-                    agendaSlider();
                 }
             });
         });

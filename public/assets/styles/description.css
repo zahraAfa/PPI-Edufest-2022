@@ -357,3 +357,57 @@
 .home-articles-button{
     margin: auto;
 }
+
+/* Roadmap Timeline */
+.home-timeline-container{
+    width: 100vw;
+    /* height: 80vh; */
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../img/header/main-header-map.png');
+    background-color: black;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-size: auto;
+}
+.home-timeline-wrapper{
+    min-height: 300px;
+    width: 100vw;
+    overflow: scroll;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.home-timeline-map{
+    height: 100%;
+}
+
+.custom-card.custom-card-agenda-home{
+    width: 300px!important;
+}
+
+@media screen and (min-width: 1919px) {
+    .home-timeline-map{
+        height: auto;
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .home-timeline-map{
+        height: 300px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width:475px){
+    .custom-card.custom-card-agenda-home{
+        width: 250px!important;
+    }
+}
