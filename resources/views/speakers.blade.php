@@ -7,7 +7,7 @@
             <div class="sp-speaker-col">
                 <h1>BINTANG TAMU<br />SPECIAL</h1>
                 <div class="sp-speaker-img-cont">
-                    <img src="assets/img/header/bintang-tamu-special-test.png" alt="Bintang Tamu Spesial">
+                    <img src="assets/img/header/special-guest-edufest.png" alt="Bintang Tamu Spesial">
                 </div>
             </div>
             <header class="sp-speaker-header-deco">
