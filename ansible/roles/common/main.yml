@@ -1,0 +1,59 @@
+---
+- name: Docker on Ubuntu 20.04 Focal
+  become: true
+  hosts: all
+  tasks:
+    - name: Install aptitude using apt
+      apt:
+        name: aptitude
+        force_apt_get: yes
+        state: latest
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name:
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+          - python3-pip
+          - python3-setuptools
+
+    - name: Add Docker GPG apt key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+
+    - name: Install docker-ce
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: yes
+
+    - name: Install Docker module for Python
+      pip:
+        name: docker
+
+    - name: Pull default Docker image
+      docker_image:
+        name: hello-world
+        source: pull
+
+    - name: Create and start default Docker container
+      docker_container:
+        name: hello-world-1
+        image: hello-world
+        cleanup: true
+        detach: false
+        output_logs: true
+        state: started
+      register: docker
+
+    - name: Debug
+      debug:
+        var: docker
