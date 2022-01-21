@@ -27,7 +27,7 @@ header:after{
     height: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.05);
+    /* background-color: rgba(0, 0, 0, 0.05); */
     overflow: hidden!important;
     z-index: 25;
 }

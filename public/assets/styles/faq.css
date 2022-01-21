@@ -4,7 +4,7 @@
   background-color: var(--mainRed);
   text-decoration: none!important;
   position: fixed;
-  bottom: 80px;
+  bottom: 90px;
   right: 30px;
   border-radius: 30px;
   /* height: 45px;*/
@@ -27,6 +27,14 @@
     font-style: italic;
     font-weight: 800;
     color: var(--mainBlack);
+    text-align: center;
+}
+#cp-title-h1{
+    font-family: "Work Sans";
+    font-style: italic;
+    font-weight: 800;
+    color: var(--mainBlack);
+    text-align: center;
 }
 
 .faq-btn-icon{
@@ -36,6 +44,39 @@
   text-align: center;
   color: white;
   font-family: "Roboto";
+}
+.cp-btn-float{
+  padding: 0px 10px;
+  background-color: var(--mainSoftGreen);
+  text-decoration: none!important;
+  position: fixed;
+  bottom: 33px;
+  right: 30px;
+  border-radius: 30px;
+  height: 45px;
+  width: 45px;
+  /* line-height: 45px; */
+  box-sizing: border-box;
+  z-index: 299;
+  box-shadow: var(--Shadow);
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cp-btn-float:hover{
+  background-color: var(--mainWhite);
+}
+.cp-btn-float:hover .cp-btn-icon{
+    color: var(--mainBlack);
+}
+
+.cp-btn-icon{
+  display: block;
+  font-size: 23px;
+  font-weight: 900;
+  text-align: center;
+  color: white;
 }
 
 /* Modal */
@@ -67,7 +108,7 @@
   height: 70vh;
 }
 
-.close-modal{
+.close-modal-faq{
   color: var(--mainBlack);
   display: flex;
   justify-content: end;
@@ -116,7 +157,7 @@
     margin-left: 5px;
   }
 
-  .active:after {
+  button.active:after {
     content: "\2212";
   }
 
@@ -143,7 +184,7 @@
     color: black;
     font-family: 'Permanent Marker';
   }
-  .close-modal{
+  .close-modal-faq{
     cursor: pointer;
   }
 
@@ -173,6 +214,114 @@
       height: 90vh;
     }
     .faq-modal-wrapper{
+      width: 90vw;
+      height: 90vh;
+    }
+  }
+
+.cp-modal{
+  display: none;
+  width: 60vw;
+  height: 70vh;
+  overflow-y: scroll;
+  background-color: var(--mainWhite);
+  border-radius: 30px;
+  position: fixed;
+  z-index: 300;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+  box-shadow: var(--Shadow);
+}
+
+.show-cp{
+  display: block;
+}
+
+.cp-modal-wrapper{
+  width: 60vw;
+  height: 70vh;
+}
+
+.close-modal-cp{
+  color: var(--mainBlack);
+  display: flex;
+  justify-content: end;
+  /* transform: translate(-5%, 50%); */
+  padding: 10px;
+  font-size: 40px;
+}
+
+.cp-container{
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cp-modal-box{
+    width: 50%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.cp-modal-box-name h2{
+    font-size: 25px;
+    color: var(--mainWhite);
+    font-weight: 600;
+}
+
+.cp-modal-box-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    width: auto;
+    height: auto;
+    gap: 20px;
+    background-color: var(--mainPurple);
+    /* border: 5px solid var(--mainPurple); */
+    border-radius: 20px;
+}
+
+.cp-modal-box-nmbr a{
+    border-radius: 20px;
+    text-decoration: none!important;
+    font-size: 25px;
+    color: var(--mainWhite);
+    background-color: var(--mainBlack);
+    padding: 10px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cp-modal-box-nmbr a:hover{
+    color: var(--mainBlack);
+    background-color: var(--mainWhite);
+}
+
+.cp-modal-box-nmbr i{
+    margin-right: 5px;
+}
+
+
+  @media screen and (max-width: 500px) {
+    .cp-modal{
+      width: 90vw;
+      height: 90vh;
+    }
+    .cp-modal-wrapper{
       width: 90vw;
       height: 90vh;
     }
