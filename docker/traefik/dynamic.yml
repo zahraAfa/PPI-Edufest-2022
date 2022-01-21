@@ -11,37 +11,37 @@ http:
           - main: "domain.local"
             sans:
               - "*.domain.local"
-    webserver_router:
-      rule: "Host(`ppiedufest.docker.localhost`)"
-      service: webserver_service
-      tls:
-        domains:
-          - main: "docker.localhost"
-            sans:
-              - "*.docker.localhost"
-          - main: "domain.local"
-            sans:
-              - "*.domain.local"
-    phpmyadmin_router:
-      rule: "Host(`phpmyadmin.docker.localhost`)"
-      service: phpmyadmin_service
-      tls:
-        domains:
-          - main: "docker.localhost"
-            sans:
-              - "*.docker.localhost"
-          - main: "domain.local"
-            sans:
-              - "*.domain.local"
-  services:
-    webserver_service:
-      loadBalancer:
-        servers:
-          - url: "http://webserver"
-    phpmyadmin_service:
-      loadBalancer:
-        servers:
-          - url: "http://phpmyadmin"
+  #   webserver_router:
+  #     rule: "Host(`ppiedufest.docker.localhost`)"
+  #     service: webserver_service
+  #     tls:
+  #       domains:
+  #         - main: "docker.localhost"
+  #           sans:
+  #             - "*.docker.localhost"
+  #         - main: "domain.local"
+  #           sans:
+  #             - "*.domain.local"
+  #   phpmyadmin_router:
+  #     rule: "Host(`phpmyadmin.docker.localhost`)"
+  #     service: phpmyadmin_service
+  #     tls:
+  #       domains:
+  #         - main: "docker.localhost"
+  #           sans:
+  #             - "*.docker.localhost"
+  #         - main: "domain.local"
+  #           sans:
+  #             - "*.domain.local"
+  # services:
+  #   webserver_service:
+  #     loadBalancer:
+  #       servers:
+  #         - url: "http://webserver"
+  #   phpmyadmin_service:
+  #     loadBalancer:
+  #       servers:
+  #         - url: "http://phpmyadmin"
 
 tls:
   certificates:

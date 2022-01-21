@@ -1,6 +1,6 @@
 http:
   routers:
-    traefik:
+    traefik_router:
       rule: "Host(`traefik.mangkoran.xyz`)"
       service: "api@internal"
       tls:
@@ -8,6 +8,31 @@ http:
           - main: "mangkoran.xyz"
             sans:
               - "*.mangkoran.xyz"
+    webserver_router:
+      rule: "Host(`ppiedufest.mangkoran.xyz`)"
+      service: webserver_service
+      tls:
+        domains:
+          - main: "mangkoran.xyz"
+            sans:
+              - "*.mangkoran.xyz"
+    phpmyadmin_router:
+      rule: "Host(`phpmyadmin.mangkoran.xyz`)"
+      service: phpmyadmin_service
+      tls:
+        domains:
+          - main: "mangkoran.xyz"
+            sans:
+              - "*.mangkoran.xyz"
+  services:
+    webserver_service:
+      loadBalancer:
+        servers:
+          - url: "http://webserver"
+    phpmyadmin_service:
+      loadBalancer:
+        servers:
+          - url: "http://phpmyadmin"
 
 tls:
   certificates:

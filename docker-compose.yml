@@ -1,6 +1,13 @@
 version: "3"
 
 services:
+  watchtower:
+    image: containrrr/watchtower
+    command: ["--interval", "30"]
+    container_name: ppi-edufest-watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
   traefik:
     image: traefik:2.5
     restart: unless-stopped
@@ -8,8 +15,8 @@ services:
     ports:
       - 80:80
       - 443:443
-    # volumes:
-    #   - /var/run/docker.sock:/var/run/docker.sock:ro
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
       - network-1
     security_opt:
@@ -18,9 +25,9 @@ services:
   webserver:
     restart: unless-stopped
     container_name: ppi-edufest-webserver
-    # labels:
-    #   - "traefik.enable=true"
-    #   - "traefik.http.routers.webserver.tls=true"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.webserver.tls=true"
     networks:
       - network-1
     depends_on:
@@ -57,7 +64,17 @@ services:
     environment:
       SERVICE_NAME: db
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "${DB_USERNAME}", "-p${DB_PASSWORD}"]
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "${DB_USERNAME}",
+          "-p${DB_PASSWORD}",
+        ]
       timeout: 10s
       retries: 10
 
@@ -65,9 +82,9 @@ services:
     image: phpmyadmin:5.1
     restart: unless-stopped
     container_name: ppi-edufest-phpmyadmin
-    # labels:
-    #   - "traefik.enable=true"
-    #   - "traefik.http.routers.phpmyadmin.tls=true"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.phpmyadmin.tls=true"
     networks:
       - network-1
     depends_on:
