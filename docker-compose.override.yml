@@ -9,8 +9,8 @@ services:
 
   webserver:
     image: nginx:1.20-alpine
-    labels:
-      - "traefik.http.routers.webserver.rule=Host(`ppiedufest.docker.localhost`)"
+    # labels:
+    #   - "traefik.http.routers.webserver.rule=Host(`ppiedufest.docker.localhost`)"
     volumes:
       - appdata:/var/www:ro
       - ./docker/webserver/conf.d:/etc/nginx/conf.d:ro
@@ -35,9 +35,9 @@ services:
       MARIADB_DATABASE: ${DB_DATABASE}
       MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
 
-  phpmyadmin:
-    labels:
-      - "traefik.http.routers.phpmyadmin.rule=Host(`pma.docker.localhost`)"
+  # phpmyadmin:
+  #   labels:
+  #     - "traefik.http.routers.phpmyadmin.rule=Host(`pma.docker.localhost`)"
 
 networks:
   network-1:

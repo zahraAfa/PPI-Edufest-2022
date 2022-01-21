@@ -18,9 +18,9 @@ services:
   webserver:
     restart: unless-stopped
     container_name: ppi-edufest-webserver
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.webserver.tls=true"
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.webserver.tls=true"
     networks:
       - network-1
     depends_on:
@@ -65,9 +65,9 @@ services:
     image: phpmyadmin:5.1
     restart: unless-stopped
     container_name: ppi-edufest-phpmyadmin
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.phpmyadmin.tls=true"
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.phpmyadmin.tls=true"
     networks:
       - network-1
     depends_on:
