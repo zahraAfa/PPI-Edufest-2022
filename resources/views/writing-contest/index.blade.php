@@ -20,8 +20,11 @@
                 <div class="agenda-section">
                     <ul id="lightSlider-agenda-section" class="responsive-slider">
                     </ul>
+                    <ul id="no-slider-section">
+                    </ul>
                 </div>
-                <p class="swipe-for-more ">Swipe for more >></p>
+                <p class="swipe-for-more "></p>
+                {{-- <p class="swipe-for-more ">Swipe for more >></p> --}}
                 <a href="/artikel" class="text-decoration-none"><button class="home-agenda-button button-56 mt-sm-2 mt-lg-5 "
                         role="button">Lihat Semua Artikel</button></a>
             </div>
@@ -228,7 +231,7 @@
                 var list = '';
                 if (result.length === 0) {
                     $(".agenda-container").hide();
-                } 
+                }
 
                 else if(result.length <= 3){
                     $.each(result, function(key, article) {
@@ -247,7 +250,8 @@
                                     </div>
                                 </div></li>`;
                     });
-                    $('#lightSlider-agenda-section').append(list);
+                    $("#lightSlider-agenda-section").hide();
+                    $('#no-slider-section').append(list);
                     $(".link_read").click(function() {
                                 let picture = $(this).attr("data-article");
                                 let id = $(this).attr("data-id");
@@ -260,7 +264,7 @@
                                 )
                             })
                 }
-                
+
                 else {
                     $.each(result, function(key, article) {
                         list += `<li><div class="articles-box">
@@ -278,6 +282,7 @@
                                     </div>
                                 </div></li>`;
                     });
+                    $("#no-slider-section").hide();
                     $('#lightSlider-agenda-section').append(list);
                     $(".link_read").click(function() {
                                 let picture = $(this).attr("data-article");
@@ -290,7 +295,7 @@
                                     '" allow="autoplay"></iframe>'
                                 )
                             })
-                            articleSlider();
+                    articleSlider();
                 }
             }
         });
