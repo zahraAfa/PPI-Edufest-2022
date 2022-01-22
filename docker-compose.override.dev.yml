@@ -3,14 +3,15 @@ version: "3"
 services:
   traefik:
     volumes:
-      - /home/mangkoran/repos/ppi_edufest/docker/traefik/certs-dev:/etc/traefik/certs
+      # - /home/mangkoran/repos/ppi_edufest/docker/traefik/certs-dev:/etc/traefik/certs
       - /home/mangkoran/repos/ppi_edufest/docker/traefik/dynamic.dev.yml:/etc/traefik/dynamic.yml:ro
       - /home/mangkoran/repos/ppi_edufest/docker/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
 
   webserver:
     image: nginx:1.20-alpine
-    # labels:
-    #   - "traefik.http.routers.webserver.rule=Host(`ppiedufest.mangkoran.xyz`)"
+    labels:
+      - "traefik.http.routers.webserver.rule=Host(`edufest.mangkoran.xyz`)"
+      - "traefik.http.routers.webserver.tls.certresolver=letsencrypt_staging"
     volumes:
       - appdata:/var/www:ro
       - /home/mangkoran/repos/ppi_edufest/docker/webserver/conf.d:/etc/nginx/conf.d:ro
@@ -35,9 +36,9 @@ services:
       MARIADB_DATABASE: ${DB_DATABASE}
       MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
 
-  # phpmyadmin:
-  #   labels:
-  #     - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.mangkoran.xyz`)"
+  phpmyadmin:
+    ports:
+      - 8080:80
 
 networks:
   network-1:

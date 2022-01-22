@@ -10,7 +10,9 @@ services:
   webserver:
     image: nginx:1.20-alpine
     labels:
-      - "traefik.http.routers.webserver.rule=Host(`ppiedufest.docker.localhost`)"
+      - "traefik.enable=true"
+      - "traefik.http.routers.webserver.tls=true"
+      - "traefik.http.routers.webserver.rule=Host(`edufest.docker.localhost`)"
     volumes:
       - appdata:/var/www:ro
       - ./docker/webserver/conf.d:/etc/nginx/conf.d:ro
@@ -37,7 +39,9 @@ services:
 
   phpmyadmin:
     labels:
-      - "traefik.http.routers.phpmyadmin.rule=Host(`pma.docker.localhost`)"
+      - "traefik.enable=true"
+      - "traefik.http.routers.phpmyadmin.tls=true"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.edufest.docker.localhost`)"
 
 networks:
   network-1:

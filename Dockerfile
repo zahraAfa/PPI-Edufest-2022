@@ -32,8 +32,7 @@ RUN docker-php-ext-install \
     xml
 
 # add user for laravel application
-RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g www www
+RUN groupadd -g 1000 www && useradd -u 1000 -ms /bin/bash -g www www
 
 # copy existing application directory with modified permissions
 COPY --chown=www:www --from=build /app /var/www
