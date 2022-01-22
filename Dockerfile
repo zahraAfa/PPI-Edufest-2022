@@ -13,14 +13,14 @@ FROM php:8.1-fpm
 WORKDIR /var/www
 
 # install dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
     build-essential=12.9 \
     libxml2-dev=2.9.10+dfsg-6.7 \
     libonig-dev=6.9.6-1.1 \
-    mariadb-client=1:10.5.12-0+deb11u1
-
-# clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+    mariadb-client=1:10.5.12-0+deb11u1 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # install php extensions
 RUN docker-php-ext-install \
@@ -32,7 +32,8 @@ RUN docker-php-ext-install \
     xml
 
 # add user for laravel application
-RUN groupadd -g 1000 www && useradd -u 1000 -ms /bin/bash -g www www
+RUN groupadd -g 1000 www \
+    && useradd -u 1000 -ms /bin/bash -g www www
 
 # copy existing application directory with modified permissions
 COPY --chown=www:www --from=build /app /var/www
