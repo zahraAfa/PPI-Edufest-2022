@@ -13,14 +13,14 @@ FROM php:8.1-fpm
 WORKDIR /var/www
 
 # install dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libxml2-dev \
-    libonig-dev \
-    mariadb-client
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential=12.9 \
+    libxml2-dev=2.9.10+dfsg-6.7 \
+    libonig-dev=6.9.6-1.1 \
+    mariadb-client=1:10.5.12-0+deb11u1
 
 # clear cache
-RUN apt-cache clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install php extensions
 RUN docker-php-ext-install \
