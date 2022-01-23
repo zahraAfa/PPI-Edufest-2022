@@ -202,3 +202,29 @@
     height: 120px;
     overflow: scroll;
 }
+@media screen and (max-width: 418px) {
+    .articles-box{
+        height: auto;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width:356px) {
+    .articles-box{
+        height: auto;
+        width: 270px;
+        padding: 17px;
+    }
+
+    .articles-box-title{
+        color: var(--mainBlack);
+        font-size: 18px!important;
+        font-weight: 600;
+    }
+
+    .articles-box-subtitle{
+        color: var(--mainGrey);
+        font-size: 16px!important;
+        font-weight: 500;
+    }
+}

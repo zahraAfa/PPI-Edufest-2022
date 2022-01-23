@@ -97,8 +97,11 @@
                 <div class="agenda-section">
                     <ul id="lightSlider-agenda-section" class="responsive-slider">
                     </ul>
+                    <ul id="no-slider-section">
+                    </ul>
                 </div>
-                <p class="swipe-for-more ">Swipe for more >></p>
+                <p class="swipe-for-more "></p>
+                {{-- <p class="swipe-for-more ">Swipe for more >></p> --}}
                 <a href="/agenda" class="text-decoration-none"><button class="home-agenda-button button-56 mt-sm-2 mt-lg-5 "
                         role="button">Lihat Semua Agenda</button></a>
             </div>
@@ -188,7 +191,8 @@
                                     </li>`;
                             }
                         });
-                        $('#lightSlider-agenda-section').append(listEvent);
+                        $("#lightSlider-agenda-section").hide();
+                        $('#no-slider-section').append(listEvent);
                     } else {
                         $.each(result, function(key, event) {
                             if (new Date(event["date"]).getTime() < ToDate) {
@@ -257,6 +261,7 @@
                                     </li>`;
                             }
                         });
+                        $("#no-slider-section").hide();
                         $('#lightSlider-agenda-section').append(listEvent);
                         agendaSlider();
                     }
