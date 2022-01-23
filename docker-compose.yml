@@ -1,0 +1,108 @@
+version: "3"
+
+services:
+  watchtower:
+    image: containrrr/watchtower
+    # command: ["--interval", "30"]
+    container_name: ppi-edufest-watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  traefik:
+    image: traefik:2.5
+    restart: unless-stopped
+    container_name: ppi-edufest-traefik
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    # networks:
+    #   - network-1
+    security_opt:
+      - no-new-privileges:true
+
+  webserver:
+    restart: unless-stopped
+    container_name: ppi-edufest-webserver
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.webserver.tls=true"
+    # networks:
+    #   - network-1
+    depends_on:
+      app:
+        condition: service_started
+      # database:
+      #   condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "service",
+          "nginx",
+          "status",
+          "||",
+          "exit",
+          "1"
+        ]
+      timeout: 10s
+      retries: 6
+
+  app:
+    restart: unless-stopped
+    command: ["php-fpm"]
+    working_dir: /var/www
+    container_name: ppi-edufest-app
+    # expose:
+    #   - "9000"
+    # networks:
+    #   - network-1
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      SERVICE_NAME: app
+
+  database:
+    image: mariadb:10.6
+    restart: unless-stopped
+    container_name: ppi-edufest-database
+    # expose:
+    #   - "3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    # networks:
+    #   - network-1
+    environment:
+      SERVICE_NAME: db
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "${DB_USERNAME}",
+          "-p${DB_PASSWORD}",
+        ]
+      timeout: 10s
+      retries: 6
+
+  phpmyadmin:
+    image: phpmyadmin:5.1
+    restart: unless-stopped
+    container_name: ppi-edufest-phpmyadmin
+    # networks:
+    #   - network-1
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      PMA_HOST: database
+
+volumes:
+  dbdata:
+    driver: local

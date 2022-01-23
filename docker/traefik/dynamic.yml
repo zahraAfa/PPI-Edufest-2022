@@ -1,0 +1,18 @@
+http:
+  routers:
+    traefik_router:
+      rule: "Host(`traefik.edufest.docker.localhost`)"
+      service: "api@internal"
+      tls:
+        domains:
+          - main: "docker.localhost"
+            sans:
+              - "*.docker.localhost"
+          - main: "domain.local"
+            sans:
+              - "*.domain.local"
+
+tls:
+  certificates:
+    - certFile: "/etc/traefik/certs/local-cert.pem"
+      keyFile: "/etc/traefik/certs/local-key.pem"
