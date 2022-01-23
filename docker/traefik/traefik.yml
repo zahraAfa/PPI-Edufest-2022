@@ -41,3 +41,11 @@ certificatesResolvers:
       httpChallenge:
         # used during the challenge
         entryPoint: web
+  letsencrypt:
+    acme:
+      caServer: https://acme-staging-v02.api.letsencrypt.org/directory
+      email: afnazrie@gmail.com
+      storage: acme.json
+      httpChallenge:
+        # used during the challenge
+        entryPoint: web

@@ -3,7 +3,7 @@ version: "3"
 services:
   traefik:
     volumes:
-      - /home/mangkoran/repos/ppi_edufest/docker/traefik/dynamic.dev.yml:/etc/traefik/dynamic.yml:ro
+      - /home/mangkoran/repos/ppi_edufest/docker/traefik/dynamic.prod.yml:/etc/traefik/dynamic.yml:ro
       - /home/mangkoran/repos/ppi_edufest/docker/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
 
   webserver:
@@ -13,8 +13,8 @@ services:
     # image: nginx:1.20-alpine
     image: mangkoran/ppi_edufest-webserver:latest
     labels:
-      - "traefik.http.routers.webserver.rule=Host(`edufest.mangkoran.xyz`)"
-      - "traefik.http.routers.webserver.tls.certresolver=letsencrypt_staging"
+      - "traefik.http.routers.webserver.rule=Host(`edufest.ppi.id`)"
+      - "traefik.http.routers.webserver.tls.certresolver=letsencrypt"
     volumes:
       - appdata:/var/www/public/storage:ro
       - /home/mangkoran/repos/ppi_edufest/docker/webserver/conf.d:/etc/nginx/conf.d:ro
@@ -25,7 +25,7 @@ services:
     volumes:
       - appdata:/var/www/public/storage
     environment:
-      SERVICE_TAGS: dev
+      SERVICE_TAGS: prod
       DB_HOST:
       DB_DATABASE:
       DB_USERNAME:
@@ -33,7 +33,7 @@ services:
 
   database:
     environment:
-      SERVICE_TAGS: dev
+      SERVICE_TAGS: prod
       MARIADB_USER: ${DB_USERNAME}
       MARIADB_PASSWORD: ${DB_PASSWORD}
       MARIADB_DATABASE: ${DB_DATABASE}

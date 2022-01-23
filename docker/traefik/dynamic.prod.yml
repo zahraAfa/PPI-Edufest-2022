@@ -1,40 +1,40 @@
-http:
-  routers:
-    traefik_router:
-      rule: "Host(`traefik.ppi.id`)"
-      service: "api@internal"
-      tls:
-        domains:
-          - main: "ppi.id"
-            sans:
-              - "*.ppi.id"
-    webserver_router:
-      rule: "Host(`traefik.ppi.id`)"
-      service: webserver_service
-      tls:
-        domains:
-          - main: "ppi.id"
-            sans:
-              - "*.ppi.id"
-    phpmyadmin_router:
-      rule: "Host(`traefik.ppi.id`)"
-      service: phpmyadmin_service
-      tls:
-        domains:
-          - main: "ppi.id"
-            sans:
-              - "*.ppi.id"
-  services:
-    webserver_service:
-      loadBalancer:
-        servers:
-          - url: "http://webserver"
-    phpmyadmin_service:
-      loadBalancer:
-        servers:
-          - url: "http://phpmyadmin"
+# http:
+#   routers:
+#     traefik_router:
+#       rule: "Host(`traefik.ppi.id`)"
+#       service: "api@internal"
+#       tls:
+#         domains:
+#           - main: "ppi.id"
+#             sans:
+#               - "*.ppi.id"
+#     webserver_router:
+#       rule: "Host(`edufest.ppi.id`)"
+#       service: webserver_service
+#       tls:
+#         domains:
+#           - main: "ppi.id"
+#             sans:
+#               - "*.ppi.id"
+#     phpmyadmin_router:
+#       rule: "Host(`traefik.ppi.id`)"
+#       service: phpmyadmin_service
+#       tls:
+#         domains:
+#           - main: "ppi.id"
+#             sans:
+#               - "*.ppi.id"
+#   services:
+#     webserver_service:
+#       loadBalancer:
+#         servers:
+#           - url: "http://webserver"
+#     phpmyadmin_service:
+#       loadBalancer:
+#         servers:
+#           - url: "http://phpmyadmin"
 
-tls:
-  certificates:
-    - certFile: "/etc/traefik/certs/local-cert.pem"
-      keyFile: "/etc/traefik/certs/local-key.pem"
+# tls:
+#   certificates:
+#     - certFile: "/etc/traefik/certs/local-cert.pem"
+#       keyFile: "/etc/traefik/certs/local-key.pem"
