@@ -8,20 +8,28 @@ services:
       - ./docker/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
 
   webserver:
-    image: nginx:1.20-alpine
+    build:
+      context: ./docker/webserver
+      dockerfile: Dockerfile
+    # image: nginx:1.20-alpine
+    image: mangkoran/ppi_edufest-webserver:latest
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.webserver.tls=true"
       - "traefik.http.routers.webserver.rule=Host(`edufest.docker.localhost`)"
     volumes:
-      - appdata:/var/www:ro
+      - appdata:/var/www/public/storage:ro
       - ./docker/webserver/conf.d:/etc/nginx/conf.d:ro
 
   app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: mangkoran/ppi_edufest-app:latest
     entrypoint: ["app-entrypoint.sh"]
     volumes:
-      - appdata:/var/www
+      - ./app-entrypoint.sh:/usr/bin/app-entrypoint.sh
+      - appdata:/var/www/public/storage
     environment:
       SERVICE_TAGS: dev
       DB_HOST:

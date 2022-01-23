@@ -3,24 +3,27 @@ version: "3"
 services:
   traefik:
     volumes:
-      # - /home/mangkoran/repos/ppi_edufest/docker/traefik/certs-dev:/etc/traefik/certs
       - /home/mangkoran/repos/ppi_edufest/docker/traefik/dynamic.dev.yml:/etc/traefik/dynamic.yml:ro
       - /home/mangkoran/repos/ppi_edufest/docker/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
 
   webserver:
-    image: nginx:1.20-alpine
+    build:
+      context: ./docker/webserver
+      dockerfile: Dockerfile
+    # image: nginx:1.20-alpine
+    image: mangkoran/ppi_edufest-webserver:latest
     labels:
       - "traefik.http.routers.webserver.rule=Host(`edufest.mangkoran.xyz`)"
       - "traefik.http.routers.webserver.tls.certresolver=letsencrypt_staging"
     volumes:
-      - appdata:/var/www:ro
+      - appdata:/var/www/public/storage:ro
       - /home/mangkoran/repos/ppi_edufest/docker/webserver/conf.d:/etc/nginx/conf.d:ro
 
   app:
     image: mangkoran/ppi_edufest-app:latest
     entrypoint: ["app-entrypoint.sh"]
     volumes:
-      - appdata:/var/www
+      - appdata:/var/www/public/storage
     environment:
       SERVICE_TAGS: dev
       DB_HOST:

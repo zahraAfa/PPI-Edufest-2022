@@ -3,7 +3,7 @@ version: "3"
 services:
   watchtower:
     image: containrrr/watchtower
-    command: ["--interval", "30"]
+    # command: ["--interval", "30"]
     container_name: ppi-edufest-watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -30,11 +30,24 @@ services:
       - "traefik.http.routers.webserver.tls=true"
     networks:
       - network-1
-    depends_on:
-      app:
-        condition: service_started
-      database:
-        condition: service_healthy
+    # depends_on:
+    #   app:
+    #     condition: service_started
+      # database:
+      #   condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "service",
+          "nginx",
+          "status",
+          "||",
+          "exit",
+          "1"
+        ]
+      timeout: 10s
+      retries: 6
 
   app:
     restart: unless-stopped
@@ -45,9 +58,9 @@ services:
       - "9000"
     networks:
       - network-1
-    depends_on:
-      database:
-        condition: service_healthy
+    # depends_on:
+    #   database:
+    #     condition: service_healthy
     environment:
       SERVICE_NAME: app
 
@@ -76,7 +89,7 @@ services:
           "-p${DB_PASSWORD}",
         ]
       timeout: 10s
-      retries: 10
+      retries: 6
 
   phpmyadmin:
     image: phpmyadmin:5.1
@@ -84,9 +97,9 @@ services:
     container_name: ppi-edufest-phpmyadmin
     networks:
       - network-1
-    depends_on:
-      database:
-        condition: service_healthy
+    # depends_on:
+    #   database:
+    #     condition: service_healthy
     environment:
       PMA_HOST: database
 

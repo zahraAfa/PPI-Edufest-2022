@@ -19,6 +19,9 @@ RUN apt-get update \
     libxml2-dev=2.9.10+dfsg-6.7 \
     libonig-dev=6.9.6-1.1 \
     mariadb-client=1:10.5.12-0+deb11u1 \
+    openssh-server=1:8.4p1-5 \
+    sshpass=1.09-1+b1 \
+    rsync=3.2.3-4+deb11u1 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
