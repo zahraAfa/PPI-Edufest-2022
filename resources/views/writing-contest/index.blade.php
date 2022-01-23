@@ -232,7 +232,6 @@
                 if (result.length === 0) {
                     $(".agenda-container").hide();
                 }
-
                 else if(result.length <= 3){
                     $.each(result, function(key, article) {
                         list += `<li><div class="articles-box">

@@ -21,19 +21,19 @@
         integrity="sha512-QmxybGIvkSI8+CGxkt5JAcGOKIzHDqBMs/hdemwisj4EeGLMXxCm9h8YgoCwIvndnuN1NdZxT4pdsesLXSaKaA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="assets/styles/style.css" />
-    <link rel="stylesheet" href="assets/styles/nav.css" />
-    <link rel="stylesheet" href="assets/styles/header.css" />
-    <link rel="stylesheet" href="assets/styles/description.css" />
-    <link rel="stylesheet" href="assets/styles/agenda.css" />
-    <link rel="stylesheet" href="assets/styles/speakers.css" />
-    <link rel="stylesheet" href="assets/styles/faq.css" />
-    <link rel="stylesheet" href="assets/styles/footer.css" />
-    <link rel="stylesheet" href="assets/styles/sponsors-partners.css" />
-    <link rel="stylesheet" href="assets/styles/merchandise.css" />
-    <link rel="stylesheet" href="assets/styles/docs.css" />
-    <link rel="stylesheet" href="assets/styles/writingcont.css" />
-    <link rel="stylesheet" href="assets/styles/articles.css" />
+    <link rel="stylesheet" href="/assets/styles/style.css" />
+    <link rel="stylesheet" href="/assets/styles/nav.css" />
+    <link rel="stylesheet" href="/assets/styles/header.css" />
+    <link rel="stylesheet" href="/assets/styles/description.css" />
+    <link rel="stylesheet" href="/assets/styles/agenda.css" />
+    <link rel="stylesheet" href="/assets/styles/speakers.css" />
+    <link rel="stylesheet" href="/assets/styles/faq.css" />
+    <link rel="stylesheet" href="/assets/styles/footer.css" />
+    <link rel="stylesheet" href="/assets/styles/sponsors-partners.css" />
+    <link rel="stylesheet" href="/assets/styles/merchandise.css" />
+    <link rel="stylesheet" href="/assets/styles/docs.css" />
+    <link rel="stylesheet" href="/assets/styles/writingcont.css" />
+    <link rel="stylesheet" href="/assets/styles/articles.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->
