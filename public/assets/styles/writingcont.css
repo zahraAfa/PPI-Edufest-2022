@@ -759,3 +759,53 @@
     margin: auto;
     max-width: 350px!important;
 }
+
+/* Row 8 */
+.ku-row-8{
+    background-color: black;
+    color: white;
+}
+.wc-ku-row-8-wrapper{
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 0 auto;
+    gap: 50px;
+}
+.wc-ku-row8-tema{
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.ku-row-8-boxes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.wc-cp{
+    color: white;
+    text-decoration: none!important;
+    font-size: 20px;
+    border: 5px solid var(--mainLightGreen);
+    background-color: var(--mainLightGreen);
+    border-radius: 50px;
+    padding: 20px;
+    text-decoration: none!important;
+}
+.wc-cp .fa-whatsapp{
+    margin-right: 10px;
+}
+
+.wc-cp:hover{
+    background-color: white;
+    color: var(--mainLightGreen);
+}
