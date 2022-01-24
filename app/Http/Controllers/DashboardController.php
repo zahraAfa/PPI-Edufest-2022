@@ -11,6 +11,7 @@ class DashboardController extends Controller
         return view('admin/dashboard', [
             'event' => DB::table('events')->count(),
             'speaker' => DB::table('speakers')->count(),
+            'article' => DB::table('articles')->count(),
         ]);
     }
 }
