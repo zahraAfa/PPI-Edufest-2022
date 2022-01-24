@@ -3,7 +3,7 @@ version: "3"
 services:
   watchtower:
     image: containrrr/watchtower
-    # command: ["--interval", "30"]
+    command: ["--interval", "300"]
     container_name: ppi-edufest-watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -28,6 +28,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.webserver.tls=true"
+      - "com.centurylinklabs.watchtower.enable=false"
     # networks:
     #   - network-1
     depends_on:

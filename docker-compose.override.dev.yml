@@ -20,7 +20,7 @@ services:
       - /home/mangkoran/repos/ppi_edufest/docker/webserver/conf.d:/etc/nginx/conf.d:ro
 
   app:
-    image: mangkoran/ppi_edufest-app:latest
+    image: mangkoran/ppi_edufest-app:dev-latest
     entrypoint: ["app-entrypoint.sh"]
     volumes:
       - appdata:/var/www/public/storage
