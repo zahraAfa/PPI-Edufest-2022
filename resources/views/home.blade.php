@@ -3,33 +3,33 @@
 @section('Home')
 
     <header>
-        <img src="assets/img/header/main-header-text.png" class="header-layer1-text translate" data-speed="0.6" alt="Header">
-        <img src="assets/img/header/main-header-layer1-left.png" class="header-layer1-left translateX" data-speed="-0.6"
+        <img src="/assets/img/header/main-header-text.png" class="header-layer1-text translate" data-speed="0.6" alt="Header">
+        <img src="/assets/img/header/main-header-layer1-left.png" class="header-layer1-left translateX" data-speed="-0.6"
             alt="Header">
-        <img src="assets/img/header/main-header-layer1-right.png" class="header-layer1-right translateX" data-speed="0.6"
+        <img src="/assets/img/header/main-header-layer1-right.png" class="header-layer1-right translateX" data-speed="0.6"
             alt="Header">
-        <img src="assets/img/header/main-header-layer2-left.png" class="header-layer2-left translate" data-speed="1"
+        <img src="/assets/img/header/main-header-layer2-left.png" class="header-layer2-left translate" data-speed="1"
             alt="Header">
-        <img src="assets/img/header/main-header-layer2-right.png" class="header-layer2-right translate" data-speed="1"
+        <img src="/assets/img/header/main-header-layer2-right.png" class="header-layer2-right translate" data-speed="1"
             alt="Header">
-        <img src="assets/img/header/main-header-layer3-left.png" class="header-layer3-left translate" data-speed="0.1"
+        <img src="/assets/img/header/main-header-layer3-left.png" class="header-layer3-left translate" data-speed="0.1"
             alt="Header">
-        <img src="assets/img/header/main-header-layer3-right.png" class="header-layer3-right translate" data-speed="0.1"
+        <img src="/assets/img/header/main-header-layer3-right.png" class="header-layer3-right translate" data-speed="0.1"
             alt="Header">
-        <img src="assets/img/header/main-header-map.png" class="header-back-layer translate" data-speed="-0.9" alt="Header">
+        <img src="/assets/img/header/main-header-map.png" class="header-back-layer translate" data-speed="-0.9" alt="Header">
     </header>
     <div class="flags-container">
-        <img src="assets/img/header/main-header-flags.svg" class="flags-flowing" alt="flag">
+        <img src="/assets/img/header/main-header-flags.svg" class="flags-flowing" alt="flag">
     </div>
     <section>
         <div class="carousel-container">
-            <img src="assets/img/header/header-frame-front-white.svg" alt="" class="carousel-container-frame">
+            <img src="/assets/img/header/header-frame-front-white.svg" alt="" class="carousel-container-frame">
             <div class="carousel-section carousel-slider"
                 style="overflow: hidden; border-radius: 0px 0px 15px 15px!important;">
-                <div class="carousel-slide"><img src="assets/img/header/carousel1.jpg" alt=""></div>
-                <div class="carousel-slide"><img src="assets/img/header/carousel2.jpeg" alt=""></div>
+                <div class="carousel-slide"><img src="/assets/img/header/Edufest_Banner-Website.png" alt=""></div>
+                <div class="carousel-slide"><img src="/assets/img/header/Edufest_Banner-Website.png" alt=""></div>
             </div>
-            <img src="assets/img/header/header-frame-back-white.svg" alt="" class="carousel-container-frame2">
+            <img src="/assets/img/header/header-frame-back-white.svg" alt="" class="carousel-container-frame2">
         </div>
     </section>
     <section>
