@@ -16,7 +16,8 @@ const fadeEffect = setInterval(() => {
     }
   }, 100);
 
-window.addEventListener('load', fadeEffect);
+  $(window).on('load', fadeEffect);
+// window.addEventListener('load', fadeEffect);
 // window.addEventListener('load', setInterval(function(){
 //     if (!preloader.style.opacity) {
 //         preloader.style.opacity = 1;
