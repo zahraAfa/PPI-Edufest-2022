@@ -10,7 +10,6 @@ services:
     build:
       context: ./docker/webserver
       dockerfile: Dockerfile
-    # image: nginx:1.20-alpine
     image: mangkoran/ppi_edufest-webserver:latest
     labels:
       - "traefik.http.routers.webserver.rule=Host(`edufest.ppi.id`)"
@@ -20,7 +19,7 @@ services:
       - /home/mangkoran/repos/ppi_edufest/docker/webserver/conf.d:/etc/nginx/conf.d:ro
 
   app:
-    image: mangkoran/ppi_edufest-app:latest
+    image: mangkoran/ppi_edufest-app:prod-latest
     entrypoint: ["app-entrypoint.sh"]
     volumes:
       - appdata:/var/www/public/storage
@@ -42,11 +41,6 @@ services:
   phpmyadmin:
     ports:
       - 8080:80
-
-# networks:
-#   network-1:
-#     external:
-#       name: network-1
 
 volumes:
   appdata:
