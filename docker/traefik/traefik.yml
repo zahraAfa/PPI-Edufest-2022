@@ -33,15 +33,15 @@ entryPoints:
         certResolver: letsencrypt_staging
 
 certificatesResolvers:
-  letsencrypt_staging:
+  letsencrypt:
     acme:
-      caServer: https://acme-staging-v02.api.letsencrypt.org/directory
+      caServer: https://acme-v02.api.letsencrypt.org/directory
       email: afnazrie@gmail.com
       storage: acme.json
       httpChallenge:
         # used during the challenge
         entryPoint: web
-  letsencrypt:
+  letsencrypt_staging:
     acme:
       caServer: https://acme-staging-v02.api.letsencrypt.org/directory
       email: afnazrie@gmail.com
