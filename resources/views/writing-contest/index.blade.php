@@ -174,6 +174,15 @@
                 </div>
             </div>
         </div>
+        <div class="wc-ku-body-row ku-row-8">
+            <div class="wc-ku-row-8-wrapper">
+                <h1 class="wc-ku-row8-tema">Narahubung</h1>
+                <div class="ku-row-8-boxes">
+                    <a class="wc-cp ku-row-8-box ku-row-8-box1" href="https://wa.me/905526267123"><i class="fa fa-whatsapp" aria-hidden="true"></i>Sunarto Natsir</a>
+                    <a class="wc-cp ku-row-8-box ku-row-8-box2" href="https://wa.me/218944619486"><i class="fa fa-whatsapp" aria-hidden="true"></i>Fina Septia</a>
+                </div>
+            </div>
+        </div>
         <div class="wc-ku-body-row ku-row-7"></div>
     </div>
     <div class="modal fade" id="writing-cont-modal" tabindex="-1" aria-labelledby="writing-cont-modal" aria-hidden="true">
@@ -210,9 +219,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body articles-modal-body" id="data_iframe">
-                <iframe class="mx-auto"
-                    src="https://drive.google.com/file/d/1z6tiBJtsczVlEcLYKPRaDlCWsxSBJXQl/preview"
-                    allow="autoplay"></iframe>
+
             </div>
         </div>
     </div>
@@ -232,7 +239,6 @@
                 if (result.length === 0) {
                     $(".agenda-container").hide();
                 }
-
                 else if(result.length <= 3){
                     $.each(result, function(key, article) {
                         list += `<li><div class="articles-box">

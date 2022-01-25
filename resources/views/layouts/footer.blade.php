@@ -13,7 +13,7 @@
                     <a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="f-nav-list effect-pop-slide-r">Beranda</a >
                     <a href="{{ ($title === "Pembicara")?'#': route('usr-speaker') }}" class="f-nav-list effect-pop-slide-r">Pembicara</a >
                     <a href="{{ ($title === "Agenda")?'#': route('usr-agenda') }}" class="f-nav-list effect-pop-slide-r">Agenda</a >
-                    <a href="../../" class="f-nav-list effect-pop-slide-r">Writing Contest</a >
+                    <a href="{{ ($title === "Writing Contest")?'#': route('usr-wc') }}" class="f-nav-list effect-pop-slide-r">Writing Contest</a >
                     <a href="{{ ($title === "Docs")?'#': route('usr-docs')}}" class="f-nav-list effect-pop-slide-r">Dokumentasi</a >
                 </div>
             </div>

@@ -13,9 +13,6 @@
                     </div>
                 </header>
                 <div class="calendar-agenda-page-wrapper">
-                    <div class="agenda-page-calendar">
-                        @include('layouts.calendar')
-                    </div>
                     <div class="agenda-page-body-container">
                         <div class="filters-div agenda-page-filters">
                             <select name="Kawasan" id="kawasan-filter" class="filter-bar">

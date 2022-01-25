@@ -1,0 +1,7 @@
+Docker*
+docker-*
+.git*
+bitbucket-*
+
+ansible/
+docker/

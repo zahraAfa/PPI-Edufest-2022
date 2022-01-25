@@ -299,7 +299,7 @@
     text-decoration: none!important;
     font-size: 25px;
     color: var(--mainWhite);
-    background-color: var(--mainBlack);
+    background-color: var(--mainLightGreen);
     padding: 10px;
     text-align: center;
     margin-right: auto;
@@ -307,7 +307,7 @@
 }
 
 .cp-modal-box-nmbr a:hover{
-    color: var(--mainBlack);
+    color: var(--mainLightGreen);
     background-color: var(--mainWhite);
 }
 
