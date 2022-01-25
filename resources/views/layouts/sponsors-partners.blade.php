@@ -40,10 +40,7 @@
             type: "GET",
             url: "../../api/partners/read",
             success: function(result) {
-
                 var partnerItems = '';
-                console.log(result);
-
                 if (result.length === 0) {
                     $('#partners__row').after(
                         '<td colspan="4" class="text-center" >There is no data exist here</td>');
@@ -66,12 +63,8 @@
             type: "GET",
             url: "../../api/sponsors/read",
             success: function(result) {
-
-                console.log(result);
-
                 if (result.length === 0) {
-                    console.log('no data')
-                    // $('#sponsors__row').after('<td colspan="4" class="text-center" >There is no data exist here</td>');
+
                 } else {
                     var sponsorItems = '';
                     $.each(result, function(key, sponsor) {
@@ -86,7 +79,6 @@
                         $('#sponsor-title').empty();
                         $('#sponsor-title').append($(this).attr("title"));
                         $('.modal-body').append($(this).attr("desc"));
-                        console.log('click sponsor');
                     });
                 }
             }

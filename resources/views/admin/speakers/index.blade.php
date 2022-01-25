@@ -112,7 +112,6 @@
                             var eventTitle;
 
                             var speakerItems = '';
-                            console.log(speakers);
                             if (speakers.length === 0) {
                                 $('#speakers__row').after(
                                     '<td colspan="7" class="text-center" >There is no data exist here</td>'

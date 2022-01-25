@@ -107,9 +107,6 @@
                     "Authorization": "Bearer {{ Auth::user()->api_token }}"
                 },
                 success: function(result) {
-
-                    console.log(result);
-
                     if (result.length === 0) {
                         $('#sponsors__row').after('<td colspan="4" class="text-center" >There is no data exist here</td>');
                     } else {

@@ -104,7 +104,6 @@
                 },
                 success: function(data)
                 {
-                    console.log('after ajax')
                     window.location.href = "{{ route('admin-sponsors-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {

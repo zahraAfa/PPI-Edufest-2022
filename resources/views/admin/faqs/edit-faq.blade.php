@@ -86,7 +86,6 @@
             type: 'GET',
             url: '../../../api/faqs/read',
             success: function(data) {
-                console.log('success');
                 $.each(data, function(key, faq) {
                     if (faq["id"] === {{ request()->route('id') }}) {
                         $('#question__faq').val(faq["question"]);
