@@ -78,7 +78,6 @@
             searchSpeakerByName();
         });
         $('#kawasan-filter').on('change', function() {
-            console.log("oke serach")
             searchSpeakerByRegion();
         })
         $(window).on('load', function() {
@@ -103,7 +102,6 @@
         });
 
         function searchSpeakerByName() {
-            console.log("oke search")
             let searchString = $("#search-input").val();
             $.ajax({
                 type: "GET",

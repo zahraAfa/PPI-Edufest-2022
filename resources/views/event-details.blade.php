@@ -40,12 +40,9 @@
                 type: "GET",
                 url: "../../../api/events/read/{{ request()->route('id') }}",
                 success: function(result) {
-                    console.log(result);
-
                     var eventItems = '';
                     var eventSpeakers = '';
                     if (result.length === 0) {
-
                     } else {
 
                         $('#event_title').append(result[0]["title"]);
@@ -84,10 +81,7 @@
                                 </div>
                             </div>`;
                         })
-
                         $("#event_speakers").append(eventSpeakers)
-
-                        //     $('#events__row').after(eventItems);
                     }
                 }
             });
