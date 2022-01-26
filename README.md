@@ -18,10 +18,11 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Getting started with laravel
-Command that u need to execute beforehand
+## Running in Local Environment
 
-Installing all dependencies
+### XAMPP
+
+Install all dependencies
 
 ```bash
     composer install
@@ -39,9 +40,7 @@ Generate a new application key
     php artisan key:generate
 ```
 
->
-> Create Database on DBMS (Navicat, mysql workbench, or phpmyadmin) called as **ppi_edufest_2022**
->
+Create Database on DBMS (Navicat, mysql workbench, or phpmyadmin) called as **ppi_edufest_2022**
 
 Migrate the database schema
 
@@ -68,3 +67,35 @@ Start the local development server
 ```
 
 You can now access the server at <http://localhost:8000>
+
+### Docker
+
+#### First Time Run
+- Create new self-signed SSL certificate.
+``` bash
+mkcert -cert-file docker/traefik/certs/local-cert.pem -key-file docker/traefik/certs/local-key.pem "docker.localhost" "*.docker.localhost" "domain.local" "*.domain.local"
+```
+
+- Make sure to set`DB_HOST` in `.env` file to database container name. In this case, it should be set to `database`.
+
+#### Subsequent Run
+- Run `docker compose`. To daemonize, use `-d` (running in background). Database should persist between container restarts.
+``` bash
+docker compose up -d
+```
+
+#### Inner Workings
+
+- Container networking is handled by `traefik`, acting as entry points to all incoming connections.
+- SSL/TLS/HTTPS also handled by `traefik`. Connection from outside into server is encrypted. Connection between services is unencrypted.
+- Database tables and entries should persist between container restarts. This is achieved with `app-entrypoint.sh`, which checks whether database tables exist within `dbdata` volume.
+``` 
+                    ___________________________
+                   / docker compose/swarm node
+                   | 
+incoming request <=============> traefik <================> app
+                   | encrypted             unencrypted \
+                   |  traffic                traffic    \
+                   |                                     => phpmyadmin
+                   |
+```

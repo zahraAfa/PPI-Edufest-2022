@@ -19,13 +19,4 @@ class Sponsor extends Model
         'detail',
         'picture'
     ];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'id'
-    ];
 }

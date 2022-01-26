@@ -1,0 +1,60 @@
+version: "3"
+
+services:
+  traefik:
+    volumes:
+      - ./docker/traefik/certs:/etc/traefik/certs
+      - ./docker/traefik/dynamic.yml:/etc/traefik/dynamic.yml:ro
+      - ./docker/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+
+  webserver:
+    build:
+      context: ./docker/webserver
+      dockerfile: Dockerfile
+    # image: nginx:1.20-alpine
+    image: mangkoran/ppi_edufest-webserver:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.webserver.tls=true"
+      - "traefik.http.routers.webserver.rule=Host(`edufest.docker.localhost`)"
+    volumes:
+      - appdata:/var/www/public/storage:ro
+      - ./docker/webserver/conf.d:/etc/nginx/conf.d:ro
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mangkoran/ppi_edufest-app:latest
+    entrypoint: ["app-entrypoint.sh"]
+    volumes:
+      - ./app-entrypoint.sh:/usr/bin/app-entrypoint.sh
+      - appdata:/var/www/public/storage
+    environment:
+      SERVICE_TAGS: dev
+      DB_HOST:
+      DB_DATABASE:
+      DB_USERNAME:
+      DB_PASSWORD:
+
+  database:
+    environment:
+      SERVICE_TAGS: dev
+      MARIADB_USER: ${DB_USERNAME}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+      MARIADB_DATABASE: ${DB_DATABASE}
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+
+  phpmyadmin:
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.phpmyadmin.tls=true"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.edufest.docker.localhost`)"
+
+networks:
+  network-1:
+    driver: bridge
+
+volumes:
+  appdata:
+    driver: local

@@ -1,0 +1,10 @@
+http:
+  routers:
+    traefik_router:
+      rule: "Host(`traefik.edufest.mangkoran.xyz`)"
+      service: "api@internal"
+      tls:
+        domains:
+          - main: "mangkoran.xyz"
+            sans:
+              - "*.mangkoran.xyz"
