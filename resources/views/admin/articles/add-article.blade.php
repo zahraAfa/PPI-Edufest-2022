@@ -124,7 +124,6 @@
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
                 success: function(data) {
-                    console.log('after ajax')
                     window.location.href = "{{ route('admin-article-index') }}";
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {

@@ -139,7 +139,6 @@
         $('#save-picture').click(function(e) {
             e.preventDefault();
             var formData = new FormData();
-            // alert('ok');
             var files = $('#form__img')[0].files[0];
             formData.append('picture', files);
             $.ajax({
@@ -194,8 +193,6 @@
                 "name" : $('#form__sponsor-name').val(),
                 "detail" : $('#form__sponsor-detail').val()
             }
-            // formData.append('name', $('#form__sponsor-name').val());
-            // formData.append('detail', $('#form__sponsor-detail').val());
             var urlpost = '../../../api/sponsors/update/{{ request()->route('id') }}';
             $.ajax({
                 type: "PUT",

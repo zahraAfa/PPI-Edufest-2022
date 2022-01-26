@@ -163,10 +163,6 @@
                 alert(jsonResponse["message"]), alert(textStatus);
             }
         });
-        // $('#form__img').click(function(){
-        //     $('#save-picture').attr("disabled", false);
-        //     console.log($('#form__img')[0].files[0]);
-        // });
         $('#save-picture').click(function(e) {
             e.preventDefault();
             var formData = new FormData();
