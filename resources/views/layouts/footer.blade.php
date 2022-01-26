@@ -26,6 +26,7 @@
                     </div>
                     <div class="section1-f-soc">
                         <a class="f-soc shml" href="mailto:ppiedufest@ppi.id"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                        <a class="f-soc shwa" href="https://wa.me/6281802022242"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>

@@ -107,11 +107,13 @@
 
 .docs-box{
     width: 85vw;
-    height: 80vh;
+    height: auto;
     margin: 5% auto;
-    border: 5px solid var(--mainWhite);
-    background-color: var(--mainWhite);
+    border: 5px solid white;
+    background-color: white;
     border-radius: 10px;
+    padding: 20px;
+    overflow: scroll;
 }
 
 @media screen and (max-width: 531px) {
@@ -169,5 +171,17 @@
         bottom: 100px;
         right: 50%;
         /* transform: translateX(50%); */
+    }
+}
+
+.drive-frame{
+    width: 100%;
+    min-height: 800px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .docs-box{
+        padding: 5px;
     }
 }

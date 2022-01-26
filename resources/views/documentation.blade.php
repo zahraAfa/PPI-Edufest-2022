@@ -19,7 +19,9 @@
             <div class="docs-edufest-rounded"><img src="../assets/img/logos/edufest-round-text.svg" alt="edufest 2022"></div>
         </header>
         <div class="docs-box-container">
-            <div class="docs-box" data-aos="zoom-in-up" data-aos-delay="30" data-aos-duration="1000"></div>
+            <div class="docs-box" data-aos="zoom-in-up" data-aos-delay="30" data-aos-duration="1000">
+                <iframe id="driveFrame" class="drive-frame" src="https://googledriveembedder.collegefam.com/?key=AIzaSyAW730mQwTrCsypb9vYL4Bp-bRlz8kdzVs&folderid=1kfsRvrOz7nD292Ae6EMqR7WDVCAhIqCN" ></iframe>
+            </div>
         </div>
     </div>
 </section>
