@@ -81,7 +81,6 @@
                 {
                     let headers = new Headers({'Content-Type': 'application/json'});
                     let token = 'Bearer '+Object.values(data);
-                    // alert(token);
                     headers.append('Authorization', token);
                     window.location.href = "/admin/dashboard";
                 },

@@ -227,9 +227,6 @@
             type: 'GET',
             url: '../../../api/speakers/read/{{ request()->route('id') }}',
             success: function(speaker) {
-                console.log(speaker);
-                console.log(speaker[0]["name"]);
-                
                 var img_link = '/storage/img/speakers/' + speaker[0]["id"] + '/' + speaker[0][
                     "picture"];
 

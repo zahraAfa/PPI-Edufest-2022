@@ -153,7 +153,6 @@
             keyboard: false
         });
         $(document).ready(function() {
-            // $('#dataTable').dataTable();
             $.ajax({
                 type: "GET",
                 url: "../../../api/articles/read",
@@ -161,7 +160,6 @@
                     "Authorization": "Bearer {{ Auth::user()->api_token }}"
                 },
                 success: function(result) {
-                    console.log(result);
                     var items = '';
                     if (result.length === 0) {
                         $('#articles__row').after(

@@ -180,7 +180,6 @@
         $('#save-picture').click(function(e) {
             e.preventDefault();
             var formData = new FormData();
-            // alert('ok');
             var files = $('#form__img')[0].files[0];
             formData.append('picture', files);
             $.ajax({

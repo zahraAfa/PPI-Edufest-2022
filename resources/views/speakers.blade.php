@@ -72,6 +72,9 @@
                         className: 'paginationjs-theme-red',
                         callback: function(data, pagination) {
                             var listSpeaker = '';
+                            if(data.length == 0) {
+                                listSpeaker = '<h3 class="text-white">Tidak ada hasil. </h3>'
+                            }
                             $.each(data, function(key, speaker) {
                                 listSpeaker +=
                                     `
