@@ -14,7 +14,7 @@
         <h3 id="faq-q"></h3>
       </button>
     </div>
-    <a href="/" class="telegram-btn">Ask on Telegram</a>
+    <a href="https://t.me/+6fn52_-GVrI3MDE1" class="telegram-btn">Ask on Telegram</a>
   </div>
 </div>
 <div class="cp-modal ">
