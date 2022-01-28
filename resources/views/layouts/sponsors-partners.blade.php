@@ -26,10 +26,6 @@
             <div class="modal-body">
                 ...
             </div>
-            {{-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div> --}}
         </div>
     </div>
 </div>
@@ -47,11 +43,8 @@
                 } else {
                     $.each(result, function(key, partner) {
                         partnerItems +=
-                            `<div class="partner-item">
-                                <div class="partner-img-wrapper">
+                            `<div>
                                     <img src="../../storage/img/partners/${partner["id"]}/${partner["picture"]}" alt="Partner" class="partner-img">
-                                </div>
-                                <h2 class="partner-name"></h2>
                             </div>`;
                     });
                     $('#list-partners').append(partnerItems);
