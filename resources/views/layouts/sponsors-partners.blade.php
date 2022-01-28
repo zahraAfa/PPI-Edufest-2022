@@ -43,11 +43,8 @@
                 } else {
                     $.each(result, function(key, partner) {
                         partnerItems +=
-                            `<div class="partner-item">
-                                <div class="partner-img-wrapper">
+                            `<div>
                                     <img src="../../storage/img/partners/${partner["id"]}/${partner["picture"]}" alt="Partner" class="partner-img">
-                                </div>
-                                <h2 class="partner-name"></h2>
                             </div>`;
                     });
                     $('#list-partners').append(partnerItems);
