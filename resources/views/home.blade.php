@@ -38,7 +38,7 @@
             <div class="desc-section">
                 <div class="youtube-cont">
                     <iframe data-aos="fade-right" data-aos-delay="20" data-aos-duration="1000"
-                        src="https://www.youtube.com/embed/73CQ4pkrauA" title="YouTube video player" frameborder="0"
+                        src="https://drive.google.com/file/d/1E0McVkP8wtficXHymZiUtBlugY4e37ec/preview"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
