@@ -1,13 +1,13 @@
 <section class="sponsors-partners-container">
     <div class="sponsors-wrapper">
-        <div class="sponsor-header-att" data-aos="fade-left" data-aos-delay="20" data-aos-duration="1000">
+        <div class="sponsor-header-att">
             <p class="effect-pop-slide-l">OUR</p>
             <p class="effect-pop-slide-l">SP<span>O</span>NS<span>O</span>R<span>S</span></p>
         </div>
         <div class="sponsors-cont"></div>
     </div>
     <div class="partners-wrapper">
-        <div class="partner-header-att" data-aos="fade-right" data-aos-delay="20" data-aos-duration="1000">
+        <div class="partner-header-att">
             <p class="effect-pop-slide-r">OUR</p>
             <p class="effect-pop-slide-r">P<span>A</span>RTN<span>E</span>R<span>S</span></p>
         </div>
