@@ -5,3 +5,4 @@ bitbucket-*
 
 ansible/
 docker/
+caches/
