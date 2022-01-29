@@ -146,7 +146,7 @@
                                 '<td id="event__detail-crud">' + event["detail"] + '</td>' +
                                 '<td><a style="background-color:#858796!important;" class="btn btn-secondary btn-icon-split" role="button" href="' +
                                 event["form_link"] +
-                                '"><span class="text-white-50 icon"><i class="fas fa-share-square" style="color: rgb(255,255,255);"></i></span><span class="text-white text">Form</span></a></td>' +
+                                '" target="_blank"><span class="text-white-50 icon"><i class="fas fa-share-square" style="color: rgb(255,255,255);"></i></span><span class="text-white text">Form</span></a></td>' +
                                 '<td>' +
                                 '<a style="background-color:#1cc88a!important;" class="btn btn-success btn-circle ms-1" role="button" id="event__edit" href="../../admin/events/edit/' +
                                 event["id"] + '"><i class="fas fa-edit text-white"></i></a>' +

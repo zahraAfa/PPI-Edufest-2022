@@ -21,12 +21,12 @@
                 <h1 class="footer-h1">Contact Us</h1>
                 <div class="footer-col2-row1">
                     <div class="section1-f-soc">
-                        <a class="f-soc shfb" href="https://www.facebook.com/ppi.edufest"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a class="f-soc shig" href="https://www.instagram.com/ppi.edufest/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a class="f-soc shfb" href="https://www.facebook.com/ppi.edufest" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a class="f-soc shig" href="https://www.instagram.com/ppi.edufest/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                     </div>
                     <div class="section1-f-soc">
                         <a class="f-soc shml" href="mailto:ppiedufest@ppi.id"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                        <a class="f-soc shwa" href="https://wa.me/6281802022242"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                        <a class="f-soc shwa" href="https://wa.me/6281802022242" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
