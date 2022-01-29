@@ -29,11 +29,19 @@
                         <p id="event_detail"></p>
                     </div>
                 </div>
-                <div class="event-form-section"><iframe id="event_form" width="100%" height="677" frameborder="0" marginheight="0" marginwidth="0" onload=window.open("https://t.me/+6fn52_-GVrI3MDE1")>Loading…</iframe></div>
+                <div class="event-form-section"><iframe id="event_form" width="100%" height="677" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
             </div>
         </div>
     </section>
-
+    <script type="text/javascript">
+        var load = 0;
+        document.getElementById('event_form').onload = function(){
+            load++;
+            if(load>1){
+                window.open("https://t.me/+6fn52_-GVrI3MDE1","_blank");
+            }
+        }
+    </script>
     <script>
         $(document).ready(function() {
             $.ajax({
