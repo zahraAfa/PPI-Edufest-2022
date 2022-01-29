@@ -1,13 +1,13 @@
 <section class="sponsors-partners-container">
     <div class="sponsors-wrapper">
-        <div class="sponsor-header-att" data-aos="fade-left" data-aos-delay="20" data-aos-duration="1000">
+        <div class="sponsor-header-att">
             <p class="effect-pop-slide-l">OUR</p>
             <p class="effect-pop-slide-l">SP<span>O</span>NS<span>O</span>R<span>S</span></p>
         </div>
         <div class="sponsors-cont"></div>
     </div>
     <div class="partners-wrapper">
-        <div class="partner-header-att" data-aos="fade-right" data-aos-delay="20" data-aos-duration="1000">
+        <div class="partner-header-att">
             <p class="effect-pop-slide-r">OUR</p>
             <p class="effect-pop-slide-r">P<span>A</span>RTN<span>E</span>R<span>S</span></p>
         </div>
@@ -26,10 +26,6 @@
             <div class="modal-body">
                 ...
             </div>
-            {{-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div> --}}
         </div>
     </div>
 </div>
@@ -47,11 +43,8 @@
                 } else {
                     $.each(result, function(key, partner) {
                         partnerItems +=
-                            `<div class="partner-item">
-                                <div class="partner-img-wrapper">
+                            `<div>
                                     <img src="../../storage/img/partners/${partner["id"]}/${partner["picture"]}" alt="Partner" class="partner-img">
-                                </div>
-                                <h2 class="partner-name"></h2>
                             </div>`;
                     });
                     $('#list-partners').append(partnerItems);

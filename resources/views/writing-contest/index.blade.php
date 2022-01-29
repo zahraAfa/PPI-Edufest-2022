@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="wc-index-body-cont">
-            <a class="wc-index-list1 effect-pop-up" style="text-decoration: none!important">
+            <a class="wc-index-list1 effect-pop-up" style="text-decoration: none!important" data-tf-slider="eAC5S3mo" data-tf-width="550" data-tf-iframe-props="title=PPI Edufest - Writing Contest" data-tf-medium="snippet">
                 <div class="wc-folder-outerbox1"></div>
                 <div class="wc-folder-box1">
                    <div class="wc-folder-box1-tag" style="text-decoration: none!important;">Pendaftaran</div>
@@ -178,8 +178,8 @@
             <div class="wc-ku-row-8-wrapper">
                 <h1 class="wc-ku-row8-tema">Narahubung</h1>
                 <div class="ku-row-8-boxes">
-                    <a class="wc-cp ku-row-8-box ku-row-8-box1" href="https://wa.me/905526267123"><i class="fa fa-whatsapp" aria-hidden="true"></i>Sunarto Natsir</a>
-                    <a class="wc-cp ku-row-8-box ku-row-8-box2" href="https://wa.me/218944619486"><i class="fa fa-whatsapp" aria-hidden="true"></i>Fina Septia</a>
+                    <a class="wc-cp ku-row-8-box ku-row-8-box1" href="https://wa.me/905526267123" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i>Sunarto Natsir</a>
+                    <a class="wc-cp ku-row-8-box ku-row-8-box2" href="https://wa.me/218944619486" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i>Fina Septia</a>
                 </div>
             </div>
         </div>
@@ -224,6 +224,7 @@
         </div>
     </div>
 </div>
+<script src="//embed.typeform.com/next/embed.js"></script>
 <script>
     $(window).on('load', function() {
         $('#writing-cont-modal').modal('show');
