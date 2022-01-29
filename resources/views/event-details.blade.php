@@ -29,7 +29,7 @@
                         <p id="event_detail"></p>
                     </div>
                 </div>
-                <div class="event-form-section"><iframe id="event_form" width="100%" height="677" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></div>
+                <div class="event-form-section"><iframe id="event_form" width="100%" height="677" frameborder="0" marginheight="0" marginwidth="0" onload=window.open("https://t.me/+6fn52_-GVrI3MDE1")>Loading…</iframe></div>
             </div>
         </div>
     </section>
@@ -60,7 +60,7 @@
 
 
                         result[1].forEach((speaker) => {
-                            eventSpeakers += 
+                            eventSpeakers +=
                             `<div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
                                     <img src="../../storage/img/speakers/${speaker["id"]}/${speaker["picture"]}"
