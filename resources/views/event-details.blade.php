@@ -37,6 +37,7 @@
         var load = 0;
         document.getElementById('event_form').onload = function(){
             load++;
+            console.log(load);
             if(load>2){
                 window.open("https://t.me/+6fn52_-GVrI3MDE1","_blank");
             }
