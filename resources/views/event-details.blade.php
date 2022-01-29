@@ -33,7 +33,15 @@
             </div>
         </div>
     </section>
-
+    <script type="text/javascript">
+        var load = 0;
+        document.getElementById('event_form').onload = function(){
+            load++;
+            if(load>2){
+                window.open("https://t.me/+6fn52_-GVrI3MDE1","_blank");
+            }
+        }
+    </script>
     <script>
         $(document).ready(function() {
             $.ajax({
@@ -60,7 +68,7 @@
 
 
                         result[1].forEach((speaker) => {
-                            eventSpeakers += 
+                            eventSpeakers +=
                             `<div class="custom-card" data-aos="fade-up" data-aos-delay="30" data-aos-duration="2000">
                                 <div class="img__card-container">
                                     <img src="../../storage/img/speakers/${speaker["id"]}/${speaker["picture"]}"

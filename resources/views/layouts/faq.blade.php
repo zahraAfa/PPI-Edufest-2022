@@ -14,7 +14,7 @@
         <h3 id="faq-q"></h3>
       </button>
     </div>
-    <a href="https://t.me/+6fn52_-GVrI3MDE1" class="telegram-btn">Ask on Telegram</a>
+    <a href="https://t.me/+6fn52_-GVrI3MDE1" target="_blank" class="telegram-btn">Ask on Telegram</a>
   </div>
 </div>
 <div class="cp-modal ">
@@ -25,11 +25,11 @@
       <div class="cp-modal-box">
           <div class="cp-modal-box-col">
             <div class="cp-modal-box-name"><h2>Sponsorship: </h2></div>
-            <div class="cp-modal-box-nmbr"><a href="https://wa.me/60173464789"><i class="fa fa-whatsapp" aria-hidden="true"></i>Aurelia</a></div>
+            <div class="cp-modal-box-nmbr"><a href="https://wa.me/60173464789" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i>Aurelia</a></div>
           </div>
           <div class="cp-modal-box-col">
             <div class="cp-modal-box-name"><h2>Partnership: </h2></div>
-            <div class="cp-modal-box-nmbr"><a href="https://wa.me/601133070198"><i class="fa fa-whatsapp" aria-hidden="true"></i>Carissa</a></div>
+            <div class="cp-modal-box-nmbr"><a href="https://wa.me/601133070198" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i>Carissa</a></div>
           </div>
       </div>
     </div>
