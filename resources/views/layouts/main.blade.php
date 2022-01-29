@@ -39,6 +39,19 @@
     <!-- Favicon start -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/edufest-icon.png">
     <!-- Favicon end -->
+
+    <!-- START Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFQS6Z9RBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-BFQS6Z9RBS');
+    </script>
+     <!-- END Global site tag (gtag.js) - Google Analytics -->
+
 </head>
 
 <body class="main-page" id="top-page">
