@@ -43,7 +43,7 @@
                 } else {
                     $.each(result, function(key, partner) {
                         partnerItems +=
-                            `<div>
+                            `<div class="partner-img-wrapper" style="display: flex; margin-left:10px; margin-right:10px;" >
                                     <img src="../../storage/img/partners/${partner["id"]}/${partner["picture"]}" alt="Partner" class="partner-img">
                             </div>`;
                     });
