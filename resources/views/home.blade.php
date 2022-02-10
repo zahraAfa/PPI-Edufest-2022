@@ -126,28 +126,29 @@
                     } else if (result.length <= 3) {
                         $.each(result, function(key, event) {
                             if (new Date(event["date"]).getTime() < ToDate) {
+
+                            } else if (new Date(event["date"]).getTime() <= date2days) {
                                 listEvent += `<li>
-                                <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
-                                        <div class="img__card-container">
-                                            <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
-                                        </div>
-                                        <div class="card__overlay">
-                                            <div class="card__header">
-                                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                                    <path />
-                                                </svg>
-                                                <div class="card__header-text">
-                                                    <h3 class="card__title">${event["title"]}</h3>
-                                                    <span class="card__status"><i
-                                                            class="material-icons-round">event</i>${event["date"]}</span>
-                                                </div>
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home" >
+                                            <div class="img__card-container">
+                                                <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                             </div>
-                                            <p class="card__description">${event["detail"]}</p>
-                                        </div>
-                                    </a>
-                                </li>`;
-                            } else if (new Date(event["date"]).getTime() >
-                                date2weeks) {
+                                            <div class="card__overlay">
+                                                <div class="card__header">
+                                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                                        <path />
+                                                    </svg>
+                                                    <div class="card__header-text">
+                                                        <h3 class="card__title">${event["title"]}</h3>
+                                                        <span class="card__status"><i
+                                                                class="material-icons-round">event</i>${event["date"]}</span>
+                                                    </div>
+                                                </div>
+                                                <p class="card__description">${event["detail"]}</p>
+                                            </div>
+                                        </a>
+                                    </li>`;
+                            } else if (new Date(event["date"]).getTime() > date2weeks) {
                                 listEvent += `<li>
                                     <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
                                             <div class="img__card-container">
@@ -196,30 +197,10 @@
                     } else {
                         $.each(result, function(key, event) {
                             if (new Date(event["date"]).getTime() < ToDate) {
+
+                            } else if (new Date(event["date"]).getTime() > date2weeks) {
                                 listEvent += `<li>
-                                <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
-                                        <div class="img__card-container">
-                                            <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
-                                        </div>
-                                        <div class="card__overlay">
-                                            <div class="card__header">
-                                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                                    <path />
-                                                </svg>
-                                                <div class="card__header-text">
-                                                    <h3 class="card__title">${event["title"]}</h3>
-                                                    <span class="card__status"><i
-                                                            class="material-icons-round">event</i>${event["date"]}</span>
-                                                </div>
-                                            </div>
-                                            <p class="card__description">${event["detail"]}</p>
-                                        </div>
-                                    </a>
-                                </li>`;
-                            } else if (new Date(event["date"]).getTime() >
-                                date2weeks) {
-                                listEvent += `<li>
-                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home" >
                                             <div class="img__card-container">
                                                 <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                             </div>
@@ -238,9 +219,30 @@
                                             </div>
                                         </a>
                                     </li>`;
+                            } else if (new Date(event["date"]).getTime() <= date2days) {
+                                listEvent += `<li>
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home" >
+                                            <div class="img__card-container">
+                                                <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
+                                            </div>
+                                            <div class="card__overlay">
+                                                <div class="card__header">
+                                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                                        <path />
+                                                    </svg>
+                                                    <div class="card__header-text">
+                                                        <h3 class="card__title">${event["title"]}</h3>
+                                                        <span class="card__status"><i
+                                                                class="material-icons-round">event</i>${event["date"]}</span>
+                                                    </div>
+                                                </div>
+                                                <p class="card__description">${event["detail"]}</p>
+                                            </div>
+                                        </a>
+                                    </li>`;
                             } else {
                                 listEvent += `<li>
-                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home">
+                                    <a href="/acara/${event["id"]}" class="custom-card custom-card-agenda-home" >
                                             <div class="img__card-container">
                                                 <img src="../../storage/img/events/${event["id"]}/${event["picture"]}" class="card__image" alt="" />
                                             </div>

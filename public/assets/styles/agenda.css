@@ -42,6 +42,11 @@
     align-items: center;
 }
 
+.agenda-section #lightSlider-agenda-section li{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .agenda-wrapper{
     width: 100vw;
     height: auto;
