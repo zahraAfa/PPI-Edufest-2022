@@ -19,7 +19,7 @@
         <img src="/assets/img/header/main-header-map.png" class="header-back-layer translate" data-speed="-0.9" alt="Header">
     </header>
     <div class="flags-container">
-        <img src="/assets/img/header/main-header-flags.svg" class="flags-flowing" alt="flag">
+        <img src="/assets/img/header/main-header-flags.jpg" class="flags-flowing" alt="flag">
     </div>
     <section>
         <div class="carousel-container">
