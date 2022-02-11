@@ -4,7 +4,7 @@
             <div class="footer-col1 f-col">
                 <div class="footer-col1-box1">
                     <div class="footer-logos">
-                        <img id="footer-ppid-logo" src="/assets/img/logos/PPI Dunia.png" alt="Logo PPID">
+                        <img id="footer-ppid-logo" src="/assets/img/logos/PPI Dunia.jpg" alt="Logo PPID">
                         <img id="footer-felari-logo" src="/assets/img/logos/Felari.png" alt="Logo Felari">
                     </div>
                     <div class="footer-cr">Copyright © 2021 PPI Dunia<br>All rights served</div>
