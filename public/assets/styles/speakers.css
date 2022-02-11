@@ -1,5 +1,38 @@
 /* Special Speakers */
 
+.card__desc_school {
+    padding: 0 2em 0.1em;
+    margin: 0;
+    color: var(--mainGray);
+    font-weight: 700;
+    font-size: 15px;
+    font-family: "Outfit";
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: scroll;
+    box-sizing: border-box;
+}
+.card__desc_school i{
+    font-size: 16px;
+    margin-right: 6px;
+    margin-top: 1px;
+}
+.card__desc_major {
+    padding: 0 2em 0.5em;
+    margin: 0;
+    margin-left: 20px;
+    color: var(--mainGray);
+    font-family: "Outfit";
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: scroll;
+    box-sizing: border-box;
+    font-style: italic;
+    font-size: 14px;
+}
+
 .sp-speakers-container{
     width: 100vw;
     display: flex;
