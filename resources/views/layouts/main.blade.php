@@ -1,4 +1,4 @@
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 
 <head>
     <meta charset="UTF-8" />
@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edufest | {{ $title }}</title>
     <!-- Script start -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Script end -->
     <!-- Style start -->
@@ -41,13 +42,14 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFQS6Z9RBS"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
         gtag('js', new Date());
         gtag('config', 'G-BFQS6Z9RBS');
     </script>
-     <!-- END Global site tag (gtag.js) - Google Analytics -->
+    <!-- END Global site tag (gtag.js) - Google Analytics -->
 
 </head>
 
@@ -60,14 +62,20 @@
             <div class="nav-body">
                 <div class="nav-sections">
                     <ul class="nav-items">
-                        <li><a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="nav-beranda">Beranda</a></li>
-                        <li><a href="{{ ($title === "Pembicara")?'#': route('usr-speaker') }}" class="nav-pembicara">Pembicara</a></li>
-                        <li><a href="{{ ($title === "Agenda")?'#': route('usr-agenda') }}" class="nav-agenda">Agenda</a></li>
-                        <li><a href="{{ ($title === "Writing Contest")?'#': route('usr-wc') }}" class="nav-writingcont">Writing Contest</a></li>
-                        <li><a href="{{ ($title === "Docs")?'#': route('usr-docs')}}" class="nav-dokumentasi">Dokumentasi</a></li>
+                        <li><a href="{{ $title === 'Home' ? '#' : route('usr-home') }}"
+                                class="nav-beranda">Beranda</a></li>
+                        <li><a href="{{ $title === 'Pembicara' ? '#' : route('usr-speaker') }}"
+                                class="nav-pembicara">Pembicara</a></li>
+                        <li><a href="{{ $title === 'Agenda' ? '#' : route('usr-agenda') }}"
+                                class="nav-agenda">Agenda</a></li>
+                        <li><a href="{{ $title === 'Writing Contest' ? '#' : route('usr-wc') }}"
+                                class="nav-writingcont">Writing Contest</a></li>
+                        <li><a href="{{ $title === 'Docs' ? '#' : route('usr-docs') }}"
+                                class="nav-dokumentasi">Dokumentasi</a></li>
                     </ul>
                     <div class="title-logo">
-                        <a href="{{ ($title === "Home")?'#': route('usr-home') }}" class="gohome"><img src="/assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
+                        <a href="{{ $title === 'Home' ? '#' : route('usr-home') }}" class="gohome"><img
+                                src="/assets/img/logos/Logo-Edufest.png" alt="Edufest Logo"></a>
                     </div>
                     <div class="nav-wrap">
                         <div class="menu-toggle">
@@ -93,18 +101,19 @@
     <script src="/assets/scripts/faq.js"></script>
     <script src="/assets/scripts/header.js"></script>
     <script src="/assets/scripts/page-loader.js"></script>
+    <script src="/assets/scripts/slick-slider.js"></script>
 
     <script>
         AOS.init();
     </script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.js"
         integrity="sha512-h1Xtd9Xz5HglyzafV0MQ2j9RU30SbD+QdVRJXxdIdMixcGLiljJqtuu1W8Ig20IzYI8lskIKEppDJbF/zkdRtA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/assets/scripts/slick-slider.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
