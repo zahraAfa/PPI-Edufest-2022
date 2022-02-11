@@ -89,10 +89,11 @@
                                     </svg>
                                     <div class="card__header-text">
                                         <h3 class="card__title speaker__name">${speaker['name']}</h3>
-                                        <span class="card__status speaker__ppi"><i
-                                                class="material-icons-round">public</i>${speaker['ppi']}</span>
+                                        <span class="card__status speaker__ppi"><i class="material-icons-round">public</i>${speaker['ppi']}</span>
                                     </div>
                                 </div>
+                                <p class="card__desc_school"><i class="material-icons-round">school</i>${speaker['school']}</p>
+                                <p class="card__desc_major">${speaker['major']}</p>
                                 <p class="card__description speaker__desc">${speaker['detail']}</p>
                               </div>
                               </div>
