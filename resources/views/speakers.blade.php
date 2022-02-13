@@ -82,7 +82,7 @@
                               <div class="img__card-container">
                                 <img src="../../storage/img/speakers/${speaker["id"]}/${speaker["picture"]}" class="card__image" alt="Speaker" />
                               </div>
-                              <div class="card__overlay">
+                              <div class="card__overlay speaker-card-overlay">
                                 <div class="card__header">
                                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
                                         <path />
@@ -92,8 +92,9 @@
                                         <span class="card__status speaker__ppi"><i class="material-icons-round">public</i>${speaker['ppi']}</span>
                                     </div>
                                 </div>
+                                <hr>
                                 <p class="card__desc_school"><i class="material-icons-round">school</i>${speaker['school']}</p>
-                                <p class="card__desc_major">${speaker['major']}</p>
+                                <p class="card__desc_major">${speaker['major']}</p><hr>
                                 <p class="card__description speaker__desc">${speaker['detail']}</p>
                               </div>
                               </div>

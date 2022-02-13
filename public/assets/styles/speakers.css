@@ -3,7 +3,7 @@
 .card__desc_school {
     padding: 0 2em 0.1em;
     margin: 0;
-    color: var(--mainGray);
+    color: var(--mainWhite);
     font-weight: 700;
     font-size: 15px;
     font-family: "Outfit";
@@ -12,6 +12,7 @@
     -webkit-line-clamp: 3;
     overflow: scroll;
     box-sizing: border-box;
+    text-align: center;
 }
 .card__desc_school i{
     font-size: 16px;
@@ -21,8 +22,8 @@
 .card__desc_major {
     padding: 0 2em 0.5em;
     margin: 0;
-    margin-left: 20px;
-    color: var(--mainGray);
+    /* margin-left: 20px; */
+    color: var(--mainBlack);
     font-family: "Outfit";
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -31,6 +32,11 @@
     box-sizing: border-box;
     font-style: italic;
     font-size: 14px;
+    text-align: center;
+}
+
+.speaker-card-overlay .speaker__desc{
+    text-align: center;
 }
 
 .sp-speakers-container{
