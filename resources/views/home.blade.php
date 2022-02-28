@@ -115,15 +115,23 @@
                 success: function(result) {
                     var listEvent = '';
                     var eventItems = '';
-                    var ToDate = new Date();
-                    var date2days = new Date();
-                    var date2weeks = new Date();
+                    var ToDate = new Date(); // closed event
+                    var date2days = new Date(); // <= 2 days
+                    var date2weeks = new Date(); // after 2 weeks
                     ToDate = ToDate.setDate(ToDate.getDate() - 1);
                     date2days = date2days.setDate(date2days.getDate() + 2);
                     date2weeks = date2weeks.setDate(date2weeks.getDate() + 14);
-                    if (result.length === 0) {
+                    // Holding open event
+                    var openEvent=0;
+                        $.each(result, function(key, event){
+                            if (!(new Date(event["date"]).getTime() < ToDate)){
+                                openEvent++;
+                            }
+                        });
+                    //
+                    if (openEvent===0) {
                         $(".agenda-container").hide();
-                    } else if (result.length <= 3) {
+                    } else if (openEvent <= 3) {
                         $.each(result, function(key, event) {
                             if (new Date(event["date"]).getTime() < ToDate) {
 
