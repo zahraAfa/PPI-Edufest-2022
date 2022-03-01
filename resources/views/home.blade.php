@@ -107,6 +107,7 @@
             </div>
         </div>
     </section>
+    @include('layouts.newsletter')
     <script>
         $(document).ready(function() {
             $.ajax({
