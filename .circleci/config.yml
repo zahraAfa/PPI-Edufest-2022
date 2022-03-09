@@ -73,6 +73,7 @@ workflows:
           context:
             - dev
           deployment: dev
+          type: approval
           filters:
             branches:
               ignore:
