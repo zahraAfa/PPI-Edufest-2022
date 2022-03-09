@@ -141,6 +141,9 @@
     padding-top: 5px;
     height: 65px;
 }
+#footer-ppm-logo{
+    height: 70px;
+}
 
 .footer-col2-row1{
     display: flex;
@@ -194,7 +197,7 @@
 
 @media screen and (max-width: 453px) {
     .footer-logos{
-        gap: 10px;
+        gap: 6px;
     }
     .footer-cr{
         font-size: 10px;
@@ -215,5 +218,31 @@
     }
     .footer-h1{
         font-size: 14px;
+    }
+    #footer-ppid-logo{
+        height: 50px;
+    }
+    #footer-felari-logo{
+        padding-top: 5px;
+        height: 45px;
+    }
+    #footer-ppm-logo{
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 304px){
+    .footer-logos{
+        gap: 3px;
+    }
+    #footer-ppid-logo{
+        height: 40px;
+    }
+    #footer-felari-logo{
+        padding-top: 5px;
+        height: 35px;
+    }
+    #footer-ppm-logo{
+        height: 40px;
     }
 }
