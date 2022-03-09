@@ -8,6 +8,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\spreadsheetController;
 use App\Models\Admin;
 use App\Models\Article;
 use Illuminate\Http\Request;
@@ -132,5 +133,10 @@ Route::middleware('auth:api')->group(function () {
         Route::put('/update/{id}', [ArticleController::class, 'update']);
         Route::put('/file/{id}', [ArticleController::class, 'updateFile']);
         Route::delete('/delete/{id}', [ArticleController::class, 'delete']);
+    });
+
+    //Participants API routes
+    Route::prefix('/participants')->group(function() {
+        Route::get('/read', [spreadsheetController::class, 'read']);
     });
 });
