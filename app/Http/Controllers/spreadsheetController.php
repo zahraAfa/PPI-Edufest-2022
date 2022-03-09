@@ -10,7 +10,6 @@ class spreadsheetController extends Controller
         //Reading data from spreadsheet.
         $client = new \Google_Client();
         $client->setApplicationName('Google Sheets and PHP');
-        // $client->addScope(\Google\Service\Sheets\Resource\Spreadsheets::SPREADSHEET);
         $client->setScopes([
             \Google_Service_Sheets::SPREADSHEETS
         ]);
@@ -32,7 +31,6 @@ class spreadsheetController extends Controller
         $listEmail = array();
         $nonEligibleName = array();
         $nonEligibleEmail = array();
-        // print_r($attendances['nameAttendances']);
         foreach($comparison as $x => $value) {
             $nonEligibleName[] = $attendances['nameAttendances'][$x];
             $nonEligibleEmail[] = $value;
@@ -40,7 +38,6 @@ class spreadsheetController extends Controller
         foreach($resultEmail as $x => $value) {
             $listName[] = $attendances['nameAttendances'][$x];
             $listEmail[] = $value;
-            // print_r($attendances['nameAttendances'][$x]);
         }
         
         return [
