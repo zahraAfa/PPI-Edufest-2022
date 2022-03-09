@@ -67,6 +67,17 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
+  manual:
+    jobs:
+      - build_and_push_image:
+          context:
+            - dev
+          deployment: dev
+          filters:
+            branches:
+              ignore:
+                - dev
+                - main
   dev:
     jobs:
       - build_and_push_image:
