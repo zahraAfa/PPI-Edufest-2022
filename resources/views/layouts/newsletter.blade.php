@@ -3,7 +3,9 @@
         <div id="dialog" class="window">
 
             <div class="box2">
-                <img src="../../../../assets/img/bg/Edufest_ACT.png" alt="ACT">
+                <div class="image-box2-wrapper">
+                    <img src="../../../../assets/img/bg/Edufest_ACT.png" alt="ACT">
+                </div>
             </div>
             <div class="box" style="overflow: scroll">
                 <div class="newletter-title">
