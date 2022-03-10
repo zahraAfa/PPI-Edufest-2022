@@ -22,7 +22,8 @@ class Authenticate extends Middleware
 
     protected function unauthenticated($request, array $guards)
     {
-        abort(401, 'User is not authenticated / session time out, please try to login again.');
-        $message = "User is not authenticated";
+        // abort(401, 'User is not authenticated / session time out, please try to login again.');
+        // $message = "User is not authenticated";
+        abort(redirect('login'));
     }
 }
