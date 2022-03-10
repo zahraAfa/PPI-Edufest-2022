@@ -137,6 +137,6 @@ Route::middleware('auth:api')->group(function () {
 
     //Participants API routes
     Route::prefix('/participants')->group(function() {
-        Route::get('/read', [spreadsheetController::class, 'read']);
+        Route::get('/read/{id}', [spreadsheetController::class, 'read']);
     });
 });
