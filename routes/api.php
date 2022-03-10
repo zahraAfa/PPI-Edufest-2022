@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\spreadsheetController;
@@ -135,8 +136,13 @@ Route::middleware('auth:api')->group(function () {
         Route::delete('/delete/{id}', [ArticleController::class, 'delete']);
     });
 
-    //Participants API routes
-    Route::prefix('/participants')->group(function() {
-        Route::get('/read/{id}', [spreadsheetController::class, 'read']);
+    //Reports API routes
+    Route::prefix('/reports')->group(function() {
+        Route::get('/read', [ReportController::class, 'read']);
+        Route::get('/read/{id}', [ReportController::class, 'readDetail']);
+        Route::post('/insert', [ReportController::class, 'insert']);
+        Route::delete('/delete/{id}', [ReportController::class, 'delete']);
+        Route::put('/update/{id}', [ReportController::class, 'update']);
+        Route::get('/generate/{id}', [ReportController::class, 'generate']);
     });
 });
