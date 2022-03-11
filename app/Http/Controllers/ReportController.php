@@ -159,8 +159,8 @@ class ReportController extends Controller
         $spreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(40);
         $spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(40);
         $writer = new Xlsx($spreadsheet);
-        $writer->save('../public/storage/file/reports/Report.xlsx');
-        return redirect('storage/file/reports/Report.xlsx');
+        $writer->save('../public/storage/file/reports/' . $report->title . ".xlsx");
+        return redirect("storage/file/reports/" . $report->title . ".xlsx");
     }
 
     public function delete($id) {
