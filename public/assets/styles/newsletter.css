@@ -21,7 +21,7 @@
 .popup .window{
     display: flex;
     flex-direction: row;
-    height: 60vh;
+    /* height: 60vh; */
     /* width: 60vw; */
     /* flex-wrap: wrap; */
     overflow: scroll;
@@ -88,7 +88,7 @@
     transform: translateY(-50%);
     right: 0px;
     left: 0;
-    /* overflow: scroll; */
+    overflow: scroll;
 }
 
 #popup1 .popup h2 {
@@ -204,4 +204,61 @@
     display: inline-block;
     margin-bottom: 5px;
     font-size: 12px;
+}
+
+@media screen and (max-width:1000px) {
+    #popup1 .newletter-title h2 {
+        font-size: 16px;
+        /* text-transform: uppercase;
+        color: var(--mainBlack);
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin: 0 0 15px; */
+    }
+    #popup1 .box-content label {
+        font-weight: 400;
+        font-size: 12px;
+    }
+    #popup1 #frm_subscribe a {
+        font-size: 12px;
+        color: #fff;
+        font-weight: 600;
+        line-height: 22px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .popup .window{
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+    .popup .box2{
+        overflow: hidden;
+        /* width: 60vh!important; */
+        height: 90vw;
+        max-height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FDE0BB;
+    }
+    .image-box2-wrapper{
+        overflow: hidden;
+        /* width: 1000px; */
+        /* height: 1000px; */
+        max-height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #popup1 .popup {
+        height: 80vh;
+        width: 90vw;
+        max-height: none;
+        max-width: none;
+    }
+    .popup .box{
+        padding: 20px 20px;
+    }
 }
