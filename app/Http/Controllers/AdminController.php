@@ -40,15 +40,15 @@ class AdminController extends Controller
             'username' => request('username'),
             'email' => request('email'),
             'password' => bcrypt(request('password')),
-            'api_token' => Str::random(60)
+            'api_token' => Str::random(60),
+            'status' => 'registered',
+            'role' => 'admin'
         ];
 
         $admin = Admin::create($adminData);
-        Auth::login($admin);
-        $response = [
-            "api_token" => Auth::user()->api_token
+        return [
+            "msg" => "successfully to register your account, please ask DB admin to approve it"
         ];
-        return $response;
     }
 
     public function update() {
@@ -115,5 +115,25 @@ class AdminController extends Controller
         ];
 
         return $response;
+    }
+
+    public function changeStatus($id) {
+        if (Auth::user()->role != "db_admin" || Auth::user()->id == $id)
+            abort(401, "Unauthorized user, can\'t use this account to change the status of other\'s account");
+        $admin = Admin::where('id', $id)->first();
+
+       
+        request()->validate([
+            'status' => ['string', 'required']
+        ]); 
+        $changeStatus = request()->only([
+            'status'
+        ]); 
+        $admin->update($changeStatus);
+        $response = [
+            "admin_status" => $admin->status
+        ];
+        
+        return $response;     
     }
 }
