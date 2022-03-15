@@ -20,7 +20,7 @@
                                 {{-- <input type="text" value="" name="subscribe_pemail" id="subscribe_pemail">
                                 <input type="hidden" value="" name="subscribe_pname" id="subscribe_pname"> --}}
                                 <div id="notification"></div>
-                                <a class="button" href="https://indonesiadermawan.id/campaign/27764/bersama-ppi-edufest-berikan-beasiswa-untuk-siswa-tepian-negeri-indonesia"><span>Sedekah Sekarang</span></a>
+                                <a class="button" href="https://indonesiadermawan.id/campaign/27764/bersama-ppi-edufest-berikan-beasiswa-untuk-siswa-tepian-negeri-indonesia" target="_blank"><span>Sedekah Sekarang</span></a>
                             </div>
                         </form>
                         {{-- <div class="subscribe-bottom">
