@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="/assets/styles/docs.css" />
     <link rel="stylesheet" href="/assets/styles/writingcont.css" />
     <link rel="stylesheet" href="/assets/styles/articles.css" />
+    <link rel="stylesheet" href="/assets/styles/newsletter.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->

@@ -107,6 +107,7 @@
             </div>
         </div>
     </section>
+    @include('layouts.newsletter')
     <script>
         $(document).ready(function() {
             $.ajax({
@@ -278,6 +279,7 @@
                 }
             });
         });
+
     </script>
     <div class="home-blank-transition"></div>
 
