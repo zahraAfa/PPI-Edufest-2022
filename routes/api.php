@@ -87,6 +87,7 @@ Route::middleware('auth:api')->group(function () {
         Route::get('/read', [AdminController::class, 'retrieve']);
         Route::put('/update', [AdminController::class, 'update']);
         Route::put('/change_password', [AdminController::class, 'changePassword']);
+        Route::put('/change_status/{id}', [AdminController::class, 'changeStatus']);
     });
     
     //FAQ API routes

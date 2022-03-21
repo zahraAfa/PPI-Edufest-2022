@@ -15,10 +15,15 @@ class AuthController extends Controller
     public function login() {
         //Checking user logged in
         if (auth()->check()) {
-            return $response = [
-                'has_logged_in' => true,
-                'api_token' => Auth::user()->api_token
-            ];
+            if (auth()->user()->status != "approved") {
+                auth()->logout();
+            } else {
+                return $response = [
+                    'has_logged_in' => true,
+                    'api_token' => Auth::user()->api_token,
+                    'role' => auth()->user()->role
+                ];
+            }
         }
         
         //Generating new token
@@ -38,6 +43,12 @@ class AuthController extends Controller
         if (!$auth)
             abort(401, 'unauthorized user, please login with proper email and password');
         
+        
+        if(Auth::user()->status != "approved") {
+            Auth::logout();
+            abort(401, 'unauthorized user, please ask the db admin to approve your account!');
+        }
+
         //Inserting new token
         $admin = Admin::where('id', Auth::user()->id)->update([
             'api_token' => $token
@@ -46,15 +57,13 @@ class AuthController extends Controller
         $auth = Admin::where('id', Auth::user()->id)->first();
         $response = [
             'api_token' => $auth->api_token,
+            'role' => $auth->role
         ];
         return $response;
     }
 
     public function logout(){
-        $admin =  Admin::where('id', Auth::guard('api')->user()->id)->update([
-            'api_token' => null
-        ]);
         Auth::logout();
-        return [];
+        return ['msg' => "logout success"];
     }
 }
