@@ -24,7 +24,6 @@ class Authenticate extends Middleware
     {
         // abort(401, 'User is not authenticated / session time out, please try to login again.');
         // $message = "User is not authenticated";
-        // echo "<script type='text/javascript'>alert('$message');</script>";
-        echo "<script type='text/javascript'>window.location.href = '../../../login';</script>";
+        abort(redirect('login'));
     }
 }

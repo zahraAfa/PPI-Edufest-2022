@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . /app
 
 # don't install dev-dependencies
-RUN composer install
+RUN composer install --ignore-platform-reqs
 
 # production image
 FROM php:8.1-fpm
@@ -22,6 +22,8 @@ RUN apt-get update \
     openssh-server=1:8.4p1-5 \
     sshpass=1.09-1+b1 \
     rsync=3.2.3-4+deb11u1 \
+    zlib1g-dev=1:1.2.11.dfsg-2 \
+    libpng-dev=1.6.37-3 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -30,9 +32,23 @@ RUN docker-php-ext-install \
     bcmath \
     ctype \
     fileinfo \
+    gd \
     mbstring \
     pdo_mysql \
     xml
+
+# RUN curl -sSLf \
+#         -o /usr/local/bin/install-php-extensions \
+#         https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions && \
+#     chmod +x /usr/local/bin/install-php-extensions && \
+#     IPE_GD_WITHOUTAVIF=1 install-php-extensions \
+#     bcmath \
+#     ctype \
+#     fileinfo \
+#     gd \
+#     mbstring \
+#     pdo_mysql \
+#     xml
 
 # add user for laravel application
 RUN groupadd -g 1000 www \

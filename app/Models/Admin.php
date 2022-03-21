@@ -25,7 +25,8 @@ class Admin extends Authenticatable
         'email',
         'username',
         'password',
-        'api_token'
+        'api_token',
+        'status'
     ];
 
     /**
@@ -37,6 +38,7 @@ class Admin extends Authenticatable
         'password',
         'id',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'role'
     ];
 }
