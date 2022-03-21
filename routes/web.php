@@ -76,8 +76,7 @@ Route::middleware('guest')->group(function(){
 
 // Authenticated user
 Route::middleware('auth')->group(function(){
-
-
+    // Admins
     Route::prefix('/admin')->group(function(){
         Route::get('/', function () {
             return view('admin/dashboard');
