@@ -1,0 +1,58 @@
+.omega-index-title{
+    color: var(--mainWhite);
+    font-family: "Montserrat";
+    font-weight: 700;
+    text-align: center;
+    position: absolute;
+    z-index: 16;
+    font-size: 60px;
+    text-shadow: 0 0 10px rgba(70, 70, 70, 0.5);
+}
+
+.omega-curve-r{
+    position: absolute;
+    z-index: 14;
+    bottom: 0;
+    right: 0;
+}
+
+.omega-curve-l{
+    position: absolute;
+    z-index: 14;
+    top: 0;
+    left: 0;
+}
+
+.omega-index-header-img{
+    position: relative;
+    width: 60vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.omega-index-pencil{
+    width: 40vw;
+    min-width: 300px;
+    position: absolute;
+    z-index: 15;
+    margin: auto;
+}
+
+.omega-halfcircle{
+    background: linear-gradient(180deg, rgba(124, 155, 250, 0) 0%, #7C9BFA 100%);
+    min-width: 200px;
+    min-height: 200px;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 300px;
+}
+
+@media screen and (max-width: 800px) {
+    .wc-index-title{
+        font-size: 40px;
+    }
+}
+
+/* Body */

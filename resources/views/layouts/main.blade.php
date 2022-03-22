@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="/assets/styles/writingcont.css" />
     <link rel="stylesheet" href="/assets/styles/articles.css" />
     <link rel="stylesheet" href="/assets/styles/newsletter.css" />
+    <link rel="stylesheet" href="/assets/styles/omegaedu.css" />
     <!-- Style end -->
 
     <!-- Favicon start -->
