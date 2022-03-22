@@ -96,7 +96,7 @@
 }
 
 .omega-index-body .omega-list-card:hover .campus-name{
-    background-color: var(--mainBlack);
+    background-color: var(--mainBlue);
     color: var(--mainWhite);
 }
 
