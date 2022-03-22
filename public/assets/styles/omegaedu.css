@@ -7,6 +7,7 @@
     z-index: 16;
     font-size: 60px;
     text-shadow: 0 0 10px rgba(70, 70, 70, 0.5);
+    /* transform: translate(0, -40%); */
 }
 
 .omega-curve-r{
@@ -32,16 +33,17 @@
     align-items: center;
 }
 
-.omega-index-pencil{
+.omega-index-book{
     width: 40vw;
     min-width: 300px;
     position: absolute;
     z-index: 15;
     margin: auto;
+    transform: translate(0, 40%);
 }
 
 .omega-halfcircle{
-    background: linear-gradient(180deg, rgba(124, 155, 250, 0) 0%, #7C9BFA 100%);
+    background: linear-gradient(0deg, rgba(124, 155, 250, 0) 0%, var(--customYellow) 100%);
     min-width: 200px;
     min-height: 200px;
     width: 25vw;
@@ -56,3 +58,66 @@
 }
 
 /* Body */
+.omega-index-body{
+    width: 100vw;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.omega-index-body .omega-lists{
+    width: 85%;
+    max-width: 1800px;
+    padding: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.omega-index-body .omega-list-card{
+    width: 300px;
+    height: 400px;
+    border-radius: 30px;
+    border: 5px solid var(--mainWhite);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none!important;
+    overflow: scroll;
+}
+.omega-index-body .omega-list-card:hover{
+    border: 5px solid var(--customYellow);
+    background-color: var(--customYellow);
+}
+
+.omega-index-body .omega-list-card:hover .campus-name{
+    background-color: var(--mainBlack);
+    color: var(--mainWhite);
+}
+
+.omega-index-body .campus-logo-wrapper{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.omega-index-body .campus-logo-wrapper img{
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+.omega-index-body .campus-name{
+    padding: 10px;
+    background-color: var(--mainWhite);
+    border-radius: 30px;
+    color: var(--mainBlack);
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+}
