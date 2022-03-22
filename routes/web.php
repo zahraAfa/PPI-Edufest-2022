@@ -63,107 +63,124 @@ Route::get('/artikel', function () {
 |--------------------------------------------------------------------------
 */
 
-Route::get('/register', function () {
-    return view('admin/register');
-})->middleware('guest')->name('register');
+// Guest
+Route::middleware('guest')->group(function(){
+    Route::get('/register', function () {
+        return view('admin/register');
+    })->name('register');
 
-Route::get('/login', function () {
-    return view('admin/login');
-})->middleware('guest')->name('login');
+    Route::get('/login', function () {
+        return view('admin/login');
+    })->name('login');
+});
 
-Route::get('/admin', function () {
-    return view('admin/dashboard');
-})->middleware('auth')->name('admin-dashboard');
+// Authenticated user
+Route::middleware('auth')->group(function(){
+    // Admins
+    Route::prefix('/admin')->group(function(){
+        Route::get('/', function () {
+            return view('admin/dashboard');
+        })->name('admin-dashboard');
 
+        // Profile routes
+        Route::prefix('/profile')->group(function(){
+            Route::get('', function () {
+                return view('/admin/profile/index');
+            })->name('admin-profile');
 
-// Profile routes
-Route::get('/admin/profile', function () {
-    return view('admin/profile/index');
-})->middleware('auth')->name('admin-profile');
+            Route::get('/change-password', function () {
+                return view('/admin/profile/change-password');
+            })->name('admin-profile-change-password');
+        });
 
-Route::get('/admin/profile/change-password', function () {
-    return view('admin/profile/change-password');
-})->middleware('auth')->name('admin-profile-change-password');
+        // FAQ routes
+        Route::prefix('/faqs')->group(function(){
+            Route::get('/', function () {
+                return view('admin/faqs/index');
+            })->name('admin-faqs-index');
 
+            Route::get('/edit/{id}', function () {
+                return view('admin/faqs/edit-faq');
+            })->name('admin-faq-edit');
 
-// FAQs routes
-Route::get('/admin/faqs', function () {
-    return view('admin/faqs/index');
-})->middleware('auth')->name('admin-faqs-index');
+            Route::get('/add', function () {
+                return view('admin/faqs/add-faq');
+            })->name('admin-faq-add');
+        });
 
-Route::get('/admin/faqs/edit/{id}', function () {
-    return view('admin/faqs/edit-faq');
-})->middleware('auth')->name('admin-faq-edit');
+        // Events routes
+        Route::prefix('/events')->group(function(){
+            Route::get('/', function () {
+                return view('admin/events/index');
+            })->name('admin-events-index');
 
-Route::get('/admin/faqs/add', function () {
-    return view('admin/faqs/add-faq');
-})->middleware('auth')->name('admin-faq-add');
+            Route::get('/edit/{id}', function () {
+                return view('admin/events/edit-event');
+            })->name('admin-event-edit');
 
+            Route::get('/add', function () {
+                return view('admin/events/add-event');
+            })->name('admin-event-add');
+        });
 
-// Events routes
-Route::get('/admin/events', function () {
-    return view('admin/events/index');
-})->middleware('auth')->name('admin-events-index');
+        // Sponsors routes
+        Route::prefix('/sponsors')->group(function(){
+            Route::get('/', function () {
+                return view('admin/sponsors/index');
+            })->name('admin-sponsors-index');
 
-Route::get('/admin/events/edit/{id}', function () {
-    return view('admin/events/edit-event');
-})->middleware('auth')->name('admin-event-edit');
+            Route::get('/edit/{id}', function () {
+                return view('admin/sponsors/edit-sponsor');
+            })->name('admin-sponsor-edit');
 
-Route::get('/admin/events/add', function () {
-    return view('admin/events/add-event');
-})->middleware('auth')->name('admin-event-add');
+            Route::get('/add', function () {
+                return view('admin/sponsors/add-sponsor');
+            })->name('admin-sponsor-add');
+        });
 
+        // Partners routes
+        Route::prefix('/partners')->group(function(){
+            Route::get('/', function () {
+                return view('admin/partners/index');
+            })->name('admin-partners-index');
 
-// Sponsors routes
-Route::get('/admin/sponsors', function () {
-    return view('admin/sponsors/index');
-})->middleware('auth')->name('admin-sponsors-index');
+            Route::get('/edit/{id}', function () {
+                return view('admin/partners/edit-partner');
+            })->name('admin-partner-edit');
 
-Route::get('/admin/sponsors/edit/{id}', function () {
-    return view('admin/sponsors/edit-sponsor');
-})->middleware('auth')->name('admin-sponsor-edit');
+            Route::get('/add', function () {
+                return view('admin/partners/add-partner');
+            })->name('admin-partner-add');
+        });
 
-Route::get('/admin/sponsors/add', function () {
-    return view('admin/sponsors/add-sponsor');
-})->middleware('auth')->name('admin-sponsor-add');
+        // Speakers routes
+        Route::prefix('/speakers')->group(function(){
+            Route::get('/', function () {
+                return view('admin/speakers/index');
+            })->name('admin-speakers-index');
 
+            Route::get('/edit/{id}', function () {
+                return view('admin/speakers/edit-speaker');
+            })->name('admin-speaker-edit');
 
-// Partners routes
-Route::get('/admin/partners', function () {
-    return view('admin/partners/index');
-})->middleware('auth')->name('admin-partners-index');
+            Route::get('/add', function () {
+                return view('admin/speakers/add-speaker');
+            })->name('admin-speaker-add');
+        });
 
-Route::get('/admin/partners/edit/{id}', function () {
-    return view('admin/partners/edit-partner');
-})->middleware('auth')->name('admin-partner-edit');
+        // Articles routes
+        Route::prefix('/articles')->group(function(){
+            Route::get('/', function () {
+                return view('admin/articles/index');
+            })->name('admin-article-index');
 
-Route::get('/admin/partners/add', function () {
-    return view('admin/partners/add-partner');
-})->middleware('auth')->name('admin-partner-add');
+            Route::get('/edit/{id}', function () {
+                return view('admin/articles/edit-article');
+            })->name('admin-article-edit');
 
-
-// Speakers routes
-Route::get('/admin/speakers', function () {
-    return view('admin/speakers/index');
-})->middleware('auth')->name('admin-speakers-index');
-
-Route::get('/admin/speakers/edit/{id}', function () {
-    return view('admin/speakers/edit-speaker');
-})->middleware('auth')->name('admin-speaker-edit');
-
-Route::get('/admin/speakers/add', function () {
-    return view('admin/speakers/add-speaker');
-})->middleware('auth')->name('admin-speaker-add');
-
-// Articles routes
-Route::get('/admin/articles', function () {
-    return view('admin/articles/index');
-})->middleware('auth')->name('admin-article-index');
-
-Route::get('/admin/articles/edit/{id}', function () {
-    return view('admin/articles/edit-article');
-})->middleware('auth')->name('admin-article-edit');
-
-Route::get('/admin/articles/add', function () {
-    return view('admin/articles/add-article');
-})->middleware('auth')->name('admin-article-add');
+            Route::get('/add', function () {
+                return view('admin/articles/add-article');
+            })->name('admin-article-add');
+        });
+    });
+});
