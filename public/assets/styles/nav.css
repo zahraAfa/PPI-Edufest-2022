@@ -101,7 +101,7 @@
 }
 
 /* media query for nav */
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 850px) {
   .nav-items li a {
     font-size: 1.3em;
     font-weight: 700;
