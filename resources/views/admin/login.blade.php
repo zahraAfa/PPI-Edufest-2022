@@ -58,14 +58,25 @@
                                     </form>
 
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">
+                                        {{-- <a class="small" href="forgot-password.html">
                                             Forgot Password?
-                                        </a></div>
-                                    <div class="text-center"><a class="small" href="/register">Create an Account!</a></div>
+                                        </a></div> --}}
+                                    <div class="text-center"><a class="small" href="{{ route('register') }}">Create an Account!</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="unauthModal" tabindex="-1" aria-labelledby="unauthModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" id="body_unauth_msg">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="unauthRegist" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
                 </div>
             </div>
         </div>
@@ -83,16 +94,21 @@
                 data: form.serialize(),
                 success: function(data)
                 {
-                    let headers = new Headers({'Content-Type': 'application/json'});
-                    let token = 'Bearer '+Object.values(data);
-                    // alert(token);
-                    headers.append('Authorization', token);
-                    window.location.href = "/admin";
+                    // console.log(data.role);
+                    location.reload();
+                    // if(data.role=="admin"){
+                        // window.location.href = "/admin";
+                    // }
+                    // else id(data.role=="db_admin"){
+                    //     window.location.href = "/access-list";
+                    // }
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    $("#body_unauth_msg").html('');
                     var data=XMLHttpRequest.responseText;
                     var jsonResponse = JSON.parse(data);
-                    alert(jsonResponse["message"]);
+                    $("#body_unauth_msg").append(jsonResponse["message"]);
+                    $('#unauthModal').modal('show');
                 }
             });
         });

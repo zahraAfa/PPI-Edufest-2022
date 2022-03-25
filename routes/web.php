@@ -90,8 +90,17 @@ Route::middleware('guest')->group(function(){
     })->name('login');
 });
 
-// Authenticated user
-Route::middleware('auth')->group(function(){
+// Authenticated user with role = db_admin
+Route::middleware('auth', 'role:db_admin')->group(function(){
+    Route::prefix('/access-list')->group(function(){
+        Route::get('/', function () {
+            return view('db-admin/index');
+        })->name('access-list');
+    });
+});
+
+// Authenticated user with role = admin
+Route::middleware('auth', 'role:admin')->group(function(){
     // Admins
     Route::prefix('/admin')->group(function(){
         Route::get('/', function () {

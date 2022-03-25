@@ -54,11 +54,8 @@
                                     Account</button>
                                 <hr>
                             </form>
-
-                            <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>
                             <div class="text-center">
-                                <a class="small" href="/login">Already have an account?Login!</a>
+                                <a class="small" href="{{ route('login') }}">Already have an account? Login</a>
                             </div>
                         </div>
                     </div>
@@ -66,9 +63,25 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                </div>
+                <div class="modal-body" id="body_success_msg">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="successRegist" class="btn btn-primary">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/admin-template/js/script.min.js"></script>
     <script>
+        $(document).on('click', "#successRegist", function() {
+            window.location.href = "{{ route('login') }}";
+        });
         $("#regist__form").submit(function(e) {
 
             e.preventDefault();
@@ -82,7 +95,8 @@
                     let headers = new Headers({'Content-Type': 'application/json'});
                     let token = 'Bearer '+Object.values(data);
                     headers.append('Authorization', token);
-                    window.location.href = "/admin";
+                    $("#body_success_msg").append(data["msg"]);
+                    $('#successModal').modal('show');
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     var data=XMLHttpRequest.responseText;
