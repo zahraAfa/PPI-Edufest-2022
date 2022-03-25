@@ -16,6 +16,11 @@ class AdminController extends Controller
         return $admin;
     }
 
+    public function retrieveAll() {
+        $admins = Admin::all();
+        return $admins;        
+    }
+
     public function register() {
         //Validating request form
         request()->validate([
@@ -47,6 +52,7 @@ class AdminController extends Controller
 
         $admin = Admin::create($adminData);
         return [
+            "data" => $admin,
             "msg" => "successfully to register your account, please ask DB admin to approve it"
         ];
     }
