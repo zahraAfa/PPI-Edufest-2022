@@ -49,11 +49,12 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Username</th>
+                                            <th>Email</th>
+                                            {{-- <th>Role</th> --}}
                                             <th>Status</th>
-                                            <th>Role</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="events__row">
+                                    <tbody id="admins__row">
 
                                     </tbody>
                                 </table>
@@ -76,13 +77,69 @@
         $(document).ready(function() {
             $.ajax({
                 type: "GET",
-                url: "../../../api/admins/read",
-                header: {
-                    "Authorization": "Bearer {{ Auth::user()->api_token }}"
+                url: "../../../../api/admins/readAll",
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
-                success: function(result) {
+                success: function(data) {
 
+                    var adminItems = '';
+                    if (data.length === 0) {
+                        $('#admins__row').after(
+                            '<td colspan="6" class="text-center" >There is no data exist here</td>');
+                    } else {
+                        $.each(data, function(key, admin) {
+                            if ((admin["id"]) !== {{ Auth::user()->id }}) {
+                                adminItems += '<tr class="align-middle">' +
+                                    '<td id="admin__name-list">' + admin["name"] + '</td>' +
+                                    '<td id="admin__username-list">' + admin["username"] +
+                                    '</td>' +
+                                    '<td id="admin__email-list">' + admin["email"] + '</td>' +
+                                    '<td id="admin__status-list">' +
+                                    '<select class="form-select changeStatus" name="status" id="' +
+                                    admin["id"] + '">' +
+                                    '<option value="registered">Registered</option>' +
+                                    '<option value="approved">Approved</option>' +
+                                    '</select>' +
+                                    '</td>' +
+                                    '</tr>';
+                            }
+                        });
+                        $('#admins__row').append(adminItems);
+                        $('#dataTable').DataTable();
+                        $.each(data, function(key, admin) {
+                            $($('#' + admin["id"])).val(admin["status"]).change();
+                        })
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    var data = XMLHttpRequest.responseText;
+                    var jsonResponse = JSON.parse(data);
+                    alert(jsonResponse["message"]), alert(textStatus);
                 }
+            });
+            $(document).on('change', 'select', function() {
+                var id = $(this).attr("id");
+                var urlpost = '../../../api/admins/change_status/' + id;
+                $.ajax({
+                    type: "PUT",
+                    url: urlpost,
+                    data: {
+                        status: $('select#' + id).val()
+                    },
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader('Authorization',
+                            'Bearer {{ Auth::user()->api_token }}');
+                    },
+                    success: function(data) {
+                        // $("select#"+id).val(data.month)
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        var data = XMLHttpRequest.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        alert(jsonResponse["message"]);
+                    }
+                });
             });
         });
     </script>

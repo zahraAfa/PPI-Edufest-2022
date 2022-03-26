@@ -94,14 +94,7 @@
                 data: form.serialize(),
                 success: function(data)
                 {
-                    // console.log(data.role);
                     location.reload();
-                    // if(data.role=="admin"){
-                        // window.location.href = "/admin";
-                    // }
-                    // else id(data.role=="db_admin"){
-                    //     window.location.href = "/access-list";
-                    // }
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
                     $("#body_unauth_msg").html('');
