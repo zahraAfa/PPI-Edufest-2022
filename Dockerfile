@@ -15,15 +15,15 @@ WORKDIR /var/www
 # install dependencies
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-    build-essential=12.9 \
-    libxml2-dev=2.9.10+dfsg-6.7 \
-    libonig-dev=6.9.6-1.1 \
-    mariadb-client=1:10.5.12-0+deb11u1 \
-    openssh-server=1:8.4p1-5 \
-    sshpass=1.09-1+b1 \
-    rsync=3.2.3-4+deb11u1 \
-    zlib1g-dev=1:1.2.11.dfsg-2 \
-    libpng-dev=1.6.37-3 \
+    build-essential \
+    libxml2-dev \
+    libonig-dev \
+    mariadb-client \
+    openssh-server \
+    sshpass \
+    rsync \
+    zlib1g-dev \
+    libpng-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
