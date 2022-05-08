@@ -55,7 +55,7 @@
                                                     <label class="form-label" id="form__report-title-label"
                                                         for="form__report-title"><strong>Title</strong></label><input
                                                         class="form-control" type="text" id="form__report-title"
-                                                        placeholder="Title" name="title" required="" />
+                                                        placeholder="Title" name="title" required />
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label" id="form__report-event-name"
@@ -79,7 +79,7 @@
                                                     <label class="form-label" id="form__report-range-att-label"
                                                         for="form__report-range-att"><strong>Attendance&nbsp;Range</strong><br /></label><input
                                                         class="form-control" type="text" id="form__report-range-att"
-                                                        placeholder="Range" name="range_attendance" required="" />
+                                                        placeholder="Range" name="range_attendance" required />
                                                 </div>
                                             </div>
                                             <div class="col">
@@ -89,7 +89,7 @@
                                                             ID</strong><br /></label>
                                                             <input class="form-control"
                                                         type="text" id="form__report-url-reg-1" placeholder="ID #1"
-                                                        name="urls_registrant" required="" />
+                                                        name="urls_registrant" required />
                                                         <input
                                                         class="form-control mt-2" type="text"
                                                         id="form__report-url-reg-2" placeholder="ID #2 (If any)"
@@ -104,7 +104,7 @@
                                                             Range</strong><br /></label>
                                                             <input class="form-control"
                                                         type="text" id="form__report-range-reg-1" placeholder="Range #1"
-                                                        name="ranges_registrant" required="" />
+                                                        name="ranges_registrant" required />
                                                         <input
                                                         class="form-control mt-2" type="text"
                                                         id="form__report-range-reg-2" placeholder="Range #2 (If any)"
@@ -115,7 +115,7 @@
                                                 </div>
                                                 <div class="d-flex justify-content-xl-end mb-3">
                                                     <a class="btn btn-primary btn-sm d-none d-sm-inline-block"
-                                                        role="button" type="submit"><i
+                                                        role="button" type="submit" id="submit_report_btn"><i
                                                             class="fas fa-download fa-sm text-white-50"></i>&nbsp;&nbsp;Save
                                                         and Generate Report</a>
                                                 </div>
@@ -316,46 +316,51 @@
             });
         });
 
-        $("#report__add-form").submit(function(e) {
+        // $("#report__add-form").click(function(e) {
+        $("#submit_report_btn").click(function(e) {
 
             e.preventDefault();
-            // var formData = new FormData();
-            // var urls='';
-            // var ranges=''
-            // formData.append('title', $('#form__report-title').val());
-            // formData.append('event_id', $('#form__speaker-event').val());
-            // formData.append('url_attendance', $('#form__report-url-att').val());
-            // formData.append('range_attendance', $('#form__report-range-att').val());
+            var formData = new FormData();
+            var urls='';
+            var ranges=''
+            formData.append('title', $('#form__report-title').val());
+            formData.append('event_id', $('#form__speaker-event').val());
+            formData.append('url_attendance', $('#form__report-url-att').val());
+            formData.append('range_attendance', $('#form__report-range-att').val());
 
-            var id_handler = "form__report-url-reg-2";
-            // var range_handler = "form__report-range-reg-2";
-            // if (id_handler.val()!=null && range_handler.val()!=null){
-            //         for(let i = 2; i <= 3; i++){
-            //             console.log("i");
-            //         }
-            // }
+            urls += $('#form__report-url-reg-1').val();
+            ranges += $('#form__report-range-reg-1').val();
+            var id_handler = $('#form__report-url-reg-2');
+            var range_handler = $('form__report-range-reg-2');
+            if (id_handler.val()!='' && range_handler.val()!=''){
+                for(let i = 2; i <= 3; i++){
+                    urls += ','+$('#form__report-url-reg-'+i).val()
+                    ranges += ','+$('#form__report-range-reg-'+i).val()
+                }
+            }
+            formData.append('urls_registrant', urls);
+            formData.append('ranges_registrant', ranges);
+                // console.log(urls);
 
-            console.log(id_handler);
-
-            // var urlpost = '../../../api/reports/insert';
-            // $.ajax({
-            //     type: "POST",
-            //     url: urlpost,
-            //     data: formData,
-            //     processData: false,
-            //     contentType: false,
-            //     beforeSend: function(xhr) {
-            //         xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
-            //     },
-            //     success: function(data) {
-            //         window.location.reload();
-            //     },
-            //     error: function(XMLHttpRequest, textStatus, errorThrown) {
-            //         var data = XMLHttpRequest.responseText;
-            //         var jsonResponse = JSON.parse(data);
-            //         alert(jsonResponse["message"]);
-            //     }
-            // });
+            var urlpost = '../../../api/reports/insert';
+            $.ajax({
+                type: "POST",
+                url: urlpost,
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
+                },
+                success: function(data) {
+                    window.location.reload();
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    var data = XMLHttpRequest.responseText;
+                    var jsonResponse = JSON.parse(data);
+                    alert(jsonResponse["message"]);
+                }
+            });
         });
 
         // $(document).on('click', ".delete-btn-event", function() {
