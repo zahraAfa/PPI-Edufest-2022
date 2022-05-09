@@ -195,15 +195,33 @@
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure want to delete this report?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="modal_delete" class="btn btn-primary">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../assets/admin-template/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/admin-template/js/script.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
     <script>
         // get modal element
-        // var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
-        //     keyboard: false
-        // });
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+            keyboard: false
+        });
         $(document).ready(function() {
             $.ajax({
                 type: "GET",
@@ -285,23 +303,21 @@
                                             '<td class="report__title-table">' + report["title"] + '</td>' +
                                             '<td class="report__event-table">' + event["title"] + '</td>' +
                                             '<td class="d-flex justify-content-end">'+
-                                                '<a class="btn btn-success btn-circle ms-1" role="button" href="edit-event-form.html">'+
+                                                '<a class="btn btn-success btn-circle ms-1" role="button" href="../../admin/reports/edit/'+report["id"]+'">'+
                                                     '<i class="fas fa-edit text-white"></i>'+
                                                 '</a>'+
-                                                '<a class="btn btn-warning btn-circle ms-1" role="button">'+
+                                                '<a class="btn btn-warning btn-circle ms-1 generate-btn-report" role="button" id="'+report["id"]+'">'+
                                                     '<i class="fas fa-download text-white"></i>'+
                                                 '</a>'+
-                                                '<a class="btn btn-danger btn-circle ms-1" role="button">'+
+                                                '<a class="btn btn-danger btn-circle ms-1 delete-btn-report" role="button" id="'+report["id"]+'">'+
                                                     '<i class="fas fa-trash text-white"></i>'+
                                                 '</a>'+
                                                 '</td></tr>';
-
-                                        $('#reports__row').append(reportItems);
-                                        $('#dataTableReports').DataTable();
-                                    }
-
+                                            }
+                                        });
                                     });
-                                });
+                                    $('#reports__row').append(reportItems);
+                                    $('#dataTableReports').DataTable();
                             }
                         }
 
@@ -370,39 +386,68 @@
                 }
             });
         });
+        $(document).on('click', ".generate-btn-report", function() {
+            var generate_id = $(this).attr('id');
+            // console.log(generate_id);
+            // var queryParams = {"test":"xxx"};
+            $.ajax({
+                type: "GET",
+                url: "../../../api/reports/generate/"+generate_id,
+                // cache: false,
+                // xhrFields: {
+                //     responseType: 'blob'
+                // },
+                header: {
+                    "Authorization": "Bearer {{ Auth::user()->api_token }}"
+                },
+                success: function(data) {
+                    console.log(data)
+                    //Convert the Byte Data to BLOB object.
+                    var blob = new Blob([data], { type: "application/octetstream" });
 
-        // $(document).on('click', ".delete-btn-event", function() {
+                    //Check the Browser type and download the File.
+                    var isIE = false || !!document.documentMode;
+                    if (isIE) {
+                        window.navigator.msSaveBlob(blob, "fileName");
+                    } else {
+                        var url = window.URL || window.webkitURL;
+                        link = url.createObjectURL(blob);
+                        var a = $("<a />");
+                        a.attr("download", "fileName");
+                        a.attr("href", link);
+                        $("body").append(a);
+                        a[0].click();
+                        $("body").remove(a);
+                    }
+                },
+            });
+        });
+        $(document).on('click', ".delete-btn-report", function() {
+            var del_id = $(this).attr('id');
+            myModal.show();
+            $("#modal_delete").attr("delete-id", del_id);
+        });
+        $(document).on('click', "#modal_delete", function() {
+            let del_id = $(this).attr('delete-id');
 
-        //     var del_id = $(this).attr('id');
-
-        //     myModal.show();
-
-        //     $("#modal_delete").attr("delete-id", del_id);
-
-
-        // });
-
-        // $(document).on('click', "#modal_delete", function() {
-        //     let del_id = $(this).attr('delete-id');
-
-        //     $.ajax({
-        //         type: "DELETE",
-        //         url: '../../../api/events/delete/' + del_id,
-        //         data: 'id=' + del_id,
-        //         beforeSend: function(xhr) {
-        //             xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
-        //         },
-        //         success: function(data) {
-        //             location.reload();
-        //         },
-        //         error: function(XMLHttpRequest, textStatus, errorThrown) {
-        //             var data = XMLHttpRequest.responseText;
-        //             var jsonResponse = JSON.parse(data);
-        //             alert(jsonResponse["message"]);
-        //         }
-        //     });
-        //     myModal.hide();
-        // });
+            $.ajax({
+                type: "DELETE",
+                url: '../../../api/reports/delete/' + del_id,
+                data: 'id=' + del_id,
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
+                },
+                success: function(data) {
+                    location.reload();
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    var data = XMLHttpRequest.responseText;
+                    var jsonResponse = JSON.parse(data);
+                    alert(jsonResponse["message"]);
+                }
+            });
+            myModal.hide();
+        });
     </script>
 </body>
 
