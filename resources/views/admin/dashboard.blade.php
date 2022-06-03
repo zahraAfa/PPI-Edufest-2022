@@ -306,7 +306,7 @@
                                                 '<a class="btn btn-success btn-circle ms-1" role="button" href="../../admin/reports/edit/'+report["id"]+'">'+
                                                     '<i class="fas fa-edit text-white"></i>'+
                                                 '</a>'+
-                                                '<a class="btn btn-warning btn-circle ms-1 generate-btn-report" role="button" id="'+report["id"]+'">'+
+                                                '<a class="btn btn-warning btn-circle ms-1 generate-btn-report" role="button" href="../../admin/reports/generate/'+report["id"]+'" target="_blank"  id="'+report["id"]+'">'+
                                                     '<i class="fas fa-download text-white"></i>'+
                                                 '</a>'+
                                                 '<a class="btn btn-danger btn-circle ms-1 delete-btn-report" role="button" id="'+report["id"]+'">'+
@@ -377,6 +377,7 @@
                     xhr.setRequestHeader('Authorization', 'Bearer {{ Auth::user()->api_token }}');
                 },
                 success: function(data) {
+                    window.open("../../../admin/reports/generate/"+data["id"], "_blank");
                     window.location.reload();
                 },
                 error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -384,42 +385,6 @@
                     var jsonResponse = JSON.parse(data);
                     alert(jsonResponse["message"]);
                 }
-            });
-        });
-        $(document).on('click', ".generate-btn-report", function() {
-            var generate_id = $(this).attr('id');
-            // console.log(generate_id);
-            // var queryParams = {"test":"xxx"};
-            $.ajax({
-                type: "GET",
-                url: "../../../api/reports/generate/"+generate_id,
-                // cache: false,
-                // xhrFields: {
-                //     responseType: 'blob'
-                // },
-                header: {
-                    "Authorization": "Bearer {{ Auth::user()->api_token }}"
-                },
-                success: function(data) {
-                    console.log(data)
-                    //Convert the Byte Data to BLOB object.
-                    var blob = new Blob([data], { type: "application/octetstream" });
-
-                    //Check the Browser type and download the File.
-                    var isIE = false || !!document.documentMode;
-                    if (isIE) {
-                        window.navigator.msSaveBlob(blob, "fileName");
-                    } else {
-                        var url = window.URL || window.webkitURL;
-                        link = url.createObjectURL(blob);
-                        var a = $("<a />");
-                        a.attr("download", "fileName");
-                        a.attr("href", link);
-                        $("body").append(a);
-                        a[0].click();
-                        $("body").remove(a);
-                    }
-                },
             });
         });
         $(document).on('click', ".delete-btn-report", function() {
