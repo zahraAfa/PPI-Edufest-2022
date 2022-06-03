@@ -62,7 +62,7 @@
                                                     <label class="form-label" id="form__report-event-name"
                                                         for="form__report-event"><strong>Event
                                                             Name</strong></label>
-                                                    <select class="form-select" id="form__speaker-event"
+                                                    <select class="form-select" id="form__report-event"
                                                         name="event_id">
                                                         <optgroup label="All Event" id="event__dropdown">
                                                         </optgroup>
@@ -348,7 +348,7 @@
             var urls = '';
             var ranges = ''
             formData.append('title', $('#form__report-title').val());
-            formData.append('event_id', $('#form__speaker-event').val());
+            formData.append('event_id', $('#form__report-event').val());
             formData.append('url_attendance', $('#form__report-url-att').val());
             formData.append('range_attendance', $('#form__report-range-att').val());
 
