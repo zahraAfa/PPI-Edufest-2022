@@ -14,64 +14,48 @@ use App\Http\Controllers\EventController;
 |
 */
 
-// Home route
 Route::get('/', function () {
     return view('home', [
         "title" => "Home",
     ]);
 })->name('usr-home');
 
-// Speakers route
 Route::get('/pembicara', function () {
     return view('speakers', [
         "title" => "Pembicara",
     ]);
 })->name('usr-speaker');
 
-// Agenda route
 Route::get('/agenda', function () {
     return view('agenda', [
         "title" => "Agenda",
     ]);
 })->name('usr-agenda');
 
-// Event Route
 Route::get('/acara/{id}', [EventController::class, 'detail'] );
 
-// Merchandise route
 Route::get('/merchandise', function () {
     return view('merchandise', [
         "title" => "Merchandise",
     ]);
 })->name('usr-merch');
 
-// Documentation route
 Route::get('/dokumentasi', function () {
     return view('documentation', [
         "title" => "Docs",
     ]);
 })->name('usr-docs');
 
-// Writing Contest route
 Route::get('/writing-contest', function () {
     return view('writing-contest/index', [
         "title" => "Writing Contest",
     ]);
 })->name('usr-wc');
-
-// Articles route
 Route::get('/artikel', function () {
     return view('articles', [
         "title" => "Articles",
     ]);
 })->name('usr-articles');
-
-// Omega Edu route
-Route::get('/omegaedu', function () {
-    return view('/omegaedu/index', [
-        "title" => "Omega Edu",
-    ]);
-})->name('omegaedu-index');
 
 /*
 |--------------------------------------------------------------------------
