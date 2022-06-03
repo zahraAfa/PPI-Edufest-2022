@@ -32,6 +32,20 @@
             <img src="/assets/img/header/header-frame-back-white.svg" alt="" class="carousel-container-frame2">
         </div>
     </section>
+    {{-- <div class="home-blank-transition"></div> --}}
+    <section>
+        <div class="home-agenda-navigation-container">
+            <div class="home-agenda-navigation-wrapper">
+                <div class="pointer-agenda-wrapper">
+                    <img class="pointer-move" src="/assets/icons/cursors/cursor-pointer.svg" alt="" style="transform: rotate(180deg); margin: 0 5px;">
+                    <img class="pointer-move" src="/assets/icons/cursors/cursor-pointer.svg" alt="" style="transform: rotate(180deg); margin: 0 5px;">
+                </div>
+                <a href="#list-acara" class="text-decoration-none"><button class="home-agenda-button button-56 mt-sm-2" style="padding: 30px; font-size: 30px;"
+                    role="button">Pendaftaran!!</button></a>
+            </div>
+        </div>
+    </section>
+    <div class="home-blank-transition"></div>
     <section>
         <div class="shadow"></div>
         <div class="desc-container">
@@ -73,12 +87,12 @@
             </div>
         </div>
     </section>
-    <div class="home-blank-transition"></div>
+    <div id="list-acara" class="home-blank-transition"></div>
     <section>
         <div class="agenda-container">
 
             <div class="agenda-wrapper">
-                <h1 class="agenda-sec-h1 effect-pop-up">- AGENDA -</h1>
+                <h1 class="agenda-sec-h1 effect-pop-up">- ACARA -</h1>
                 <div
                     class="agenda-modal-body-wrapper d-lg-flex align-self-center justify-content-lg-evenly justify-content-sm-center text-white">
                     <div class="agenda-modal-row me-5">
