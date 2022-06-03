@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DocumentationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PartnerController;
@@ -146,5 +147,10 @@ Route::middleware('auth:api')->group(function () {
         Route::delete('/delete/{id}', [ReportController::class, 'delete']);
         Route::put('/update/{id}', [ReportController::class, 'update']);
         Route::get('/generate/{id}', [ReportController::class, 'generate']);
+    });
+
+    //Documentation API routes
+    Route::prefix('/document')->group(function() {
+        Route::post('/upload', [DocumentationController::class, 'upload']);
     });
 });
