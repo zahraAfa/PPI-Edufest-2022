@@ -5,7 +5,6 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FaqController;
-use App\Http\Controllers\OmegaController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SpeakerController;
@@ -77,11 +76,6 @@ Route::prefix('/articles')->group(function() {
     Route::get('/read/{id}', [ArticleController::class, 'readDetail']);
 });
 
-//Omega Edu unprotected routes
-Route::prefix('/omegas')->group(function() {
-    Route::get('/read', [OmegaController::class, 'read']);
-});
-
 /*
 |--------------------------------------------------------------------------
 | API Protected Routes
@@ -111,7 +105,7 @@ Route::middleware('auth:api')->group(function () {
         Route::put('/image/{id}', [SponsorController::class, 'updateImage']);
         Route::delete('/delete/{id}', [SponsorController::class, 'delete']);
     });
-    
+
     //Partner API routes
     Route::prefix('/partners')->group(function() {
         Route::post('/insert', [PartnerController::class, 'insert']);
@@ -127,7 +121,7 @@ Route::middleware('auth:api')->group(function () {
         Route::put('/image/{id}', [EventController::class, 'updateImage']);
         Route::delete('/delete/{id}', [EventController::class, 'delete']);
     });
-    
+
     //Speaker API routes
     Route::prefix('/speakers')->group(function() {
         Route::post('/insert', [SpeakerController::class, 'insert']);
@@ -135,7 +129,7 @@ Route::middleware('auth:api')->group(function () {
         Route::put('/image/{id}', [SpeakerController::class, 'updateImage']);
         Route::delete('/delete/{id}', [SpeakerController::class, 'delete']);
     });
-    
+
     //Artilce API routes
     Route::prefix('/articles')->group(function() {
         Route::post('/insert', [ArticleController::class, 'insert']);
@@ -152,13 +146,5 @@ Route::middleware('auth:api')->group(function () {
         Route::delete('/delete/{id}', [ReportController::class, 'delete']);
         Route::put('/update/{id}', [ReportController::class, 'update']);
         Route::get('/generate/{id}', [ReportController::class, 'generate']);
-    });
-    
-    //Omega Edu API routes
-    Route::prefix('/omegas')->group(function() {
-        Route::post('/insert', [OmegaController::class, 'insert']);
-        Route::put('/update/{id}', [OmegaController::class, 'update']);
-        Route::put('/image/{id}', [OmegaController::class, 'updateImage']);
-        Route::delete('/delete/{id}', [OmegaController::class, 'delete']);
     });
 });
