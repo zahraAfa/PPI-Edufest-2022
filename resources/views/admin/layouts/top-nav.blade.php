@@ -46,9 +46,6 @@
                         <a class="dropdown-item" href="#" style="color: var(--bs-gray-800);">
                             <i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile
                         </a>
-                        <a class="dropdown-item" href="#" style="color: var(--bs-gray-800);">
-                            <i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log
-                        </a>
                         <div class="dropdown-divider"></div>
                             <a id="logout__btn" class="dropdown-item" style="color: var(--bs-gray-800);">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout
