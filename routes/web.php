@@ -191,5 +191,13 @@ Route::middleware('auth', 'role:admin')->group(function(){
                 return view('admin/articles/add-article');
             })->name('admin-article-add');
         });
+
+        // Documentation routes
+        Route::prefix('/docs')->group(function(){
+
+            Route::get('/add', function () {
+                return view('admin/docs/add-document');
+            })->name('admin-docs-add');
+        });
     });
 });
