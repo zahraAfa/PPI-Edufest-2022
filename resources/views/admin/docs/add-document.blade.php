@@ -30,8 +30,8 @@
                 @include('admin.layouts.top-nav')
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Upload Documentation</h3>
-                    <div class="row mb-3">
-                        <div class="col-lg-8">
+                    <div class="row d-flex justify-content-center mb-3">
+                        <div class="col-lg-8" style="width: 90%">
                             <div class="row">
                                 <div class="col">
                                     <div class="card shadow mb-3">
@@ -60,7 +60,7 @@
                                             <form id="document-upload-form" method="post" enctype="multipart/form-data">
 
                                                 <div class="row mt-3">
-                                                    <div class="col">
+                                                    <div class="col-lg-8">
                                                         <div class="mb-3">
                                                             <select class="form-select" id="folder-selection"
                                                                 name="folder">
