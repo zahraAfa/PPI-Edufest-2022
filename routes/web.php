@@ -194,14 +194,22 @@ Route::middleware('auth', 'role:admin')->group(function(){
             })->name('admin-article-add');
         });
 
+        // Documentation routes
+        Route::prefix('/docs')->group(function(){
+
+            Route::get('/add', function () {
+                return view('admin/docs/add-document');
+            })->name('admin-docs-add');
+        });
+
         // Reports routes
         Route::prefix('/reports')->group(function(){
 
             Route::get('/edit/{id}', function () {
                 return view('admin/reports/edit-report');
             })->name('admin-report-edit');
-            Route::get('/generate/{id}', [ReportController::class, 'generate']);
 
+            Route::get('/generate/{id}', [ReportController::class, 'generate']);
         });
     });
 });
