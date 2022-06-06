@@ -47,10 +47,10 @@
                                 </div>
                                 <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email Address" name="email" required></div>
                                 <div class="row mb-3">
-                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Password" name="password" required></div>
-                                    <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Repeat Password" ="password_repeat" required></div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="passwordInput" placeholder="Password" name="password" required></div>
+                                    <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="repeatPasswordInput" placeholder="Repeat Password" name="password_repeat" required></div>
                                 </div>
-                                <button class="btn btn-primary d-block btn-user w-100" type="submit" style="background: #68c38a;border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Register
+                                <button id="submit" class="btn btn-primary d-block btn-user w-100" type="submit" style="background: #68c38a;border-color: rgb(255, 255, 255);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Register
                                     Account</button>
                                 <hr>
                             </form>
@@ -82,28 +82,37 @@
         $(document).on('click', "#successRegist", function() {
             window.location.href = "{{ route('login') }}";
         });
+
         $("#regist__form").submit(function(e) {
 
             e.preventDefault();
-            var form = $("#regist__form");
-            $.ajax({
-                type: "POST",
-                url: '../../api/admins/register',
-                data: form.serialize(),
-                success: function(data)
-                {
-                    let headers = new Headers({'Content-Type': 'application/json'});
-                    let token = 'Bearer '+Object.values(data);
-                    headers.append('Authorization', token);
-                    $("#body_success_msg").append(data["msg"]);
-                    $('#successModal').modal('show');
-                },
-                error: function(XMLHttpRequest, textStatus, errorThrown) {
-                    var data=XMLHttpRequest.responseText;
-                    var jsonResponse = JSON.parse(data);
-                    alert(jsonResponse["message"]);
-                }
-            });
+
+            var pwInput = $('#passwordInput').val();
+            var pwRepeatInput = $('#repeatPasswordInput').val();
+            
+            if (pwInput != pwRepeatInput) {
+                alert("please enter the same confirmation password!");
+            } else {
+                var form = $("#regist__form");
+                $.ajax({
+                    type: "POST",
+                    url: '../../api/admins/register',
+                    data: form.serialize(),
+                    success: function(data)
+                    {
+                        let headers = new Headers({'Content-Type': 'application/json'});
+                        let token = 'Bearer '+Object.values(data);
+                        headers.append('Authorization', token);
+                        $("#body_success_msg").append(data["msg"]);
+                        $('#successModal').modal('show');
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        var data=XMLHttpRequest.responseText;
+                        var jsonResponse = JSON.parse(data);
+                        alert(jsonResponse["message"]);
+                    }
+                });
+            }
         });
     </script>
 </body>
