@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ArticleController extends Controller
 {
@@ -76,7 +77,11 @@ class ArticleController extends Controller
 
     public function update($id) {
         request()->validate([
-            'title' => ['required', 'string'],
+            'title' => [
+                'required',
+                'string',
+                Rule::unique('articles')->ignore($id)
+            ],
             'writer' => ['required', 'string'],
             'description' => ['required', 'string'],
             'writer_school' => ['required', 'string'],
